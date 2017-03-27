@@ -57,18 +57,14 @@ extern void RIL_requestTimedCallback (RIL_TimedCallback callback,
                                void *param, const struct timeval *relativeTime);
 
 
-/*************************************************************************************************/
 static struct RIL_Env s_rilEnv = {
     RIL_onRequestComplete,
     RIL_onUnsolicitedResponse,
     RIL_requestTimedCallback
 };
-/*************************************************************************************************/
 
 extern void RIL_startEventLoop();
 
-
-/*************************************************************************************************/
 static int make_argv(char * args, char ** argv)
 {
     // Note: reserve argv[0]
@@ -83,11 +79,11 @@ static int make_argv(char * args, char ** argv)
     }
     return count;
 }
-/*************************************************************************************************/
 
-
-/*************************************************************************************************/
-// switchUser - Switches UID to radio, preserving CAP_NET_ADMIN capabilities. Our group, cache, was set by init.
+/*
+ * switchUser - Switches UID to radio, preserving CAP_NET_ADMIN capabilities.
+ * Our group, cache, was set by init.
+ */
 void switchUser() {
     prctl(PR_SET_KEEPCAPS, 1, 0, 0, 0);
     setuid(AID_RADIO);
@@ -100,10 +96,7 @@ void switchUser() {
     cap.inheritable = 0;
     capset(&header, &cap);
 }
-/*************************************************************************************************/
 
-
-/*************************************************************************************************/
 int main(int argc, char **argv)
 {
     const char * rilLibPath = NULL;
@@ -140,7 +133,6 @@ int main(int argc, char **argv)
         }
     }
 
-/*************************************************************************************************/
     /* special override when in the emulator */
 #if 1
     {
@@ -248,11 +240,9 @@ int main(int argc, char **argv)
     }
 OpenLib:
 #endif
-/*************************************************************************************************/
-
     //switchUser();
 
-    RLOGI("RIL_Init library: %s\n", rilLibPath);
+    RLOGI("------ VendorRIL initialize: library=%s ------\n", rilLibPath);
 
     dlHandle = dlopen(rilLibPath, RTLD_NOW);
 
@@ -273,18 +263,28 @@ OpenLib:
     if (hasLibArgs) {
         rilArgv = argv + i - 1;
         argc = argc -i + 1;
+    	RLOGI("------ VendorRIL initialize: arguments from command ------\n");
     } else {
         static char * newArgv[MAX_LIB_ARGS];
         static char args[PROPERTY_VALUE_MAX];
         rilArgv = newArgv;
         property_get(LIB_ARGS_PROPERTY, args, "");
         argc = make_argv(args, rilArgv);
+    	RLOGI("------ VendorRIL initialize: arguments from property ------\n");
     }
 
     // Make sure there's a reasonable argv[0]
     rilArgv[0] = argv[0];
 
+    RLOGI("------ VendorRIL initialize: argc=%d ------\n", argc);
+
+    for (i = 0; i < argc; i ++) {
+        RLOGI("------ VendorRIL initialize: argv[%d]=%s ------\n", i, rilArgv[i]);
+    }
+   
     funcs = rilInit(&s_rilEnv, argc, rilArgv);
+
+    RLOGI("------ VendorRIL initialize: return=%s ------\n", ((funcs != NULL)? "funcs" : "NULL"));
 
     RIL_register(funcs);
 
@@ -295,4 +295,4 @@ done:
         sleep(0x00ffffff);
     }
 }
-/*************************************************************************************************/
+
