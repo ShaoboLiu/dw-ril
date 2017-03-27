@@ -261,6 +261,13 @@ static int clccStateToRILState(int state, RIL_CallState *p_state)
     }
 }
 
+
+
+/*************************************************************************************************/
+RIL_InitialAttachApn s_apnInfo;
+/*************************************************************************************************/
+
+
 /**
  * Note: directly modified line and has *p_call point directly into
  * modified line
@@ -1940,6 +1947,54 @@ static void requestSetCellInfoListRate(void *data, size_t datalen, RIL_Token t)
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
 
+
+/*************************************************************************************************/
+static void finalReleaseMemory()
+{
+#ifdef MEMSET_FREED
+    memsetString(s_apnInfo.apn);
+    memsetString(s_apnInfo.protocol);
+    memsetString(s_apnInfo.username);
+    memsetString(s_apnInfo.password);
+#endif
+
+    free(s_apnInfo.apn);
+    free(s_apnInfo.protocol);
+    free(s_apnInfo.username);
+    free(s_apnInfo.password);
+
+#ifdef MEMSET_FREED
+    memset(&s_apnInfo, 0, sizeof(s_apnInfo));
+#endif
+}
+/*************************************************************************************************/
+
+
+/*************************************************************************************************/
+static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
+{
+    RIL_InitialAttachApn *pf;
+
+    assert (datalen == sizeof(RIL_InitialAttachApn));
+    pf = (RIL_InitialAttachApn*)data;
+
+    s_apnInfo.apn      = strdup(pf->apn);
+    s_apnInfo.protocol = strdup(pf->protocol);
+    s_apnInfo.authtype = pf->authtype;
+    s_apnInfo.username = strdup(pf->username);
+    s_apnInfo.password = strdup(pf->password);
+
+    RLOGI("--- VendorRIL SetAPN: apn=%s, protocol=%s, auth_type=%d, username=%s, password=%s ---",
+          s_apnInfo.apn, s_apnInfo.protocol, s_apnInfo.authtype, s_apnInfo.username, s_apnInfo.password);
+
+    //TODO: after using s_apnInfo variable, don't forget release memory block
+
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+}
+/*************************************************************************************************/
+
+
+
 /*** Callback methods from the RIL library to us ***/
 
 /**
@@ -2354,7 +2409,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             break;
 
         case RIL_REQUEST_SET_INITIAL_ATTACH_APN:	/* VendorRIL basic */
-            RLOGI("--- VendorRIL not supported: RIL_REQUEST_SET_INITIAL_ATTACH_APN ---");
+            requestSetInitialAttachApn(data, datalen, t);
             break;
 
         default:
