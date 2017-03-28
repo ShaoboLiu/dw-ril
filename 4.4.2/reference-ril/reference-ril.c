@@ -854,25 +854,51 @@ static void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
     int numofElements=sizeof(RIL_SignalStrength_v6)/sizeof(int);
     int response[numofElements];
 
-    err = at_send_command_singleline("AT+CSQ", "+CSQ:", &p_response);
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGI("------ VendorRIL not support: CDMA RIL_REQUEST_SIGNAL_STRENGTH ------");
+        RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+        return;
+    } else {
+        err = at_send_command_singleline("AT+CSQ", "+CSQ:", &p_response);
+    }
+    // GSM mode below, using structure RIL_GW_SignalStrength {int, int}
 
     if (err < 0 || p_response->success == 0) {
-        RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+        RLOGE("------ VendorRIL SignalStrength: error at_send ------");
         goto error;
     }
 
     line = p_response->p_intermediates->line;
 
     err = at_tok_start(&line);
-    if (err < 0) goto error;
+    if (err < 0) {
+        RLOGE("------ VendorRIL SignalStrength: error at_tok_start ------");
+        goto error;
+    }
 
+    /*
     for (count =0; count < numofElements; count ++) {
         err = at_tok_nextint(&line, &(response[count]));
         if (err < 0) goto error;
     }
-
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
+    */
 
+    err = at_tok_nextint(&line, &(response[0]));
+    if (err < 0) {
+        RLOGE("------ VendorRIL SignalStrength: error at_tok_nextint_0 ------");
+        goto error;
+    }
+
+    err = at_tok_nextint(&line, &(response[1]));
+    if (err < 0) {
+        RLOGE("------ VendorRIL SignalStrength: error at_tok_nextint_1 ------");
+        goto error;
+    }
+
+
+    RLOGI("------ VendorRIL SignalStrength: %d, %d ------", response[0], response[1]);
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(int)*2);
     at_response_free(p_response);
     return;
 
