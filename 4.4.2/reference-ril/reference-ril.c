@@ -2062,6 +2062,13 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
     ATResponse *p_response;
     int err;
 
+    /* before radio available, usually there are four requests initial:
+     * REQUEST_RADIO_POWER
+     * REQUEST_SET_PREFERRED_NETWORK_TYPE
+     * REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE
+     * REQUEST_SET_CELL_INFO_LIST_RATE
+     */
+
     RLOGI("------ VendorRIL onRequest: %s ------", requestToString(request));
     RLOGD("onRequest: %s", requestToString(request));
 
@@ -3013,11 +3020,29 @@ int is_multimode_modem(ModemInfo *mdm)
     char *line;
     int tech;
     int32_t preferred;
+    char *responseStr;
+
 
     /*************************************************************************/
     // Our modem not support command AT+CTEC, we use GSM mode only
-    return 0;
+
+    // Query the Revision Identification
+    err = at_send_command_singleline("AT+CGMR", "+CGMR:", &response);
+    if (err < 0 || !response->success) goto error;
+
+    line = response->p_intermediates->line;
+    err = at_tok_start(&line);
+    if (err < 0) goto error;
+
+    err = at_tok_nextstr(&line, &responseStr);
+    if (err < 0 || !responseStr) goto error;
+
+    RLOGI("------ VendorRIL modem info: %s ------", responseStr);
+    at_response_free(response);
+
+    return 0; // Presently not support multimode
     /*************************************************************************/
+
 
     if (query_ctec(mdm, &tech, &preferred) == 0) {
         mdm->currentTech = tech;
@@ -3027,6 +3052,11 @@ int is_multimode_modem(ModemInfo *mdm)
         }
         return 1;
     }
+    return 0;
+
+error:
+    RLOGI("------ VendorRIL error while query modem info ------");
+    at_response_free(response);
     return 0;
 }
 

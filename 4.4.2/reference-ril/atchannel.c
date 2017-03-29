@@ -244,14 +244,14 @@ static void processLine(const char *line)
 
     if (sp_response == NULL) {
         /* no command pending */
-        RLOGI("------ VendorRIL readLoop: handleUnsolicited (no command pending) ------");
+        // RLOGI("------ VendorRIL readLoop: handleUnsolicited (no command pending) ------");
         handleUnsolicited(line);
     } else if (isFinalResponseSuccess(line)) {
-        RLOGI("------ VendorRIL readLoop: handleFinalResponse (success) ------");
+        // RLOGI("------ VendorRIL readLoop: handleFinalResponse (success) ------");
         sp_response->success = 1;
         handleFinalResponse(line);
     } else if (isFinalResponseError(line)) {
-        RLOGI("------ VendorRIL readLoop: handleFinalResponse (error) ------");
+        // RLOGI("------ VendorRIL readLoop: handleFinalResponse (error) ------");
         sp_response->success = 0;
         handleFinalResponse(line);
     } else if (s_smsPDU != NULL && 0 == strcmp(line, "> ")) {
@@ -261,7 +261,7 @@ static void processLine(const char *line)
         s_smsPDU = NULL;
     } else switch (s_type) {
         case NO_RESULT:
-            RLOGI("------ VendorRIL readLoop: handleUnsolicited (NO_RESULT) ------");
+            // RLOGI("------ VendorRIL readLoop: handleUnsolicited (NO_RESULT) ------");
             handleUnsolicited(line);
             break;
         case NUMERIC:
@@ -272,7 +272,7 @@ static void processLine(const char *line)
             } else {
                 /* either we already have an intermediate response or
                    the line doesn't begin with a digit */
-                RLOGI("------ VendorRIL readLoop: handleUnsolicited (NUMERIC) ------");
+                // RLOGI("------ VendorRIL readLoop: handleUnsolicited (NUMERIC) ------");
                 handleUnsolicited(line);
             }
             break;
@@ -283,7 +283,7 @@ static void processLine(const char *line)
                 addIntermediate(line);
             } else {
                 /* we already have an intermediate response */
-                RLOGI("------ VendorRIL readLoop: handleUnsolicited (SINGLELINE) ------");
+                // RLOGI("------ VendorRIL readLoop: handleUnsolicited (SINGLELINE) ------");
                 handleUnsolicited(line);
             }
             break;
@@ -291,13 +291,13 @@ static void processLine(const char *line)
             if (strStartsWith (line, s_responsePrefix)) {
                 addIntermediate(line);
             } else {
-                RLOGI("------ VendorRIL readLoop: handleUnsolicited (MULTILINE) ------");
+                // RLOGI("------ VendorRIL readLoop: handleUnsolicited (MULTILINE) ------");
                 handleUnsolicited(line);
             }
         break;
 
         default: /* this should never be reached */
-            RLOGI("------ VendorRIL readLoop: handleUnsolicited (Unsupported) ------");
+            //RLOGI("------ VendorRIL readLoop: handleUnsolicited (Unsupported) ------");
             RLOGE("Unsupported AT command type %d\n", s_type);
             handleUnsolicited(line);
         break;
