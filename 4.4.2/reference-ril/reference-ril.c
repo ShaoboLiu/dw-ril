@@ -950,7 +950,21 @@ static void requestSetPreferredNetworkType( int request, void *data,
     }
     /*************************************************************************/
 
+
     RLOGD("requestSetPreferredNetworkType: current: %x. New: %x", PREFERRED_NETWORK(sMdmInfo), preferred);
+
+
+    /*************************************************************************/
+    // Presently, we support GSM only
+    if (preferred != MDM_GSM) {
+        RLOGI("------ VendorRIL: PreferredNetworkType only GSM supported ------");
+        RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+    /*************************************************************************/
+
+
+    /*
     if (!networkModePossible(sMdmInfo, value)) {
         RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
         return;
@@ -959,7 +973,16 @@ static void requestSetPreferredNetworkType( int request, void *data,
         RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
         return;
     }
+    */
+
     old = PREFERRED_NETWORK(sMdmInfo);
+    if (old != preferred) {
+        RLOGI("****** VendorRIL: Unknown command to setPreferredNetworkType ******");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+
+    /*
     RLOGD("old != preferred: %d", old != preferred);
     if (old != preferred) {
         asprintf(&cmd, "AT+CTEC=%d,\"%x\"", current, preferred);
@@ -984,6 +1007,8 @@ static void requestSetPreferredNetworkType( int request, void *data,
             }
         }
     }
+    */
+
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
 
@@ -1001,7 +1026,8 @@ static void requestGetPreferredNetworkType(int request, void *data,
         case 0: // Both current and preferred were parsed
             for ( i = 0 ; i < sizeof(net2pmask) / sizeof(int32_t) ; i++ ) {
                 if (preferred == net2pmask[i]) {
-                    RIL_onRequestComplete(t, RIL_E_SUCCESS, &i, sizeof(int));
+                    // RIL_onRequestComplete(t, RIL_E_SUCCESS, &i, sizeof(int));
+                    RIL_onRequestComplete(t, RIL_E_SUCCESS, &preferred, sizeof(int));
                     return;
                 }
             }
@@ -1009,7 +1035,6 @@ static void requestGetPreferredNetworkType(int request, void *data,
             RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
             break;
     }
-
 }
 
 static void requestCdmaPrlVersion(int request, void *data,
@@ -1036,9 +1061,45 @@ error:
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
 
-static void requestCdmaBaseBandVersion(int request, void *data,
+static void requestBaseBandVersion(int request, void *data,
                                    size_t datalen, RIL_Token t)
 {
+    int err;
+    ATResponse *p_response = NULL;
+    char * responseStr = NULL;
+    char* line = NULL;
+
+    /*************************************************************************/
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGI("------ VendorRIL not support (CDMA): RIL_REQUEST_BASEBAND_VERSION ------");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+    /*************************************************************************/
+
+    if (TECH_BIT(sMdmInfo) == MDM_GSM) {
+        err = at_send_command_singleline("AT+CGMM", "", &p_response);
+        if (err < 0 || !p_response->success) goto error;
+
+        line = p_response->p_intermediates->line;
+        err = at_tok_start(&line);
+        if (err < 0) goto error;
+
+        err = at_tok_nextstr(&line, &responseStr);
+        if (err < 0 || !responseStr) goto error;
+
+        RLOGI("------ VendorRIL Baseband Version: %s ------", responseStr);
+        RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
+        at_response_free(p_response);
+    }
+    return;
+
+error:
+    LOGE("------ VendorRIL error while request BaseBandVersion ------");
+    at_response_free(p_response);
+    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+
+    /*
     int err;
     char * responseStr;
     ATResponse *p_response = NULL;
@@ -1053,6 +1114,7 @@ static void requestCdmaBaseBandVersion(int request, void *data,
     responseStr = strdup("1.0.0.0");
     RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
     free(responseStr);
+    */
 }
 
 static void requestCdmaDeviceIdentity(int request, void *data,
@@ -2401,12 +2463,9 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             requestSetCellInfoListRate(data, datalen, t);
             break;
 
-        /* CDMA Specific Requests */
         case RIL_REQUEST_BASEBAND_VERSION:	/* VendorRIL basic */
-            if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
-                requestCdmaBaseBandVersion(request, data, datalen, t);
-                break;
-            } // Fall-through if tech is not cdma
+            requestBaseBandVersion(request, data, datalen, t);
+            break;
 
         case RIL_REQUEST_DEVICE_IDENTITY:
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
@@ -2952,7 +3011,7 @@ int query_supported_techs( ModemInfo *mdm, int *supported )
 
     /*************************************************************************/
     // Our modem not support command AT+CTEC, we use GSM mode only
-    *supported   = MDM_GSM;
+    if (supported) {*supported   = MDM_GSM;}
     return 0;
     /*************************************************************************/
 
@@ -2996,8 +3055,8 @@ int query_ctec(ModemInfo *mdm, int *current, int32_t *preferred)
 
     /*************************************************************************/
     // Our modem not support command AT+CTEC, we use GSM mode only
-    *current   = MDM_GSM;
-    *preferred = MDM_GSM;
+    if (current) {*current   = MDM_GSM;}
+    if (preferred) {*preferred = MDM_GSM;}
     return 0;
     /*************************************************************************/
 
@@ -3027,19 +3086,27 @@ int is_multimode_modem(ModemInfo *mdm)
     // Our modem not support command AT+CTEC, we use GSM mode only
 
     // Query the Revision Identification
-    err = at_send_command_singleline("AT+CGMR", "+CGMR:", &response);
-    if (err < 0 || !response->success) goto error;
+    err = at_send_command_singleline("AT+CGMM", "+CGMM:", &response);
+    if (err < 0 || !response->success) {
+        RLOGE("--- VendorRIL error: at_send ---");
+        goto error;
+    }
 
     line = response->p_intermediates->line;
     err = at_tok_start(&line);
-    if (err < 0) goto error;
+    if (err < 0){
+        RLOGE("--- VendorRIL error: at_tok_start ---");
+        goto error;
+    }
 
     err = at_tok_nextstr(&line, &responseStr);
-    if (err < 0 || !responseStr) goto error;
+    if (err < 0 || !responseStr) {
+        RLOGE("--- VendorRIL error: at_tok_nextstr ---");
+        goto error;
+    }
 
-    RLOGI("------ VendorRIL modem info: %s ------", responseStr);
+    RLOGI("------ VendorRIL modem Revision info: %s ------", responseStr);
     at_response_free(response);
-
     return 0; // Presently not support multimode
     /*************************************************************************/
 
