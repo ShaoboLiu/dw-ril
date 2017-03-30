@@ -391,6 +391,7 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
         setRadioState(RADIO_STATE_OFF);
         RLOGI("------ VendorRIL RadioPower: set RadioState_OFF ------");
     }
+
     else if (onOff > 0 && sState == RADIO_STATE_OFF) {
         err = at_send_command("AT+CFUN=1", &p_response);
         if (err < 0|| p_response->success == 0) {
@@ -406,6 +407,7 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
         setRadioState(RADIO_STATE_ON);
         RLOGI("------ VendorRIL RadioPower: set RadioState_ON ------");
     }
+
     else {
         RLOGI("------ VendorRIL RadioPower: Unhandled state ------");
     }
@@ -1082,7 +1084,7 @@ static void requestBaseBandVersion(int request, void *data,
     }
     /*************************************************************************/
 
-    if (TECH_BIT(sMdmInfo) == MDM_GSM) {
+    else {
         err = at_send_command_singleline("AT+CGMM", "", &p_response);
         if (err < 0 || !p_response->success) {
             RLOGE("--- VendorRIL: error at_send_command");
@@ -1105,12 +1107,8 @@ static void requestBaseBandVersion(int request, void *data,
         RLOGI("------ VendorRIL Baseband Version: %s ------", responseStr);
         RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
         at_response_free(p_response);
+        return;
     }
-
-    else {
-        RLOGI("------ VendorRIL Baseband Version: Unhandled tech=%d ------", TECH_BIT(sMdmInfo));
-    }
-    return;
 
 error:
     RLOGE("------ VendorRIL error while request BaseBandVersion ------");
