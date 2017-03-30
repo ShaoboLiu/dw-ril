@@ -1088,6 +1088,7 @@ static void requestBaseBandVersion(int request, void *data,
         responseStr = strdup("E1750");
         RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
         free(responseStr);
+        return;
 
 #if 0
         err = at_send_command_singleline("AT+CGMM", "+CGMM:", &p_response);
@@ -1576,6 +1577,7 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
      * +COPS: 0,2,"310170"
      */
 
+#if 0
     if (err != 0) goto error;
 
     for (i = 0, p_cur = p_response->p_intermediates
@@ -1612,6 +1614,8 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
         if (strlen(response[i]) == 6) {
             if (sscanf(response[i], "%3d%3d", &s_mcc, &s_mnc) != 2) {
                 RLOGE("requestOperator expected mccmnc to be 6 decimal digits");
+            } else {
+                RLOGD("[VendorRIL] requestOperator result: mcc=%d, mnc=%d", s_mcc, s_mnc);
             }
         }
     }
@@ -1620,13 +1624,26 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
         /* expect 3 lines exactly */
         goto error;
     }
+#endif
 
-    RLOGD("[VendorRIL] requestOperator [0] = %s", response[0]);
-    RLOGD("[VendorRIL] requestOperator [1] = %s", response[1]);
-    RLOGD("[VendorRIL] requestOperator [2] = %s", response[2]);
+#if 1
+    response[0] = strdup("CAN Rogers Wirel");
+    response[1] = strdup("ROGERS");
+    response[2] = strdup("302720");
+#endif
+
+    RLOGD("[VendorRIL] requestOperator result: [0] = %s", response[0]);
+    RLOGD("[VendorRIL] requestOperator result: [1] = %s", response[1]);
+    RLOGD("[VendorRIL] requestOperator result: [2] = %s", response[2]);
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
     at_response_free(p_response);
+
+#if 1
+    free(response[0]);
+    free(response[1]);
+    free(response[2]);
+#endif
 
     return;
 error:
