@@ -1101,6 +1101,10 @@ static void requestBaseBandVersion(int request, void *data,
         RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
         at_response_free(p_response);
     }
+
+    else {
+        RLOGI("------ VendorRIL Baseband Version: Unhandled tech=%d ------", TECH_BIT(sMdmInfo));
+    }
     return;
 
 error:
@@ -2483,34 +2487,55 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             } // Fall-through if tech is not cdma
 
         case RIL_REQUEST_CDMA_SUBSCRIPTION:	/* VendorRIL basic */
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaSubscription(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE:	/* VendorRIL basic */
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaSetSubscriptionSource(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE:	/* VendorRIL basic */
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaGetSubscriptionSource(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_CDMA_QUERY_ROAMING_PREFERENCE:
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaGetRoamingPreference(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
+
 
         case RIL_REQUEST_CDMA_SET_ROAMING_PREFERENCE:
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaSetRoamingPreference(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_EXIT_EMERGENCY_CALLBACK_MODE:
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
@@ -2841,7 +2866,7 @@ static int getCardStatus(RIL_CardStatus_v6 **pp_card_status) {
         { RIL_APPTYPE_RUIM, RIL_APPSTATE_SUBSCRIPTION_PERSO, RIL_PERSOSUBSTATE_SIM_NETWORK,
            NULL, NULL, 0, RIL_PINSTATE_ENABLED_NOT_VERIFIED, RIL_PINSTATE_UNKNOWN }
     };
-    RIL_CardState card_state;
+    RIL_CardState card_state;   /*0, 1, 2: absent, present, error*/
     int num_apps;
 
     int sim_status = getSIMStatus();
@@ -3093,29 +3118,9 @@ int is_multimode_modem(ModemInfo *mdm)
 
     /*************************************************************************/
     // Our modem not support command AT+CTEC, we use GSM mode only
-
-    // Query the Revision Identification
-    err = at_send_command_singleline("AT+CGMM", "+CGMM:", &response);
-    if (err < 0 || !response->success) {
-        RLOGE("--- VendorRIL: error at_send");
-        goto error;
-    }
-
-    line = response->p_intermediates->line;
-    err = at_tok_start(&line);
-    if (err < 0){
-        RLOGE("--- VendorRIL: error at_tok_start");
-        goto error;
-    }
-
-    err = at_tok_nextstr(&line, &responseStr);
-    if (err < 0 || !responseStr) {
-        RLOGE("--- VendorRIL: error at_tok_nextstr");
-        goto error;
-    }
-
-    RLOGI("------ VendorRIL modem Revision info: %s ------", responseStr);
-    at_response_free(response);
+    mdm->isMultimode = 0;
+    mdm->currentTech = MDM_GSM;
+    mdm->preferredNetworkMode = MDM_GSM;
     return 0; // Presently not support multimode
     /*************************************************************************/
 
@@ -3128,11 +3133,6 @@ int is_multimode_modem(ModemInfo *mdm)
         }
         return 1;
     }
-    return 0;
-
-error:
-    RLOGI("------ VendorRIL error while query modem info ------");
-    at_response_free(response);
     return 0;
 }
 
@@ -3165,7 +3165,9 @@ static void probeForModemMode(ModemInfo *info)
         // info->supportedTechs = MDM_CDMA | MDM_EVDO;
         info->supportedTechs = MDM_CDMA;
         info->currentTech = MDM_CDMA;
-        RLOGI("------ VendorRIL: found CDMA Modem ------");
+        info->isMultimode = 0;
+        info->preferredNetworkMode = MDM_CDMA;
+        RLOGI("======== VendorRIL: found CDMA Modem Device ========");
         return;
     }
     if (!err) at_response_free(response);
@@ -3173,7 +3175,9 @@ static void probeForModemMode(ModemInfo *info)
     // info->supportedTechs = MDM_GSM | MDM_WCDMA | MDM_LTE;
     info->supportedTechs = MDM_GSM;
     info->currentTech = MDM_GSM;
-    RLOGI("------ VendorRIL: found GSM Modem ------");
+    info->isMultimode = 0;
+    info->preferredNetworkMode = MDM_GSM;
+    RLOGI("======== VendorRIL: found GSM Modem Device ========");
 }
 
 /**
