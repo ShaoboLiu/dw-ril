@@ -383,6 +383,8 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
     assert (datalen >= sizeof(int *));
     onOff = ((int *)data)[0];
 
+    RLOGI("requestRadioPower: request to set [%d], current state [%d]", onOff, sState);
+
     if (onOff == 0 && sState != RADIO_STATE_OFF) {
         err = at_send_command("AT+CFUN=0", &p_response);
        if (err < 0 || p_response->success == 0) goto error;
@@ -403,6 +405,9 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
         }
         setRadioState(RADIO_STATE_ON);
         RLOGI("------ VendorRIL RadioPower: set RadioState_ON ------");
+    }
+    else {
+        RLOGI("------ VendorRIL RadioPower: Unhandled state ------");
     }
 
     at_response_free(p_response);
@@ -2116,6 +2121,25 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 /*************************************************************************************************/
 
 
+/*************************************************************************************************/
+static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
+{
+    /*
+    p_response = NULL;
+    err = at_send_command_numeric("AT+CGSN", &p_response);
+
+    if (err < 0 || p_response->success == 0) {
+        RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+    } else {
+        RIL_onRequestComplete(t, RIL_E_SUCCESS,
+            p_response->p_intermediates->line, sizeof(char *));
+    }
+    at_response_free(p_response);
+    break;
+    */
+}
+/*************************************************************************************************/
+
 
 /*** Callback methods from the RIL library to us ***/
 
@@ -2145,7 +2169,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
      */
 
     RLOGI("------ VendorRIL onRequest: %s ------", requestToString(request));
-    RLOGD("onRequest: %s", requestToString(request));
+    // RLOGD("onRequest: %s", requestToString(request));
 
     /* Ignore all requests except RIL_REQUEST_GET_SIM_STATUS
      * when RADIO_STATE_UNAVAILABLE.
@@ -2329,6 +2353,10 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             break;
 
         case RIL_REQUEST_GET_IMEI:	/* VendorRIL basic */
+            requestGetIMEI(data, datalen, t);
+            break;
+
+            /*
             p_response = NULL;
             err = at_send_command_numeric("AT+CGSN", &p_response);
 
@@ -2340,6 +2368,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             }
             at_response_free(p_response);
             break;
+            */
 
 	case RIL_REQUEST_GET_IMEISV:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---");
@@ -3266,9 +3295,9 @@ static void initializeCallback(void *param)
     if (isRadioOn() > 0) {
         setRadioState (RADIO_STATE_ON);
 
-	RLOGI("------ VendorRIL: AT Command initialize done, Radio_State=On ------"); 
+        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=ON ========");
     } else {
-        RLOGI("------ VendorRIL: AT Command initialize done, Radio_State=Off ------"); 
+        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=OFF ========);
     }
 }
 
