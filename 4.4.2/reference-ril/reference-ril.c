@@ -1621,6 +1621,10 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
         goto error;
     }
 
+    RLOGD("[VendorRIL] requestOperator [0] = %s", response[0]);
+    RLOGD("[VendorRIL] requestOperator [1] = %s", response[1]);
+    RLOGD("[VendorRIL] requestOperator [2] = %s", response[2]);
+
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
     at_response_free(p_response);
 
