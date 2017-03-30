@@ -383,13 +383,13 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
     assert (datalen >= sizeof(int *));
     onOff = ((int *)data)[0];
 
-    RLOGI("requestRadioPower: request to set [%d], current state [%d]", onOff, sState);
+    RLOGD("requestRadioPower: request to set [%d], current state [%d]", onOff, sState);
 
     if (onOff == 0 && sState != RADIO_STATE_OFF) {
         err = at_send_command("AT+CFUN=0", &p_response);
        if (err < 0 || p_response->success == 0) goto error;
         setRadioState(RADIO_STATE_OFF);
-        RLOGI("------ VendorRIL RadioPower: set RadioState_OFF ------");
+        RLOGD("requestRadioPower: success set RadioState_OFF");
     }
 
     else if (onOff > 0 && sState == RADIO_STATE_OFF) {
@@ -405,11 +405,11 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
             }
         }
         setRadioState(RADIO_STATE_ON);
-        RLOGI("------ VendorRIL RadioPower: set RadioState_ON ------");
+        RLOGD("requestRadioPower: success set RadioState_ON");
     }
 
     else {
-        RLOGI("------ VendorRIL RadioPower: Unhandled state ------");
+        RLOGD("requestRadioPower: error Unhandled state");
     }
 
     at_response_free(p_response);
@@ -417,7 +417,7 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
     return;
 
 error:
-    RLOGE("------ VendorRIL error while handle RadioPower ------");
+    RLOGE("------ VendorRIL error while requestRadioPower ------");
     at_response_free(p_response);
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
@@ -1085,7 +1085,12 @@ static void requestBaseBandVersion(int request, void *data,
     /*************************************************************************/
 
     else {
-        err = at_send_command_singleline("AT+CGMM", "", &p_response);
+        responseStr = strdup("E1750");
+        RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
+        free(responseStr);
+
+#if 0
+        err = at_send_command_singleline("AT+CGMM", "+CGMM:", &p_response);
         if (err < 0 || !p_response->success) {
             RLOGE("--- VendorRIL: error at_send_command");
             goto error;
@@ -1108,6 +1113,7 @@ static void requestBaseBandVersion(int request, void *data,
         RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
         at_response_free(p_response);
         return;
+#endif
     }
 
 error:
@@ -1552,6 +1558,14 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
 
     ATResponse *p_response = NULL;
 
+    /*************************************************************************
+     * send AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+     * get return:
+     * +COPS: 0,0,"CAN Rogers Wirel",0
+     * +COPS: 0,1,"ROGERS",0
+     * +COPS: 0,2,"302720",0
+    /*************************************************************************/
+
     err = at_send_command_multiline(
         "AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?",
         "+COPS:", &p_response);
@@ -1612,7 +1626,7 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
 
     return;
 error:
-    RLOGE("requestOperator must not return error when radio is on");
+    RLOGE("---!!! requestOperator must not return error when radio is on !!!---");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
@@ -2122,6 +2136,12 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 /*************************************************************************************************/
 static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
 {
+    char* responseStr;
+
+    responseStr = strdup("356793032334716");
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
+    free(responseStr);
+
     /*
     p_response = NULL;
     err = at_send_command_numeric("AT+CGSN", &p_response);
@@ -2370,7 +2390,8 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
 
 	case RIL_REQUEST_GET_IMEISV:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---");
-	    break;
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_SIM_IO:	/* VendorRIL basic */
             requestSIM_IO(data,datalen,t);
@@ -2651,7 +2672,7 @@ setRadioTechnology(ModemInfo *mdm, int newtech)
 static void
 setRadioState(RIL_RadioState newState)
 {
-    RLOGD("VendorRIL: setRadioState(%d), oldState=%d", newState, sState);
+    RLOGD("******** VendorRIL: setRadioState(%d), oldState=%d ********", newState, sState);
     RIL_RadioState oldState;
 
     pthread_mutex_lock(&s_state_mutex);
@@ -2954,6 +2975,8 @@ static void pollSIMState (void *param)
 {
     ATResponse *p_response;
     int ret;
+
+    RLOGD("******** VendorRIL: onRadioPowerOn pollSIMState, current state=%d ********", sState);
 
     if (sState != RADIO_STATE_SIM_NOT_READY) {
         // no longer valid to poll
