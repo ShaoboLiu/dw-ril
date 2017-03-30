@@ -2651,7 +2651,7 @@ setRadioTechnology(ModemInfo *mdm, int newtech)
 static void
 setRadioState(RIL_RadioState newState)
 {
-    RLOGD("setRadioState(%d)", newState);
+    RLOGD("VendorRIL: setRadioState(%d), oldState=%d", newState, sState);
     RIL_RadioState oldState;
 
     pthread_mutex_lock(&s_state_mutex);
@@ -3293,9 +3293,9 @@ static void initializeCallback(void *param)
     if (isRadioOn() > 0) {
         setRadioState (RADIO_STATE_ON);
 
-        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=ON ========");
+        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=ON, sState=%d ========", sState);
     } else {
-        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=OFF ========);
+        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=OFF, sState=%d ========", sState);
     }
 }
 
