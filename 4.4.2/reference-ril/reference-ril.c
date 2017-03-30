@@ -1079,14 +1079,23 @@ static void requestBaseBandVersion(int request, void *data,
 
     if (TECH_BIT(sMdmInfo) == MDM_GSM) {
         err = at_send_command_singleline("AT+CGMM", "", &p_response);
-        if (err < 0 || !p_response->success) goto error;
+        if (err < 0 || !p_response->success) {
+            RLOGE("--- VendorRIL: error at_send_command");
+            goto error;
+        }
 
         line = p_response->p_intermediates->line;
         err = at_tok_start(&line);
-        if (err < 0) goto error;
+        if (err < 0) {
+            RLOGE("--- VendorRIL: error at_tok_start");
+            goto error;
+        }
 
         err = at_tok_nextstr(&line, &responseStr);
-        if (err < 0 || !responseStr) goto error;
+        if (err < 0 || !responseStr) {
+            RLOGE("--- VendorRIL: error at_tok_nextstr");
+            goto error;
+        }
 
         RLOGI("------ VendorRIL Baseband Version: %s ------", responseStr);
         RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
@@ -1095,7 +1104,7 @@ static void requestBaseBandVersion(int request, void *data,
     return;
 
 error:
-    LOGE("------ VendorRIL error while request BaseBandVersion ------");
+    RLOGE("------ VendorRIL error while request BaseBandVersion ------");
     at_response_free(p_response);
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 
@@ -3088,20 +3097,20 @@ int is_multimode_modem(ModemInfo *mdm)
     // Query the Revision Identification
     err = at_send_command_singleline("AT+CGMM", "+CGMM:", &response);
     if (err < 0 || !response->success) {
-        RLOGE("--- VendorRIL error: at_send ---");
+        RLOGE("--- VendorRIL: error at_send");
         goto error;
     }
 
     line = response->p_intermediates->line;
     err = at_tok_start(&line);
     if (err < 0){
-        RLOGE("--- VendorRIL error: at_tok_start ---");
+        RLOGE("--- VendorRIL: error at_tok_start");
         goto error;
     }
 
     err = at_tok_nextstr(&line, &responseStr);
     if (err < 0 || !responseStr) {
-        RLOGE("--- VendorRIL error: at_tok_nextstr ---");
+        RLOGE("--- VendorRIL: error at_tok_nextstr");
         goto error;
     }
 
