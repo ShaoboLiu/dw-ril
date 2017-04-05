@@ -264,7 +264,7 @@ static int clccStateToRILState(int state, RIL_CallState *p_state)
 
 
 /*************************************************************************************************/
-extern RIL_InitialAttachApn s_apnInfo;
+RIL_InitialAttachApn s_apnInfo;
 /*************************************************************************************************/
 
 
@@ -1019,8 +1019,7 @@ static void requestSetPreferredNetworkType( int request, void *data,
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
 
-static void requestGetPreferredNetworkType(int request, void *data,
-                                   size_t datalen, RIL_Token t)
+static void requestGetPreferredNetworkType(int request, void *data, size_t datalen, RIL_Token t)
 {
     int preferred;
     unsigned i;
@@ -2131,9 +2130,6 @@ static void finalReleaseMemory()
 
 
 /*************************************************************************************************/
-static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t);
-
-#if 0
 static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 {
     RIL_InitialAttachApn *pf;
@@ -2154,7 +2150,6 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
-#endif
 /*************************************************************************************************/
 
 
