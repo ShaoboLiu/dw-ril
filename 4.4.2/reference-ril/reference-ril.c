@@ -1032,8 +1032,8 @@ static void requestGetPreferredNetworkType(int request, void *data, size_t datal
         case 0: // Both current and preferred were parsed
             for ( i = 0 ; i < sizeof(net2pmask) / sizeof(int32_t) ; i++ ) {
                 if (preferred == net2pmask[i]) {
-                    // RIL_onRequestComplete(t, RIL_E_SUCCESS, &i, sizeof(int));
-                    RIL_onRequestComplete(t, RIL_E_SUCCESS, &preferred, sizeof(int));
+                    RIL_onRequestComplete(t, RIL_E_SUCCESS, &i, sizeof(int));
+                    // RIL_onRequestComplete(t, RIL_E_SUCCESS, &preferred, sizeof(int));
                     return;
                 }
             }
@@ -2154,6 +2154,14 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 
 
 /*************************************************************************************************/
+static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
+{
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+}
+/*************************************************************************************************/
+
+
+/*************************************************************************************************/
 static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
 {
     char* responseStr;
@@ -2611,9 +2619,9 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
                 break;
             } // Fall-through if tech is not cdma
 
-	case RIL_REQUEST_SCREEN_STATE:	/* VendorRIL basic */
+        case RIL_REQUEST_SCREEN_STATE:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_SCREEN_STATE ---");
-	    break;
+            break;
 
         case RIL_REQUEST_QUERY_FACILITY_LOCK:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_QUERY_FACILITY_LOCK ---");
@@ -2625,6 +2633,10 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
 
         case RIL_REQUEST_SET_INITIAL_ATTACH_APN:	/* VendorRIL basic */
             requestSetInitialAttachApn(data, datalen, t);
+            break;
+
+        case RIL_REQUEST_QUERY_AVAILABLE_NETWORKS: /* VendorRIL basic data*/
+            requestQueryAvailableNetworks(data, datalen, t);
             break;
 
         default:
