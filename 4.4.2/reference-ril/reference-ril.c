@@ -264,7 +264,7 @@ static int clccStateToRILState(int state, RIL_CallState *p_state)
 
 
 /*************************************************************************************************/
-RIL_InitialAttachApn s_apnInfo;
+extern RIL_InitialAttachApn s_apnInfo;
 /*************************************************************************************************/
 
 
@@ -1447,7 +1447,7 @@ static void requestRegistrationState(int request, void *data,
     int count = 3;
     int type, startfrom;
 
-    RLOGD("requestRegistrationState");
+    RLOGD("VendorRIL: requestRegistrationState >>>>>>>>>");
     if (request == RIL_REQUEST_VOICE_REGISTRATION_STATE) {
         cmd = "AT+CREG?";
         prefix = "+CREG:";
@@ -1542,7 +1542,7 @@ error:
         free(responseStr);
         responseStr = NULL;
     }
-    RLOGE("requestRegistrationState must never return an error when radio is on");
+    RLOGE("!!!!!! requestRegistrationState must never return an error when radio is on !!!!!!");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
@@ -2131,6 +2131,9 @@ static void finalReleaseMemory()
 
 
 /*************************************************************************************************/
+static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t);
+
+#if 0
 static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 {
     RIL_InitialAttachApn *pf;
@@ -2151,6 +2154,7 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
+#endif
 /*************************************************************************************************/
 
 
