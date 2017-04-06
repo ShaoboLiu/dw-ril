@@ -2154,9 +2154,63 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 
 
 /*************************************************************************************************/
+// {RIL_REQUEST_QUERY_AVAILABLE_NETWORKS , dispatchVoid, responseStrings}
+
 static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
 {
-    RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+    int err;
+    int i;
+    int skip;
+    ATLine *p_cur;
+    char *response[3];
+
+    memset(response, 0, sizeof(response));
+
+    ATResponse *p_response = NULL;
+
+    /*************************************************************************
+     * send AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+     * get return:
+     * +COPS: 0,0,"CAN Rogers Wirel",0
+     * +COPS: 0,1,"ROGERS",0
+     * +COPS: 0,2,"302720",0
+    /*************************************************************************/
+
+    err = at_send_command_multiline(
+        "AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?",
+        "+COPS:", &p_response);
+
+    /* we expect 3 lines here:
+     * +COPS: 0,0,"T - Mobile"
+     * +COPS: 0,1,"TMO"
+     * +COPS: 0,2,"310170"
+     */
+
+
+#if 1
+    response[0] = strdup("CAN Rogers Wirel");
+    response[1] = strdup("ROGERS");
+    response[2] = strdup("302720");
+#endif
+
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [0] = %s", response[0]);
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [1] = %s", response[1]);
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [2] = %s", response[2]);
+
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
+    at_response_free(p_response);
+
+#if 1
+    free(response[0]);
+    free(response[1]);
+    free(response[2]);
+#endif
+    return;
+
+error:
+    RLOGE(">> Error while requestQueryAvailableNetworks");
+    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+    at_response_free(p_response);
 }
 /*************************************************************************************************/
 
