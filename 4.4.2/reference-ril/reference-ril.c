@@ -2190,8 +2190,8 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
 #if 1
     response[0] = strdup("CAN Rogers Wirel");
     response[1] = strdup("ROGERS");
-    response[2] = strdup("720");
-    response[3] = strdup("302");
+    response[2] = strdup("302720");
+    response[3] = strdup("current"); //unknown, available, current, forbidden
 
 #endif
 
