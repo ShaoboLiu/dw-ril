@@ -2162,7 +2162,7 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
     int i;
     int skip;
     ATLine *p_cur;
-    char *response[3];
+    char *response[4];
 
     memset(response, 0, sizeof(response));
 
@@ -2190,12 +2190,15 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
 #if 1
     response[0] = strdup("CAN Rogers Wirel");
     response[1] = strdup("ROGERS");
-    response[2] = strdup("302720");
+    response[2] = strdup("720");
+    response[3] = strdup("302");
+
 #endif
 
     RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [0] = %s", response[0]);
     RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [1] = %s", response[1]);
     RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [2] = %s", response[2]);
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [3] = %s", response[3]);
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
     at_response_free(p_response);
