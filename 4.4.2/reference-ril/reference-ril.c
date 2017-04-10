@@ -2226,7 +2226,7 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
 
 error:
     at_response_free(p_response);
-    LOGE(">> ERROR - requestQueryAvailableNetworks() failed");
+    RLOGE(">> ERROR - requestQueryAvailableNetworks() failed");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
 
