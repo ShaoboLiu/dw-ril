@@ -2170,7 +2170,7 @@ static const char* networkStatusToRilString(int state)
 /*************************************************************************************************/
 // {RIL_REQUEST_QUERY_AVAILABLE_NETWORKS , dispatchVoid, responseStrings}
 
-#if 0
+#if 1
 static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
 {
     /* We expect an answer on the following form:
@@ -2184,6 +2184,8 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
 
     err = at_send_command_singleline("AT+COPS=?", "+COPS:", &p_response);
     if (err != 0) goto error;
+
+    RLOGD(">> [QueryAvailableNetworks] p_response: %s", p_response->p_intermediates->line);
 
     line = p_response->p_intermediates->line;
     err = at_tok_start(&line);
@@ -2220,6 +2222,8 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
 
         err = at_tok_nextstr(&line, &c_skip);
         if (err < 0) goto error;
+
+        RLOGD(">> [QueryAvailableNetworks] operator[%d]: %s, %s, %s, %s", i, response[i*4+0], response[i*4+1], response[i*4+2], response[i*4+3]);
     }
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, (operators * 4 * sizeof(char *)));
@@ -2233,6 +2237,7 @@ error:
 }
 #endif
 
+#if 0
 static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
 {
     /* We expect an answer on the following form:
@@ -2250,6 +2255,10 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
     ATResponse *p_response = NULL;
 
     /*************************************************************************
+     * send AT+COPS=?
+     * get return:
+     * (1,"CAN Rogers Wirel","ROGERS","302720",0),,(0,1,3,4),(0,1,2)
+     *
      * send AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
      * get return:
      * +COPS: 0,0,"CAN Rogers Wirel",0
@@ -2276,7 +2285,7 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
     RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [2] = %s", response[2]);
     RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [3] = %s", response[3]);
 
-    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, 4*sizeof(char*));
     at_response_free(p_response);
 
 #if 1
@@ -2292,6 +2301,7 @@ error:
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
+#endif
 /*************************************************************************************************/
 
 
