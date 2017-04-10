@@ -2257,15 +2257,10 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
      * +COPS: 0,2,"302720",0
     /*************************************************************************/
 
-    err = at_send_command_multiline(
-        "AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?",
-        "+COPS:", &p_response);
-
-    /* we expect 3 lines here:
-     * +COPS: 0,0,"T - Mobile"
-     * +COPS: 0,1,"TMO"
-     * +COPS: 0,2,"310170"
-     */
+#if 0
+    err = at_send_command_multiline("AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?", "+COPS:", &p_response);
+#endif
+    sleep(500);
 
 
 #if 1
