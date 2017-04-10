@@ -2154,10 +2154,90 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 
 
 /*************************************************************************************************/
-// {RIL_REQUEST_QUERY_AVAILABLE_NETWORKS , dispatchVoid, responseStrings}
+static const char* networkStatusToRilString(int state)
+{
+    switch(state){
+        case 0: return("unknown");   break;
+        case 1: return("available"); break;
+        case 2: return("current");   break;
+        case 3: return("forbidden"); break;
+        default: return NULL;
+    }
+}
+/*************************************************************************************************/
 
+
+/*************************************************************************************************/
+// {RIL_REQUEST_QUERY_AVAILABLE_NETWORKS , dispatchVoid, responseStrings}
 static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
 {
+    /* We expect an answer on the following form:
+       +COPS: (2,"AT&T","AT&T","310410",0),(1,"T-Mobile ","TMO","310260",0)
+     */
+
+    int err, operators, i, skip, status;
+    ATResponse *p_response = NULL;
+    char * c_skip, *line, *p = NULL;
+    char ** response = NULL;
+
+    err = at_send_command_singleline("AT+COPS=?", "+COPS:", &p_response);
+    if (err != 0) goto error;
+
+    line = p_response->p_intermediates->line;
+    err = at_tok_start(&line);
+    if (err < 0) goto error;
+
+    /* Count number of '(' in the +COPS response to get number of operators*/
+    operators = 0;
+    for (p = line ; *p != '\0' ;p++) {
+        if (*p == '(') operators++;
+    }
+
+    response = (char **)alloca(operators * 4 * sizeof(char *));
+
+    for (i = 0 ; i < operators ; i++ )
+    {
+        err = at_tok_nextstr(&line, &c_skip);
+        if (err < 0) goto error;
+        if (strcmp(c_skip,"") == 0)
+        {
+            operators = i;
+            continue;
+        }
+        status = atoi(&c_skip[1]);
+        response[i*4+3] = (char*)networkStatusToRilString(status);
+
+        err = at_tok_nextstr(&line, &(response[i*4+0]));
+        if (err < 0) goto error;
+
+        err = at_tok_nextstr(&line, &(response[i*4+1]));
+        if (err < 0) goto error;
+
+        err = at_tok_nextstr(&line, &(response[i*4+2]));
+        if (err < 0) goto error;
+
+        err = at_tok_nextstr(&line, &c_skip);
+        if (err < 0) goto error;
+    }
+
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, (operators * 4 * sizeof(char *)));
+    at_response_free(p_response);
+    return;
+
+error:
+    at_response_free(p_response);
+    LOGE(">> ERROR - requestQueryAvailableNetworks() failed");
+    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+}
+
+
+#if 0
+static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
+{
+    /* We expect an answer on the following form:
+       +COPS: (2,"AT&T","AT&T","310410",0),(1,"T-Mobile ","TMO","310260",0)
+     */
+
     int err;
     int i;
     int skip;
@@ -2215,6 +2295,7 @@ error:
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
+#endif
 /*************************************************************************************************/
 
 
