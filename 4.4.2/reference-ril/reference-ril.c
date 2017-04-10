@@ -2169,6 +2169,8 @@ static const char* networkStatusToRilString(int state)
 
 /*************************************************************************************************/
 // {RIL_REQUEST_QUERY_AVAILABLE_NETWORKS , dispatchVoid, responseStrings}
+
+#if 0
 static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
 {
     /* We expect an answer on the following form:
@@ -2229,9 +2231,8 @@ error:
     RLOGE(">> ERROR - requestQueryAvailableNetworks() failed");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
+#endif
 
-
-#if 0
 static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
 {
     /* We expect an answer on the following form:
@@ -2268,10 +2269,10 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
 
 
 #if 1
-    response[0] = strdup("CAN Rogers Wirel");
+    response[0] = strdup("CAN Rogers Wirel (fido)");
     response[1] = strdup("ROGERS");
     response[2] = strdup("302720");
-    response[3] = ""; // strdup("current"); //unknown, available, current, forbidden
+    response[3] = strdup("2"); // strdup("current"); //unknown, available, current, forbidden
 
 #endif
 
@@ -2287,6 +2288,7 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
     free(response[0]);
     free(response[1]);
     free(response[2]);
+    free(response[3]);
 #endif
     return;
 
@@ -2295,7 +2297,6 @@ error:
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
-#endif
 /*************************************************************************************************/
 
 
