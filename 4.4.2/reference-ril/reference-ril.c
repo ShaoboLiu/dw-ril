@@ -2223,7 +2223,7 @@ static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token 
         err = at_tok_nextstr(&line, &c_skip);
         if (err < 0) goto error;
 
-        RLOGD(">> [QueryAvailableNetworks] operator[%d]: %s, %s, %s, %s", i, response[i*4+0], response[i*4+1], response[i*4+2], response[i*4+3]);
+        RLOGD(">> [QueryAvailableNetworks] operator(%d): [%s, %s, %s, %s]", i, response[i*4+0], response[i*4+1], response[i*4+2], response[i*4+3]);
     }
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, (operators * 4 * sizeof(char *)));
@@ -2305,6 +2305,23 @@ error:
 /*************************************************************************************************/
 
 
+
+/*************************************************************************************************/
+// {RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL, dispatchString, responseVoid}
+
+static void requestSetNetworkSelectionManual(void *data, size_t datalen, RIL_Token t)
+{
+    //at_send_command("AT+COPS=0", NULL);
+
+    char* pOperator = (char*)data;
+
+    RLOGD(">> requestSetNetworkSelectionManual %s", pOperator);
+
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+}
+/*************************************************************************************************/
+
+
 /*************************************************************************************************/
 static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
 {
@@ -2329,6 +2346,8 @@ static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
     */
 }
 /*************************************************************************************************/
+
+
 
 
 /*** Callback methods from the RIL library to us ***/
@@ -2591,7 +2610,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             break;
 
         case RIL_REQUEST_DATA_CALL_LIST:
-	    RLOGI("ril-req: [%d] RIL_REQUEST_DATA_CALL_LIST", request);
+            RLOGI("ril-req: [%d] RIL_REQUEST_DATA_CALL_LIST", request);
             requestDataCallList(data, datalen, t);
             break;
 
@@ -2781,6 +2800,10 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
 
         case RIL_REQUEST_QUERY_AVAILABLE_NETWORKS: /* VendorRIL basic data*/
             requestQueryAvailableNetworks(data, datalen, t);
+            break;
+
+        case RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL:
+            requestSetNetworkSelectionManual(data, datalen, t);
             break;
 
         default:
