@@ -1475,7 +1475,7 @@ static void requestRegistrationState(int request, void *data,
 
     line = p_response->p_intermediates->line;
 
-    RLOGD("%_REGISTRATION: response=%s" ((request == RIL_REQUEST_DATA_REGISTRATION_STATE)? "DATA":"VOICE"), line);
+    RLOGD("%_REGISTRATION: response=%s", ((request == RIL_REQUEST_DATA_REGISTRATION_STATE)? "DATA":"VOICE"), line);
 
 
     if (parseRegistrationState(line, &type, &count, &registration)) goto error;
