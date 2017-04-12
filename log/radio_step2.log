@@ -1,0 +1,44 @@
+[  448.630749] <MON> idpin be pulldown when B_IN detecting
+[  449.310790] /home/developer/action_compiling_21/leopard/platform/drivers/usb/monitor/umonitor_core.c--738, SYS_MSG_USB_A_IN
+------start rild
+
+04-12 14:08:30.374 I/RILD    ( 9386): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: arguments from command ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: argc=5 ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: argv[0]=/system/bin/rild ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: argv[1]=-u ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: argv[2]=/dev/ttyUSB0 ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: argv[3]=-d ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: argv[4]=/dev/ttyUSB2 ------
+04-12 14:08:30.384 I/RIL     ( 9386): Opening tty device /dev/ttyUSB0
+04-12 14:08:30.384 I/RIL     ( 9386): Opening tty device /dev/ttyUSB2
+04-12 14:08:30.384 I/RIL     ( 9386): ------ VendorRIL Init argus: path_d=/dev/ttyUSB2 ------
+04-12 14:08:30.384 I/RIL     ( 9386): ------ VendorRIL Init argus: path_u=/dev/ttyUSB0 ------
+04-12 14:08:30.384 I/RIL     ( 9386): ------ VendorRIL Init success ------
+04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: return=funcs ------
+04-12 14:08:30.384 E/RILC    ( 9386): RIL_register: RIL version 9
+04-12 14:08:30.394 I/RIL     ( 9386): ------ VendorRIL entering mainLoop() ------
+04-12 14:08:30.394 I/RIL     ( 9386): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
+04-12 14:08:30.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-12 14:08:34.054 I/RILJ    ( 7779): Connected to 'rild' socket
+04-12 14:08:34.054 I/RILC    ( 9386): libril: new connection
+04-12 14:08:34.054 I/RILC    ( 9386): RIL Daemon version: android reference-ril 1.0
+04-12 14:08:34.064 D/RILJ    ( 7779): [UNSL]< UNSOL_RIL_CONNECTED {9}
+04-12 14:08:34.064 D/RILJ    ( 7779): [3651]> RADIO_POWER off
+04-12 14:08:34.064 D/RILJ    ( 7779): [3652]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 1
+04-12 14:08:34.074 I/RIL     ( 9386): ------ VendorRIL onRequest: RADIO_POWER ------
+04-12 14:08:34.074 I/RIL     ( 9386): ------ VendorRIL onRequest: SET_PREFERRED_NETWORK_TYPE ------
+04-12 14:08:34.074 D/RILJ    ( 7779): [3653]> RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE : 1
+04-12 14:08:34.074 I/RIL     ( 9386): ------ VendorRIL onRequest: CDMA_SET_SUBSCRIPTION_SOURCE ------
+04-12 14:08:34.074 D/RILJ    ( 7779): setCellInfoListRate: 2147483647
+04-12 14:08:34.074 D/RILJ    ( 7779): [3654]> RIL_REQUEST_SET_CELL_INFO_LIST_RATE
+04-12 14:08:34.094 I/RIL     ( 9386): ------ VendorRIL onRequest: SET_UNSOL_CELL_INFO_LIST_RATE ------
+04-12 14:08:34.094 D/RILJ    ( 7779): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_UNAVAILABLE
+04-12 14:08:34.094 D/RilRequest( 7779): [3651]< RADIO_POWER error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-12 14:08:34.094 D/RilRequest( 7779): [3652]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-12 14:08:34.094 D/RilRequest( 7779): [3653]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-12 14:08:34.094 D/Dcc     ( 7779): DccDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=9
+04-12 14:08:34.094 D/RilRequest( 7779): [3654]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-12 14:08:40.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-12 14:08:50.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-12 14:09:00.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
