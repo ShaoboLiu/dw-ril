@@ -650,7 +650,7 @@ static void requestQueryNetworkSelectionMode(
         goto error;
     }
 
-    RLOGD(">>> QueryNetworkSelectionMode, response=%d", &response);
+    RLOGD(">>> QueryNetworkSelectionMode, response=%d", response);
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, &response, sizeof(int));
     at_response_free(p_response);
