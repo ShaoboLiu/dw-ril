@@ -650,9 +650,12 @@ static void requestQueryNetworkSelectionMode(
         goto error;
     }
 
+    RLOGD(">>> QueryNetworkSelectionMode, response=%d", &response);
+
     RIL_onRequestComplete(t, RIL_E_SUCCESS, &response, sizeof(int));
     at_response_free(p_response);
     return;
+
 error:
     at_response_free(p_response);
     RLOGE("requestQueryNetworkSelectionMode must never return error when radio is on");
@@ -1445,6 +1448,12 @@ static void requestRegistrationState(int request, void *data,
     int i = 0, j, numElements = 0;
     int count = 3;
     int type, startfrom;
+
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGE("Not support CDMA presently");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
 
     RLOGD("VendorRIL: requestRegistrationState >>>>>>>>>");
     if (request == RIL_REQUEST_VOICE_REGISTRATION_STATE) {
@@ -2375,6 +2384,12 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
      * REQUEST_SET_PREFERRED_NETWORK_TYPE
      * REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE
      * REQUEST_SET_CELL_INFO_LIST_RATE
+     *
+     * from RIL.java while RIL_UNSOL_RIL_CONNECTED
+     * setRadioPower(false, null);
+     * setPreferredNetworkType(mPreferredNetworkType, null);
+     * setCdmaSubscriptionSource(mCdmaSubscription, null);
+     * setCellInfoListRate(Integer.MAX_VALUE, null);
      */
 
     RLOGI("------ VendorRIL onRequest: %s ------", requestToString(request));
