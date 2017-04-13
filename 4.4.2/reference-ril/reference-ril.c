@@ -695,6 +695,8 @@ static void requestGetCurrentCalls(void *data, size_t datalen, RIL_Token t)
         return;
     }
 
+    RLOGD("[GetCurrentCalls] response=%s", p_response->p_intermediates->line);
+
     /* count the calls */
     for (countCalls = 0, p_cur = p_response->p_intermediates
             ; p_cur != NULL
@@ -788,6 +790,7 @@ static void requestGetCurrentCalls(void *data, size_t datalen, RIL_Token t)
 
     return;
 error:
+    RLOGD("Error while requestGetCurrentCalls");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
