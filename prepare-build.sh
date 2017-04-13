@@ -4,4 +4,5 @@ cp ./4.4.2/reference-ril/reference-ril.c /home/developer/action_compiling_21/and
 
 rm ./libreference-ril.so
 rm /home/developer/action_compiling_21/android/out/target/product/gs702c/obj/lib/libreference-ril.so
+rm /home/developer/action_compiling_21/android/out/target/product/gs702c/system/lib/libreference-ril.so
 
