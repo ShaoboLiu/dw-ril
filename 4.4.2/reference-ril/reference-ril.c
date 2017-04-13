@@ -369,18 +369,30 @@ static void onSIMReady()
 static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
 {
     int onOff;
-
     int err;
     ATResponse *p_response = NULL;
 
+    /*************************************************************************/
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGI("------ VendorRIL not support (CDMA): RIL_REQUEST_RADIO_POWER ------");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+    /*************************************************************************/
+
     assert (datalen >= sizeof(int *));
     onOff = ((int *)data)[0];
+
+    RLOGD("requestRadioPower: request to set [%d], current state [%d]", onOff, sState);
 
     if (onOff == 0 && sState != RADIO_STATE_OFF) {
         err = at_send_command("AT+CFUN=0", &p_response);
        if (err < 0 || p_response->success == 0) goto error;
         setRadioState(RADIO_STATE_OFF);
-    } else if (onOff > 0 && sState == RADIO_STATE_OFF) {
+        RLOGD("requestRadioPower: success set RadioState_OFF");
+    }
+
+    else if (onOff > 0 && sState == RADIO_STATE_OFF) {
         err = at_send_command("AT+CFUN=1", &p_response);
         if (err < 0|| p_response->success == 0) {
             // Some stacks return an error when there is no SIM,
@@ -393,12 +405,19 @@ static void requestRadioPower(void *data, size_t datalen, RIL_Token t)
             }
         }
         setRadioState(RADIO_STATE_ON);
+        RLOGD("requestRadioPower: success set RadioState_ON");
+    }
+
+    else {
+        RLOGD("requestRadioPower: error Unhandled state");
     }
 
     at_response_free(p_response);
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
     return;
+
 error:
+    RLOGE("------ VendorRIL error while requestRadioPower ------");
     at_response_free(p_response);
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
@@ -631,9 +650,12 @@ static void requestQueryNetworkSelectionMode(
         goto error;
     }
 
+    RLOGD(">>> QueryNetworkSelectionMode, response=%d", response);
+
     RIL_onRequestComplete(t, RIL_E_SUCCESS, &response, sizeof(int));
     at_response_free(p_response);
     return;
+
 error:
     at_response_free(p_response);
     RLOGE("requestQueryNetworkSelectionMode must never return error when radio is on");
@@ -854,32 +876,59 @@ static void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
     int numofElements=sizeof(RIL_SignalStrength_v6)/sizeof(int);
     int response[numofElements];
 
-    err = at_send_command_singleline("AT+CSQ", "+CSQ:", &p_response);
+    /*************************************************************************/
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGI("------ VendorRIL not support (CDMA): RIL_REQUEST_SIGNAL_STRENGTH ------");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+    /*************************************************************************/
 
+    // GSM mode below, using structure RIL_GW_SignalStrength {int, int}
+
+    err = at_send_command_singleline("AT+CSQ", "+CSQ:", &p_response);
     if (err < 0 || p_response->success == 0) {
-        RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+        RLOGE("------ VendorRIL SignalStrength: error at_send ------");
         goto error;
     }
 
     line = p_response->p_intermediates->line;
-
     err = at_tok_start(&line);
-    if (err < 0) goto error;
+    if (err < 0) {
+        RLOGE("------ VendorRIL SignalStrength: error at_tok_start ------");
+        goto error;
+    }
 
+    /*
     for (count =0; count < numofElements; count ++) {
         err = at_tok_nextint(&line, &(response[count]));
         if (err < 0) goto error;
     }
-
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
+    */
 
+    err = at_tok_nextint(&line, &(response[0]));
+    if (err < 0) {
+        RLOGE("------ VendorRIL SignalStrength: error at_tok_nextint_0 ------");
+        goto error;
+    }
+
+    err = at_tok_nextint(&line, &(response[1]));
+    if (err < 0) {
+        RLOGE("------ VendorRIL SignalStrength: error at_tok_nextint_1 ------");
+        goto error;
+    }
+
+
+    RLOGI("------ VendorRIL SignalStrength: %d, %d ------", response[0], response[1]);
     at_response_free(p_response);
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(int)*2);
     return;
 
 error:
     RLOGE("requestSignalStrength must never return an error when radio is on");
-    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
+    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
 
 /**
@@ -903,7 +952,29 @@ static void requestSetPreferredNetworkType( int request, void *data,
     int err;
     int32_t preferred = net2pmask[value];
 
+    /*************************************************************************/
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGI("------ VendorRIL not support (CDMA): RIL_REQUEST_RADIO_POWER ------");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+    /*************************************************************************/
+
+
     RLOGD("requestSetPreferredNetworkType: current: %x. New: %x", PREFERRED_NETWORK(sMdmInfo), preferred);
+
+
+    /*************************************************************************/
+    // Presently, we support GSM only
+    if (preferred != MDM_GSM) {
+        RLOGI("------ VendorRIL: PreferredNetworkType only GSM supported ------");
+        RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+    /*************************************************************************/
+
+
+    /*
     if (!networkModePossible(sMdmInfo, value)) {
         RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
         return;
@@ -912,7 +983,16 @@ static void requestSetPreferredNetworkType( int request, void *data,
         RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
         return;
     }
+    */
+
     old = PREFERRED_NETWORK(sMdmInfo);
+    if (old != preferred) {
+        RLOGI("****** VendorRIL: Unknown command to setPreferredNetworkType ******");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+
+    /*
     RLOGD("old != preferred: %d", old != preferred);
     if (old != preferred) {
         asprintf(&cmd, "AT+CTEC=%d,\"%x\"", current, preferred);
@@ -937,11 +1017,12 @@ static void requestSetPreferredNetworkType( int request, void *data,
             }
         }
     }
+    */
+
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
 
-static void requestGetPreferredNetworkType(int request, void *data,
-                                   size_t datalen, RIL_Token t)
+static void requestGetPreferredNetworkType(int request, void *data, size_t datalen, RIL_Token t)
 {
     int preferred;
     unsigned i;
@@ -955,6 +1036,7 @@ static void requestGetPreferredNetworkType(int request, void *data,
             for ( i = 0 ; i < sizeof(net2pmask) / sizeof(int32_t) ; i++ ) {
                 if (preferred == net2pmask[i]) {
                     RIL_onRequestComplete(t, RIL_E_SUCCESS, &i, sizeof(int));
+                    // RIL_onRequestComplete(t, RIL_E_SUCCESS, &preferred, sizeof(int));
                     return;
                 }
             }
@@ -962,7 +1044,6 @@ static void requestGetPreferredNetworkType(int request, void *data,
             RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
             break;
     }
-
 }
 
 static void requestCdmaPrlVersion(int request, void *data,
@@ -989,9 +1070,61 @@ error:
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
 
-static void requestCdmaBaseBandVersion(int request, void *data,
+static void requestBaseBandVersion(int request, void *data,
                                    size_t datalen, RIL_Token t)
 {
+    int err;
+    ATResponse *p_response = NULL;
+    char * responseStr = NULL;
+    char* line = NULL;
+
+    /*************************************************************************/
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGI("------ VendorRIL not support (CDMA): RIL_REQUEST_BASEBAND_VERSION ------");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+    /*************************************************************************/
+
+    else {
+        responseStr = strdup("E1750");
+        RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
+        free(responseStr);
+        return;
+
+#if 0
+        err = at_send_command_singleline("AT+CGMM", "+CGMM:", &p_response);
+        if (err < 0 || !p_response->success) {
+            RLOGE("--- VendorRIL: error at_send_command");
+            goto error;
+        }
+
+        line = p_response->p_intermediates->line;
+        err = at_tok_start(&line);
+        if (err < 0) {
+            RLOGE("--- VendorRIL: error at_tok_start");
+            goto error;
+        }
+
+        err = at_tok_nextstr(&line, &responseStr);
+        if (err < 0 || !responseStr) {
+            RLOGE("--- VendorRIL: error at_tok_nextstr");
+            goto error;
+        }
+
+        RLOGI("------ VendorRIL Baseband Version: %s ------", responseStr);
+        RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
+        at_response_free(p_response);
+        return;
+#endif
+    }
+
+error:
+    RLOGE("------ VendorRIL error while request BaseBandVersion ------");
+    at_response_free(p_response);
+    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+
+    /*
     int err;
     char * responseStr;
     ATResponse *p_response = NULL;
@@ -1006,6 +1139,7 @@ static void requestCdmaBaseBandVersion(int request, void *data,
     responseStr = strdup("1.0.0.0");
     RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
     free(responseStr);
+    */
 }
 
 static void requestCdmaDeviceIdentity(int request, void *data,
@@ -1315,7 +1449,13 @@ static void requestRegistrationState(int request, void *data,
     int count = 3;
     int type, startfrom;
 
-    RLOGD("requestRegistrationState");
+    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+        RLOGE("Not support CDMA presently");
+        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
+        return;
+    }
+
+    RLOGD("VendorRIL: requestRegistrationState >>>>>>>>>");
     if (request == RIL_REQUEST_VOICE_REGISTRATION_STATE) {
         cmd = "AT+CREG?";
         prefix = "+CREG:";
@@ -1334,6 +1474,8 @@ static void requestRegistrationState(int request, void *data,
     if (err != 0) goto error;
 
     line = p_response->p_intermediates->line;
+
+    RLOGD("[%s_REGISTRATION] response=%s", ((request == RIL_REQUEST_DATA_REGISTRATION_STATE)? "DATA":"VOICE"), line);
 
     if (parseRegistrationState(line, &type, &count, &registration)) goto error;
 
@@ -1410,7 +1552,7 @@ error:
         free(responseStr);
         responseStr = NULL;
     }
-    RLOGE("requestRegistrationState must never return an error when radio is on");
+    RLOGE("!!!!!! requestRegistrationState must never return an error when radio is on !!!!!!");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
@@ -1427,6 +1569,14 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
 
     ATResponse *p_response = NULL;
 
+    /*************************************************************************
+     * send AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+     * get return:
+     * +COPS: 0,0,"CAN Rogers Wirel",0
+     * +COPS: 0,1,"ROGERS",0
+     * +COPS: 0,2,"302720",0
+    /*************************************************************************/
+
     err = at_send_command_multiline(
         "AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?",
         "+COPS:", &p_response);
@@ -1437,6 +1587,7 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
      * +COPS: 0,2,"310170"
      */
 
+#if 0
     if (err != 0) goto error;
 
     for (i = 0, p_cur = p_response->p_intermediates
@@ -1473,6 +1624,8 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
         if (strlen(response[i]) == 6) {
             if (sscanf(response[i], "%3d%3d", &s_mcc, &s_mnc) != 2) {
                 RLOGE("requestOperator expected mccmnc to be 6 decimal digits");
+            } else {
+                RLOGD("[VendorRIL] requestOperator result: mcc=%d, mnc=%d", s_mcc, s_mnc);
             }
         }
     }
@@ -1481,13 +1634,30 @@ static void requestOperator(void *data, size_t datalen, RIL_Token t)
         /* expect 3 lines exactly */
         goto error;
     }
+#endif
+
+#if 1
+    response[0] = strdup("CAN Rogers Wirel");
+    response[1] = strdup("ROGERS");
+    response[2] = strdup("302720");
+#endif
+
+    RLOGD("[VendorRIL] requestOperator result: [0] = %s", response[0]);
+    RLOGD("[VendorRIL] requestOperator result: [1] = %s", response[1]);
+    RLOGD("[VendorRIL] requestOperator result: [2] = %s", response[2]);
 
     RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
     at_response_free(p_response);
 
+#if 1
+    free(response[0]);
+    free(response[1]);
+    free(response[2]);
+#endif
+
     return;
 error:
-    RLOGE("requestOperator must not return error when radio is on");
+    RLOGE("---!!! requestOperator must not return error when radio is on !!!---");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
@@ -1994,6 +2164,202 @@ static void requestSetInitialAttachApn(void* data, size_t datalen, RIL_Token t)
 /*************************************************************************************************/
 
 
+/*************************************************************************************************/
+static const char* networkStatusToRilString(int state)
+{
+    switch(state){
+        case 0: return("unknown");   break;
+        case 1: return("available"); break;
+        case 2: return("current");   break;
+        case 3: return("forbidden"); break;
+        default: return NULL;
+    }
+}
+/*************************************************************************************************/
+
+
+/*************************************************************************************************/
+// {RIL_REQUEST_QUERY_AVAILABLE_NETWORKS , dispatchVoid, responseStrings}
+
+#if 1
+static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
+{
+    /* We expect an answer on the following form:
+       +COPS: (2,"AT&T","AT&T","310410",0),(1,"T-Mobile ","TMO","310260",0)
+     */
+
+    int err, operators, i, skip, status;
+    ATResponse *p_response = NULL;
+    char * c_skip, *line, *p = NULL;
+    char ** response = NULL;
+
+    err = at_send_command_singleline("AT+COPS=?", "+COPS:", &p_response);
+    if (err != 0) goto error;
+
+    RLOGD(">> [QueryAvailableNetworks] p_response: %s", p_response->p_intermediates->line);
+
+    line = p_response->p_intermediates->line;
+    err = at_tok_start(&line);
+    if (err < 0) goto error;
+
+    /* Count number of '(' in the +COPS response to get number of operators*/
+    operators = 0;
+    for (p = line ; *p != '\0' ;p++) {
+        if (*p == '(') operators++;
+    }
+
+    response = (char **)alloca(operators * 4 * sizeof(char *));
+
+    for (i = 0 ; i < operators ; i++ )
+    {
+        err = at_tok_nextstr(&line, &c_skip);
+        if (err < 0) goto error;
+        if (strcmp(c_skip,"") == 0)
+        {
+            operators = i;
+            continue;
+        }
+        status = atoi(&c_skip[1]);
+        response[i*4+3] = (char*)networkStatusToRilString(status);
+
+        err = at_tok_nextstr(&line, &(response[i*4+0]));
+        if (err < 0) goto error;
+
+        err = at_tok_nextstr(&line, &(response[i*4+1]));
+        if (err < 0) goto error;
+
+        err = at_tok_nextstr(&line, &(response[i*4+2]));
+        if (err < 0) goto error;
+
+        err = at_tok_nextstr(&line, &c_skip);
+        if (err < 0) goto error;
+
+        RLOGD(">> [QueryAvailableNetworks] operator(%d): [%s, %s, %s, %s]", i, response[i*4+0], response[i*4+1], response[i*4+2], response[i*4+3]);
+    }
+
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, (operators * 4 * sizeof(char *)));
+    at_response_free(p_response);
+    return;
+
+error:
+    at_response_free(p_response);
+    RLOGE(">> ERROR - requestQueryAvailableNetworks() failed");
+    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+}
+#endif
+
+#if 0
+static void requestQueryAvailableNetworks(void* data, size_t datalen, RIL_Token t)
+{
+    /* We expect an answer on the following form:
+       +COPS: (2,"AT&T","AT&T","310410",0),(1,"T-Mobile ","TMO","310260",0)
+     */
+
+    int err;
+    int i;
+    int skip;
+    ATLine *p_cur;
+    char *response[4];
+
+    memset(response, 0, sizeof(response));
+
+    ATResponse *p_response = NULL;
+
+    /*************************************************************************
+     * send AT+COPS=?
+     * get return:
+     * (1,"CAN Rogers Wirel","ROGERS","302720",0),,(0,1,3,4),(0,1,2)
+     *
+     * send AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+     * get return:
+     * +COPS: 0,0,"CAN Rogers Wirel",0
+     * +COPS: 0,1,"ROGERS",0
+     * +COPS: 0,2,"302720",0
+    /*************************************************************************/
+
+#if 0
+    err = at_send_command_multiline("AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?", "+COPS:", &p_response);
+#endif
+    sleep(500);
+
+
+#if 1
+    response[0] = strdup("CAN Rogers Wirel (fido)");
+    response[1] = strdup("ROGERS");
+    response[2] = strdup("302720");
+    response[3] = strdup("2"); // strdup("current"); //unknown, available, current, forbidden
+
+#endif
+
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [0] = %s", response[0]);
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [1] = %s", response[1]);
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [2] = %s", response[2]);
+    RLOGD("[VendorRIL] requestQueryAvailableNetworks result: [3] = %s", response[3]);
+
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, 4*sizeof(char*));
+    at_response_free(p_response);
+
+#if 1
+    free(response[0]);
+    free(response[1]);
+    free(response[2]);
+    free(response[3]);
+#endif
+    return;
+
+error:
+    RLOGE(">> Error while requestQueryAvailableNetworks");
+    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+    at_response_free(p_response);
+}
+#endif
+/*************************************************************************************************/
+
+
+
+/*************************************************************************************************/
+// {RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL, dispatchString, responseVoid}
+
+static void requestSetNetworkSelectionManual(void *data, size_t datalen, RIL_Token t)
+{
+    //at_send_command("AT+COPS=0", NULL);
+
+    char* pOperator = (char*)data;
+
+    RLOGD(">> requestSetNetworkSelectionManual %s", pOperator);
+
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+}
+/*************************************************************************************************/
+
+
+/*************************************************************************************************/
+static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
+{
+    char* responseStr;
+
+    responseStr = strdup("356793032334716");
+    RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
+    free(responseStr);
+
+    /*
+    p_response = NULL;
+    err = at_send_command_numeric("AT+CGSN", &p_response);
+
+    if (err < 0 || p_response->success == 0) {
+        RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+    } else {
+        RIL_onRequestComplete(t, RIL_E_SUCCESS,
+            p_response->p_intermediates->line, sizeof(char *));
+    }
+    at_response_free(p_response);
+    break;
+    */
+}
+/*************************************************************************************************/
+
+
+
 
 /*** Callback methods from the RIL library to us ***/
 
@@ -2015,8 +2381,21 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
     ATResponse *p_response;
     int err;
 
+    /* before radio available, usually there are four requests initial:
+     * REQUEST_RADIO_POWER
+     * REQUEST_SET_PREFERRED_NETWORK_TYPE
+     * REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE
+     * REQUEST_SET_CELL_INFO_LIST_RATE
+     *
+     * from RIL.java while RIL_UNSOL_RIL_CONNECTED
+     * setRadioPower(false, null);
+     * setPreferredNetworkType(mPreferredNetworkType, null);
+     * setCdmaSubscriptionSource(mCdmaSubscription, null);
+     * setCellInfoListRate(Integer.MAX_VALUE, null);
+     */
+
     RLOGI("------ VendorRIL onRequest: %s ------", requestToString(request));
-    RLOGD("onRequest: %s", requestToString(request));
+    // RLOGD("onRequest: %s", requestToString(request));
 
     /* Ignore all requests except RIL_REQUEST_GET_SIM_STATUS
      * when RADIO_STATE_UNAVAILABLE.
@@ -2200,6 +2579,10 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             break;
 
         case RIL_REQUEST_GET_IMEI:	/* VendorRIL basic */
+            requestGetIMEI(data, datalen, t);
+            break;
+
+            /*
             p_response = NULL;
             err = at_send_command_numeric("AT+CGSN", &p_response);
 
@@ -2211,10 +2594,12 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             }
             at_response_free(p_response);
             break;
+            */
 
 	case RIL_REQUEST_GET_IMEISV:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---");
-	    break;
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_SIM_IO:	/* VendorRIL basic */
             requestSIM_IO(data,datalen,t);
@@ -2242,7 +2627,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             break;
 
         case RIL_REQUEST_DATA_CALL_LIST:
-	    RLOGI("ril-req: [%d] RIL_REQUEST_DATA_CALL_LIST", request);
+            RLOGI("ril-req: [%d] RIL_REQUEST_DATA_CALL_LIST", request);
             requestDataCallList(data, datalen, t);
             break;
 
@@ -2347,12 +2732,9 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             requestSetCellInfoListRate(data, datalen, t);
             break;
 
-        /* CDMA Specific Requests */
         case RIL_REQUEST_BASEBAND_VERSION:	/* VendorRIL basic */
-            if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
-                requestCdmaBaseBandVersion(request, data, datalen, t);
-                break;
-            } // Fall-through if tech is not cdma
+            requestBaseBandVersion(request, data, datalen, t);
+            break;
 
         case RIL_REQUEST_DEVICE_IDENTITY:
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
@@ -2361,34 +2743,55 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             } // Fall-through if tech is not cdma
 
         case RIL_REQUEST_CDMA_SUBSCRIPTION:	/* VendorRIL basic */
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaSubscription(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE:	/* VendorRIL basic */
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaSetSubscriptionSource(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE:	/* VendorRIL basic */
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaGetSubscriptionSource(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_CDMA_QUERY_ROAMING_PREFERENCE:
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaGetRoamingPreference(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
+
 
         case RIL_REQUEST_CDMA_SET_ROAMING_PREFERENCE:
+            /*
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
                 requestCdmaSetRoamingPreference(request, data, datalen, t);
                 break;
             } // Fall-through if tech is not cdma
+            */
+            RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+            break;
 
         case RIL_REQUEST_EXIT_EMERGENCY_CALLBACK_MODE:
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
@@ -2396,9 +2799,9 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
                 break;
             } // Fall-through if tech is not cdma
 
-	case RIL_REQUEST_SCREEN_STATE:	/* VendorRIL basic */
+        case RIL_REQUEST_SCREEN_STATE:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_SCREEN_STATE ---");
-	    break;
+            break;
 
         case RIL_REQUEST_QUERY_FACILITY_LOCK:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_QUERY_FACILITY_LOCK ---");
@@ -2410,6 +2813,14 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
 
         case RIL_REQUEST_SET_INITIAL_ATTACH_APN:	/* VendorRIL basic */
             requestSetInitialAttachApn(data, datalen, t);
+            break;
+
+        case RIL_REQUEST_QUERY_AVAILABLE_NETWORKS: /* VendorRIL basic data*/
+            requestQueryAvailableNetworks(data, datalen, t);
+            break;
+
+        case RIL_REQUEST_SET_NETWORK_SELECTION_MANUAL:
+            requestSetNetworkSelectionManual(data, datalen, t);
             break;
 
         default:
@@ -2477,7 +2888,7 @@ setRadioTechnology(ModemInfo *mdm, int newtech)
 static void
 setRadioState(RIL_RadioState newState)
 {
-    RLOGD("setRadioState(%d)", newState);
+    RLOGD("******** VendorRIL: setRadioState(%d), oldState=%d ********", newState, sState);
     RIL_RadioState oldState;
 
     pthread_mutex_lock(&s_state_mutex);
@@ -2633,6 +3044,8 @@ getSIMStatus()
 
     /* CPIN? has succeeded, now look at the result */
 
+    RLOGD("[getSIMStatus] response=%s", p_response->p_intermediates->line);
+
     cpinLine = p_response->p_intermediates->line;
     err = at_tok_start (&cpinLine);
 
@@ -2719,7 +3132,7 @@ static int getCardStatus(RIL_CardStatus_v6 **pp_card_status) {
         { RIL_APPTYPE_RUIM, RIL_APPSTATE_SUBSCRIPTION_PERSO, RIL_PERSOSUBSTATE_SIM_NETWORK,
            NULL, NULL, 0, RIL_PINSTATE_ENABLED_NOT_VERIFIED, RIL_PINSTATE_UNKNOWN }
     };
-    RIL_CardState card_state;
+    RIL_CardState card_state;   /*0, 1, 2: absent, present, error*/
     int num_apps;
 
     int sim_status = getSIMStatus();
@@ -2780,6 +3193,8 @@ static void pollSIMState (void *param)
 {
     ATResponse *p_response;
     int ret;
+
+    RLOGD("******** VendorRIL: onRadioPowerOn pollSIMState, current state=%d ********", sState);
 
     if (sState != RADIO_STATE_SIM_NOT_READY) {
         // no longer valid to poll
@@ -2896,6 +3311,12 @@ int query_supported_techs( ModemInfo *mdm, int *supported )
     char *tok;
     char *line;
 
+    /*************************************************************************/
+    // Our modem not support command AT+CTEC, we use GSM mode only
+    if (supported) {*supported   = MDM_GSM;}
+    return 0;
+    /*************************************************************************/
+
     RLOGD("query_supported_techs");
     err = at_send_command_singleline("AT+CTEC=?", "+CTEC:", &p_response);
     if (err || !p_response->success)
@@ -2934,6 +3355,13 @@ int query_ctec(ModemInfo *mdm, int *current, int32_t *preferred)
     int err;
     int res;
 
+    /*************************************************************************/
+    // Our modem not support command AT+CTEC, we use GSM mode only
+    if (current) {*current   = MDM_GSM;}
+    if (preferred) {*preferred = MDM_GSM;}
+    return 0;
+    /*************************************************************************/
+
     RLOGD("query_ctec. current: %d, preferred: %d", (int)current, (int) preferred);
     err = at_send_command_singleline("AT+CTEC?", "+CTEC:", &response);
     if (!err && response->success) {
@@ -2953,6 +3381,17 @@ int is_multimode_modem(ModemInfo *mdm)
     char *line;
     int tech;
     int32_t preferred;
+    char *responseStr;
+
+
+    /*************************************************************************/
+    // Our modem not support command AT+CTEC, we use GSM mode only
+    mdm->isMultimode = 0;
+    mdm->currentTech = MDM_GSM;
+    mdm->preferredNetworkMode = MDM_GSM;
+    return 0; // Presently not support multimode
+    /*************************************************************************/
+
 
     if (query_ctec(mdm, &tech, &preferred) == 0) {
         mdm->currentTech = tech;
@@ -2994,7 +3433,9 @@ static void probeForModemMode(ModemInfo *info)
         // info->supportedTechs = MDM_CDMA | MDM_EVDO;
         info->supportedTechs = MDM_CDMA;
         info->currentTech = MDM_CDMA;
-        RLOGI("------ VendorRIL: found CDMA Modem ------");
+        info->isMultimode = 0;
+        info->preferredNetworkMode = MDM_CDMA;
+        RLOGI("======== VendorRIL: found CDMA Modem Device ========");
         return;
     }
     if (!err) at_response_free(response);
@@ -3002,7 +3443,9 @@ static void probeForModemMode(ModemInfo *info)
     // info->supportedTechs = MDM_GSM | MDM_WCDMA | MDM_LTE;
     info->supportedTechs = MDM_GSM;
     info->currentTech = MDM_GSM;
-    RLOGI("------ VendorRIL: found GSM Modem ------");
+    info->isMultimode = 0;
+    info->preferredNetworkMode = MDM_GSM;
+    RLOGI("======== VendorRIL: found GSM Modem Device ========");
 }
 
 /**
@@ -3091,9 +3534,9 @@ static void initializeCallback(void *param)
     if (isRadioOn() > 0) {
         setRadioState (RADIO_STATE_ON);
 
-	RLOGI("------ VendorRIL: AT Command initialize done, Radio_State=On ------"); 
+        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=ON, sState=%d ========", sState);
     } else {
-        RLOGI("------ VendorRIL: AT Command initialize done, Radio_State=Off ------"); 
+        RLOGI("======== VendorRIL: AT Command initialize done, Radio_State=OFF, sState=%d ========", sState);
     }
 }
 

@@ -1,7 +1,14 @@
+<<<<<<< HEAD
 =~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2017.04.12 14:08:17 =~=~=~=~=~=~=~=~=~=~=~=
 [  448.630749] <MON> idpin be pulldown when B_IN detecting
 [  449.310790] /home/developer/action_compiling_21/leopard/platform/drivers/usb/monitor/umonitor_core.c--738, SYS_MSG_USB_A_IN
 ------start rild
+=======
+[  448.630749] <MON> idpin be pulldown when B_IN detecting
+[  449.310790] /home/developer/action_compiling_21/leopard/platform/drivers/usb/monitor/umonitor_core.c--738, SYS_MSG_USB_A_IN
+------start rild
+
+>>>>>>> a0b550ff7be76173151a5060b9a7dd78ec498a2c
 04-12 14:08:30.374 I/RILD    ( 9386): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
 04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: arguments from command ------
 04-12 14:08:30.384 I/RILD    ( 9386): ------ VendorRIL initialize: argc=5 ------
@@ -20,6 +27,7 @@
 04-12 14:08:30.394 I/RIL     ( 9386): ------ VendorRIL entering mainLoop() ------
 04-12 14:08:30.394 I/RIL     ( 9386): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
 04-12 14:08:30.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+<<<<<<< HEAD
 [  450.363525] hcd aotg0 add
 [  450.373447] aotg_hcd aotg_hcd.0: AOTG USB Host Controller Driver
 [  450.379570] aotg_hcd aotg_hcd.0: new USB bus registered, assigned bus number 1
@@ -29,10 +37,29 @@
 [  450.404027] hub 1-0:1.0: 1 port detected
 [  450.408315] aotg_hcd aotg_hcd.0: hcd controller initialized. OTGIRQ: 0x01, OTGSTATE:	0x02 
 [  451.410740] aotg_hcd aotg_hcd.0: aotg_hcd.0	changed:0,inserted: 0
+=======
+>>>>>>> a0b550ff7be76173151a5060b9a7dd78ec498a2c
 04-12 14:08:34.054 I/RILJ    ( 7779): Connected to 'rild' socket
 04-12 14:08:34.054 I/RILC    ( 9386): libril: new connection
 04-12 14:08:34.054 I/RILC    ( 9386): RIL Daemon version: android reference-ril 1.0
 04-12 14:08:34.064 D/RILJ    ( 7779): [UNSL]< UNSOL_RIL_CONNECTED {9}
+<<<<<<< HEAD
+=======
+
+            ## RIL.java
+            case RIL_UNSOL_RIL_CONNECTED: {
+                if (RILJ_LOGD) unsljLogRet(response, ret);
+
+                // Initial conditions
+                setRadioPower(false, null);
+                setPreferredNetworkType(mPreferredNetworkType, null);
+                setCdmaSubscriptionSource(mCdmaSubscription, null);
+                setCellInfoListRate(Integer.MAX_VALUE, null);
+                notifyRegistrantsRilConnectionChanged(((int[])ret)[0]);
+                break;
+            }              
+
+>>>>>>> a0b550ff7be76173151a5060b9a7dd78ec498a2c
 04-12 14:08:34.064 D/RILJ    ( 7779): [3651]> RADIO_POWER off
 04-12 14:08:34.064 D/RILJ    ( 7779): [3652]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 1
 04-12 14:08:34.074 I/RIL     ( 9386): ------ VendorRIL onRequest: RADIO_POWER ------

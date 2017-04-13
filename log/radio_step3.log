@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 =~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2017.04.12 14:11:28 =~=~=~=~=~=~=~=~=~=~=~=
 04-12 14:11:40.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
 [  648.169128] otg_port_no:0 OTG IRQ,	OTGSTATE: 0x03, USBIRQ:0x00
@@ -33,6 +34,10 @@
 [  653.573925] scsi 1:0:0:0: Direct-Access     WCDMA    MMC Storage      2.31 PQ: 0 ANSI: 2
 [  653.594204] sd 1:0:0:0: Attached scsi generic sg0 type 0
 [  653.606670] sd 1:0:0:0: [sda] Attached SCSI removable disk
+=======
+04-12 14:11:40.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-12 14:11:50.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+>>>>>>> a0b550ff7be76173151a5060b9a7dd78ec498a2c
 04-12 14:12:00.394 I/RIL     ( 9386): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
 04-12 14:12:00.404 D/RIL     ( 9386): ******** VendorRIL: setRadioState(0), oldState=1 ********
 04-12 14:12:00.404 D/AT      ( 9386): AT> ATE0Q0V1
@@ -136,14 +141,20 @@
 04-12 14:12:00.854 D/AT      ( 9386): AT< +CGREG: 1,2
 04-12 14:12:00.854 D/AT      ( 9386): AT< OK
 04-12 14:12:00.854 D/RIL     ( 9386): parseRegistrationState. Parsing: +CGREG: 1,2CPU1: Booted secondary processor
+<<<<<<< HEAD
 
+=======
+>>>>>>> a0b550ff7be76173151a5060b9a7dd78ec498a2c
 04-12 14:12:00.854 D/RIL     ( 9386): registration state type: 3GPP
 04-12 14:12:00.854 I/RIL     ( 9386): ------ VendorRIL onRequest: VOICE_REGISTRATION_STATE ------
 04-12 14:12:00.854 D/RIL     ( 9386): VendorRIL: requestRegistrationState >>>>>>>>>
 04-12 14:12:00.854 D/AT      ( 9386): AT> AT+CREG?
 04-12 14:12:00.854 D/RILJ    ( 7779): [3661]< DATA_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null}
 04-12 14:12:00.854 E/GsmSST  ( 7779): [GsmSST] error parsing GprsRegistrationState: java.lang.NumberFormatException: Invalid int: "null"
+<<<<<<< HEAD
 [  660.363326] end
+=======
+>>>>>>> a0b550ff7be76173151a5060b9a7dd78ec498a2c
 04-12 14:12:00.854 D/PHONE   ( 7779): [ServiceState] setDataRegState=1
 04-12 14:12:00.854 D/PHONE   ( 7779): [ServiceState] setDataRadioTechnology=0
 04-12 14:12:00.854 D/GsmSST  ( 7779): [GsmSST] handlPollStateResultMessage: GsmSST setDataRegState=1 regState=2 dataRadioTechnology=0
@@ -673,9 +684,12 @@
 04-12 14:12:05.594 D/IccCardProxy( 7779): Broadcasting intent ACTION_SIM_STATE_CHANGED LOADED reason null
 04-12 14:12:05.614 D/PhoneProxy( 7779): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=0
 04-12 14:12:05.614 D/PhoneProxy( 7779): [PhoneProxy] phoneObjectUpdater: Unknown rat ignore,  newVoiceRadioTech=Unknown. mActivePhone=GSM
+<<<<<<< HEAD
 [  674.350779] cpu1 turning off start...
 [  674.356729] CPU1: shutdown
 [  674.363035] end
+=======
+>>>>>>> a0b550ff7be76173151a5060b9a7dd78ec498a2c
 04-12 14:12:22.724 D/RILJ    ( 7779): [3723]> SIGNAL_STRENGTH
 04-12 14:12:22.724 I/RIL     ( 9386): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 04-12 14:12:22.724 D/AT      ( 9386): AT> AT+CSQ
