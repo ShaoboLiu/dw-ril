@@ -6,8 +6,3 @@ scp developer@192.168.0.252:/home/developer/WorkspaceX/android/hardware/dw-ril/l
 adb shell stop ril-daemon
 adb shell rm -f /system/lib/libreference-ril.so
 adb push ./libreference-ril.so /system/lib/
-
-
-
-
-
