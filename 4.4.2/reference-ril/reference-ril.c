@@ -1477,7 +1477,6 @@ static void requestRegistrationState(int request, void *data,
 
     RLOGD("[%s_REGISTRATION] response=%s", ((request == RIL_REQUEST_DATA_REGISTRATION_STATE)? "DATA":"VOICE"), line);
 
-
     if (parseRegistrationState(line, &type, &count, &registration)) goto error;
 
     responseStr = malloc(numElements * sizeof(char *));
@@ -3044,6 +3043,8 @@ getSIMStatus()
     }
 
     /* CPIN? has succeeded, now look at the result */
+
+    RLOGD("[getSIMStatus] response=%s", p_response->p_intermediates->line);
 
     cpinLine = p_response->p_intermediates->line;
     err = at_tok_start (&cpinLine);
