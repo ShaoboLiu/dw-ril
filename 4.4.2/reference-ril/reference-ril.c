@@ -1457,11 +1457,13 @@ static void requestRegistrationState(int request, void *data,
 
     RLOGD("VendorRIL: requestRegistrationState >>>>>>>>>");
     if (request == RIL_REQUEST_VOICE_REGISTRATION_STATE) {
-        cmd = "AT+CREG?";
+        //cmd = "AT+CREG?";
+        cmd = "AT+CREG=2";
         prefix = "+CREG:";
         numElements = REG_STATE_LEN;
     } else if (request == RIL_REQUEST_DATA_REGISTRATION_STATE) {
-        cmd = "AT+CGREG?";
+        //cmd = "AT+CGREG?";
+        cmd = "AT+CGREG=2";
         prefix = "+CGREG:";
         numElements = REG_DATA_STATE_LEN;
     } else {
