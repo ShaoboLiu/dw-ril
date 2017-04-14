@@ -695,7 +695,7 @@ static void requestGetCurrentCalls(void *data, size_t datalen, RIL_Token t)
         return;
     }
 
-    RLOGD("[GetCurrentCalls] response=%s", p_response->p_intermediates->line);
+    //RLOGD("[GetCurrentCalls] response=%s", p_response->p_intermediates->line);
 
     /* count the calls */
     for (countCalls = 0, p_cur = p_response->p_intermediates
@@ -1073,9 +1073,10 @@ error:
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
 
-static void requestBaseBandVersion(int request, void *data,
-                                   size_t datalen, RIL_Token t)
+static void requestBaseBandVersion(int request, void *data, size_t datalen, RIL_Token t)
 {
+    // {RIL_REQUEST_BASEBAND_VERSION, dispatchVoid, responseString}
+
     int err;
     ATResponse *p_response = NULL;
     char * responseStr = NULL;
@@ -1090,12 +1091,13 @@ static void requestBaseBandVersion(int request, void *data,
     /*************************************************************************/
 
     else {
+#if 1
         responseStr = strdup("E1750");
         RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
         free(responseStr);
         return;
 
-#if 0
+#else
         err = at_send_command_singleline("AT+CGMM", "+CGMM:", &p_response);
         if (err < 0 || !p_response->success) {
             RLOGE("--- VendorRIL: error at_send_command");
@@ -1103,6 +1105,8 @@ static void requestBaseBandVersion(int request, void *data,
         }
 
         line = p_response->p_intermediates->line;
+        RLOGI("[BaseBandVersion] response=%s", line);
+
         err = at_tok_start(&line);
         if (err < 0) {
             RLOGE("--- VendorRIL: error at_tok_start");
@@ -2339,14 +2343,20 @@ static void requestSetNetworkSelectionManual(void *data, size_t datalen, RIL_Tok
 /*************************************************************************************************/
 static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
 {
+    // {RIL_REQUEST_GET_IMEI, dispatchVoid, responseString}
+
+#if 1
     char* responseStr;
 
     responseStr = strdup("356793032334716");
     RIL_onRequestComplete(t, RIL_E_SUCCESS, responseStr, sizeof(responseStr));
     free(responseStr);
 
-    /*
-    p_response = NULL;
+#else
+
+    ATResponse *p_response = NULL;
+    int err;
+
     err = at_send_command_numeric("AT+CGSN", &p_response);
 
     if (err < 0 || p_response->success == 0) {
@@ -2357,7 +2367,8 @@ static void requestGetIMEI(void *data, size_t datalen, RIL_Token t)
     }
     at_response_free(p_response);
     break;
-    */
+
+#endif
 }
 /*************************************************************************************************/
 
@@ -2585,20 +2596,6 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             requestGetIMEI(data, datalen, t);
             break;
 
-            /*
-            p_response = NULL;
-            err = at_send_command_numeric("AT+CGSN", &p_response);
-
-            if (err < 0 || p_response->success == 0) {
-                RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
-            } else {
-                RIL_onRequestComplete(t, RIL_E_SUCCESS,
-                    p_response->p_intermediates->line, sizeof(char *));
-            }
-            at_response_free(p_response);
-            break;
-            */
-
 	case RIL_REQUEST_GET_IMEISV:	/* VendorRIL basic */
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---");
             RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
@@ -2803,7 +2800,13 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             } // Fall-through if tech is not cdma
 
         case RIL_REQUEST_SCREEN_STATE:	/* VendorRIL basic */
-            RLOGI("--- VendorRIL not supported: RIL_REQUEST_SCREEN_STATE ---");
+            // {RIL_REQUEST_SCREEN_STATE, dispatchInts, responseVoid},
+            {
+                int* pData = (int*)data;
+                assert(datalen == 2*sizeof(int) && pData[0] == 1 && (pData[1] == 1 || pData[1] == 0));
+                RLOGI("[ScreenState]: %s", ((pData[1] == 1)? "ON" : "OFF"));
+                RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+            }
             break;
 
         case RIL_REQUEST_QUERY_FACILITY_LOCK:	/* VendorRIL basic */
