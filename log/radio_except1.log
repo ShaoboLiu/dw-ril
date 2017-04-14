@@ -1,0 +1,1372 @@
+04-14 10:59:53.730 I/RIL     (26472): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:03.730 I/RIL     (26472): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:13.730 I/RIL     (26472): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:23.730 I/RIL     (26472): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:33.730 I/RIL     (26472): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:43.730 I/RIL     (26472): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:53.730 I/RIL     (26472): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:53.740 D/RIL     (26472): ******** VendorRIL: setRadioState(0), oldState=1 ********
+04-14 11:00:53.740 D/AT      (26472): AT> ATE0Q0V1
+04-14 11:00:53.750 D/RILJ    ( 3342): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_OFF
+04-14 11:00:53.750 D/RILJ    ( 3342): [3677]> RADIO_POWER on
+04-14 11:00:53.750 D/PHONE   ( 3342): [ServiceState] setNullState=3
+04-14 11:00:53.750 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[3 3 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:00:53.750 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:00:53.750 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is off w/ showPlmn=false plmn=null
+04-14 11:00:53.760 D/RILJ    ( 3342): [3678]> SCREEN_STATE: false
+04-14 11:00:53.760 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='false' plmn='null' showSpn='false' spn=''
+04-14 11:00:53.780 D/GsmSST  ( 3342): [GsmSST] operatorNumeric is null
+04-14 11:00:53.780 D/GsmSST  ( 3342): [GsmSST] notifyDataRegStateRilRadioTechnologyChanged: drs=3 rat=0
+04-14 11:00:53.780 D/DCT     ( 3342): get all active apn types
+04-14 11:00:53.780 D/DCT     ( 3342): handleMessage msg={ when=-37ms what=270337 obj=android.os.AsyncResult@422d00f8 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:00:53.780 D/DCT     ( 3342): onRadioAvailable
+04-14 11:00:53.780 D/DCT     ( 3342): overall state is IDLE
+04-14 11:00:53.780 D/RILJ    ( 3342): [3679]> BASEBAND_VERSION
+04-14 11:00:53.790 D/RILJ    ( 3342): [3680]> GET_IMEI
+04-14 11:00:53.790 D/RILJ    ( 3342): [3681]> GET_IMEISV
+04-14 11:00:53.800 I/AT      (26472): ------ VendorRIL readerLoop: repeatedly readLine, processLine, handleUnsolicited, handleFinalResponse ------
+04-14 11:00:53.800 D/AT      (26472): AT< OK
+04-14 11:00:54.050 I/RIL     (26472): ------ VendorRIL: GSM AT Command for initialization ------
+04-14 11:00:54.050 D/AT      (26472): AT> AT+WNAM
+04-14 11:00:54.060 D/AT      (26472): AT< ERROR
+04-14 11:00:54.060 I/RIL     (26472): ======== VendorRIL: found GSM Modem Device ========
+04-14 11:00:54.060 D/AT      (26472): AT> ATE0Q0V1
+04-14 11:00:54.060 D/AT      (26472): AT< OK
+04-14 11:00:54.060 D/AT      (26472): AT> ATS0=0
+04-14 11:00:54.070 D/AT      (26472): AT< OK
+04-14 11:00:54.070 D/AT      (26472): AT> AT+CMEE=1
+04-14 11:00:54.090 D/AT      (26472): AT< OK
+04-14 11:00:54.090 D/AT      (26472): AT> AT+CREG=2
+04-14 11:00:54.090 D/AT      (26472): AT< OK
+04-14 11:00:54.090 D/AT      (26472): AT> AT+CGREG=1
+04-14 11:00:54.100 D/AT      (26472): AT< OK
+04-14 11:00:54.100 D/AT      (26472): AT> AT+CCWA=1
+04-14 11:00:54.100 D/AT      (26472): AT< OK
+04-14 11:00:54.100 D/AT      (26472): AT> AT+CMOD=0
+04-14 11:00:54.100 D/AT      (26472): AT< OK
+04-14 11:00:54.100 D/AT      (26472): AT> AT+CMUT=0
+04-14 11:00:54.110 D/AT      (26472): AT< OK
+04-14 11:00:54.110 D/AT      (26472): AT> AT+CSSN=0,1
+04-14 11:00:54.120 D/AT      (26472): AT< OK
+04-14 11:00:54.120 D/AT      (26472): AT> AT+COLP=0
+04-14 11:00:54.120 D/AT      (26472): AT< OK
+04-14 11:00:54.120 D/AT      (26472): AT> AT+CSCS="HEX"
+04-14 11:00:54.130 D/AT      (26472): AT< OK
+04-14 11:00:54.130 D/AT      (26472): AT> AT+CUSD=1
+04-14 11:00:54.140 D/AT      (26472): AT< OK
+04-14 11:00:54.140 D/AT      (26472): AT> AT+CGEREP=1,0
+04-14 11:00:54.150 D/AT      (26472): AT< OK
+04-14 11:00:54.150 D/AT      (26472): AT> AT+CMGF=0
+04-14 11:00:54.150 D/AT      (26472): AT< OK
+04-14 11:00:54.150 D/AT      (26472): AT> AT+CFUN?
+04-14 11:00:54.160 D/AT      (26472): AT< +CFUN: 1
+04-14 11:00:54.160 D/AT      (26472): AT< OK
+04-14 11:00:54.160 D/RIL     (26472): ******** VendorRIL: setRadioState(10), oldState=0 ********
+04-14 11:00:54.160 D/RIL     (26472): ******** VendorRIL: onRadioPowerOn pollSIMState, current state=10 ********
+04-14 11:00:54.160 I/RIL     (26472): ======== VendorRIL: AT Command initialize done, Radio_State=ON, sState=10 ========
+04-14 11:00:54.160 I/RIL     (26472): ------ VendorRIL onRequest: RADIO_POWER ------
+04-14 11:00:54.160 D/RIL     (26472): requestRadioPower: request to set [1], current state [10]
+04-14 11:00:54.160 D/RIL     (26472): requestRadioPower: error Unhandled state
+04-14 11:00:54.160 I/RIL     (26472): ------ VendorRIL onRequest: SCREEN_STATE ------
+04-14 11:00:54.160 I/RIL     (26472): --- VendorRIL not supported: RIL_REQUEST_SCREEN_STATE ---
+04-14 11:00:54.160 I/RIL     (26472): ------ VendorRIL onRequest: BASEBAND_VERSION ------
+04-14 11:00:54.160 I/RIL     (26472): ------ VendorRIL onRequest: GET_IMEI ------
+04-14 11:00:54.160 I/RIL     (26472): ------ VendorRIL onRequest: GET_IMEISV ------
+04-14 11:00:54.160 I/RIL     (26472): --- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---
+04-14 11:00:54.160 D/RILJ    ( 3342): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_ON
+04-14 11:00:54.160 D/RILJ    ( 3342): [3677]< RADIO_POWER 
+04-14 11:00:54.160 D/RILJ    ( 3342): [3679]< BASEBAND_VERSION E1750
+04-14 11:00:54.160 D/RILJ    ( 3342): [3680]< GET_IMEI 
+04-14 11:00:54.160 D/RilRequest( 3342): [3681]< GET_IMEISV error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:00:54.160 D/RILJ    ( 3342): [3682]> OPERATOR
+04-14 11:00:54.160 D/RILJ    ( 3342): [3683]> DATA_REGISTRATION_STATE
+04-14 11:00:54.160 I/RIL     (26472): ------ VendorRIL onRequest: OPERATOR ------
+04-14 11:00:54.160 D/AT      (26472): AT> AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+04-14 11:00:54.160 D/RILJ    ( 3342): [3684]> VOICE_REGISTRATION_STATE
+04-14 11:00:54.170 D/RILJ    ( 3342): [3685]> QUERY_NETWORK_SELECTION_MODE
+04-14 11:00:54.170 D/UiccController( 3342): Received EVENT_ICC_STATUS_CHANGED, calling getIccCardStatus[61854.736691] cpu1 turning on start...
+04-14 11:00:54.170 D/RILJ    ( 3342): [3686]> GET_SIM_STATUS
+04-14 11:00:54.170 D/RILJ    ( 3342): [3687]> GET_CURRENT_CALLS
+04-14 11:00:54.170 D/RILJ    ( 3342): [3688]> RIL_REQUEST_IMS_REGISTRATION_STATE
+04-14 11:00:54.170 D/RILJ    ( 3342): [3689]> RIL_REQUEST_VOICE_RADIO_TECH
+04-14 11:00:54.170 D/AT      (26472): AT< +COPS: 0
+04-14 11:00:54.170 D/AT      (26472): AT< +COPS: 0
+04-14 11:00:54.170 D/AT      (26472): AT< +COPS: 0
+04-14 11:00:54.170 D/AT      (26472): AT< OK
+04-14 11:00:54.170 D/RIL     (26472): [VendorRIL] requestOperator result: [0] = CAN Rogers Wirel
+04-14 11:00:54.170 D/RIL     (26472): [VendorRIL] requestOperator result: [1] = ROGERS
+04-14 11:00:54.170 D/RIL     (26472): [VendorRIL] requestOperator result: [2] = 302720
+04-14 11:00:54.170 I/RIL     (26472): ------ VendorRIL onRequest: DATA_REGISTRATION_STATE ------
+04-14 11:00:54.170 D/RIL     (26472): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:00:54.170 D/AT      (26472): AT> AT+CGREG?
+04-14 11:00:54.170 D/RILJ    ( 3342): [3682]< OPERATOR {CAN Rogers Wirel, ROGERS, 302720}
+04-14 11:00:54.170 D/RILJ    ( 3342): [3690]> RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE
+04-14 11:00:54.170 D/GSMPhone( 3342): Baseband version: E1750
+04-14 11:00:54.180 D/AT      (26472): AT< +CGREG: 1,0
+04-14 11:00:54.180 D/AT      (26472): AT< OK
+04-14 11:00:54.180 D/RIL     (26472): [DATA_REGISTRATION] response=+CGREG: 1,0
+04-14 11:00:54.180 D/RIL     (26472): parseRegistrationState. Parsing: +CGREG: 1,0
+04-14 11:00:54.180 D/RIL     (26472): registration state type: 3GPP
+04-14 11:00:54.180 I/RIL     (26472): ------ VendorRIL onRequest: VOICE_REGISTRATION_STATE ------
+04-14 11:00:54.180 D/RIL     (26472): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:00:54.180 D/AT      (26472): AT> AT+CREG?
+04-14 11:00:54.180 D/RILJ    ( 3342): [3683]< DATA_REGISTRATION_STATE {0, ffffffff, ffffffff, null, null, null}
+04-14 11:00:54.180 E/GsmSST  ( 3342): [GsmSST] error parsing GprsRegistrationState: java.lang.NumberFormatException: Invalid int: "null"
+04-14 11:00:54.180 D/PHONE   ( 3342): [ServiceState] setDataRegState=1
+04-14 11:00:54.180 D/PHONE   ( 3342): [ServiceState] setDataRadioTechnology=0
+04-14 11:00:54.180 D/GsmSST  ( 3342): [GsmSST] handlPollStateResultMessage: GsmSST setDataRegState=1 regState=0 dataRadioTechnology=0
+04-14 11:00:54.190 D/AT      (26472): AT< +CREG: 2,0
+04-14 11:00:54.190 D/AT      (26472): AT< OK
+04-14 11:00:54.190 D/RIL     (26472): [VOICE_REGISTRATION] response=+CREG: 2,0
+04-14 11:00:54.190 D/RIL     (26472): parseRegistrationState. Parsing: +CREG: 2,0
+04-14 11:00:54.190 D/RIL     (26472): registration state type: 3GPP
+04-14 11:00:54.190 I/RIL     (26472): ------ VendorRIL onRequest: QUERY_NETWORK_SELECTION_MODE ------
+04-14 11:00:54.190 D/AT      (26472): AT> AT+COPS?
+04-14 11:00:54.190 D/RILJ    ( 3342): [3684]< VOICE_REGISTRATION_STATE {0, ffffffff, ffffffff, null, null, null, null, null, null, null, null, null, null, null, null}
+04-14 11:00:54.190 E/GsmSST  ( 3342): [GsmSST] error parsing RegistrationState: java.lang.NumberFormatException: Invalid int: "ffffffff"
+04-14 11:00:54.190 D/PHONE   ( 3342): [ServiceState] setVoiceRegState=1
+04-14 11:00:54.190 E/PHONE   ( 3342): [ServiceState] setState deprecated use setVoiceRegState()
+04-14 11:00:54.200 D/AT      (26472): AT< +COPS: 0
+04-14 11:00:54.200 D/AT      (26472): AT< OK
+04-14 11:00:54.200 D/RIL     (26472): >>> QueryNetworkSelectionMode, response=0
+04-14 11:00:54.200 I/RIL     (26472): ------ VendorRIL onRequest: GET_SIM_STATUS ------
+04-14 11:00:54.200 D/RIL     (26472): getSIMStatus(). sState: 10
+04-14 11:00:54.200 D/AT      (26472): AT> AT+CPIN?
+04-14 11:00:54.200 D/RILJ    ( 3342): [3685]< QUERY_NETWORK_SELECTION_MODE {0}
+04-14 11:00:54.200 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[3 3 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:00:54.200 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:00:54.200 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:00:54.200 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='true' plmn='No service.' showSpn='false' spn=''
+04-14 11:00:54.200 D/AT      (26472): AT< +CPIN:READY
+04-14 11:00:54.200 D/AT      (26472): AT< OK
+04-14 11:00:54.200 D/RIL     (26472): [getSIMStatus] response=+CPIN:READY
+04-14 11:00:54.200 I/RIL     (26472): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------
+04-14 11:00:54.200 D/AT      (26472): AT> AT+CLCC
+04-14 11:00:54.200 D/RILJ    ( 3342): [3686]< GET_SIM_STATUS IccCardState {CARDSTATE_PRESENT,PINSTATE_UNKNOWN,num_apps=2,gsm_id=0{APPTYPE_SIM,APPSTATE_READY},cdma_id=1{APPTYPE_RUIM,APPSTATE_READY},ims_id=8}
+04-14 11:00:54.210 D/AT      (26472): AT< OK
+04-14 11:00:54.420 D/GsmSST  ( 3342): [GsmSST] pollStateDone: there are 6 unique offsets for iso-cc='ca testOneUniqueOffsetPath=false', do nothing
+04-14 11:00:54.420 D/GsmSST  ( 3342): [GsmSST] shouldFixTimeZoneNow: retVal=false iccCardExist=false operatorNumeric=302720 mcc=302 prevOperatorNumeric= prevMcc=303 needToFixTimeZone=false ltod=04-14 11:00:54.428
+04-14 11:00:54.420 D/GsmSST  ( 3342): [GsmSST] notifyDataRegStateRilRadioTechnologyChanged: drs=1 rat=0
+04-14 11:00:54.420 D/DCT     ( 3342): get all active apn types
+04-14 11:00:54.420 D/UiccController( 3342): Received EVENT_GET_ICC_STATUS_DONE
+04-14 11:00:54.430 D/UiccCard( 3342): Creating
+04-14 11:00:54.430 D/UiccCard( 3342): 2 applications
+04-14 11:00:54.430 D/UiccCardApplication( 3342): Creating UiccApp: {APPTYPE_SIM,APPSTATE_READY}
+04-14 11:00:54.430 W/VoiceMailConstants( 3342): Can't open /system/etc/voicemail-conf.xml
+04-14 11:00:54.430 W/SpnOverride( 3342): Can not open /system/etc/spn-conf.xml
+04-14 11:00:54.430 D/SIMRecords( 3342): [SIMRecords] SIMRecords: onRadioOffOrNotAvailable set 'gsm.sim.operator.numeric' to operator=null
+04-14 11:00:54.440 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:00:54.440 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:00:54.440 D/SIMRecords( 3342): [SIMRecords] SIMRecords X ctor this=SimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.SIMFileHandler) {42282c60} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@42277d20 recordsLoadedRegistrants=android.os.RegistrantList@421ca478 mImsiReadyRegistrants=android.os.RegistrantList@4227e6b0 mRecordsEventsRegistrants=android.os.RegistrantList@421cdcb0 mNewSmsRegistrants=android.os.RegistrantList@421a8bc0 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@42172ae0 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {422aa7e8} recordsRequested=false iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=-1 mailboxIndex=0 spn=null mVmConfigcom.android.internal.telephony.uicc.VoiceMailConstants@422acb20 mSpnOverride=mSpnOverride callForwardingEnabled=false spnState=null mCphsInfo=null mCspPlmnEnabled=true efMWIS=null efCPHS_MWI=null mEfCff=null mEfCfis=null getOperatorNumeric=null
+04-14 11:00:54.440 D/RILJ    ( 3342): [3691]> QUERY_FACILITY_LOCK [FD 7 null]
+04-14 11:00:54.440 D/RILJ    ( 3342): [3692]> QUERY_FACILITY_LOCK [SC 7 null]
+04-14 11:00:54.440 D/UiccCardApplication( 3342): Creating UiccApp: {APPTYPE_RUIM,APPSTATE_READY}
+04-14 11:00:54.440 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:00:54.440 D/RuimRecords( 3342): [RuimRecords] RuimRecords X ctor this=RuimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.RuimFileHandler) {421e4db0} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@421e4cb8 recordsLoadedRegistrants=android.os.RegistrantList@422c4cd0 mImsiReadyRegistrants=android.os.RegistrantList@421385e0 mRecordsEventsRegistrants=android.os.RegistrantList@4222d0a8 mNewSmsRegistrants=android.os.RegistrantList@42132968 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@42125b90 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {42258eb0} recordsRequested=false iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=-1 mailboxIndex=0 spn=null m_ota_commitedfalse mMyMobileNumber=xxxx mMin2Min1=null mPrlVersion=null mEFpl=null mEFli=null mCsimSpnDisplayCondition=false mMdn=null mMin=null mHomeSystemId=null mHomeNetworkId=null
+04-14 11:00:54.440 D/RILJ    ( 3342): [3693]> QUERY_FACILITY_LOCK [FD 7 null]
+04-14 11:00:54.440 D/RILJ    ( 3342): [3694]> QUERY_FACILITY_LOCK [SC 7 null]
+04-14 11:00:54.480 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:00:54.490 D/CAT     ( 3342): CatService: Running CAT service. STK app installed:false
+04-14 11:00:54.490 D/CAT     ( 3342): CatService: NEW sInstance
+04-14 11:00:54.490 E/UiccCard( 3342): App index 8 is invalid since there are no applications
+04-14 11:00:54.490 D/UiccCard( 3342): update: radioState=RADIO_ON mLastRadioState=RADIO_UNAVAILABLE
+04-14 11:00:54.490 D/UiccController( 3342): Notifying IccChangedRegistrants
+04-14 11:00:54.490 D/SIMRecords( 3342): [SIMRecords] fetchSimRecords 0
+04-14 11:00:54.490 D/RILJ    ( 3342): [3695]> getIMSI: GET_IMSI aid: null
+04-14 11:00:54.490 D/RILJ    ( 3342): [3696]> iccIO: SIM_IO 0xc0 0x2fe2  path: 3F00,0,0,15 aid: null
+04-14 11:00:54.490 D/RILJ    ( 3342): [3697]> iccIO: SIM_IO 0xc0 0x6f40  path: 3F007F10,0,0,15 aid: null
+04-14 11:00:54.490 D/RILJ    ( 3342): [3698]> iccIO: SIM_IO 0xc0 0x6fc9  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.490 D/RILJ    ( 3342): [3699]> iccIO: SIM_IO 0xc0 0x6fad  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.500 D/RILJ    ( 3342): [3700]> iccIO: SIM_IO 0xc0 0x6fca  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.500 D/RILJ    ( 3342): [3701]> iccIO: SIM_IO 0xc0 0x6f11  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.500 D/RILJ    ( 3342): [3702]> iccIO: SIM_IO 0xc0 0x6fcb  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.500 D/RILJ    ( 3342): [3703]> iccIO: SIM_IO 0xc0 0x6f13  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.500 D/RILJ    ( 3342): [3704]> iccIO: SIM_IO 0xc0 0x6f46  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.500 D/RILJ    ( 3342): [3705]> iccIO: SIM_IO 0xc0 0x6fcd  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.500 D/RILJ    ( 3342): [3706]> iccIO: SIM_IO 0xc0 0x6fc5  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.510 D/RILJ    ( 3342): [3707]> iccIO: SIM_IO 0xc0 0x6f38  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.510 D/RILJ    ( 3342): [3708]> iccIO: SIM_IO 0xc0 0x6f16  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.510 D/RILJ    ( 3342): [3709]> iccIO: SIM_IO 0xc0 0x6f15  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.510 D/RILJ    ( 3342): [3710]> iccIO: SIM_IO 0xc0 0x6f3e  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.510 D/SIMRecords( 3342): [SIMRecords] fetchSimRecords 16 requested: true
+04-14 11:00:54.510 D/RuimRecords( 3342): [RuimRecords] fetchRuimRecords 0
+04-14 11:00:54.510 D/RILJ    ( 3342): [3711]> getIMSI: GET_IMSI aid: null
+04-14 11:00:54.520 D/RILJ    ( 3342): [3712]> iccIO: SIM_IO 0xc0 0x2fe2  path: 3F00,0,0,15 aid: null
+04-14 11:00:54.520 D/RILJ    ( 3342): [3713]> iccIO: SIM_IO 0xc0 0x2f05  path: 3F00,0,0,15 aid: null
+04-14 11:00:54.520 D/RILJ    ( 3342): [3714]> iccIO: SIM_IO 0xc0 0x6f3a  path: 3F007F25,0,0,15 aid: null
+04-14 11:00:54.520 D/RILJ    ( 3342): [3715]> iccIO: SIM_IO 0xc0 0x6f41  path: 3F007F25,0,0,15 aid: null
+04-14 11:00:54.520 D/RILJ    ( 3342): [3716]> iccIO: SIM_IO 0xc0 0x6f44  path: 3F007F25,0,0,15 aid: null
+04-14 11:00:54.530 D/RILJ    ( 3342): [3717]> iccIO: SIM_IO 0xc0 0x6f22  path: 3F007F25,0,0,15 aid: null
+04-14 11:00:54.550 D/RILJ    ( 3342): [3718]> iccIO: SIM_IO 0xc0 0x6f28  path: 3F007F25,0,0,15 aid: null
+04-14 11:00:54.550 D/RILJ    ( 3342): [3719]> iccIO: SIM_IO 0xb0 0x6f5a  path: 3F007F25,0,0,4 aid: null
+04-14 11:00:54.550 D/RuimRecords( 3342): [RuimRecords] fetchRuimRecords 9 requested: true
+04-14 11:00:54.550 D/RILJ    ( 3342): [3720]> RIL_REQUEST_CDMA_SUBSCRIPTION
+04-14 11:00:54.550 D/CAT     ( 3342): CatService: SIM ready. Reporting STK service running now...
+04-14 11:00:54.550 D/RILJ    ( 3342): [3721]> RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING
+04-14 11:00:54.560 D/GSMPhone( 3342): [GSMPhone] New Uicc application found
+04-14 11:00:54.560 D/GsmSST  ( 3342): [GsmSST] New card found
+04-14 11:00:54.560 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:00:54.560 D/DCT     ( 3342): handleMessage msg={ when=-69ms what=270369 obj=android.os.AsyncResult@422d1118 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:00:54.560 D/DCT     ( 3342): New records found
+04-14 11:00:54.560 D/GsmSMSDispatcher( 3342): New Uicc application found
+04-14 11:00:54.560 D/IccCardProxy( 3342): Icc changed. Reregestering.
+04-14 11:00:54.560 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:00:54.560 D/IccCardProxy( 3342): Broadcasting intent ACTION_SIM_STATE_CHANGED READY reason null
+04-14 11:00:54.580 D/RILJ    ( 3342): setCurrentPreferredNetworkType: 0
+04-14 11:00:54.580 D/RILJ    ( 3342): [3722]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 0
+04-14 11:00:54.580 D/RILJ    ( 3342): [3723]> SET_NETWORK_SELECTION_AUTOMATIC
+04-14 11:00:54.580 D/RILJ    ( 3342): [3724]> OPERATOR
+04-14 11:00:54.590 D/RILJ    ( 3342): [3725]> DATA_REGISTRATION_STATE
+04-14 11:00:54.590 D/RILJ    ( 3342): [3726]> VOICE_REGISTRATION_STATE
+04-14 11:00:54.590 D/RILJ    ( 3342): [3727]> QUERY_NETWORK_SELECTION_MODE
+04-14 11:00:54.720 I/RILJ    ( 3342): 'rild' socket closed
+04-14 11:00:54.720 I/RILJ    ( 3342): java.io.IOException: Connection reset by peer
+04-14 11:00:54.720 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl.readba_native(Native Method)
+04-14 11:00:54.720 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl.access$400(LocalSocketImpl.java:33)
+04-14 11:00:54.720 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl$SocketInputStream.read(LocalSocketImpl.java:98)
+04-14 11:00:54.720 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL.readRilMessage(RIL.java:421)
+04-14 11:00:54.720 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL.access$400(RIL.java:215)
+04-14 11:00:54.720 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL$RILReceiver.run(RIL.java:521)
+04-14 11:00:54.720 I/RILJ    ( 3342): 	at java.lang.Thread.run(Thread.java:841)
+04-14 11:00:54.720 I/RILJ    ( 3342): Disconnected from 'rild' socket
+04-14 11:00:54.720 D/RilRequest( 3342): [3678]< SCREEN_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3687]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3688]< RIL_REQUEST_IMS_REGISTRATION_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3689]< RIL_REQUEST_VOICE_RADIO_TECH error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3690]< RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3691]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3692]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3693]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3694]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3695]< GET_IMSI error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3696]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3697]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3698]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3699]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3700]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3701]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3702]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3703]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3704]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3705]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3706]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3707]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3708]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3709]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3710]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3711]< GET_IMSI error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3712]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3713]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3714]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3715]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3716]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3717]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3718]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3719]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3720]< RIL_REQUEST_CDMA_SUBSCRIPTION error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3721]< RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3722]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3723]< SET_NETWORK_SELECTION_AUTOMATIC error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3724]< OPERATOR error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3725]< DATA_REGISTRATION_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3726]< VOICE_REGISTRATION_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/RilRequest( 3342): [3727]< QUERY_NETWORK_SELECTION_MODE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.720 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:00:54.720 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:00:54.720 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:00:54.720 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:00:54.720 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: changed sending intent rule=2 showPlmn='true' plmn='No service.' showSpn='false' spn='null'
+04-14 11:00:54.730 D/GsmSST  ( 3342): [GsmSST] operatorNumeric is null
+04-14 11:00:54.730 D/RILJ    ( 3342): [3177]> GET_CURRENT_CALLS
+04-14 11:00:54.730 D/RilRequest( 3342): [3177]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.730 D/DCT     ( 3342): handleMessage msg={ when=-16ms what=270342 obj=android.os.AsyncResult@42288560 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:00:54.730 D/DCT     ( 3342): onRadioOffOrNotAvailable: is off and clean up all connections
+04-14 11:00:54.730 D/DCT     ( 3342): cleanUpAllConnections: tearDown=false reason=radioTurnedOff
+04-14 11:00:54.730 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:54.730 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.730 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:00:54.740 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:00:54.740 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:54.740 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.740 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:00:54.740 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:00:54.740 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:54.740 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.740 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:00:54.750 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:00:54.750 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:54.750 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.750 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:00:54.750 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:00:54.750 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+04-14 11:00:54.750 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.750 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:00:54.760 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true} dcac=null
+04-14 11:00:54.760 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:54.760 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.760 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:00:54.790 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:00:54.790 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:54.790 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.790 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:00:54.800 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:00:54.800 D/DCT     ( 3342): stopNetStatPoll
+04-14 11:00:54.800 D/DCT     ( 3342): stopDataStallAlarm: current tag=81740 mDataStallAlarmIntent=null
+04-14 11:00:54.800 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.800 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:00:54.810 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.810 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:00:54.820 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.820 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:00:54.820 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.820 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:00:54.830 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.830 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:00:54.840 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.840 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:00:54.840 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:00:54.840 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:00:54.850 D/UiccCardApplication( 3342): handleMessage (EVENT_RADIO_OFF_OR_UNAVAILABLE)
+04-14 11:00:54.850 D/UiccCardApplication( 3342): handleMessage (EVENT_RADIO_OFF_OR_UNAVAILABLE)
+04-14 11:00:54.850 E/RIL_ImsSms( 3342): IMS State query failed with exp com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.850 E/PhoneProxy( 3342): [PhoneProxy] EVENT_REQUEST_VOICE_RADIO_TECH_DONE: exception=com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.850 D/CdmaSSM ( 3342): CDMA_SUBSCRIPTION_SOURCE event = 2
+04-14 11:00:54.850 W/CdmaSSM ( 3342): Unable to get CDMA Subscription Source, Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE, result: null
+04-14 11:00:54.850 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.850 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.860 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.860 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.860 E/SIMRecords( 3342): [SIMRecords] Exception querying IMSI, Exception:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.860 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 15 requested: true
+04-14 11:00:54.860 E/RuimRecords( 3342): [RuimRecords] Exception querying IMSI, Exception:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.860 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 8 requested: true
+04-14 11:00:54.870 I/RILD    (26612): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 14 requested: true
+04-14 11:00:54.890 D/RILJ    ( 3342): [3178]> iccIO: SIM_IO 0xc0 0x6f17  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.890 D/RilRequest( 3342): [3178]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 14 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] MNC length not present in EF_AD
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 13 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 12 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 11 requested: true
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: arguments from command ------
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: argc=5 ------
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: argv[0]=/system/bin/rild ------
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: argv[1]=-u ------
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: argv[2]=/dev/ttyUSB0 ------
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: argv[3]=-d ------
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: argv[4]=/dev/ttyUSB2 ------
+04-14 11:00:54.890 I/RIL     (26612): Opening tty device /dev/ttyUSB0
+04-14 11:00:54.890 I/RIL     (26612): Opening tty device /dev/ttyUSB2
+04-14 11:00:54.890 I/RIL     (26612): ------ VendorRIL Init argus: path_d=/dev/ttyUSB2 ------
+04-14 11:00:54.890 I/RIL     (26612): ------ VendorRIL Init argus: path_u=/dev/ttyUSB0 ------
+04-14 11:00:54.890 I/RIL     (26612): ------ VendorRIL Init success ------
+04-14 11:00:54.890 I/RILD    (26612): ------ VendorRIL initialize: return=funcs ------
+04-14 11:00:54.890 E/RILC    (26612): RIL_register: RIL version 9
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 10 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 9 requested: true
+04-14 11:00:54.890 D/RILJ    ( 3342): [3179]> iccIO: SIM_IO 0xc0 0x6f14  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.890 D/RilRequest( 3342): [3179]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 9 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 8 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 7 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 6 requested: true
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 5 requested: true
+04-14 11:00:54.890 E/SIMRecords( 3342): [SIMRecords] Exception in fetching EF_CSP data com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 4 requested: true
+04-14 11:00:54.890 E/SIMRecords( 3342): [SIMRecords] Exception in get GID1 com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 3 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 7 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] EF_PL LOADED
+04-14 11:00:54.890 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 6 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_LI LOADED
+04-14 11:00:54.890 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 5 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_SPN LOADED
+04-14 11:00:54.890 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 4 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_MDN LOADED
+04-14 11:00:54.890 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 3 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_IMSIM LOADED
+04-14 11:00:54.890 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 2 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_CDMAHOME LOADED
+04-14 11:00:54.890 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 1 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_EPRL LOADED
+04-14 11:00:54.890 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 0 requested: true
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] record load complete
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onAllRecordsLoaded empty 'gsm.sim.operator.numeric' skipping
+04-14 11:00:54.890 D/RuimRecords( 3342): [RuimRecords] onAllRecordsLoaded empty imsi skipping setting mcc
+04-14 11:00:54.920 I/RIL     (26612): ------ VendorRIL entering mainLoop() ------
+04-14 11:00:54.920 I/RIL     (26612): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
+04-14 11:00:54.920 I/RIL     (26612): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:00:54.920 D/RIL     (26612): ******** VendorRIL: setRadioState(0), oldState=1 ********
+04-14 11:00:54.920 D/AT      (26612): AT> ATE0Q0V1
+04-14 11:00:54.930 D/RuimRecords( 3342): [RuimRecords] No suitable CSIM selected locale
+04-14 11:00:54.930 I/AT      (26612): ------ VendorRIL readerLoop: repeatedly readLine, processLine, handleUnsolicited, handleFinalResponse ------
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] Invalid or missing EF[MSISDN]
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 2 requested: true
+04-14 11:00:54.940 D/RILJ    ( 3342): [3180]> iccIO: SIM_IO 0xc0 0x6f18  path: 3F007F20,0,0,15 aid: null
+04-14 11:00:54.940 D/RilRequest( 3342): [3180]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 2 requested: true
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] Invalid or missing EF[MAILBOX]
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 1 requested: true
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] No SPN loaded in either CHPS or 3GPP
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 0 requested: true
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] record load complete
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] onAllRecordsLoaded empty 'gsm.sim.operator.numeric' skipping
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] onAllRecordsLoaded empty imsi skipping setting mcc
+04-14 11:00:54.940 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:00:55.200 D/AT      (26612): AT> ATE0Q0V1
+04-14 11:00:55.220 D/AT      (26612): AT< OK
+04-14 11:00:55.440 I/RIL     (26612): ------ VendorRIL: GSM AT Command for initialization ------
+04-14 11:00:55.440 D/AT      (26612): AT> AT+WNAM
+04-14 11:00:55.500 D/AT      (26612): AT< ERROR
+04-14 11:00:55.500 I/RIL     (26612): ======== VendorRIL: found GSM Modem Device ========
+04-14 11:00:55.500 D/AT      (26612): AT> ATE0Q0V1
+04-14 11:00:55.580 D/AT      (26612): AT< OK
+04-14 11:00:55.580 D/AT      (26612): AT> ATS0=0
+04-14 11:00:55.820 D/AT      (26612): AT< OK
+04-14 11:00:55.830 D/AT      (26612): AT> AT+CMEE=1
+04-14 11:00:55.900 D/AT      (26612): AT< OK
+04-14 11:00:55.900 D/AT      (26612): AT> AT+CREG=2
+04-14 11:00:55.980 D/AT      (26612): AT< OK
+04-14 11:00:55.980 D/AT      (26612): AT> AT+CGREG=1
+04-14 11:00:55.990 D/AT      (26612): AT< OK
+04-14 11:00:55.990 D/AT      (26612): AT> AT+CCWA=1
+04-14 11:00:56.000 D/AT      (26612): AT< OK
+04-14 11:00:56.000 D/AT      (26612): AT> AT+CMOD=0
+04-14 11:00:56.010 D/AT      (26612): AT< OK
+04-14 11:00:56.010 D/AT      (26612): AT> AT+CMUT=0
+04-14 11:00:56.020 D/AT      (26612): AT< OK
+04-14 11:00:56.020 D/AT      (26612): AT> AT+CSSN=0,1
+04-14 11:00:56.040 D/AT      (26612): AT< OK
+04-14 11:00:56.040 D/AT      (26612): AT> AT+COLP=0
+04-14 11:00:56.050 D/AT      (26612): AT< OK
+04-14 11:00:56.050 D/AT      (26612): AT> AT+CSCS="HEX"
+04-14 11:00:56.050 D/AT      (26612): AT< OK
+04-14 11:00:56.050 D/AT      (26612): AT> AT+CUSD=1
+04-14 11:00:56.050 D/AT      (26612): AT< OK
+04-14 11:00:56.060 D/AT      (26612): AT> AT+CGEREP=1,0
+04-14 11:00:56.060 D/AT      (26612): AT< OK
+04-14 11:00:56.060 D/AT      (26612): AT> AT+CMGF=0
+04-14 11:00:56.080 D/AT      (26612): AT< OK
+04-14 11:00:56.080 D/AT      (26612): AT> AT+CFUN?
+04-14 11:00:56.090 D/AT      (26612): AT< +CFUN: 1
+04-14 11:00:56.090 D/AT      (26612): AT< OK
+04-14 11:00:56.090 D/RIL     (26612): ******** VendorRIL: setRadioState(10), oldState=0 ********
+04-14 11:00:56.090 D/RIL     (26612): ******** VendorRIL: onRadioPowerOn pollSIMState, current state=10 ********
+04-14 11:00:56.090 I/RIL     (26612): ======== VendorRIL: AT Command initialize done, Radio_State=ON, sState=10 ========
+04-14 11:00:58.050 D/GsmSST  ( 3342): [GsmSST] EVENT_SIM_RECORDS_LOADED: what=16
+04-14 11:00:58.050 D/PhoneProxy( 3342): [PhoneProxy] updatePhoneObject: radioTechnology=0
+04-14 11:00:58.050 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:00:58.050 D/DCT     ( 3342): handleMessage msg={ when=-3s106ms what=270338 obj=android.os.AsyncResult@4222af98 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:00:58.050 D/DCT     ( 3342): onRecordsLoaded: createAllApnList
+04-14 11:00:58.050 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:00:58.050 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:00:58.050 D/DCT     ( 3342): createAllApnList, r:SimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.SIMFileHandler) {42282c60} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@42277d20 recordsLoadedRegistrants=android.os.RegistrantList@421ca478 mImsiReadyRegistrants=android.os.RegistrantList@4227e6b0 mRecordsEventsRegistrants=android.os.RegistrantList@421cdcb0 mNewSmsRegistrants=android.os.RegistrantList@421a8bc0 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@42172ae0 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {422aa7e8} recordsRequested=true iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=0 mailboxIndex=0 spn=null mVmConfigcom.android.internal.telephony.uicc.VoiceMailConstants@422acb20 mSpnOverride=mSpnOverride callForwardingEnabled=false spnState=IDLE mCphsInfo=null mCspPlmnEnabled=true efMWIS=null efCPHS_MWI=null mEfCff=null mEfCfis=null getOperatorNumeric=null, operator:null
+04-14 11:00:58.050 D/DCT     ( 3342): createAllApnList: No APN found for carrier: null
+04-14 11:00:58.050 D/DCT     ( 3342): createAllApnList: X mAllApnSettings=[]
+04-14 11:00:58.050 D/DCT     ( 3342): setInitialApn: E mPreferredApn=null
+04-14 11:00:58.050 D/DCT     ( 3342): setInitialAttachApn: X There in no available apn
+04-14 11:00:58.050 D/DCT     ( 3342): setupDataOnConnectableApns: simLoaded
+04-14 11:00:58.050 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:58.050 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:58.050 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:58.050 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+04-14 11:00:58.050 D/DCT     ( 3342): setupDataOnConnectableApns: isConnectable() call trySetupData
+04-14 11:00:58.050 D/DCT     ( 3342): trySetupData for type:default due to simLoaded apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=simLoaded mDataEnabled=true mDependencyMet=true}
+04-14 11:00:58.050 D/DCT     ( 3342): trySetupData with mIsPsRestricted=false
+04-14 11:00:58.050 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.050 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.050 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:00:58.060 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.060 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:00:58.070 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.070 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:00:58.180 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.180 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:00:58.390 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.440 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:00:58.500 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.500 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:00:58.630 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.630 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:00:58.750 D/DCT     ( 3342): trySetupData: X apnContext not 'ready' retValue=false
+04-14 11:00:58.750 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:58.750 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:58.750 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:00:58.750 D/IccCardProxy( 3342): Broadcasting intent ACTION_SIM_STATE_CHANGED LOADED reason null
+04-14 11:00:58.760 D/PhoneProxy( 3342): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=0
+04-14 11:00:58.760 D/PhoneProxy( 3342): [PhoneProxy] phoneObjectUpdater: Unknown rat ignore,  newVoiceRadioTech=Unknown. mActivePhone=GSM
+04-14 11:00:58.760 I/RILJ    ( 3342): Connected to 'rild' socket
+04-14 11:00:58.760 I/RILC    (26612): libril: new connection
+04-14 11:00:58.760 I/RILC    (26612): RIL Daemon version: android reference-ril 1.0
+04-14 11:00:58.760 D/RILJ    ( 3342): [UNSL]< UNSOL_RIL_CONNECTED {9}
+04-14 11:00:58.760 D/RILJ    ( 3342): [3181]> RADIO_POWER off
+04-14 11:00:58.760 D/RILJ    ( 3342): [3182]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 0
+04-14 11:00:58.760 I/RIL     (26612): ------ VendorRIL onRequest: RADIO_POWER ------
+04-14 11:00:58.760 D/RIL     (26612): requestRadioPower: request to set [0], current state [10]
+04-14 11:00:58.760 D/AT      (26612): AT> AT+CFUN=0
+04-14 11:00:58.760 D/RILJ    ( 3342): [3183]> RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE : 1
+04-14 11:00:58.760 D/RILJ    ( 3342): setCellInfoListRate: 2147483647
+04-14 11:00:58.760 D/RILJ    ( 3342): [3184]> RIL_REQUEST_SET_CELL_INFO_LIST_RATE
+04-14 11:00:58.760 D/Dcc     ( 3342): DccDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=9
+04-14 11:00:58.770 D/RILJ    ( 3342): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_ON
+04-14 11:00:58.780 D/RILJ    ( 3342): [3186]> SCREEN_STATE: false
+04-14 11:00:58.780 D/RILJ    ( 3342): [3185]> OPERATOR
+04-14 11:00:58.780 D/RILJ    ( 3342): [3187]> DATA_REGISTRATION_STATE
+04-14 11:00:58.780 D/RILJ    ( 3342): [3188]> VOICE_REGISTRATION_STATE
+04-14 11:00:58.780 D/RILJ    ( 3342): [3189]> QUERY_NETWORK_SELECTION_MODE
+04-14 11:00:58.790 D/DCT     ( 3342): handleMessage msg={ when=-21ms what=270337 obj=android.os.AsyncResult@42240638 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:00:58.790 D/DCT     ( 3342): onRadioAvailable
+04-14 11:00:58.790 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:58.790 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:00:58.870 D/AT      (26612): AT< ERROR
+04-14 11:00:59.220 E/RIL     (26612): ------ VendorRIL error while requestRadioPower ------
+04-14 11:00:59.220 I/RIL     (26612): ------ VendorRIL onRequest: SET_PREFERRED_NETWORK_TYPE ------
+04-14 11:00:59.220 D/RIL     (26612): requestSetPreferredNetworkType: current: 1. New: 201
+04-14 11:00:59.220 I/RIL     (26612): ------ VendorRIL: PreferredNetworkType only GSM supported ------
+04-14 11:00:59.220 I/RIL     (26612): ------ VendorRIL onRequest: CDMA_SET_SUBSCRIPTION_SOURCE ------
+04-14 11:00:59.220 I/RIL     (26612): ------ VendorRIL onRequest: SET_UNSOL_CELL_INFO_LIST_RATE ------
+04-14 11:00:59.220 I/RIL     (26612): ------ VendorRIL onRequest: SCREEN_STATE ------
+04-14 11:00:59.220 I/RIL     (26612): --- VendorRIL not supported: RIL_REQUEST_SCREEN_STATE ---
+04-14 11:00:59.220 I/RIL     (26612): ------ VendorRIL onRequest: OPERATOR ------
+04-14 11:00:59.220 D/AT      (26612): AT> AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+04-14 11:00:59.220 D/RilRequest( 3342): [3181]< RADIO_POWER error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+04-14 11:00:59.220 D/RilRequest( 3342): [3182]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:00:59.220 D/RilRequest( 3342): [3183]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:00:59.220 D/RILJ    ( 3342): [3184]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE 
+04-14 11:00:59.470 D/AT      (26612): AT< +COPS: 2
+04-14 11:00:59.470 D/AT      (26612): AT< +COPS: 2
+04-14 11:00:59.470 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:59.470 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:00:59.470 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:59.470 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:00:59.550 D/AT      (26612): AT< +COPS: 2
+04-14 11:00:59.550 D/AT      (26612): AT< OK
+04-14 11:00:59.550 D/RIL     (26612): [VendorRIL] requestOperator result: [0] = CAN Rogers Wirel
+04-14 11:00:59.550 D/RIL     (26612): [VendorRIL] requestOperator result: [1] = ROGERS
+04-14 11:00:59.550 D/RIL     (26612): [VendorRIL] requestOperator result: [2] = 302720
+04-14 11:00:59.550 I/RIL     (26612): ------ VendorRIL onRequest: DATA_REGISTRATION_STATE ------
+04-14 11:00:59.550 D/RIL     (26612): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:00:59.550 D/AT      (26612): AT> AT+CGREG?
+04-14 11:00:59.550 D/RILJ    ( 3342): [3185]< OPERATOR {CAN Rogers Wirel, ROGERS, 302720}
+04-14 11:00:59.670 D/AT      (26612): AT< OK
+04-14 11:00:59.670 D/AT      (26612): AT< +CGREG: 1,2
+04-14 11:00:59.670 D/AT      (26612): AT< OK
+04-14 11:00:59.670 D/RIL     (26612): [DATA_REGISTRATION] response=+CGREG: 1,2
+04-14 11:00:59.670 D/RIL     (26612): parseRegistrationState. Parsing: +CGREG: 1,2
+04-14 11:00:59.670 D/RIL     (26612): registration state type: 3GPP
+04-14 11:00:59.670 I/RIL     (26612): ------ VendorRIL onRequest: VOICE_REGISTRATION_STATE ------
+04-14 11:00:59.670 D/RIL     (26612): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:00:59.670 D/AT      (26612): AT> AT+CREG?
+04-14 11:00:59.670 D/RILJ    ( 3342): [3187]< DATA_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null}
+04-14 11:00:59.670 D/AT      (26612): AT< +CREG: 2,2
+04-14 11:00:59.670 D/AT      (26612): AT< OK
+04-14 11:00:59.670 D/RIL     (26612): [VOICE_REGISTRATION] response=+CREG: 2,2
+04-14 11:00:59.670 D/RIL     (26612): parseRegistrationState. Parsing: +CREG: 2,2
+04-14 11:00:59.670 D/RIL     (26612): registration state type: 3GPP
+04-14 11:00:59.670 I/RIL     (26612): ------ VendorRIL onRequest: QUERY_NETWORK_SELECTION_MODE ------
+04-14 11:00:59.670 D/AT      (26612): AT> AT+COPS?
+04-14 11:00:59.670 D/RILJ    ( 3342): [3188]< VOICE_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null, null, null, null, null, null, null, null, null, null}
+04-14 11:00:59.670 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:59.670 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:00:59.890 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:59.890 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:00:59.910 D/AT      (26612): AT< +COPS: 2
+04-14 11:00:59.910 D/AT      (26612): AT< OK
+04-14 11:00:59.910 D/RIL     (26612): >>> QueryNetworkSelectionMode, response=2
+04-14 11:00:59.910 D/RILJ    ( 3342): [3189]< QUERY_NETWORK_SELECTION_MODE {2}
+04-14 11:00:59.910 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:59.910 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:00:59.960 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:00:59.960 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:00:59.980 D/DCT     ( 3342): overall state is IDLE
+04-14 11:00:59.980 D/RILJ    ( 3342): [3190]> BASEBAND_VERSION
+04-14 11:01:00.010 D/RILJ    ( 3342): [3191]> GET_IMEI
+04-14 11:01:00.010 I/RIL     (26612): ------ VendorRIL onRequest: BASEBAND_VERSION ------
+04-14 11:01:00.010 D/RILJ    ( 3342): [3192]> GET_IMEISV
+04-14 11:01:00.010 D/RILJ    ( 3342): [3190]< BASEBAND_VERSION E1750
+04-14 11:01:00.010 I/RIL     (26612): ------ VendorRIL onRequest: GET_IMEI ------
+04-14 11:01:00.010 D/UiccController( 3342): Received EVENT_ICC_STATUS_CHANGED, calling getIccCardStatus
+04-14 11:01:00.010 D/RILJ    ( 3342): [3193]> GET_SIM_STATUS
+04-14 11:01:00.020 I/RIL     (26612): ------ VendorRIL onRequest: GET_IMEISV ------
+04-14 11:01:00.020 I/RIL     (26612): --- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---
+04-14 11:01:00.020 D/RILJ    ( 3342): [3194]> GET_CURRENT_CALLS
+04-14 11:01:00.020 D/RILJ    ( 3342): [3191]< GET_IMEI 
+04-14 11:01:00.020 I/RIL     (26612): ------ VendorRIL onRequest: GET_SIM_STATUS ------
+04-14 11:01:00.020 D/RIL     (26612): getSIMStatus(). sState: 10
+04-14 11:01:00.020 D/AT      (26612): AT> AT+CPIN?
+04-14 11:01:00.020 D/RILJ    ( 3342): [3195]> RIL_REQUEST_IMS_REGISTRATION_STATE
+04-14 11:01:00.020 D/AT      (26612): AT< +CME ERROR: 10
+04-14 11:01:00.020 I/RIL     (26612): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------
+04-14 11:01:00.020 D/AT      (26612): AT> AT+CLCC
+04-14 11:01:00.020 D/RilRequest( 3342): [3192]< GET_IMEISV error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:01:00.020 D/RILJ    ( 3342): [3193]< GET_SIM_STATUS IccCardState {CARDSTATE_ABSENT,PINSTATE_UNKNOWN,num_apps=0,gsm_id=8,cdma_id=8,ims_id=8}
+04-14 11:01:00.030 D/RILJ    ( 3342): [3196]> RIL_REQUEST_VOICE_RADIO_TECH
+04-14 11:01:00.030 D/RILJ    ( 3342): [3197]> RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE
+04-14 11:01:00.040 D/AT      (26612): AT< OK
+04-14 11:01:00.040 E/GsmSST  ( 3342): [GsmSST] error parsing GprsRegistrationState: java.lang.NumberFormatException: Invalid int: "null"
+04-14 11:01:00.040 D/PHONE   ( 3342): [ServiceState] setDataRegState=1
+04-14 11:01:00.040 D/PHONE   ( 3342): [ServiceState] setDataRadioTechnology=0
+04-14 11:01:00.040 D/GsmSST  ( 3342): [GsmSST] handlPollStateResultMessage: GsmSST setDataRegState=1 regState=2 dataRadioTechnology=0
+04-14 11:01:00.040 E/GsmSST  ( 3342): [GsmSST] error parsing RegistrationState: java.lang.NumberFormatException: Invalid int: "ffffffff"
+04-14 11:01:00.040 D/PHONE   ( 3342): [ServiceState] setVoiceRegState=1
+04-14 11:01:00.040 E/PHONE   ( 3342): [ServiceState] setState deprecated use setVoiceRegState()
+04-14 11:01:00.040 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:01:00.040 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:00.040 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:01:00.080 D/GsmSST  ( 3342): [GsmSST] pollStateDone: there are 6 unique offsets for iso-cc='ca testOneUniqueOffsetPath=false', do nothing
+04-14 11:01:00.100 D/GsmSST  ( 3342): [GsmSST] shouldFixTimeZoneNow: retVal=false iccCardExist=false operatorNumeric=302720 mcc=302 prevOperatorNumeric= prevMcc=303 needToFixTimeZone=false ltod=04-14 11:01:00.088
+04-14 11:01:00.110 D/GSMPhone( 3342): Baseband version: E1750
+04-14 11:01:00.190 D/UiccController( 3342): Received EVENT_GET_ICC_STATUS_DONE
+04-14 11:01:00.190 D/UiccCard( 3342): 0 applications
+04-14 11:01:00.190 D/UiccCardApplication( 3342): APPTYPE_SIM being Disposed
+04-14 11:01:00.190 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:01:00.190 D/SIMRecords( 3342): [SIMRecords] Disposing SIMRecords this=SimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.SIMFileHandler) {42282c60} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@42277d20 recordsLoadedRegistrants=android.os.RegistrantList@421ca478 mImsiReadyRegistrants=android.os.RegistrantList@4227e6b0 mRecordsEventsRegistrants=android.os.RegistrantList@421cdcb0 mNewSmsRegistrants=android.os.RegistrantList@421a8bc0 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@42172ae0 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {422aa7e8} recordsRequested=true iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=0 mailboxIndex=0 spn=null mVmConfigcom.android.internal.telephony.uicc.VoiceMailConstants@422acb20 mSpnOverride=mSpnOverride callForwardingEnabled=false spnState=IDLE mCphsInfo=null mCspPlmnEnabled=true efMWIS=null efCPHS_MWI=null mEfCff=null mEfCfis=null getOperatorNumeric=null
+04-14 11:01:00.190 D/SIMRecords( 3342): [SIMRecords] SIMRecords: onRadioOffOrNotAvailable set 'gsm.sim.operator.numeric' to operator=null
+04-14 11:01:00.500 D/UiccCardApplication( 3342): APPTYPE_RUIM being Disposed
+04-14 11:01:00.520 D/RuimRecords( 3342): [RuimRecords] Disposing RuimRecords RuimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.RuimFileHandler) {421e4db0} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@421e4cb8 recordsLoadedRegistrants=android.os.RegistrantList@422c4cd0 mImsiReadyRegistrants=android.os.RegistrantList@421385e0 mRecordsEventsRegistrants=android.os.RegistrantList@4222d0a8 mNewSmsRegistrants=android.os.RegistrantList@42132968 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@42125b90 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {42258eb0} recordsRequested=true iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=-1 mailboxIndex=0 spn=null m_ota_commitedfalse mMyMobileNumber=xxxx mMin2Min1=null mPrlVersion=null mEFpl=null mEFli=null mCsimSpnDisplayCondition=false mMdn=null mMin=null mHomeSystemId=null mHomeNetworkId=null
+04-14 11:01:00.520 E/UiccCard( 3342): App index 8 is invalid since there are no applications
+04-14 11:01:00.520 E/UiccCard( 3342): App index 8 is invalid since there are no applications
+04-14 11:01:00.520 E/UiccCard( 3342): App index 8 is invalid since there are no applications
+04-14 11:01:00.520 D/UiccCard( 3342): update: radioState=RADIO_ON mLastRadioState=RADIO_ON
+04-14 11:01:00.520 D/UiccCard( 3342): update: notify card removed
+04-14 11:01:00.660 D/UiccController( 3342): Notifying IccChangedRegistrants
+04-14 11:01:00.670 D/IccCardProxy( 3342): Broadcasting intent ACTION_SIM_STATE_CHANGED ABSENT reason null
+04-14 11:01:00.710 I/RILJ    ( 3342): 'rild' socket closed
+04-14 11:01:00.710 I/RILJ    ( 3342): java.io.IOException: Connection reset by peer
+04-14 11:01:00.710 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl.readba_native(Native Method)
+04-14 11:01:00.710 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl.access$400(LocalSocketImpl.java:33)
+04-14 11:01:00.710 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl$SocketInputStream.read(LocalSocketImpl.java:98)
+04-14 11:01:00.710 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL.readRilMessage(RIL.java:421)
+04-14 11:01:00.710 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL.access$400(RIL.java:215)
+04-14 11:01:00.710 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL$RILReceiver.run(RIL.java:521)
+04-14 11:01:00.710 I/RILJ    ( 3342): 	at java.lang.Thread.run(Thread.java:841)
+04-14 11:01:00.710 I/RILJ    ( 3342): Disconnected from 'rild' socket
+04-14 11:01:00.710 D/RilRequest( 3342): [3186]< SCREEN_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:00.710 D/RilRequest( 3342): [3194]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:00.710 D/RilRequest( 3342): [3195]< RIL_REQUEST_IMS_REGISTRATION_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:00.710 D/RilRequest( 3342): [3196]< RIL_REQUEST_VOICE_RADIO_TECH error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:00.710 D/RilRequest( 3342): [3197]< RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: arguments from command ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: argc=5 ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: argv[0]=/system/bin/rild ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: argv[1]=-u ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: argv[2]=/dev/ttyUSB0 ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: argv[3]=-d ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: argv[4]=/dev/ttyUSB2 ------
+04-14 11:01:00.730 I/RIL     (26628): Opening tty device /dev/ttyUSB0
+04-14 11:01:00.730 I/RIL     (26628): Opening tty device /dev/ttyUSB2
+04-14 11:01:00.730 I/RIL     (26628): ------ VendorRIL Init argus: path_d=/dev/ttyUSB2 ------
+04-14 11:01:00.730 I/RIL     (26628): ------ VendorRIL Init argus: path_u=/dev/ttyUSB0 ------
+04-14 11:01:00.730 I/RIL     (26628): ------ VendorRIL Init success ------
+04-14 11:01:00.730 I/RILD    (26628): ------ VendorRIL initialize: return=funcs ------
+04-14 11:01:00.730 E/RILC    (26628): RIL_register: RIL version 9
+04-14 11:01:00.730 I/RIL     (26628): ------ VendorRIL entering mainLoop() ------
+04-14 11:01:00.730 I/RIL     (26628): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
+04-14 11:01:00.730 I/RIL     (26628): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:01:00.730 D/RIL     (26628): ******** VendorRIL: setRadioState(0), oldState=1 ********
+04-14 11:01:00.730 D/AT      (26628): AT> ATE0Q0V1
+04-14 11:01:00.750 I/AT      (26628): ------ VendorRIL readerLoop: repeatedly readLine, processLine, handleUnsolicited, handleFinalResponse ------
+04-14 11:01:00.770 D/RuimRecords( 3342): [RuimRecords] RuimRecords finalized
+04-14 11:01:00.860 D/GSMPhone( 3342): [GSMPhone] Removing stale icc objects.
+04-14 11:01:00.860 D/GsmSST  ( 3342): [GsmSST] Removing stale icc objects.
+04-14 11:01:00.860 D/DCT     ( 3342): handleMessage msg={ when=-204ms what=270369 obj=android.os.AsyncResult@421665d0 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:01:00.860 D/DCT     ( 3342): newIccRecords is in APP_FAM_3GPP2
+04-14 11:01:00.860 D/DCT     ( 3342): Removing stale icc objects.
+04-14 11:01:00.860 D/GsmSMSDispatcher( 3342): Removing stale icc objects.
+04-14 11:01:00.860 D/IccCardProxy( 3342): Icc changed. Reregestering.
+04-14 11:01:00.860 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:00.860 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:01:00.860 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:00.860 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:01:00.860 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='true' plmn='No service.' showSpn='false' spn=''
+04-14 11:01:00.990 D/AT      (26628): AT> ATE0Q0V1
+04-14 11:01:01.010 D/GsmSST  ( 3342): [GsmSST] operatorNumeric is null
+04-14 11:01:01.010 D/RILJ    ( 3342): [8800]> GET_CURRENT_CALLS
+04-14 11:01:01.010 D/RilRequest( 3342): [8800]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:01.010 D/DCT     ( 3342): handleMessage msg={ when=-304ms what=270342 obj=android.os.AsyncResult@4226a9b8 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:01:01.010 D/DCT     ( 3342): onRadioOffOrNotAvailable: is off and clean up all connections
+04-14 11:01:01.010 D/DCT     ( 3342): cleanUpAllConnections: tearDown=false reason=radioTurnedOff
+04-14 11:01:01.010 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:01.010 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.010 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:01:01.010 D/AT      (26628): AT< OK
+04-14 11:01:01.020 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:01.020 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:01.020 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.020 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:01:01.260 I/RIL     (26628): ------ VendorRIL: GSM AT Command for initialization ------
+04-14 11:01:01.260 D/AT      (26628): AT> AT+WNAM
+04-14 11:01:01.300 D/AT      (26628): AT< ERROR
+04-14 11:01:01.300 I/RIL     (26628): ======== VendorRIL: found GSM Modem Device ========
+04-14 11:01:01.300 D/AT      (26628): AT> ATE0Q0V1
+04-14 11:01:01.330 D/AT      (26628): AT< OK
+04-14 11:01:01.330 D/AT      (26628): AT> ATS0=0
+04-14 11:01:01.330 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:01.330 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:01.330 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.330 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:01:01.330 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:01.330 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:01.330 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.330 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:01:01.330 D/AT      (26628): AT< OK
+04-14 11:01:01.330 D/AT      (26628): AT> AT+CMEE=1
+04-14 11:01:01.330 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:01.330 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+04-14 11:01:01.330 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.330 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:01:01.340 D/AT      (26628): AT< OK
+04-14 11:01:01.340 D/AT      (26628): AT> AT+CREG=2
+04-14 11:01:01.340 D/AT      (26628): AT< OK
+04-14 11:01:01.340 D/AT      (26628): AT> AT+CGREG=1
+04-14 11:01:01.340 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true} dcac=null
+04-14 11:01:01.340 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:01.340 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.340 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:01:01.480 D/AT      (26628): AT< OK
+04-14 11:01:01.520 D/AT      (26628): AT> AT+CCWA=1
+04-14 11:01:01.630 D/AT      (26628): AT< OK
+04-14 11:01:01.630 D/AT      (26628): AT> AT+CMOD=0
+04-14 11:01:01.640 D/AT      (26628): AT< OK
+04-14 11:01:01.640 D/AT      (26628): AT> AT+CMUT=0
+04-14 11:01:01.730 D/AT      (26628): AT< OK
+04-14 11:01:01.740 D/AT      (26628): AT> AT+CSSN=0,1
+04-14 11:01:01.750 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:01.750 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:01.750 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.750 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:01:01.750 D/AT      (26628): AT< OK
+04-14 11:01:01.750 D/AT      (26628): AT> AT+COLP=0
+04-14 11:01:01.750 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:01.750 D/DCT     ( 3342): stopNetStatPoll
+04-14 11:01:01.750 D/DCT     ( 3342): stopDataStallAlarm: current tag=81741 mDataStallAlarmIntent=null
+04-14 11:01:01.750 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.750 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:01:01.780 D/AT      (26628): AT< OK
+04-14 11:01:01.780 D/AT      (26628): AT> AT+CSCS="HEX"
+04-14 11:01:01.780 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.780 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:01:01.780 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.780 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:01:01.810 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.810 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:01:01.810 D/AT      (26628): AT< OK
+04-14 11:01:01.810 D/AT      (26628): AT> AT+CUSD=1
+04-14 11:01:01.810 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.810 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:01:01.810 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.810 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:01:01.830 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:01.830 D/AT      (26628): AT< OK
+04-14 11:01:01.830 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:01:01.830 D/AT      (26628): AT> AT+CGEREP=1,0
+04-14 11:01:01.840 D/AT      (26628): AT< OK
+04-14 11:01:01.840 D/AT      (26628): AT> AT+CMGF=0
+04-14 11:01:01.840 E/UiccCardApplication( 3342): Received message { when=-1s127ms what=103 obj=android.os.AsyncResult@4226aa00 target=com.android.internal.telephony.uicc.UiccCardApplication$1 }[103] while being destroyed. Ignoring.
+04-14 11:01:01.840 E/UiccCardApplication( 3342): Received message { when=-1s127ms what=103 obj=android.os.AsyncResult@4226aa18 target=com.android.internal.telephony.uicc.UiccCardApplication$1 }[103] while being destroyed. Ignoring.
+04-14 11:01:01.840 E/RIL_ImsSms( 3342): IMS State query failed with exp com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:01.840 E/PhoneProxy( 3342): [PhoneProxy] EVENT_REQUEST_VOICE_RADIO_TECH_DONE: exception=com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:01.840 D/CdmaSSM ( 3342): CDMA_SUBSCRIPTION_SOURCE event = 2
+04-14 11:01:01.840 W/CdmaSSM ( 3342): Unable to get CDMA Subscription Source, Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE, result: null
+04-14 11:01:01.840 D/AT      (26628): AT< OK
+04-14 11:01:01.840 D/AT      (26628): AT> AT+CFUN?
+04-14 11:01:01.840 D/AT      (26628): AT< +CFUN: 0
+04-14 11:01:01.840 D/AT      (26628): AT< OK
+04-14 11:01:01.840 I/RIL     (26628): ======== VendorRIL: AT Command initialize done, Radio_State=OFF, sState=0 ========
+04-14 11:01:04.710 I/RILC    (26628): libril: new connection
+04-14 11:01:04.710 I/RILJ    ( 3342): Connected to 'rild' socket
+04-14 11:01:04.710 I/RILC    (26628): RIL Daemon version: android reference-ril 1.0
+04-14 11:01:04.710 D/RILJ    ( 3342): [UNSL]< UNSOL_RIL_CONNECTED {9}
+04-14 11:01:04.710 D/RILJ    ( 3342): [8801]> RADIO_POWER off
+04-14 11:01:04.720 I/RIL     (26628): ------ VendorRIL onRequest: RADIO_POWER ------
+04-14 11:01:04.720 D/RIL     (26628): requestRadioPower: request to set [0], current state [0]
+04-14 11:01:04.720 D/RIL     (26628): requestRadioPower: error Unhandled state
+04-14 11:01:04.720 D/RILJ    ( 3342): [8802]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 0
+04-14 11:01:04.720 I/RIL     (26628): ------ VendorRIL onRequest: SET_PREFERRED_NETWORK_TYPE ------
+04-14 11:01:04.720 D/RILJ    ( 3342): [8803]> RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE : 1
+04-14 11:01:04.720 D/RILJ    ( 3342): setCellInfoListRate: 2147483647
+04-14 11:01:04.720 D/RILJ    ( 3342): [8804]> RIL_REQUEST_SET_CELL_INFO_LIST_RATE
+04-14 11:01:04.740 I/RIL     (26628): ------ VendorRIL onRequest: CDMA_SET_SUBSCRIPTION_SOURCE ------
+04-14 11:01:04.740 I/RIL     (26628): ------ VendorRIL onRequest: SET_UNSOL_CELL_INFO_LIST_RATE ------
+04-14 11:01:04.740 D/RILJ    ( 3342): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_OFF
+04-14 11:01:04.740 D/RILJ    ( 3342): [8805]> RADIO_POWER on
+04-14 11:01:04.740 D/PHONE   ( 3342): [ServiceState] setNullState=3
+04-14 11:01:04.740 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[3 3 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:01:04.740 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:04.740 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is off w/ showPlmn=false plmn=null
+04-14 11:01:04.740 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='false' plmn='null' showSpn='false' spn=''
+04-14 11:01:04.740 D/GsmSST  ( 3342): [GsmSST] operatorNumeric is null
+04-14 11:01:04.750 D/Dcc     ( 3342): DccDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=9
+04-14 11:01:04.750 D/GsmSST  ( 3342): [GsmSST] notifyDataRegStateRilRadioTechnologyChanged: drs=3 rat=0
+04-14 11:01:04.750 I/RIL     (26628): ------ VendorRIL onRequest: RADIO_POWER ------
+04-14 11:01:04.750 D/RIL     (26628): requestRadioPower: request to set [1], current state [0]
+04-14 11:01:04.750 D/AT      (26628): AT> AT+CFUN=1
+04-14 11:01:04.750 D/DCT     ( 3342): get all active apn types
+04-14 11:01:04.750 D/DCT     ( 3342): handleMessage msg={ when=0 what=270337 obj=android.os.AsyncResult@420e3588 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:01:04.750 D/DCT     ( 3342): onRadioAvailable
+04-14 11:01:04.750 D/DCT     ( 3342): overall state is IDLE
+04-14 11:01:04.750 D/RILJ    ( 3342): [8806]> BASEBAND_VERSION
+04-14 11:01:04.750 D/RILJ    ( 3342): [8807]> GET_IMEI
+04-14 11:01:04.750 D/RILJ    ( 3342): [8808]> GET_IMEISV
+04-14 11:01:04.750 D/RILJ    ( 3342): [8809]> SCREEN_STATE: false
+04-14 11:01:04.760 D/RILJ    ( 3342): [8801]< RADIO_POWER 
+04-14 11:01:04.760 D/RilRequest( 3342): [8802]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:04.760 D/RilRequest( 3342): [8803]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:04.760 D/RilRequest( 3342): [8804]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.140 D/AT      (26628): AT< OK
+04-14 11:01:05.140 D/RIL     (26628): ******** VendorRIL: setRadioState(10), oldState=0 ********
+04-14 11:01:05.140 D/RIL     (26628): ******** VendorRIL: onRadioPowerOn pollSIMState, current state=10 ********
+04-14 11:01:05.140 D/RIL     (26628): requestRadioPower: success set RadioState_ON
+04-14 11:01:05.140 I/RIL     (26628): ------ VendorRIL onRequest: BASEBAND_VERSION ------
+04-14 11:01:05.140 D/RILJ    ( 3342): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_ON
+04-14 11:01:05.140 I/RIL     (26628): ------ VendorRIL onRequest: GET_IMEI ------
+04-14 11:01:05.140 I/RIL     (26628): ------ VendorRIL onRequest: GET_IMEISV ------
+04-14 11:01:05.140 I/RIL     (26628): --- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---
+04-14 11:01:05.140 I/RIL     (26628): ------ VendorRIL onRequest: SCREEN_STATE ------
+04-14 11:01:05.140 I/RIL     (26628): --- VendorRIL not supported: RIL_REQUEST_SCREEN_STATE ---
+04-14 11:01:05.140 D/RILJ    ( 3342): [8810]> OPERATOR
+04-14 11:01:05.140 D/RILJ    ( 3342): [8811]> DATA_REGISTRATION_STATE
+04-14 11:01:05.140 D/RILJ    ( 3342): [8812]> VOICE_REGISTRATION_STATE
+04-14 11:01:05.140 D/RILJ    ( 3342): [8813]> QUERY_NETWORK_SELECTION_MODE
+04-14 11:01:05.150 I/RIL     (26628): ------ VendorRIL onRequest: OPERATOR ------
+04-14 11:01:05.150 D/AT      (26628): AT> AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+04-14 11:01:05.150 D/RILJ    ( 3342): [8805]< RADIO_POWER 
+04-14 11:01:05.150 D/RILJ    ( 3342): [8806]< BASEBAND_VERSION E1750
+04-14 11:01:05.150 D/RILJ    ( 3342): [8807]< GET_IMEI 
+04-14 11:01:05.150 D/RilRequest( 3342): [8808]< GET_IMEISV error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:01:05.150 D/UiccController( 3342): Received EVENT_ICC_STATUS_CHANGED, calling getIccCardStatus
+04-14 11:01:05.150 D/RILJ    ( 3342): [8814]> GET_SIM_STATUS
+04-14 11:01:05.150 D/RILJ    ( 3342): [8815]> GET_CURRENT_CALLS
+04-14 11:01:05.150 D/RILJ    ( 3342): [8816]> RIL_REQUEST_IMS_REGISTRATION_STATE
+04-14 11:01:05.150 D/RILJ    ( 3342): [8817]> RIL_REQUEST_VOICE_RADIO_TECH
+04-14 11:01:05.150 D/RILJ    ( 3342): [8818]> RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE
+04-14 11:01:05.160 D/GSMPhone( 3342): Baseband version: E1750
+04-14 11:01:05.210 D/AT      (26628): AT< +COPS: 0
+04-14 11:01:05.210 D/AT      (26628): AT< +COPS: 0
+04-14 11:01:05.210 D/AT      (26628): AT< +COPS: 0
+04-14 11:01:05.210 D/AT      (26628): AT< OK
+04-14 11:01:05.210 D/RIL     (26628): [VendorRIL] requestOperator result: [0] = CAN Rogers Wirel
+04-14 11:01:05.210 D/RIL     (26628): [VendorRIL] requestOperator result: [1] = ROGERS
+04-14 11:01:05.210 D/RIL     (26628): [VendorRIL] requestOperator result: [2] = 302720
+04-14 11:01:05.210 I/RIL     (26628): ------ VendorRIL onRequest: DATA_REGISTRATION_STATE ------
+04-14 11:01:05.210 D/RIL     (26628): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:01:05.210 D/AT      (26628): AT> AT+CGREG?
+04-14 11:01:05.210 D/RILJ    ( 3342): [8810]< OPERATOR {CAN Rogers Wirel, ROGERS, 302720}
+04-14 11:01:05.210 D/AT      (26628): AT< +CGREG: 1,2
+04-14 11:01:05.210 D/AT      (26628): AT< OK
+04-14 11:01:05.210 D/RIL     (26628): [DATA_REGISTRATION] response=+CGREG: 1,2
+04-14 11:01:05.210 D/RIL     (26628): parseRegistrationState. Parsing: +CGREG: 1,2
+04-14 11:01:05.210 D/RIL     (26628): registration state type: 3GPP
+04-14 11:01:05.210 I/RIL     (26628): ------ VendorRIL onRequest: VOICE_REGISTRATION_STATE ------
+04-14 11:01:05.210 D/RIL     (26628): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:01:05.210 D/AT      (26628): AT> AT+CREG?
+04-14 11:01:05.210 D/RILJ    ( 3342): [8811]< DATA_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null}
+04-14 11:01:05.220 E/GsmSST  ( 3342): [GsmSST] error parsing GprsRegistrationState: java.lang.NumberFormatException: Invalid int: "null"
+04-14 11:01:05.220 D/PHONE   ( 3342): [ServiceState] setDataRegState=1
+04-14 11:01:05.220 D/PHONE   ( 3342): [ServiceState] setDataRadioTechnology=0
+04-14 11:01:05.220 D/GsmSST  ( 3342): [GsmSST] handlPollStateResultMessage: GsmSST setDataRegState=1 regState=2 dataRadioTechnology=0
+04-14 11:01:05.220 D/AT      (26628): AT< +CREG: 2,2
+04-14 11:01:05.220 D/AT      (26628): AT< OK
+04-14 11:01:05.220 D/RIL     (26628): [VOICE_REGISTRATION] response=+CREG: 2,2
+04-14 11:01:05.220 D/RIL     (26628): parseRegistrationState. Parsing: +CREG: 2,2
+04-14 11:01:05.220 D/RIL     (26628): registration state type: 3GPP
+04-14 11:01:05.220 I/RIL     (26628): ------ VendorRIL onRequest: QUERY_NETWORK_SELECTION_MODE ------
+04-14 11:01:05.220 D/AT      (26628): AT> AT+COPS?
+04-14 11:01:05.220 D/RILJ    ( 3342): [8812]< VOICE_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null, null, null, null, null, null, null, null, null, null}
+04-14 11:01:05.220 E/GsmSST  ( 3342): [GsmSST] error parsing RegistrationState: java.lang.NumberFormatException: Invalid int: "ffffffff"
+04-14 11:01:05.220 D/PHONE   ( 3342): [ServiceState] setVoiceRegState=1
+04-14 11:01:05.220 E/PHONE   ( 3342): [ServiceState] setState deprecated use setVoiceRegState()
+04-14 11:01:05.240 D/AT      (26628): AT< +COPS: 0
+04-14 11:01:05.240 D/AT      (26628): AT< OK
+04-14 11:01:05.240 D/RIL     (26628): >>> QueryNetworkSelectionMode, response=0
+04-14 11:01:05.240 I/RIL     (26628): ------ VendorRIL onRequest: GET_SIM_STATUS ------
+04-14 11:01:05.240 D/RIL     (26628): getSIMStatus(). sState: 10
+04-14 11:01:05.240 D/AT      (26628): AT> AT+CPIN?
+04-14 11:01:05.240 D/RILJ    ( 3342): [8813]< QUERY_NETWORK_SELECTION_MODE {0}
+04-14 11:01:05.240 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[3 3 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:01:05.240 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:05.240 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:01:05.240 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='true' plmn='No service.' showSpn='false' spn=''
+04-14 11:01:05.240 D/GsmSST  ( 3342): [GsmSST] pollStateDone: there are 6 unique offsets for iso-cc='ca testOneUniqueOffsetPath=false', do nothing
+04-14 11:01:05.240 D/GsmSST  ( 3342): [GsmSST] shouldFixTimeZoneNow: retVal=false iccCardExist=false operatorNumeric=302720 mcc=302 prevOperatorNumeric= prevMcc=303 needToFixTimeZone=false ltod=04-14 11:01:05.248
+04-14 11:01:05.240 D/GsmSST  ( 3342): [GsmSST] notifyDataRegStateRilRadioTechnologyChanged: drs=1 rat=0
+04-14 11:01:05.240 D/DCT     ( 3342): get all active apn types
+04-14 11:01:05.240 D/AT      (26628): AT< +CPIN:READY
+04-14 11:01:05.280 D/AT      (26628): AT< OK
+04-14 11:01:05.280 D/RIL     (26628): [getSIMStatus] response=+CPIN:READY
+04-14 11:01:05.300 I/RIL     (26628): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------
+04-14 11:01:05.300 D/AT      (26628): AT> AT+CLCC
+04-14 11:01:05.300 D/RILJ    ( 3342): [8814]< GET_SIM_STATUS IccCardState {CARDSTATE_PRESENT,PINSTATE_UNKNOWN,num_apps=2,gsm_id=0{APPTYPE_SIM,APPSTATE_READY},cdma_id=1{APPTYPE_RUIM,APPSTATE_READY},ims_id=8}
+04-14 11:01:05.300 D/UiccController( 3342): Received EVENT_GET_ICC_STATUS_DONE
+04-14 11:01:05.300 D/UiccCard( 3342): 2 applications
+04-14 11:01:05.320 D/AT      (26628): AT< OK
+04-14 11:01:05.370 D/UiccCardApplication( 3342): Creating UiccApp: {APPTYPE_SIM,APPSTATE_READY}
+04-14 11:01:05.450 W/VoiceMailConstants( 3342): Can't open /system/etc/voicemail-conf.xml
+04-14 11:01:05.450 W/SpnOverride( 3342): Can not open /system/etc/spn-conf.xml
+04-14 11:01:05.450 D/SIMRecords( 3342): [SIMRecords] SIMRecords: onRadioOffOrNotAvailable set 'gsm.sim.operator.numeric' to operator=null
+04-14 11:01:05.450 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:01:05.450 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:01:05.450 D/SIMRecords( 3342): [SIMRecords] SIMRecords X ctor this=SimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.SIMFileHandler) {420d70e8} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@42157448 recordsLoadedRegistrants=android.os.RegistrantList@42157500 mImsiReadyRegistrants=android.os.RegistrantList@42116ca0 mRecordsEventsRegistrants=android.os.RegistrantList@42111878 mNewSmsRegistrants=android.os.RegistrantList@42096b38 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@420967d8 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {420d7280} recordsRequested=false iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=-1 mailboxIndex=0 spn=null mVmConfigcom.android.internal.telephony.uicc.VoiceMailConstants@4208d018 mSpnOverride=mSpnOverride callForwardingEnabled=false spnState=null mCphsInfo=null mCspPlmnEnabled=true efMWIS=null efCPHS_MWI=null mEfCff=null mEfCfis=null getOperatorNumeric=null
+04-14 11:01:05.450 D/RILJ    ( 3342): [8819]> QUERY_FACILITY_LOCK [FD 7 null]
+04-14 11:01:05.450 D/RILJ    ( 3342): [8820]> QUERY_FACILITY_LOCK [SC 7 null]
+04-14 11:01:05.470 D/UiccCardApplication( 3342): Creating UiccApp: {APPTYPE_RUIM,APPSTATE_READY}
+04-14 11:01:05.470 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:01:05.470 D/RuimRecords( 3342): [RuimRecords] RuimRecords X ctor this=RuimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.RuimFileHandler) {420a11b0} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@42081448 recordsLoadedRegistrants=android.os.RegistrantList@42087aa0 mImsiReadyRegistrants=android.os.RegistrantList@4210bd88 mRecordsEventsRegistrants=android.os.RegistrantList@421511a0 mNewSmsRegistrants=android.os.RegistrantList@421071b8 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@42314410 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {42147140} recordsRequested=false iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=-1 mailboxIndex=0 spn=null m_ota_commitedfalse mMyMobileNumber=xxxx mMin2Min1=null mPrlVersion=null mEFpl=null mEFli=null mCsimSpnDisplayCondition=false mMdn=null mMin=null mHomeSystemId=null mHomeNetworkId=null
+04-14 11:01:05.470 D/RILJ    ( 3342): [8821]> QUERY_FACILITY_LOCK [FD 7 null]
+04-14 11:01:05.470 D/RILJ    ( 3342): [8822]> QUERY_FACILITY_LOCK [SC 7 null]
+04-14 11:01:05.480 D/CAT     ( 3342): CatService: Reinitialize the Service with SIMRecords and UiccCardApplication
+04-14 11:01:05.480 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:01:05.480 D/CAT     ( 3342): CatService: sr changed reinitialize and return current sInstance
+04-14 11:01:05.480 E/UiccCard( 3342): App index 8 is invalid since there are no applications
+04-14 11:01:05.480 D/UiccCard( 3342): update: radioState=RADIO_ON mLastRadioState=RADIO_ON
+04-14 11:01:05.480 D/UiccCard( 3342): update: notify card added
+04-14 11:01:05.480 D/UiccController( 3342): Notifying IccChangedRegistrants
+04-14 11:01:05.480 D/SIMRecords( 3342): [SIMRecords] fetchSimRecords 0
+04-14 11:01:05.480 D/RILJ    ( 3342): [8823]> getIMSI: GET_IMSI aid: null
+04-14 11:01:05.480 D/RILJ    ( 3342): [8824]> iccIO: SIM_IO 0xc0 0x2fe2  path: 3F00,0,0,15 aid: null
+04-14 11:01:05.490 D/RILJ    ( 3342): [8825]> iccIO: SIM_IO 0xc0 0x6f40  path: 3F007F10,0,0,15 aid: null
+04-14 11:01:05.490 D/RILJ    ( 3342): [8826]> iccIO: SIM_IO 0xc0 0x6fc9  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.490 D/RILJ    ( 3342): [8827]> iccIO: SIM_IO 0xc0 0x6fad  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.500 D/RILJ    ( 3342): [8828]> iccIO: SIM_IO 0xc0 0x6fca  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.520 D/RILJ    ( 3342): [8829]> iccIO: SIM_IO 0xc0 0x6f11  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.520 D/RILJ    ( 3342): [8830]> iccIO: SIM_IO 0xc0 0x6fcb  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.520 D/RILJ    ( 3342): [8831]> iccIO: SIM_IO 0xc0 0x6f13  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.530 D/RILJ    ( 3342): [8832]> iccIO: SIM_IO 0xc0 0x6f46  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.530 D/RILJ    ( 3342): [8833]> iccIO: SIM_IO 0xc0 0x6fcd  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.530 D/RILJ    ( 3342): [8834]> iccIO: SIM_IO 0xc0 0x6fc5  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.530 I/RILJ    ( 3342): 'rild' socket closed
+04-14 11:01:05.530 I/RILJ    ( 3342): java.io.IOException: Connection reset by peer
+04-14 11:01:05.530 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl.readba_native(Native Method)
+04-14 11:01:05.530 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl.access$400(LocalSocketImpl.java:33)
+04-14 11:01:05.530 I/RILJ    ( 3342): 	at android.net.LocalSocketImpl$SocketInputStream.read(LocalSocketImpl.java:98)
+04-14 11:01:05.530 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL.readRilMessage(RIL.java:421)
+04-14 11:01:05.530 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL.access$400(RIL.java:215)
+04-14 11:01:05.530 I/RILJ    ( 3342): 	at com.android.internal.telephony.RIL$RILReceiver.run(RIL.java:521)
+04-14 11:01:05.530 I/RILJ    ( 3342): 	at java.lang.Thread.run(Thread.java:841)
+04-14 11:01:05.530 I/RILJ    ( 3342): Disconnected from 'rild' socket
+04-14 11:01:05.530 D/RilRequest( 3342): [8809]< SCREEN_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8815]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6125]> iccIO: SIM_IO 0xc0 0x6f38  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6125]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8816]< RIL_REQUEST_IMS_REGISTRATION_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8817]< RIL_REQUEST_VOICE_RADIO_TECH error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6126]> iccIO: SIM_IO 0xc0 0x6f16  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [8818]< RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8819]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8820]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [6126]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8821]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6127]> iccIO: SIM_IO 0xc0 0x6f15  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [8822]< QUERY_FACILITY_LOCK error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [6127]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8834]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6128]> iccIO: SIM_IO 0xc0 0x6f3e  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6128]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8823]< GET_IMSI error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/SIMRecords( 3342): [SIMRecords] fetchSimRecords 16 requested: true
+04-14 11:01:05.550 D/RilRequest( 3342): [8824]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RuimRecords( 3342): [RuimRecords] fetchRuimRecords 0
+04-14 11:01:05.550 D/RILJ    ( 3342): [6129]> getIMSI: GET_IMSI aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [8825]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [6129]< GET_IMSI error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8826]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8827]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6130]> iccIO: SIM_IO 0xc0 0x2fe2  path: 3F00,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6130]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8828]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8829]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6131]> iccIO: SIM_IO 0xc0 0x2f05  path: 3F00,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [8830]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [6131]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8831]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [8832]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6132]> iccIO: SIM_IO 0xc0 0x6f3a  path: 3F007F25,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [8833]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RilRequest( 3342): [6132]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6133]> iccIO: SIM_IO 0xc0 0x6f41  path: 3F007F25,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6133]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6134]> iccIO: SIM_IO 0xc0 0x6f44  path: 3F007F25,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6134]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6135]> iccIO: SIM_IO 0xc0 0x6f22  path: 3F007F25,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6135]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6136]> iccIO: SIM_IO 0xc0 0x6f28  path: 3F007F25,0,0,15 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6136]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RILJ    ( 3342): [6137]> iccIO: SIM_IO 0xb0 0x6f5a  path: 3F007F25,0,0,4 aid: null
+04-14 11:01:05.550 D/RilRequest( 3342): [6137]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 D/RuimRecords( 3342): [RuimRecords] fetchRuimRecords 9 requested: true
+04-14 11:01:05.550 D/RILJ    ( 3342): [6138]> RIL_REQUEST_CDMA_SUBSCRIPTION
+04-14 11:01:05.550 D/RilRequest( 3342): [6138]< RIL_REQUEST_CDMA_SUBSCRIPTION error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
+04-14 11:01:05.550 D/CAT     ( 3342): CatService: SIM ready. Reporting STK service running now...
+04-14 11:01:05.550 D/RILJ    ( 3342): [6139]> RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING
+04-14 11:01:05.550 D/RilRequest( 3342): [6139]< RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: arguments from command ------
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: argc=5 ------
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: argv[0]=/system/bin/rild ------
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: argv[1]=-u ------
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: argv[2]=/dev/ttyUSB0 ------
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: argv[3]=-d ------
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: argv[4]=/dev/ttyUSB2 ------
+04-14 11:01:05.550 I/RIL     (26634): Opening tty device /dev/ttyUSB0
+04-14 11:01:05.550 I/RIL     (26634): Opening tty device /dev/ttyUSB2
+04-14 11:01:05.550 I/RIL     (26634): ------ VendorRIL Init argus: path_d=/dev/ttyUSB2 ------
+04-14 11:01:05.550 I/RIL     (26634): ------ VendorRIL Init argus: path_u=/dev/ttyUSB0 ------
+04-14 11:01:05.550 I/RIL     (26634): ------ VendorRIL Init success ------
+04-14 11:01:05.550 I/RILD    (26634): ------ VendorRIL initialize: return=funcs ------
+04-14 11:01:05.550 E/RILC    (26634): RIL_register: RIL version 9
+04-14 11:01:05.550 I/RIL     (26634): ------ VendorRIL entering mainLoop() ------
+04-14 11:01:05.550 I/RIL     (26634): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
+04-14 11:01:05.550 I/RIL     (26634): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+04-14 11:01:05.560 D/RIL     (26634): ******** VendorRIL: setRadioState(0), oldState=1 ********
+04-14 11:01:05.560 I/AT      (26634): ------ VendorRIL readerLoop: repeatedly readLine, processLine, handleUnsolicited, handleFinalResponse ------
+04-14 11:01:05.560 D/AT      (26634): AT> ATE0Q0V1
+04-14 11:01:05.570 D/AT      (26634): AT< OK
+04-14 11:01:05.580 D/GSMPhone( 3342): [GSMPhone] New Uicc application found
+04-14 11:01:05.580 D/GsmSST  ( 3342): [GsmSST] New card found
+04-14 11:01:05.580 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:01:05.580 D/DCT     ( 3342): handleMessage msg={ when=-107ms what=270369 obj=android.os.AsyncResult@42076468 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:01:05.580 D/DCT     ( 3342): New records found
+04-14 11:01:05.580 D/GsmSMSDispatcher( 3342): New Uicc application found
+04-14 11:01:05.580 D/IccCardProxy( 3342): Icc changed. Reregestering.
+04-14 11:01:05.580 D/UiccCardApplication( 3342): Notifying 1 registrant: READY
+04-14 11:01:05.580 D/IccCardProxy( 3342): Broadcasting intent ACTION_SIM_STATE_CHANGED READY reason null
+04-14 11:01:05.580 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:05.580 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:01:05.580 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:05.580 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:01:05.580 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: changed sending intent rule=2 showPlmn='true' plmn='No service.' showSpn='false' spn='null'
+04-14 11:01:05.590 D/GsmSST  ( 3342): [GsmSST] operatorNumeric is null
+04-14 11:01:05.590 D/RILJ    ( 3342): [6140]> GET_CURRENT_CALLS
+04-14 11:01:05.590 D/RilRequest( 3342): [6140]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:05.590 D/DCT     ( 3342): handleMessage msg={ when=-63ms what=270342 obj=android.os.AsyncResult@4213f878 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:01:05.590 D/DCT     ( 3342): onRadioOffOrNotAvailable: is off and clean up all connections
+04-14 11:01:05.590 D/DCT     ( 3342): cleanUpAllConnections: tearDown=false reason=radioTurnedOff
+04-14 11:01:05.590 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:05.590 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.590 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:01:05.600 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:05.600 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:05.600 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.600 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:01:05.610 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:05.610 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:05.610 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.610 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:01:05.610 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:05.610 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:05.610 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.610 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:01:05.630 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:05.630 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+04-14 11:01:05.630 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.630 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:01:05.650 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true} dcac=null
+04-14 11:01:05.650 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:05.650 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.650 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:01:05.650 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:05.650 D/DCT     ( 3342): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:05.650 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.650 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:01:05.650 D/DCT     ( 3342): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+04-14 11:01:05.650 D/DCT     ( 3342): stopNetStatPoll
+04-14 11:01:05.650 D/DCT     ( 3342): stopDataStallAlarm: current tag=81742 mDataStallAlarmIntent=null
+04-14 11:01:05.650 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.650 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:01:05.670 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.670 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:01:05.670 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.670 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:01:05.680 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.680 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:01:05.680 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.680 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:01:05.710 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.710 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:01:05.710 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+04-14 11:01:05.710 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:01:05.720 E/UiccCardApplication( 3342): Received message { when=-187ms what=103 obj=android.os.AsyncResult@42300d70 target=com.android.internal.telephony.uicc.UiccCardApplication$1 }[103] while being destroyed. Ignoring.
+04-14 11:01:05.720 E/UiccCardApplication( 3342): Received message { when=-188ms what=103 obj=android.os.AsyncResult@42300d88 target=com.android.internal.telephony.uicc.UiccCardApplication$1 }[103] while being destroyed. Ignoring.
+04-14 11:01:05.720 D/UiccCardApplication( 3342): handleMessage (EVENT_RADIO_OFF_OR_UNAVAILABLE)
+04-14 11:01:05.720 D/UiccCardApplication( 3342): handleMessage (EVENT_RADIO_OFF_OR_UNAVAILABLE)
+04-14 11:01:05.720 E/RIL_ImsSms( 3342): IMS State query failed with exp com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 E/PhoneProxy( 3342): [PhoneProxy] EVENT_REQUEST_VOICE_RADIO_TECH_DONE: exception=com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 D/CdmaSSM ( 3342): CDMA_SUBSCRIPTION_SOURCE event = 2
+04-14 11:01:05.720 W/CdmaSSM ( 3342): Unable to get CDMA Subscription Source, Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE, result: null
+04-14 11:01:05.720 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 D/UiccCardApplication( 3342): Error in querying facility lock:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 E/SIMRecords( 3342): [SIMRecords] Exception querying IMSI, Exception:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 15 requested: true
+04-14 11:01:05.720 E/RuimRecords( 3342): [RuimRecords] Exception querying IMSI, Exception:com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:05.720 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 8 requested: true
+04-14 11:01:05.830 I/RIL     (26634): ------ VendorRIL: GSM AT Command for initialization ------
+04-14 11:01:05.830 D/AT      (26634): AT> AT+WNAM
+04-14 11:01:06.080 D/AT      (26634): AT< ERROR
+04-14 11:01:06.080 I/RIL     (26634): ======== VendorRIL: found GSM Modem Device ========
+04-14 11:01:06.080 D/AT      (26634): AT> ATE0Q0V1
+04-14 11:01:06.240 D/AT      (26634): AT< OK
+04-14 11:01:06.240 D/AT      (26634): AT> ATS0=0
+04-14 11:01:06.260 D/AT      (26634): AT< OK
+04-14 11:01:06.260 D/AT      (26634): AT> AT+CMEE=1
+04-14 11:01:06.270 D/AT      (26634): AT< OK
+04-14 11:01:06.270 D/AT      (26634): AT> AT+CREG=2
+04-14 11:01:06.270 D/AT      (26634): AT< OK
+04-14 11:01:06.270 D/AT      (26634): AT> AT+CGREG=1
+04-14 11:01:06.270 D/AT      (26634): AT< OK
+04-14 11:01:06.270 D/AT      (26634): AT> AT+CCWA=1
+04-14 11:01:06.280 D/RILJ    ( 3342): setCurrentPreferredNetworkType: 0
+04-14 11:01:06.280 D/RILJ    ( 3342): [6141]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 0
+04-14 11:01:06.280 D/AT      (26634): AT< OK
+04-14 11:01:06.280 D/RilRequest( 3342): [6141]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:06.280 D/AT      (26634): AT> AT+CMOD=0
+04-14 11:01:06.280 D/RILJ    ( 3342): [6142]> SET_NETWORK_SELECTION_AUTOMATIC
+04-14 11:01:06.280 D/RilRequest( 3342): [6142]< SET_NETWORK_SELECTION_AUTOMATIC error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:06.280 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:06.280 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+04-14 11:01:06.280 D/PHONE   ( 3342): [ServiceState] setNullState=1
+04-14 11:01:06.280 D/AT      (26634): AT< OK
+04-14 11:01:06.280 D/AT      (26634): AT> AT+CMUT=0
+04-14 11:01:06.280 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 14 requested: true
+04-14 11:01:06.280 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 13 requested: true
+04-14 11:01:06.280 E/SIMRecords( 3342): [SIMRecords] Exception in fetching EF_CSP data com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.280 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 12 requested: true
+04-14 11:01:06.280 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 11 requested: true
+04-14 11:01:06.280 E/SIMRecords( 3342): [SIMRecords] Exception in get GID1 com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.280 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 10 requested: true
+04-14 11:01:06.280 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 9 requested: true
+04-14 11:01:06.280 D/RILJ    ( 3342): [6143]> iccIO: SIM_IO 0xc0 0x6f17  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:06.280 D/RilRequest( 3342): [6143]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:06.280 D/AT      (26634): AT< OK
+04-14 11:01:06.280 D/AT      (26634): AT> AT+CSSN=0,1
+04-14 11:01:06.280 D/AT      (26634): AT< OK
+04-14 11:01:06.280 D/AT      (26634): AT> AT+COLP=0
+04-14 11:01:06.280 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 9 requested: true
+04-14 11:01:06.290 D/SIMRecords( 3342): [SIMRecords] MNC length not present in EF_AD
+04-14 11:01:06.290 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 8 requested: true
+04-14 11:01:06.290 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 7 requested: true
+04-14 11:01:06.290 D/AT      (26634): AT< OK
+04-14 11:01:06.290 D/AT      (26634): AT> AT+CSCS="HEX"
+04-14 11:01:06.340 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 7 requested: true
+04-14 11:01:06.340 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 6 requested: true
+04-14 11:01:06.340 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 5 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] EF_PL LOADED
+04-14 11:01:06.340 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 6 requested: true
+04-14 11:01:06.340 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 4 requested: true
+04-14 11:01:06.340 D/RILJ    ( 3342): [6144]> iccIO: SIM_IO 0xc0 0x6f14  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:06.340 D/RilRequest( 3342): [6144]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:06.340 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 4 requested: true
+04-14 11:01:06.340 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 3 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_LI LOADED
+04-14 11:01:06.340 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 5 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_SPN LOADED
+04-14 11:01:06.340 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 4 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_MDN LOADED
+04-14 11:01:06.340 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 3 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_IMSIM LOADED
+04-14 11:01:06.340 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 2 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_CDMAHOME LOADED
+04-14 11:01:06.340 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 1 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] EF_CSIM_EPRL LOADED
+04-14 11:01:06.340 E/RuimRecords( 3342): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onRecordLoaded 0 requested: true
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] record load complete
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onAllRecordsLoaded empty 'gsm.sim.operator.numeric' skipping
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] onAllRecordsLoaded empty imsi skipping setting mcc
+04-14 11:01:06.340 D/RuimRecords( 3342): [RuimRecords] No suitable CSIM selected locale
+04-14 11:01:06.350 D/AT      (26634): AT< OK
+04-14 11:01:06.350 D/AT      (26634): AT> AT+CUSD=1
+04-14 11:01:06.350 D/AT      (26634): AT< OK
+04-14 11:01:06.350 D/AT      (26634): AT> AT+CGEREP=1,0
+04-14 11:01:06.350 D/AT      (26634): AT< OK
+04-14 11:01:06.350 D/AT      (26634): AT> AT+CMGF=0
+04-14 11:01:06.350 D/AT      (26634): AT< OK
+04-14 11:01:06.350 D/AT      (26634): AT> AT+CFUN?
+04-14 11:01:06.410 D/AT      (26634): AT< +CFUN: 1
+04-14 11:01:06.410 D/AT      (26634): AT< OK
+04-14 11:01:06.410 D/RIL     (26634): ******** VendorRIL: setRadioState(10), oldState=0 ********
+04-14 11:01:06.410 D/RIL     (26634): ******** VendorRIL: onRadioPowerOn pollSIMState, current state=10 ********
+04-14 11:01:06.410 I/RIL     (26634): ======== VendorRIL: AT Command initialize done, Radio_State=ON, sState=10 ========
+04-14 11:01:06.480 D/SIMRecords( 3342): [SIMRecords] Invalid or missing EF[MSISDN]
+04-14 11:01:06.480 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 2 requested: true
+04-14 11:01:06.490 D/RILJ    ( 3342): [6145]> iccIO: SIM_IO 0xc0 0x6f18  path: 3F007F20,0,0,15 aid: null
+04-14 11:01:06.490 D/RilRequest( 3342): [6145]< SIM_IO error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+04-14 11:01:06.490 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 2 requested: true
+04-14 11:01:06.490 D/SIMRecords( 3342): [SIMRecords] Invalid or missing EF[MAILBOX]
+04-14 11:01:06.490 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 1 requested: true
+04-14 11:01:06.490 D/SIMRecords( 3342): [SIMRecords] No SPN loaded in either CHPS or 3GPP
+04-14 11:01:06.500 D/SIMRecords( 3342): [SIMRecords] onRecordLoaded 0 requested: true
+04-14 11:01:06.500 D/SIMRecords( 3342): [SIMRecords] record load complete
+04-14 11:01:06.500 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:01:06.500 D/SIMRecords( 3342): [SIMRecords] onAllRecordsLoaded empty 'gsm.sim.operator.numeric' skipping
+04-14 11:01:06.500 D/SIMRecords( 3342): [SIMRecords] onAllRecordsLoaded empty imsi skipping setting mcc
+04-14 11:01:06.500 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:01:06.510 D/GsmSST  ( 3342): [GsmSST] EVENT_SIM_RECORDS_LOADED: what=16
+04-14 11:01:06.510 D/PhoneProxy( 3342): [PhoneProxy] updatePhoneObject: radioTechnology=0
+04-14 11:01:06.510 D/GsmSST  ( 3342): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+04-14 11:01:06.510 D/DCT     ( 3342): handleMessage msg={ when=-16ms what=270338 obj=android.os.AsyncResult@421438a0 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:01:06.510 D/DCT     ( 3342): onRecordsLoaded: createAllApnList
+04-14 11:01:06.510 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:01:06.510 D/SIMRecords( 3342): [SIMRecords] getOperatorNumeric: IMSI == null
+04-14 11:01:06.510 D/DCT     ( 3342): createAllApnList, r:SimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@420957e8 mCi=com.android.internal.telephony.RIL@42099c20 mFh=Handler (com.android.internal.telephony.uicc.SIMFileHandler) {420d70e8} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@42157448 recordsLoadedRegistrants=android.os.RegistrantList@42157500 mImsiReadyRegistrants=android.os.RegistrantList@42116ca0 mRecordsEventsRegistrants=android.os.RegistrantList@42111878 mNewSmsRegistrants=android.os.RegistrantList@42096b38 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@420967d8 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {420d7280} recordsRequested=true iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=0 mailboxIndex=0 spn=null mVmConfigcom.android.internal.telephony.uicc.VoiceMailConstants@4208d018 mSpnOverride=mSpnOverride callForwardingEnabled=false spnState=IDLE mCphsInfo=null mCspPlmnEnabled=true efMWIS=null efCPHS_MWI=null mEfCff=null mEfCfis=null getOperatorNumeric=null, operator:null
+04-14 11:01:06.510 D/DCT     ( 3342): createAllApnList: No APN found for carrier: null
+04-14 11:01:06.510 D/DCT     ( 3342): createAllApnList: X mAllApnSettings=[]
+04-14 11:01:06.510 D/DCT     ( 3342): setInitialApn: E mPreferredApn=null
+04-14 11:01:06.510 D/DCT     ( 3342): setInitialAttachApn: X There in no available apn
+04-14 11:01:06.510 D/DCT     ( 3342): setupDataOnConnectableApns: simLoaded
+04-14 11:01:06.510 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:06.510 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:06.510 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:06.510 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+04-14 11:01:06.510 D/DCT     ( 3342): setupDataOnConnectableApns: isConnectable() call trySetupData
+04-14 11:01:06.510 D/DCT     ( 3342): trySetupData for type:default due to simLoaded apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=simLoaded mDataEnabled=true mDependencyMet=true}
+04-14 11:01:06.510 D/DCT     ( 3342): trySetupData with mIsPsRestricted=false
+04-14 11:01:06.510 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.510 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.510 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:01:06.510 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.510 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:01:06.530 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.530 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:01:06.530 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.530 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:01:06.550 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.550 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:01:06.550 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.550 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:01:06.560 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:06.560 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:01:06.570 D/DCT     ( 3342): trySetupData: X apnContext not 'ready' retValue=false
+04-14 11:01:06.570 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:06.570 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:06.570 D/DCT     ( 3342): setupDataOnConnectableApns: apnContext {mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+04-14 11:01:06.570 D/IccCardProxy( 3342): Broadcasting intent ACTION_SIM_STATE_CHANGED LOADED reason null
+04-14 11:01:06.570 D/PhoneProxy( 3342): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=0
+04-14 11:01:06.570 D/PhoneProxy( 3342): [PhoneProxy] phoneObjectUpdater: Unknown rat ignore,  newVoiceRadioTech=Unknown. mActivePhone=GSM
+04-14 11:01:09.550 I/RILJ    ( 3342): Connected to 'rild' socket
+04-14 11:01:09.700 I/RILC    (26634): libril: new connection
+04-14 11:01:09.710 D/RILJ    ( 3342): [UNSL]< UNSOL_RIL_CONNECTED {9}
+04-14 11:01:09.710 D/RILJ    ( 3342): [6146]> RADIO_POWER off
+04-14 11:01:09.710 D/RILJ    ( 3342): [6147]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 0
+04-14 11:01:09.710 D/RILJ    ( 3342): [6148]> RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE : 1
+04-14 11:01:09.710 D/RILJ    ( 3342): setCellInfoListRate: 2147483647
+04-14 11:01:09.710 D/RILJ    ( 3342): [6149]> RIL_REQUEST_SET_CELL_INFO_LIST_RATE
+04-14 11:01:09.710 D/RILJ    ( 3342): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_ON
+04-14 11:01:09.710 D/RILJ    ( 3342): [6150]> OPERATOR
+04-14 11:01:09.720 D/Dcc     ( 3342): DccDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=9
+04-14 11:01:09.720 D/RILJ    ( 3342): [6151]> DATA_REGISTRATION_STATE
+04-14 11:01:09.720 D/RILJ    ( 3342): [6152]> VOICE_REGISTRATION_STATE
+04-14 11:01:09.720 D/RILJ    ( 3342): [6153]> QUERY_NETWORK_SELECTION_MODE
+04-14 11:01:09.720 D/RILJ    ( 3342): [6154]> SCREEN_STATE: false
+04-14 11:01:09.720 D/DCT     ( 3342): handleMessage msg={ when=-4ms what=270337 obj=android.os.AsyncResult@42158388 target=com.android.internal.telephony.dataconnection.DcTracker }
+04-14 11:01:09.720 D/DCT     ( 3342): onRadioAvailable
+04-14 11:01:09.720 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:09.720 D/DCT     ( 3342): [ApnContext:fota] getApnSetting: apnSetting=null
+04-14 11:01:09.720 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:09.720 D/DCT     ( 3342): [ApnContext:supl] getApnSetting: apnSetting=null
+04-14 11:01:09.720 I/RILC    (26634): RIL Daemon version: android reference-ril 1.0
+04-14 11:01:09.730 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:09.730 D/DCT     ( 3342): [ApnContext:hipri] getApnSetting: apnSetting=null
+04-14 11:01:09.730 I/RIL     (26634): ------ VendorRIL onRequest: RADIO_POWER ------
+04-14 11:01:09.730 D/RIL     (26634): requestRadioPower: request to set [0], current state [10]
+04-14 11:01:09.730 D/AT      (26634): AT> AT+CFUN=0
+04-14 11:01:09.730 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:09.730 D/DCT     ( 3342): [ApnContext:ims] getApnSetting: apnSetting=null
+04-14 11:01:09.730 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:09.730 D/DCT     ( 3342): [ApnContext:default] getApnSetting: apnSetting=null
+04-14 11:01:09.730 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:09.730 D/DCT     ( 3342): [ApnContext:mms] getApnSetting: apnSetting=null
+04-14 11:01:09.730 D/DCT     ( 3342): isDataAllowed: not allowed due to - Attached= false
+04-14 11:01:09.730 D/DCT     ( 3342): [ApnContext:cbs] getApnSetting: apnSetting=null
+04-14 11:01:09.730 D/DCT     ( 3342): overall state is IDLE
+04-14 11:01:09.730 D/RILJ    ( 3342): [6155]> BASEBAND_VERSION
+04-14 11:01:09.750 D/RILJ    ( 3342): [6156]> GET_IMEI
+04-14 11:01:09.750 D/RILJ    ( 3342): [6157]> GET_IMEISV
+04-14 11:01:09.750 D/UiccController( 3342): Received EVENT_ICC_STATUS_CHANGED, calling getIccCardStatus
+04-14 11:01:09.750 D/RILJ    ( 3342): [6158]> GET_SIM_STATUS
+04-14 11:01:09.750 D/RILJ    ( 3342): [6159]> GET_CURRENT_CALLS
+04-14 11:01:09.750 D/RILJ    ( 3342): [6160]> RIL_REQUEST_IMS_REGISTRATION_STATE
+04-14 11:01:09.750 D/RILJ    ( 3342): [6161]> RIL_REQUEST_VOICE_RADIO_TECH
+04-14 11:01:09.760 D/RILJ    ( 3342): [6162]> RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE
+04-14 11:01:09.790 D/AT      (26634): AT< ERROR
+04-14 11:01:09.790 E/RIL     (26634): ------ VendorRIL error while requestRadioPower ------
+04-14 11:01:09.790 I/RIL     (26634): ------ VendorRIL onRequest: SET_PREFERRED_NETWORK_TYPE ------
+04-14 11:01:09.790 D/RIL     (26634): requestSetPreferredNetworkType: current: 1. New: 201
+04-14 11:01:09.790 I/RIL     (26634): ------ VendorRIL: PreferredNetworkType only GSM supported ------
+04-14 11:01:09.790 I/RIL     (26634): ------ VendorRIL onRequest: CDMA_SET_SUBSCRIPTION_SOURCE ------
+04-14 11:01:09.790 I/RIL     (26634): ------ VendorRIL onRequest: SET_UNSOL_CELL_INFO_LIST_RATE ------
+04-14 11:01:09.790 I/RIL     (26634): ------ VendorRIL onRequest: OPERATOR ------
+04-14 11:01:09.790 D/AT      (26634): AT> AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+04-14 11:01:09.790 D/RilRequest( 3342): [6146]< RADIO_POWER error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+04-14 11:01:09.790 D/RilRequest( 3342): [6147]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:01:09.790 D/RilRequest( 3342): [6148]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:01:09.790 D/RILJ    ( 3342): [6149]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE 
+04-14 11:01:09.810 D/AT      (26634): AT< +COPS: 0
+04-14 11:01:09.810 D/AT      (26634): AT< +COPS: 0
+04-14 11:01:09.810 D/AT      (26634): AT< +COPS: 0
+04-14 11:01:09.810 D/AT      (26634): AT< OK
+04-14 11:01:09.810 D/RIL     (26634): [VendorRIL] requestOperator result: [0] = CAN Rogers Wirel
+04-14 11:01:09.810 D/RIL     (26634): [VendorRIL] requestOperator result: [1] = ROGERS
+04-14 11:01:09.810 D/RIL     (26634): [VendorRIL] requestOperator result: [2] = 302720
+04-14 11:01:09.810 I/RIL     (26634): ------ VendorRIL onRequest: DATA_REGISTRATION_STATE ------
+04-14 11:01:09.810 D/RIL     (26634): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:01:09.810 D/AT      (26634): AT> AT+CGREG?
+04-14 11:01:09.810 D/RILJ    ( 3342): [6150]< OPERATOR {CAN Rogers Wirel, ROGERS, 302720}
+04-14 11:01:09.820 D/AT      (26634): AT< +CGREG: 1,2
+04-14 11:01:09.820 D/AT      (26634): AT< OK
+04-14 11:01:09.820 D/RIL     (26634): [DATA_REGISTRATION] response=+CGREG: 1,2
+04-14 11:01:09.820 D/RIL     (26634): parseRegistrationState. Parsing: +CGREG: 1,2
+04-14 11:01:09.820 D/RIL     (26634): registration state type: 3GPP
+04-14 11:01:09.820 I/RIL     (26634): ------ VendorRIL onRequest: VOICE_REGISTRATION_STATE ------
+04-14 11:01:09.820 D/RIL     (26634): VendorRIL: requestRegistrationState >>>>>>>>>
+04-14 11:01:09.820 D/AT      (26634): AT> AT+CREG?
+04-14 11:01:09.820 D/RILJ    ( 3342): [6151]< DATA_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null}
+04-14 11:01:09.850 E/GsmSST  ( 3342): [GsmSST] error parsing GprsRegistrationState: java.lang.NumberFormatException: Invalid int: "null"
+04-14 11:01:09.850 D/PHONE   ( 3342): [ServiceState] setDataRegState=1
+04-14 11:01:09.850 D/PHONE   ( 3342): [ServiceState] setDataRadioTechnology=0
+04-14 11:01:09.850 D/GsmSST  ( 3342): [GsmSST] handlPollStateResultMessage: GsmSST setDataRegState=1 regState=2 dataRadioTechnology=0
+04-14 11:01:09.850 D/AT      (26634): AT< +CREG: 2,2
+04-14 11:01:09.850 D/AT      (26634): AT< OK
+04-14 11:01:09.850 D/RIL     (26634): [VOICE_REGISTRATION] response=+CREG: 2,2
+04-14 11:01:09.850 D/RIL     (26634): parseRegistrationState. Parsing: +CREG: 2,2
+04-14 11:01:09.850 D/RIL     (26634): registration state type: 3GPP
+04-14 11:01:09.850 I/RIL     (26634): ------ VendorRIL onRequest: QUERY_NETWORK_SELECTION_MODE ------
+04-14 11:01:09.850 D/AT      (26634): AT> AT+COPS?
+04-14 11:01:09.850 D/RILJ    ( 3342): [6152]< VOICE_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null, null, null, null, null, null, null, null, null, null}
+04-14 11:01:09.850 E/GsmSST  ( 3342): [GsmSST] error parsing RegistrationState: java.lang.NumberFormatException: Invalid int: "ffffffff"
+04-14 11:01:09.850 D/PHONE   ( 3342): [ServiceState] setVoiceRegState=1
+04-14 11:01:09.850 E/PHONE   ( 3342): [ServiceState] setState deprecated use setVoiceRegState()
+04-14 11:01:09.850 D/AT      (26634): AT< +COPS: 0
+04-14 11:01:09.850 D/AT      (26634): AT< OK
+04-14 11:01:09.850 D/RIL     (26634): >>> QueryNetworkSelectionMode, response=0
+04-14 11:01:09.850 I/RIL     (26634): ------ VendorRIL onRequest: SCREEN_STATE ------
+04-14 11:01:09.850 I/RIL     (26634): --- VendorRIL not supported: RIL_REQUEST_SCREEN_STATE ---
+04-14 11:01:09.850 I/RIL     (26634): ------ VendorRIL onRequest: BASEBAND_VERSION ------
+04-14 11:01:09.850 I/RIL     (26634): ------ VendorRIL onRequest: GET_IMEI ------
+04-14 11:01:09.850 I/RIL     (26634): ------ VendorRIL onRequest: GET_IMEISV ------
+04-14 11:01:09.850 I/RIL     (26634): --- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---
+04-14 11:01:09.850 I/RIL     (26634): ------ VendorRIL onRequest: GET_SIM_STATUS ------
+04-14 11:01:09.850 D/RILJ    ( 3342): [6153]< QUERY_NETWORK_SELECTION_MODE {0}
+04-14 11:01:09.850 D/RILJ    ( 3342): [6155]< BASEBAND_VERSION E1750
+04-14 11:01:09.850 D/RILJ    ( 3342): [6156]< GET_IMEI 
+04-14 11:01:09.850 D/RilRequest( 3342): [6157]< GET_IMEISV error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+04-14 11:01:09.850 D/RIL     (26634): getSIMStatus(). sState: 10
+04-14 11:01:09.850 D/AT      (26634): AT> AT+CPIN?
+04-14 11:01:09.870 D/GsmSST  ( 3342): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 Em
