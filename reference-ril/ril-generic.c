@@ -283,7 +283,7 @@ RIL_InitialAttachApn s_apnInfo;
 
 
 
-static void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
+void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
 {
     ATResponse *p_response = NULL;
     int err;
