@@ -18,5 +18,4 @@
 /** returns 1 if GSM modem, 0 if it is not */
 bool IsGsmModem();
 
-
-external void requestSignalStrength(void *data, size_t datalen, RIL_Token t);
+void requestSignalStrength(void *data, size_t datalen, RIL_Token t);
