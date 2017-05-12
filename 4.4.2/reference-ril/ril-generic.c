@@ -39,11 +39,13 @@
 #include "ril.h"
 #include "hardware/qemu_pipe.h"
 
-
-#if 0
-
 #define LOG_TAG "RIL"
 #include <utils/Log.h>
+
+#include "common.h"
+
+
+#if 0
 
 #define MAX_AT_RESPONSE 0x1000
 
@@ -280,7 +282,8 @@ RIL_InitialAttachApn s_apnInfo;
 
 
 
-static void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
+
+void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
 {
     ATResponse *p_response = NULL;
     int err;
@@ -290,7 +293,7 @@ static void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
     int response[numofElements];
 
     /*************************************************************************/
-    if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+    if (!IsGsmModem()) {
         RLOGI("------ VendorRIL not support (CDMA): RIL_REQUEST_SIGNAL_STRENGTH ------");
         RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
         return;

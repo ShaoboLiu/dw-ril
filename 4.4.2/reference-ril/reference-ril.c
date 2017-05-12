@@ -39,6 +39,8 @@
 #include "ril.h"
 #include "hardware/qemu_pipe.h"
 
+#include "common.h"
+
 #define LOG_TAG "RIL"
 #include <utils/Log.h>
 
@@ -872,6 +874,13 @@ static void requestHangup(void *data, size_t datalen, RIL_Token t)
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
 
+
+bool IsGsmModem() {
+    return (TECH_BIT(sMdmInfo) != MDM_CDMA);
+}
+
+
+//void requestSignalStrength(void *data, size_t datalen, RIL_Token t);
 
 #if 0
 static void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
