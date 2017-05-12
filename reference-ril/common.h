@@ -19,4 +19,4 @@
 bool IsGsmModem();
 
 
-static void requestSignalStrength(void *data, size_t datalen, RIL_Token t);
+external void requestSignalStrength(void *data, size_t datalen, RIL_Token t);
