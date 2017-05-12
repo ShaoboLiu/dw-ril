@@ -671,6 +671,8 @@ static void sendCallStateChanged(void *param)
 
 static void requestGetCurrentCalls(void *data, size_t datalen, RIL_Token t)
 {
+    // {RIL_REQUEST_GET_CURRENT_CALLS, dispatchVoid, responseCallList}
+
     int err;
     ATResponse *p_response;
     ATLine *p_cur;
@@ -870,6 +872,8 @@ static void requestHangup(void *data, size_t datalen, RIL_Token t)
     RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
 }
 
+
+#if 0
 static void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
 {
     ATResponse *p_response = NULL;
@@ -933,6 +937,8 @@ error:
     at_response_free(p_response);
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
+#endif
+
 
 /**
  * networkModePossible. Decides whether the network mode is appropriate for the
@@ -1149,8 +1155,7 @@ error:
     */
 }
 
-static void requestCdmaDeviceIdentity(int request, void *data,
-                                        size_t datalen, RIL_Token t)
+static void requestDeviceIdentity(int request, void *data, size_t datalen, RIL_Token t)
 {
     int err;
     int response[4];
@@ -1181,7 +1186,7 @@ static void requestCdmaDeviceIdentity(int request, void *data,
 
     return;
 error:
-    RLOGE("requestCdmaDeviceIdentity must never return an error when radio is on");
+    RLOGE("requestDeviceIdentity must never return an error when radio is on");
     at_response_free(p_response);
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
@@ -2597,6 +2602,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             break;
 
 	case RIL_REQUEST_GET_IMEISV:	/* VendorRIL basic */
+            // {RIL_REQUEST_GET_IMEISV, dispatchVoid, responseString}
             RLOGI("--- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---");
             RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
             break;
@@ -2687,6 +2693,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
             break;
 
         case RIL_REQUEST_IMS_REGISTRATION_STATE: {	/* VendorRIL basic */
+            // {RIL_REQUEST_IMS_REGISTRATION_STATE, dispatchVoid, responseInts}
             int reply[2];
             //0==unregistered, 1==registered
             reply[0] = s_ims_registered;
@@ -2708,6 +2715,7 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
         }
 
         case RIL_REQUEST_VOICE_RADIO_TECH:	/* VendorRIL basic */
+            // {RIL_REQUEST_VOICE_RADIO_TECH, dispatchVoiceRadioTech, responseInts}
             {
                 int tech = techFromModemType(TECH(sMdmInfo));
                 if (tech < 0 )
@@ -2716,9 +2724,21 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
                     RIL_onRequestComplete(t, RIL_E_SUCCESS, &tech, sizeof(tech));
             }
             break;
+
         case RIL_REQUEST_SET_PREFERRED_NETWORK_TYPE:	/* VendorRIL basic */
             requestSetPreferredNetworkType(request, data, datalen, t);
             break;
+
+            /* public static final String PREFERRED_NETWORK_MODE = "preferred_network_mode"
+             * 7 = Global
+             * 6 = EvDo only
+             * 5 = CDMA w/o EvDo
+             * 4 = CDMA / EvDo auto
+             * 3 = GSM / WCDMA auto
+             * 2 = WCDMA only
+             * 1 = GSM only
+             * 0 = GSM / WCDMA preferred
+             */
 
         case RIL_REQUEST_GET_PREFERRED_NETWORK_TYPE:
             requestGetPreferredNetworkType(request, data, datalen, t);
@@ -2738,9 +2758,12 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
 
         case RIL_REQUEST_DEVICE_IDENTITY:
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
-                requestCdmaDeviceIdentity(request, data, datalen, t);
+                RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
                 break;
-            } // Fall-through if tech is not cdma
+            } else {
+                requestDeviceIdentity(request, data, datalen, t);
+                break;
+            }
 
         case RIL_REQUEST_CDMA_SUBSCRIPTION:	/* VendorRIL basic */
             /*
@@ -2795,17 +2818,21 @@ onRequest (int request, void *data, size_t datalen, RIL_Token t)
 
         case RIL_REQUEST_EXIT_EMERGENCY_CALLBACK_MODE:
             if (TECH_BIT(sMdmInfo) == MDM_CDMA) {
+                RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
+                break;
+            } else {
                 requestExitEmergencyMode(data, datalen, t);
                 break;
-            } // Fall-through if tech is not cdma
+            }
 
         case RIL_REQUEST_SCREEN_STATE:	/* VendorRIL basic */
             // {RIL_REQUEST_SCREEN_STATE, dispatchInts, responseVoid},
             {
                 int* pData = (int*)data;
-                assert(datalen == 2*sizeof(int) && pData[0] == 1 && (pData[1] == 1 || pData[1] == 0));
+                //assert(datalen == 2*sizeof(int) && pData[0] == 1 && (pData[1] == 1 || pData[1] == 0));
                 RLOGI("[ScreenState]: %s", ((pData[1] == 1)? "ON" : "OFF"));
-                RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+                //RIL_onRequestComplete(t, RIL_E_SUCCESS, NULL, 0);
+                RIL_onRequestComplete(t, RIL_E_MODE_NOT_SUPPORTED, NULL, 0);
             }
             break;
 
@@ -3450,7 +3477,7 @@ static void probeForModemMode(ModemInfo *info)
     info->supportedTechs = MDM_GSM;
     info->currentTech = MDM_GSM;
     info->isMultimode = 0;
-    info->preferredNetworkMode = MDM_GSM;
+    info->preferredNetworkMode = MDM_GSM ;
     RLOGI("======== VendorRIL: found GSM Modem Device ========");
 }
 
