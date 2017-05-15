@@ -46,7 +46,7 @@
 
 
 /* pathname returned from RIL_REQUEST_SETUP_DATA_CALL / RIL_REQUEST_SETUP_DEFAULT_PDP */
-// #define PPP_TTY_PATH "eth0"
+#define PPP_TTY_PATH "eth0"
 
 #if 0
 
