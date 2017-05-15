@@ -1,0 +1,179 @@
+05-15 13:50:34.400 D/TelephonyManager( 1236): No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline: open failed: EACCES (Permission denied)
+05-15 13:50:34.400 D/TelephonyManager( 1236): /proc/cmdline=
+05-15 13:50:51.420 D/TelephonyManager( 3041): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
+05-15 13:50:51.420 I/PhoneFactory( 3041): Network Mode set to 1
+05-15 13:50:51.560 I/PhoneFactory( 3041): Cdma Subscription set to 1
+05-15 13:50:51.580 D/RILJ    ( 3041): RIL(context, preferredNetworkType=1 cdmaSubscription=1)
+05-15 13:50:51.600 D/RILJ    ( 3041): Starting RILReceiver
+05-15 13:50:51.600 D/UiccController( 3041): Creating UiccController
+05-15 13:50:51.600 I/PhoneFactory( 3041): Creating GSMPhone
+05-15 13:50:51.620 D/TelephonyTester( 3041): register for intent action=com.android.internal.telephony.gsm.action_detached
+05-15 13:50:51.620 D/TelephonyTester( 3041): register for intent action=com.android.internal.telephony.gsm.action_attached
+05-15 13:50:51.720 D/PhoneBase( 3041): mDoesRilSendMultipleCallRing=true
+05-15 13:50:51.720 D/PhoneBase( 3041): mCallRingDelay=3000
+05-15 13:50:51.750 D/RILJ    ( 3041): setPhoneType=1 old value=0
+05-15 13:50:51.780 D/DCT     ( 3041): DCT.constructor
+05-15 13:50:51.780 D/Dcc     ( 3041): E ctor
+05-15 13:50:51.780 D/Dcc     ( 3041): X ctor
+05-15 13:50:51.790 D/DcTesterFailBrinupAll( 3041): register for intent action=com.android.internal.telephony.dataconnection.action_fail_bringup
+05-15 13:50:51.790 D/DcTesterFailBrinupAll( 3041): register for intent action=com.android.internal.telephony.gsm.action_detached
+05-15 13:50:51.790 D/DcTesterFailBrinupAll( 3041): register for intent action=com.android.internal.telephony.gsm.action_attached
+05-15 13:50:51.790 D/DCT     ( 3041): GsmDCT.constructor
+05-15 13:50:51.790 D/DcTesterDeacativeAll( 3041): register for intent action=com.android.internal.telephony.dataconnection.action_deactivate_all
+05-15 13:50:51.790 D/DcTesterDeacativeAll( 3041): register for intent action=com.android.internal.telephony.gsm.action_detached
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: E
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: skipping unknown type=1
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=true mDependencyMet=true}
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: skipping unknown type=9
+05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: X mApnContexts={fota={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, supl={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, hipri={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, ims={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, default={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=true mDependencyMet=true}, mms={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, cbs={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}}
+05-15 13:50:51.810 E/RIL_ImsSms( 3041): getFormat should never be called from here!
+05-15 13:50:51.810 D/SMSDispatcher( 3041): SMSDispatcher: ctor mSmsCapable=true format=unknown mSmsSendDisabled=false
+05-15 13:50:51.810 D/RIL_ImsSms( 3041): ImsSMSDispatcher created
+05-15 13:50:51.820 D/SMSDispatcher( 3041): SMSDispatcher: ctor mSmsCapable=true format=3gpp2 mSmsSendDisabled=false
+05-15 13:50:51.820 D/CdmaSMSDispatcher( 3041): CdmaSMSDispatcher created
+05-15 13:50:51.820 E/WAP PUSH( 3041): bindService() for wappush manager failed
+05-15 13:50:51.820 D/GsmInboundSmsHandler( 3041): created InboundSmsHandler
+05-15 13:50:52.070 E/WAP PUSH( 3041): bindService() for wappush manager failed
+05-15 13:50:52.070 D/CdmaInboundSmsHandler( 3041): created InboundSmsHandler
+05-15 13:50:52.080 D/SMSDispatcher( 3041): SMSDispatcher: ctor mSmsCapable=true format=3gpp mSmsSendDisabled=false
+05-15 13:50:52.090 D/GsmSMSDispatcher( 3041): GsmSMSDispatcher created
+05-15 13:50:52.090 D/SmsBroadcastUndelivered( 3041): scanning raw table for undelivered messages
+05-15 13:50:52.100 D/IccCardProxy( 3041): Creating
+05-15 13:50:52.100 D/IccCardProxy( 3041): Broadcasting intent ACTION_SIM_STATE_CHANGED NOT_READY reason null
+05-15 13:50:52.100 D/IccCardProxy( 3041): Setting radio tech UMTS
+05-15 13:50:52.100 D/TelephonyManager( 3041): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
+05-15 13:50:52.100 D/IccCardProxy( 3041): updateQuietMode: 3GPP subscription -> newQuietMode=false
+05-15 13:50:52.110 D/IccCardProxy( 3041): updateQuietMode: QuietMode is false (app_type=1 isLteOnCdmaMode=false cdmaSource=-1)
+05-15 13:50:52.350 D/SmsBroadcastUndelivered( 3041): finished scanning raw table in 254 ms
+05-15 13:50:52.350 D/GsmInboundSmsHandler( 3041): entering Idle state
+05-15 13:50:52.350 D/CdmaInboundSmsHandler( 3041): entering Idle state
+05-15 13:50:52.750 I/PhoneFactory( 3041): defaultSmsApplication: com.android.mms
+05-15 13:50:52.790 D/CallManager( 3041): registerPhone(GSM Handler (com.android.internal.telephony.PhoneProxy) {41f47c18})
+05-15 13:50:53.000 D/RILJ    ( 3041): [3648]> GET_CURRENT_CALLS
+05-15 13:50:53.000 D/RilRequest( 3041): [3648]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-15 13:50:53.000 D/PHONE   ( 3041): [ServiceState] setNullState=1
+05-15 13:50:53.000 D/GsmSST  ( 3041): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported 0 0 RoamInd=0 DefRoamInd=0 EmergOnly=false] newSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+05-15 13:50:53.000 D/PHONE   ( 3041): [ServiceState] setNullState=1
+05-15 13:50:53.000 D/GsmSST  ( 3041): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+05-15 13:50:53.000 D/GsmSST  ( 3041): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='true' plmn='No service.' showSpn='false' spn=''
+05-15 13:50:53.010 D/GsmSST  ( 3041): [GsmSST] operatorNumeric is null
+05-15 13:50:53.010 D/DCT     ( 3041): handleMessage msg={ when=-1s234ms what=270369 obj=android.os.AsyncResult@41f5ffd0 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-15 13:50:53.010 D/DCT     ( 3041): newIccRecords is in APP_FAM_3GPP2
+05-15 13:50:53.010 D/DCT     ( 3041): handleMessage msg={ when=-1s224ms what=270342 obj=android.os.AsyncResult@41f649b8 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-15 13:50:53.010 D/DCT     ( 3041): onRadioOffOrNotAvailable: is off and clean up all connections
+05-15 13:50:53.010 D/DCT     ( 3041): cleanUpAllConnections: tearDown=false reason=radioTurnedOff
+05-15 13:50:53.010 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 13:50:53.010 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.010 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
+05-15 13:50:53.020 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-15 13:50:53.020 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 13:50:53.030 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.030 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
+05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 13:50:53.040 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.040 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 13:50:53.040 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.040 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
+05-15 13:50:53.050 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-15 13:50:53.050 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+05-15 13:50:53.050 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.050 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
+05-15 13:50:53.050 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true} dcac=null
+05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 13:50:53.060 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.060 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
+05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 13:50:53.060 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.060 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-15 13:50:53.060 D/DCT     ( 3041): stopNetStatPoll
+05-15 13:50:53.060 D/DCT     ( 3041): stopDataStallAlarm: current tag=38241 mDataStallAlarmIntent=null
+05-15 13:50:53.060 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.060 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
+05-15 13:50:53.080 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.080 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
+05-15 13:50:53.090 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.090 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-15 13:50:53.110 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.110 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
+05-15 13:50:53.120 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.120 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
+05-15 13:50:53.120 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.120 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
+05-15 13:50:53.140 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.140 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-15 13:50:53.140 D/DCT     ( 3041): handleMessage msg={ when=-1s352ms what=270345 obj=android.os.AsyncResult@41f64c90 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-15 13:50:53.140 D/DCT     ( 3041): onDataConnectionDetached: stop polling and notify detached
+05-15 13:50:53.140 D/DCT     ( 3041): stopNetStatPoll
+05-15 13:50:53.140 D/DCT     ( 3041): stopDataStallAlarm: current tag=38242 mDataStallAlarmIntent=null
+05-15 13:50:53.140 D/DCT     ( 3041): notifyDataConnection: reason=dataDetached
+05-15 13:50:53.140 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.140 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
+05-15 13:50:53.140 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.140 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
+05-15 13:50:53.150 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.150 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-15 13:50:53.170 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.170 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
+05-15 13:50:53.170 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.170 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
+05-15 13:50:53.170 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.170 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
+05-15 13:50:53.180 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.180 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-15 13:50:53.180 D/DCT     ( 3041): handleMessage msg={ when=-1s391ms what=270348 obj=android.os.AsyncResult@41f64de8 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-15 13:50:53.180 D/DCT     ( 3041): onRoamingOff
+05-15 13:50:53.190 D/DCT     ( 3041): notifyDataConnection: reason=roamingOff
+05-15 13:50:53.190 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.190 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
+05-15 13:50:53.200 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.200 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
+05-15 13:50:53.200 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.200 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-15 13:50:53.200 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.200 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
+05-15 13:50:53.230 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.230 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
+05-15 13:50:53.250 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.250 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
+05-15 13:50:53.260 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-15 13:50:53.260 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-15 13:50:53.270 D/DebugService( 3041): DebugService DebugService:
+05-15 13:50:53.300 D/SipService( 3041): SipService: started!
+05-15 13:50:53.320 D/SipService( 3041): start:
+05-15 13:50:54.820 D/GsmCellBroadcastHandler( 3041): mWakeLock released
+05-15 13:50:55.060 D/CellBroadcastHandler( 3041): mWakeLock released
+05-15 13:50:55.090 D/CdmaServiceCategoryProgramHandler( 3041): mWakeLock released
+05-15 13:50:55.360 D/GsmInboundSmsHandler( 3041): Idle state processing message type 5
+05-15 13:50:55.360 D/CdmaInboundSmsHandler( 3041): Idle state processing message type 5
+05-15 13:50:55.360 D/CdmaInboundSmsHandler( 3041): mWakeLock released
+05-15 13:50:55.360 D/GsmInboundSmsHandler( 3041): mWakeLock released
+05-15 13:50:55.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
+05-15 13:50:56.680 D/SipBroadcastReceiver( 3041): onReceive: start auto registration
+05-15 13:50:59.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
+05-15 13:51:03.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
+05-15 13:51:07.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
+05-15 13:51:11.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
+05-15 13:51:15.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
+05-15 13:51:19.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
+05-15 13:51:23.620 E/RILJ    ( 3041): Couldn't find 'rild' socket after 8 times, continuing to retry silently
+05-15 13:53:36.910 D/RILJ    ( 3041): [3649]> SCREEN_STATE: true
+05-15 13:53:36.910 D/RilRequest( 3041): [3649]< SCREEN_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-15 13:53:37.000 D/DCT     ( 3041): onReceive: action=android.intent.action.SCREEN_ON
+05-15 13:53:37.000 D/DCT     ( 3041): stopNetStatPoll
+05-15 13:53:37.000 D/DCT     ( 3041): overall state is IDLE
+05-15 13:53:37.200 D/RILJ    ( 3041): [3650]> SCREEN_STATE: false
+05-15 13:53:37.200 D/RilRequest( 3041): [3650]< SCREEN_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-15 13:53:37.220 D/DCT     ( 3041): onReceive: action=android.intent.action.SCREEN_OFF
+05-15 13:53:37.220 D/DCT     ( 3041): stopNetStatPoll
+05-15 13:53:37.220 D/DCT     ( 3041): overall state is IDLE

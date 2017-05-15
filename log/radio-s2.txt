@@ -1,0 +1,40 @@
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: arguments from command ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: argc=5 ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: argv[0]=/system/bin/rild ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: argv[1]=-u ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: argv[2]=/dev/ttyUSB0 ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: argv[3]=-d ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: argv[4]=/dev/ttyUSB2 ------
+05-15 14:02:22.590 I/RIL     ( 4439): Opening tty device /dev/ttyUSB0
+05-15 14:02:22.590 I/RIL     ( 4439): Opening tty device /dev/ttyUSB2
+05-15 14:02:22.590 I/RIL     ( 4439): ------ VendorRIL Init argus: path_d=/dev/ttyUSB2 ------
+05-15 14:02:22.590 I/RIL     ( 4439): ------ VendorRIL Init argus: path_u=/dev/ttyUSB0 ------
+05-15 14:02:22.590 I/RIL     ( 4439): ------ VendorRIL Init success ------
+05-15 14:02:22.590 I/RILD    ( 4439): ------ VendorRIL initialize: return=funcs ------
+05-15 14:02:22.590 E/RILC    ( 4439): RIL_register: RIL version 9
+05-15 14:02:22.610 I/RIL     ( 4439): ------ VendorRIL entering mainLoop() ------
+05-15 14:02:22.610 I/RIL     ( 4439): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
+05-15 14:02:22.610 I/RIL     ( 4439): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+05-15 14:02:25.360 I/RILJ    ( 3041): Connected to 'rild' socket
+05-15 14:02:25.360 I/RILC    ( 4439): libril: new connection
+05-15 14:02:25.360 I/RILC    ( 4439): RIL Daemon version: android reference-ril 1.0
+05-15 14:02:25.380 D/RILJ    ( 3041): [UNSL]< UNSOL_RIL_CONNECTED {9}
+05-15 14:02:25.380 D/RILJ    ( 3041): [3651]> RADIO_POWER off
+05-15 14:02:25.380 D/RILJ    ( 3041): [3652]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 1
+05-15 14:02:25.380 I/RIL     ( 4439): ------ VendorRIL onRequest: RADIO_POWER ------
+05-15 14:02:25.380 I/RIL     ( 4439): ------ VendorRIL onRequest: SET_PREFERRED_NETWORK_TYPE ------
+05-15 14:02:25.380 D/RILJ    ( 3041): [3653]> RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE : 1
+05-15 14:02:25.380 I/RIL     ( 4439): ------ VendorRIL onRequest: CDMA_SET_SUBSCRIPTION_SOURCE ------
+05-15 14:02:25.380 D/RILJ    ( 3041): setCellInfoListRate: 2147483647
+05-15 14:02:25.380 D/RILJ    ( 3041): [3654]> RIL_REQUEST_SET_CELL_INFO_LIST_RATE
+05-15 14:02:25.390 I/RIL     ( 4439): ------ VendorRIL onRequest: SET_UNSOL_CELL_INFO_LIST_RATE ------
+05-15 14:02:25.390 D/RILJ    ( 3041): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_UNAVAILABLE
+05-15 14:02:25.390 D/RilRequest( 3041): [3651]< RADIO_POWER error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-15 14:02:25.390 D/RilRequest( 3041): [3652]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-15 14:02:25.390 D/Dcc     ( 3041): DccDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=9
+05-15 14:02:25.390 D/RilRequest( 3041): [3653]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-15 14:02:25.390 D/RilRequest( 3041): [3654]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-15 14:02:32.600 I/RIL     ( 4439): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+05-15 14:02:42.600 I/RIL     ( 4439): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+05-15 14:02:52.600 I/RIL     ( 4439): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------

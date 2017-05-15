@@ -1,0 +1,683 @@
+05-15 14:50:05.730 I/RIL     ( 3788): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+05-15 14:50:15.730 I/RIL     ( 3788): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+05-15 14:50:25.730 I/RIL     ( 3788): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
+05-15 14:50:25.730 D/RIL     ( 3788): ******** VendorRIL: setRadioState(0), oldState=1 ********
+05-15 14:50:25.730 D/AT      ( 3788): AT> ATE0Q0V1
+05-15 14:50:25.730 D/RILJ    ( 2733): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_OFF
+05-15 14:50:25.730 D/RILJ    ( 2733): [3657]> RADIO_POWER on
+05-15 14:50:25.750 D/RILJ    ( 2733): [3658]> SCREEN_STATE: false
+05-15 14:50:25.750 D/PHONE   ( 2733): [ServiceState] setNullState=3
+05-15 14:50:25.750 D/GsmSST  ( 2733): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[3 3 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+05-15 14:50:25.750 D/PHONE   ( 2733): [ServiceState] setNullState=1
+05-15 14:50:25.750 D/GsmSST  ( 2733): [GsmSST] updateSpnDisplay: radio is off w/ showPlmn=false plmn=null
+05-15 14:50:25.750 D/GsmSST  ( 2733): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='false' plmn='null' showSpn='false' spn=''
+05-15 14:50:25.770 D/GsmSST  ( 2733): [GsmSST] operatorNumeric is null
+05-15 14:50:25.790 D/GsmSST  ( 2733): [GsmSST] notifyDataRegStateRilRadioTechnologyChanged: drs=3 rat=0
+05-15 14:50:25.790 D/DCT     ( 2733): get all active apn types
+05-15 14:50:25.790 D/DCT     ( 2733): handleMessage msg={ when=-62ms what=270337 obj=android.os.AsyncResult@41fb84c0 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-15 14:50:25.790 D/DCT     ( 2733): onRadioAvailable
+05-15 14:50:25.790 D/DCT     ( 2733): overall state is IDLE
+05-15 14:50:25.790 D/RILJ    ( 2733): [3659]> BASEBAND_VERSION
+05-15 14:50:25.790 D/RILJ    ( 2733): [3660]> GET_IMEI
+05-15 14:50:25.790 D/RILJ    ( 2733): [3661]> GET_IMEISV
+05-15 14:50:25.800 I/AT      ( 3788): ------ VendorRIL readerLoop: repeatedly readLine, processLine, handleUnsolicited, handleFinalResponse ------
+05-15 14:50:25.800 D/AT      ( 3788): AT< OK
+05-15 14:50:26.050 I/RIL     ( 3788): ------ VendorRIL: GSM AT Command for initialization ------
+05-15 14:50:26.050 D/AT      ( 3788): AT> AT+WNAM
+05-15 14:50:26.060 D/AT      ( 3788): AT< ERROR
+05-15 14:50:26.060 I/RIL     ( 3788): ======== VendorRIL: found GSM Modem Device ========
+05-15 14:50:26.060 D/AT      ( 3788): AT> ATE0Q0V1
+05-15 14:50:26.060 D/AT      ( 3788): AT< OK
+05-15 14:50:26.060 D/AT      ( 3788): AT> ATS0=0
+05-15 14:50:26.070 D/AT      ( 3788): AT< OK
+05-15 14:50:26.070 D/AT      ( 3788): AT> AT+CMEE=1
+05-15 14:50:26.080 D/AT      ( 3788): AT< OK
+05-15 14:50:26.080 D/AT      ( 3788): AT> AT+CREG=2
+05-15 14:50:26.090 D/AT      ( 3788): AT< OK
+05-15 14:50:26.090 D/AT      ( 3788): AT> AT+CGREG=1
+05-15 14:50:26.090 D/AT      ( 3788): AT< OK
+05-15 14:50:26.090 D/AT      ( 3788): AT> AT+CCWA=1
+05-15 14:50:26.090 D/AT      ( 3788): AT< OK
+05-15 14:50:26.090 D/AT      ( 3788): AT> AT+CMOD=0
+05-15 14:50:26.100 D/AT      ( 3788): AT< OK
+05-15 14:50:26.100 D/AT      ( 3788): AT> AT+CMUT=0
+05-15 14:50:26.110 D/AT      ( 3788): AT< OK
+05-15 14:50:26.110 D/AT      ( 3788): AT> AT+CSSN=0,1
+05-15 14:50:26.120 D/AT      ( 3788): AT< OK
+05-15 14:50:26.120 D/AT      ( 3788): AT> AT+COLP=0
+05-15 14:50:26.130 D/AT      ( 3788): AT< OK
+05-15 14:50:26.130 D/AT      ( 3788): AT> AT+CSCS="HEX"
+05-15 14:50:26.140 D/AT      ( 3788): AT< OK
+05-15 14:50:26.140 D/AT      ( 3788): AT> AT+CUSD=1
+05-15 14:50:26.140 D/AT      ( 3788): AT< OK
+05-15 14:50:26.140 D/AT      ( 3788): AT> AT+CGEREP=1,0
+05-15 14:50:26.150 D/AT      ( 3788): AT< OK
+05-15 14:50:26.150 D/AT      ( 3788): AT> AT+CMGF=0
+05-15 14:50:26.150 D/AT      ( 3788): AT< OK
+05-15 14:50:26.150 D/AT      ( 3788): AT> AT+CFUN?
+05-15 14:50:26.160 D/AT      ( 3788): AT< +CFUN: 1
+05-15 14:50:26.160 D/AT      ( 3788): AT< OK
+05-15 14:50:26.160 D/RIL     ( 3788): ******** VendorRIL: setRadioState(10), oldState=0 ********
+05-15 14:50:26.160 D/RIL     ( 3788): ******** VendorRIL: onRadioPowerOn pollSIMState, current state=10 ********
+05-15 14:50:26.160 I/RIL     ( 3788): ======== VendorRIL: AT Command initialize done, Radio_State=ON, sState=10 ========
+05-15 14:50:26.160 I/RIL     ( 3788): ------ VendorRIL onRequest: RADIO_POWER ------
+05-15 14:50:26.160 D/RIL     ( 3788): requestRadioPower: request to set [1], current state [10]
+05-15 14:50:26.160 D/RIL     ( 3788): requestRadioPower: error Unhandled state
+05-15 14:50:26.160 I/RIL     ( 3788): ------ VendorRIL onRequest: SCREEN_STATE ------
+05-15 14:50:26.160 I/RIL     ( 3788): [ScreenState]: OFF
+05-15 14:50:26.160 I/RIL     ( 3788): ------ VendorRIL onRequest: BASEBAND_VERSION ------
+05-15 14:50:26.160 I/RIL     ( 3788): ------ VendorRIL onRequest: GET_IMEI ------
+05-15 14:50:26.160 I/RIL     ( 3788): ------ VendorRIL onRequest: GET_IMEISV ------
+05-15 14:50:26.160 I/RIL     ( 3788): --- VendorRIL not supported: RIL_REQUEST_GET_IMEISV ---
+05-15 14:50:26.160 D/RILJ    ( 2733): [UNSL]< UNSOL_RESPONSE_RADIO_STATE_CHANGED RADIO_ON
+05-15 14:50:26.160 D/RILJ    ( 2733): [3657]< RADIO_POWER 
+05-15 14:50:26.160 D/RilRequest( 2733): [3658]< SCREEN_STATE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+05-15 14:50:26.160 D/RILJ    ( 2733): [3659]< BASEBAND_VERSION E1750
+05-15 14:50:26.160 D/RILJ    ( 2733): [3660]< GET_IMEI 
+05-15 14:50:26.160 D/RilRequest( 2733): [3661]< GET_IMEISV error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+05-15 14:50:26.160 D/RILJ    ( 2733): [3662]> OPERATOR
+05-15 14:50:26.160 D/RILJ    ( 2733): [3663]> DATA_REGISTRATION_STATE
+05-15 14:50:26.170 I/RIL     ( 3788): ------ VendorRIL onRequest: OPERATOR ------
+05-15 14:50:26.170 D/AT      ( 3788): AT> AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+05-15 14:50:26.170 D/RILJ    ( 2733): [3664]> VOICE_REGISTRATION_STATE
+05-15 14:50:26.170 D/RILJ    ( 2733): [3665]> QUERY_NETWORK_SELECTION_MODE[  292.765840] cpu1 turning on start...
+05-15 14:50:26.170 D/UiccController( 2733): Received EVENT_ICC_STATUS_CHANGED, calling getIccCardStatus
+05-15 14:50:26.170 D/RILJ    ( 2733): [3666]> GET_SIM_STATUSCPU1: Booted secondary processor
+
+05-15 14:50:26.170 D/RILJ    ( 2733): [3667]> GET_CURRENT_CALLS
+05-15 14:50:26.170 D/RILJ    ( 2733): [3668]> RIL_REQUEST_IMS_REGISTRATION_STATE
+05-15 14:50:26.170 D/RILJ    ( 2733): [3669]> RIL_REQUEST_VOICE_RADIO_TECH
+05-15 14:50:26.170 D/RILJ    ( 2733): [3670]> RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE
+05-15 14:50:26.180 D/GSMPhone( 2733): Baseband version: E1750
+05-15 14:50:26.180 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.180 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.180 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.180 D/AT      ( 3788): AT< OK
+05-15 14:50:26.180 D/RIL     ( 3788): [VendorRIL] requestOperator result: [0] = CAN Rogers Wirel
+05-15 14:50:26.180 D/RIL     ( 3788): [VendorRIL] requestOperator result: [1] = ROGERS
+05-15 14:50:26.180 D/RIL     ( 3788): [VendorRIL] requestOperator result: [2] = 302720
+05-15 14:50:26.180 I/RIL     ( 3788): ------ VendorRIL onRequest: DATA_REGISTRATION_STATE ------
+05-15 14:50:26.180 D/RIL     ( 3788): VendorRIL: requestRegistrationState >>>>>>>>>[  292.921573] end
+
+05-15 14:50:26.180 D/AT      ( 3788): AT> AT+CGREG?
+05-15 14:50:26.180 D/RILJ    ( 2733): [3662]< OPERATOR {CAN Rogers Wirel, ROGERS, 302720}
+05-15 14:50:26.190 D/AT      ( 3788): AT< +CGREG: 1,2
+05-15 14:50:26.190 D/AT      ( 3788): AT< OK
+05-15 14:50:26.190 D/RIL     ( 3788): [DATA_REGISTRATION] response=+CGREG: 1,2
+05-15 14:50:26.190 D/RIL     ( 3788): parseRegistrationState. Parsing: +CGREG: 1,2
+05-15 14:50:26.190 D/RIL     ( 3788): registration state type: 3GPP
+05-15 14:50:26.190 I/RIL     ( 3788): ------ VendorRIL onRequest: VOICE_REGISTRATION_STATE ------
+05-15 14:50:26.190 D/RIL     ( 3788): VendorRIL: requestRegistrationState >>>>>>>>>
+05-15 14:50:26.190 D/AT      ( 3788): AT> AT+CREG?
+05-15 14:50:26.190 D/RILJ    ( 2733): [3663]< DATA_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null}
+05-15 14:50:26.190 E/GsmSST  ( 2733): [GsmSST] error parsing GprsRegistrationState: java.lang.NumberFormatException: Invalid int: "null"
+05-15 14:50:26.190 D/PHONE   ( 2733): [ServiceState] setDataRegState=1
+05-15 14:50:26.190 D/PHONE   ( 2733): [ServiceState] setDataRadioTechnology=0
+05-15 14:50:26.190 D/GsmSST  ( 2733): [GsmSST] handlPollStateResultMessage: GsmSST setDataRegState=1 regState=2 dataRadioTechnology=0
+05-15 14:50:26.200 D/AT      ( 3788): AT< +CREG: 2,2
+05-15 14:50:26.200 D/AT      ( 3788): AT< OK
+05-15 14:50:26.200 D/RIL     ( 3788): [VOICE_REGISTRATION] response=+CREG: 2,2
+05-15 14:50:26.200 D/RIL     ( 3788): parseRegistrationState. Parsing: +CREG: 2,2
+05-15 14:50:26.200 D/RIL     ( 3788): registration state type: 3GPP
+05-15 14:50:26.200 I/RIL     ( 3788): ------ VendorRIL onRequest: QUERY_NETWORK_SELECTION_MODE ------
+05-15 14:50:26.200 D/AT      ( 3788): AT> AT+COPS?
+05-15 14:50:26.200 D/RILJ    ( 2733): [3664]< VOICE_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null, null, null, null, null, null, null, null, null, null}
+05-15 14:50:26.200 E/GsmSST  ( 2733): [GsmSST] error parsing RegistrationState: java.lang.NumberFormatException: Invalid int: "ffffffff"
+05-15 14:50:26.200 D/PHONE   ( 2733): [ServiceState] setVoiceRegState=1
+05-15 14:50:26.200 E/PHONE   ( 2733): [ServiceState] setState deprecated use setVoiceRegState()
+05-15 14:50:26.210 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.210 D/AT      ( 3788): AT< OK
+05-15 14:50:26.210 D/RIL     ( 3788): >>> QueryNetworkSelectionMode, response=0
+05-15 14:50:26.210 I/RIL     ( 3788): ------ VendorRIL onRequest: GET_SIM_STATUS ------
+05-15 14:50:26.210 D/RIL     ( 3788): getSIMStatus(). sState: 10
+05-15 14:50:26.210 D/AT      ( 3788): AT> AT+CPIN?
+05-15 14:50:26.210 D/RILJ    ( 2733): [3665]< QUERY_NETWORK_SELECTION_MODE {0}
+05-15 14:50:26.210 D/GsmSST  ( 2733): [GsmSST] Poll ServiceState done:  oldSS=[3 3 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+05-15 14:50:26.210 D/PHONE   ( 2733): [ServiceState] setNullState=1
+05-15 14:50:26.210 D/GsmSST  ( 2733): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+05-15 14:50:26.210 D/GsmSST  ( 2733): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='true' plmn='No service.' showSpn='false' spn=''
+05-15 14:50:26.220 D/AT      ( 3788): AT< +CPIN:READY
+05-15 14:50:26.220 D/AT      ( 3788): AT< OK
+05-15 14:50:26.220 D/RIL     ( 3788): [getSIMStatus] response=+CPIN:READY
+05-15 14:50:26.220 I/RIL     ( 3788): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------
+05-15 14:50:26.220 D/AT      ( 3788): AT> AT+CLCC
+05-15 14:50:26.220 D/RILJ    ( 2733): [3666]< GET_SIM_STATUS IccCardState {CARDSTATE_PRESENT,PINSTATE_UNKNOWN,num_apps=2,gsm_id=0{APPTYPE_SIM,APPSTATE_READY},cdma_id=1{APPTYPE_RUIM,APPSTATE_READY},ims_id=8}
+05-15 14:50:26.230 D/AT      ( 3788): AT< OK
+05-15 14:50:26.230 I/RIL     ( 3788): ------ VendorRIL onRequest: IMS_REGISTRATION_STATE ------
+05-15 14:50:26.230 D/RIL     ( 3788): IMS_REGISTRATION=0, format=1 
+05-15 14:50:26.230 I/RIL     ( 3788): ------ VendorRIL onRequest: VOICE_RADIO_TECH ------
+05-15 14:50:26.230 I/RIL     ( 3788): ------ VendorRIL onRequest: CDMA_GET_SUBSCRIPTION_SOURCE ------
+05-15 14:50:26.230 D/RILJ    ( 2733): [3667]< GET_CURRENT_CALLS  
+05-15 14:50:26.230 D/RILJ    ( 2733): [3668]< RIL_REQUEST_IMS_REGISTRATION_STATE {0, 1}
+05-15 14:50:26.230 D/RILJ    ( 2733): [3669]< RIL_REQUEST_VOICE_RADIO_TECH {11}
+05-15 14:50:26.230 D/RilRequest( 2733): [3670]< RIL_REQUEST_CDMA_GET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+05-15 14:50:26.300 D/GsmSST  ( 2733): [GsmSST] pollStateDone: there are 6 unique offsets for iso-cc='ca testOneUniqueOffsetPath=false', do nothing
+05-15 14:50:26.300 D/GsmSST  ( 2733): [GsmSST] shouldFixTimeZoneNow: retVal=false iccCardExist=false operatorNumeric=302720 mcc=302 prevOperatorNumeric= prevMcc=303 needToFixTimeZone=false ltod=05-15 14:50:26.306
+05-15 14:50:26.310 D/GsmSST  ( 2733): [GsmSST] notifyDataRegStateRilRadioTechnologyChanged: drs=1 rat=0
+05-15 14:50:26.310 D/DCT     ( 2733): get all active apn types
+05-15 14:50:26.310 D/UiccController( 2733): Received EVENT_GET_ICC_STATUS_DONE
+05-15 14:50:26.310 D/UiccCard( 2733): Creating
+05-15 14:50:26.310 D/UiccCard( 2733): 2 applications
+05-15 14:50:26.310 D/UiccCardApplication( 2733): Creating UiccApp: {APPTYPE_SIM,APPSTATE_READY}
+05-15 14:50:26.310 W/VoiceMailConstants( 2733): Can't open /system/etc/voicemail-conf.xml
+05-15 14:50:26.310 W/SpnOverride( 2733): Can not open /system/etc/spn-conf.xml
+05-15 14:50:26.310 D/SIMRecords( 2733): [SIMRecords] SIMRecords: onRadioOffOrNotAvailable set 'gsm.sim.operator.numeric' to operator=null
+05-15 14:50:26.320 D/UiccCardApplication( 2733): Notifying 1 registrant: READY
+05-15 14:50:26.320 D/SIMRecords( 2733): [SIMRecords] getOperatorNumeric: IMSI == null
+05-15 14:50:26.320 D/SIMRecords( 2733): [SIMRecords] SIMRecords X ctor this=SimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@41eebaa0 mCi=com.android.internal.telephony.RIL@41eefed8 mFh=Handler (com.android.internal.telephony.uicc.SIMFileHandler) {41fdb2d8} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@41fda1e8 recordsLoadedRegistrants=android.os.RegistrantList@41fddd90 mImsiReadyRegistrants=android.os.RegistrantList@41fdddb8 mRecordsEventsRegistrants=android.os.RegistrantList@41fddde0 mNewSmsRegistrants=android.os.RegistrantList@41fdde08 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@41fdde30 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {41fddf30} recordsRequested=false iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=-1 mailboxIndex=0 spn=null mVmConfigcom.android.internal.telephony.uicc.VoiceMailConstants@41fde6e0 mSpnOverride=mSpnOverride callForwardingEnabled=false spnState=null mCphsInfo=null mCspPlmnEnabled=true efMWIS=null efCPHS_MWI=null mEfCff=null mEfCfis=null getOperatorNumeric=null
+05-15 14:50:26.320 D/RILJ    ( 2733): [3671]> QUERY_FACILITY_LOCK [FD 7 null]
+05-15 14:50:26.330 D/RILJ    ( 2733): [3672]> QUERY_FACILITY_LOCK [SC 7 null]
+05-15 14:50:26.330 I/RIL     ( 3788): ------ VendorRIL onRequest: QUERY_FACILITY_LOCK ------
+05-15 14:50:26.330 I/RIL     ( 3788): --- VendorRIL not supported: RIL_REQUEST_QUERY_FACILITY_LOCK ---
+05-15 14:50:26.330 D/UiccCardApplication( 2733): Creating UiccApp: {APPTYPE_RUIM,APPSTATE_READY}
+05-15 14:50:26.330 D/UiccCardApplication( 2733): Notifying 1 registrant: READY
+05-15 14:50:26.330 I/RIL     ( 3788): ------ VendorRIL onRequest: QUERY_FACILITY_LOCK ------
+05-15 14:50:26.330 I/RIL     ( 3788): --- VendorRIL not supported: RIL_REQUEST_QUERY_FACILITY_LOCK ---
+05-15 14:50:26.330 D/RuimRecords( 2733): [RuimRecords] RuimRecords X ctor this=RuimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@41eebaa0 mCi=com.android.internal.telephony.RIL@41eefed8 mFh=Handler (com.android.internal.telephony.uicc.RuimFileHandler) {41fe7898} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@41fe7418 recordsLoadedRegistrants=android.os.RegistrantList@41fe7bd0 mImsiReadyRegistrants=android.os.RegistrantList@41fe7bf8 mRecordsEventsRegistrants=android.os.RegistrantList@41fe7c20 mNewSmsRegistrants=android.os.RegistrantList@41fe7c48 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@41fe7c70 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {41fe7c98} recordsRequested=false iccid=null msisdn=null msisdnTag=null voiceMailNum=null voiceMailTag=null newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=null mncLength=-1 mailboxIndex=0 spn=null m_ota_commitedfalse mMyMobileNumber=xxxx mMin2Min1=null mPrlVersion=null mEFpl=null mEFli=null mCsimSpnDisplayCondition=false mMdn=null mMin=null mHomeSystemId=null mHomeNetworkId=null
+05-15 14:50:26.330 D/RILJ    ( 2733): [3673]> QUERY_FACILITY_LOCK [FD 7 null]
+05-15 14:50:26.340 I/RIL     ( 3788): ------ VendorRIL onRequest: QUERY_FACILITY_LOCK ------
+05-15 14:50:26.340 I/RIL     ( 3788): --- VendorRIL not supported: RIL_REQUEST_QUERY_FACILITY_LOCK ---
+05-15 14:50:26.340 D/RILJ    ( 2733): [3674]> QUERY_FACILITY_LOCK [SC 7 null]
+05-15 14:50:26.340 I/RIL     ( 3788): ------ VendorRIL onRequest: QUERY_FACILITY_LOCK ------
+05-15 14:50:26.340 I/RIL     ( 3788): --- VendorRIL not supported: RIL_REQUEST_QUERY_FACILITY_LOCK ---
+05-15 14:50:26.350 D/UiccCardApplication( 2733): Notifying 1 registrant: READY
+05-15 14:50:26.350 D/CAT     ( 2733): CatService: Running CAT service. STK app installed:false
+05-15 14:50:26.350 D/CAT     ( 2733): CatService: NEW sInstance
+05-15 14:50:26.350 E/UiccCard( 2733): App index 8 is invalid since there are no applications
+05-15 14:50:26.350 D/UiccCard( 2733): update: radioState=RADIO_ON mLastRadioState=RADIO_UNAVAILABLE
+05-15 14:50:26.350 D/UiccController( 2733): Notifying IccChangedRegistrants
+05-15 14:50:26.350 D/RIL_ImsSms( 2733): IMS is NOT registered!
+05-15 14:50:26.350 D/PhoneProxy( 2733): [PhoneProxy] EVENT_REQUEST_VOICE_RADIO_TECH_DONE: newVoiceTech=11
+05-15 14:50:26.350 D/PhoneProxy( 2733): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=11
+05-15 14:50:26.350 D/PhoneProxy( 2733): [PhoneProxy] phoneObjectUpdater: No change ignore, newVoiceRadioTech=11 mActivePhone=GSM
+05-15 14:50:26.350 D/CdmaSSM ( 2733): CDMA_SUBSCRIPTION_SOURCE event = 2
+05-15 14:50:26.350 W/CdmaSSM ( 2733): Unable to get CDMA Subscription Source, Exception: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED, result: null
+05-15 14:50:26.370 D/SIMRecords( 2733): [SIMRecords] fetchSimRecords 0
+05-15 14:50:26.370 D/RILJ    ( 2733): [3675]> getIMSI: GET_IMSI aid: null
+05-15 14:50:26.370 I/RIL     ( 3788): ------ VendorRIL onRequest: GET_IMSI ------
+05-15 14:50:26.370 D/AT      ( 3788): AT> AT+CIMI
+05-15 14:50:26.370 D/RILJ    ( 2733): [3676]> iccIO: SIM_IO 0xc0 0x2fe2  path: 3F00,0,0,15 aid: null
+05-15 14:50:26.370 D/RILJ    ( 2733): [3677]> iccIO: SIM_IO 0xc0 0x6f40  path: 3F007F10,0,0,15 aid: null
+05-15 14:50:26.380 D/RILJ    ( 2733): [3678]> iccIO: SIM_IO 0xc0 0x6fc9  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.380 D/AT      ( 3788): AT< 302370602284779
+05-15 14:50:26.380 D/AT      ( 3788): AT< OK
+05-15 14:50:26.380 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.380 D/AT      ( 3788): AT> AT+CRSM=192,12258,0,0,15
+05-15 14:50:26.380 D/RILJ    ( 2733): [3675]< GET_IMSI 
+05-15 14:50:26.380 D/RILJ    ( 2733): [3679]> iccIO: SIM_IO 0xc0 0x6fad  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.380 D/RILJ    ( 2733): [3680]> iccIO: SIM_IO 0xc0 0x6fca  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.380 D/RILJ    ( 2733): [3681]> iccIO: SIM_IO 0xc0 0x6f11  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.380 D/RILJ    ( 2733): [3682]> iccIO: SIM_IO 0xc0 0x6fcb  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.380 D/RILJ    ( 2733): [3683]> iccIO: SIM_IO 0xc0 0x6f13  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.390 D/RILJ    ( 2733): [3684]> iccIO: SIM_IO 0xc0 0x6f46  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.400 D/RILJ    ( 2733): [3685]> iccIO: SIM_IO 0xc0 0x6fcd  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.400 D/RILJ    ( 2733): [3686]> iccIO: SIM_IO 0xc0 0x6fc5  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.400 D/RILJ    ( 2733): [3687]> iccIO: SIM_IO 0xc0 0x6f38  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.400 D/RILJ    ( 2733): [3688]> iccIO: SIM_IO 0xc0 0x6f16  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.400 D/RILJ    ( 2733): [3689]> iccIO: SIM_IO 0xc0 0x6f15  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.410 D/RILJ    ( 2733): [3690]> iccIO: SIM_IO 0xc0 0x6f3e  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:26.410 D/AT      ( 3788): AT< +CRSM: 144,0,0000000A2FE20400FFF0AA04020000
+05-15 14:50:26.410 D/AT      ( 3788): AT< OK
+05-15 14:50:26.410 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.410 D/AT      ( 3788): AT> AT+CRSM=192,28480,0,0,15
+05-15 14:50:26.410 D/RILJ    ( 2733): [3676]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.410 D/SIMRecords( 2733): [SIMRecords] fetchSimRecords 16 requested: true
+05-15 14:50:26.410 D/RuimRecords( 2733): [RuimRecords] fetchRuimRecords 0
+05-15 14:50:26.410 D/RILJ    ( 2733): [3691]> getIMSI: GET_IMSI aid: null
+05-15 14:50:26.420 D/RILJ    ( 2733): [3692]> iccIO: SIM_IO 0xc0 0x2fe2  path: 3F00,0,0,15 aid: null
+05-15 14:50:26.420 D/RILJ    ( 2733): [3693]> iccIO: SIM_IO 0xc0 0x2f05  path: 3F00,0,0,15 aid: null
+05-15 14:50:26.420 D/AT      ( 3788): AT< +CRSM: 144,0,000000806F40040011F0AA04020120
+05-15 14:50:26.420 D/AT      ( 3788): AT< OK
+05-15 14:50:26.420 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.420 D/AT      ( 3788): AT> AT+CRSM=192,28617,0,0,15
+05-15 14:50:26.420 D/RILJ    ( 2733): [3677]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.420 D/RILJ    ( 2733): [3694]> iccIO: SIM_IO 0xc0 0x6f3a  path: 3F007F25,0,0,15 aid: null
+05-15 14:50:26.420 D/RILJ    ( 2733): [3695]> iccIO: SIM_IO 0xc0 0x6f41  path: 3F007F25,0,0,15 aid: null
+05-15 14:50:26.420 D/RILJ    ( 2733): [3696]> iccIO: SIM_IO 0xc0 0x6f44  path: 3F007F25,0,0,15 aid: null
+05-15 14:50:26.430 D/RILJ    ( 2733): [3697]> iccIO: SIM_IO 0xc0 0x6f22  path: 3F007F25,0,0,15 aid: null
+05-15 14:50:26.430 D/RILJ    ( 2733): [3698]> iccIO: SIM_IO 0xc0 0x6f28  path: 3F007F25,0,0,15 aid: null
+05-15 14:50:26.430 D/RILJ    ( 2733): [3699]> iccIO: SIM_IO 0xb0 0x6f5a  path: 3F007F25,0,0,4 aid: null
+05-15 14:50:26.430 D/RuimRecords( 2733): [RuimRecords] fetchRuimRecords 9 requested: true
+05-15 14:50:26.430 D/RILJ    ( 2733): [3700]> RIL_REQUEST_CDMA_SUBSCRIPTION
+05-15 14:50:26.440 D/CAT     ( 2733): CatService: SIM ready. Reporting STK service running now...
+05-15 14:50:26.440 D/RILJ    ( 2733): [3701]> RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING
+05-15 14:50:26.440 D/GSMPhone( 2733): [GSMPhone] New Uicc application found
+05-15 14:50:26.440 D/GsmSST  ( 2733): [GsmSST] New card found
+05-15 14:50:26.440 D/UiccCardApplication( 2733): Notifying 1 registrant: READY
+05-15 14:50:26.440 D/DCT     ( 2733): handleMessage msg={ when=-85ms what=270369 obj=android.os.AsyncResult@41ff0e00 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-15 14:50:26.440 D/DCT     ( 2733): New records found
+05-15 14:50:26.440 D/GsmSMSDispatcher( 2733): New Uicc application found
+05-15 14:50:26.440 D/IccCardProxy( 2733): Icc changed. Reregestering.
+05-15 14:50:26.440 D/UiccCardApplication( 2733): Notifying 1 registrant: READY
+05-15 14:50:26.440 D/IccCardProxy( 2733): Broadcasting intent ACTION_SIM_STATE_CHANGED READY reason null
+05-15 14:50:26.440 D/AT      ( 3788): AT< +CRSM: 144,0,000000186FC9040011F0AA0402010C
+05-15 14:50:26.440 D/AT      ( 3788): AT< OK
+05-15 14:50:26.450 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.450 D/AT      ( 3788): AT> AT+CRSM=192,28589,0,0,15
+05-15 14:50:26.450 D/RILJ    ( 2733): [3678]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.450 D/SIMRecords( 2733): [SIMRecords] IMSI: xxxxxxx
+05-15 14:50:26.450 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 15 requested: true
+05-15 14:50:26.450 D/RILJ    ( 2733): [3702]> iccIO: SIM_IO 0xb0 0x2fe2  path: 3F00,0,0,10 aid: null
+05-15 14:50:26.460 D/RILJ    ( 2733): [3703]> iccIO: SIM_IO 0xb2 0x6f40  path: 3F007F10,1,4,32 aid: null
+05-15 14:50:26.460 D/RILJ    ( 2733): setCurrentPreferredNetworkType: 1
+05-15 14:50:26.460 D/RILJ    ( 2733): [3704]> REQUEST_SET_PREFERRED_NETWORK_TYPE : 1
+05-15 14:50:26.460 D/AT      ( 3788): AT< +CRSM: 144,0,000000046FAD04000AF0AA04020000
+05-15 14:50:26.460 D/AT      ( 3788): AT< OK
+05-15 14:50:26.460 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.460 D/AT      ( 3788): AT> AT+CRSM=192,28618,0,0,15
+05-15 14:50:26.460 D/RILJ    ( 2733): [3679]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.460 D/RILJ    ( 2733): [3705]> SET_NETWORK_SELECTION_MANUAL 302720
+05-15 14:50:26.470 D/RILJ    ( 2733): [3706]> OPERATOR
+05-15 14:50:26.470 D/RILJ    ( 2733): [3707]> DATA_REGISTRATION_STATE
+05-15 14:50:26.470 D/RILJ    ( 2733): [3708]> VOICE_REGISTRATION_STATE
+05-15 14:50:26.470 D/RILJ    ( 2733): [3709]> QUERY_NETWORK_SELECTION_MODE
+05-15 14:50:26.470 D/RILJ    ( 2733): [3710]> iccIO: SIM_IO 0xb2 0x6fc9  path: 3F007F20,1,4,12 aid: null
+05-15 14:50:26.480 D/IccCardProxy( 2733): Broadcasting intent ACTION_SIM_STATE_CHANGED IMSI reason null
+05-15 14:50:26.490 D/AT      ( 3788): AT< +CRSM: 144,0,0000000A6FCA040011F0AA04020105
+05-15 14:50:26.490 D/AT      ( 3788): AT< OK
+05-15 14:50:26.490 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.490 D/AT      ( 3788): AT> AT+CRSM=192,28433,0,0,15
+05-15 14:50:26.490 D/RILJ    ( 2733): [3680]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.490 D/RILJ    ( 2733): [3711]> iccIO: SIM_IO 0xb0 0x6fad  path: 3F007F20,0,0,4 aid: null
+05-15 14:50:26.490 D/RILJ    ( 2733): [3712]> iccIO: SIM_IO 0xb2 0x6fca  path: 3F007F20,1,4,5 aid: null
+05-15 14:50:26.530 D/AT      ( 3788): AT< +CRSM: 148,4
+05-15 14:50:26.530 D/AT      ( 3788): AT< ERROR
+05-15 14:50:26.530 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.530 D/AT      ( 3788): AT> AT+CRSM=192,28619,0,0,15
+05-15 14:50:26.530 D/RilRequest( 2733): [3681]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+05-15 14:50:26.530 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 14 requested: true
+05-15 14:50:26.550 D/AT      ( 3788): AT< +CRSM: 144,0,000000206FCB040011F0AA04020110
+05-15 14:50:26.550 D/AT      ( 3788): AT< OK
+05-15 14:50:26.560 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.560 D/AT      ( 3788): AT> AT+CRSM=192,28435,0,0,15
+05-15 14:50:26.560 D/RILJ    ( 2733): [3682]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.560 D/RILJ    ( 2733): [3713]> iccIO: SIM_IO 0xb2 0x6fcb  path: 3F007F20,1,4,16 aid: null
+05-15 14:50:26.590 D/AT      ( 3788): AT< +CRSM: 148,4
+05-15 14:50:26.590 D/AT      ( 3788): AT< ERROR
+05-15 14:50:26.590 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.590 D/AT      ( 3788): AT> AT+CRSM=192,28486,0,0,15
+05-15 14:50:26.590 D/RilRequest( 2733): [3683]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+05-15 14:50:26.590 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 13 requested: true
+05-15 14:50:26.610 D/AT      ( 3788): AT< +CRSM: 144,0,000000116F4604000AF0AA04020000
+05-15 14:50:26.610 D/AT      ( 3788): AT< OK
+05-15 14:50:26.610 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.610 D/AT      ( 3788): AT> AT+CRSM=192,28621,0,0,15
+05-15 14:50:26.610 D/RILJ    ( 2733): [3684]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.610 D/RILJ    ( 2733): [3714]> iccIO: SIM_IO 0xb0 0x6f46  path: 3F007F20,0,0,17 aid: null
+05-15 14:50:26.630 D/AT      ( 3788): AT< +CRSM: 144,0,000000136FCD04001AF0AA04020000
+05-15 14:50:26.630 D/AT      ( 3788): AT< OK
+05-15 14:50:26.630 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.630 D/AT      ( 3788): AT> AT+CRSM=192,28613,0,0,15
+05-15 14:50:26.630 D/RILJ    ( 2733): [3685]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.640 D/RILJ    ( 2733): [3715]> iccIO: SIM_IO 0xb0 0x6fcd  path: 3F007F20,0,0,19 aid: null
+05-15 14:50:26.660 D/AT      ( 3788): AT< +CRSM: 144,0,000000A06FC504000AF0AA04020114
+05-15 14:50:26.660 D/AT      ( 3788): AT< OK
+05-15 14:50:26.660 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.660 D/AT      ( 3788): AT> AT+CRSM=192,28472,0,0,15
+05-15 14:50:26.660 D/RILJ    ( 2733): [3686]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.660 D/RILJ    ( 2733): [3716]> iccIO: SIM_IO 0xb2 0x6fc5  path: 3F007F20,1,4,20 aid: null
+05-15 14:50:26.670 D/AT      ( 3788): AT< +CRSM: 144,0,0000000B6F3804001AF0AA04020000
+05-15 14:50:26.670 D/AT      ( 3788): AT< OK
+05-15 14:50:26.670 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.670 D/AT      ( 3788): AT> AT+CRSM=192,28438,0,0,15
+05-15 14:50:26.680 D/RILJ    ( 2733): [3687]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.680 D/RILJ    ( 2733): [3717]> iccIO: SIM_IO 0xb0 0x6f38  path: 3F007F20,0,0,11 aid: null
+05-15 14:50:26.700 D/AT      ( 3788): AT< +CRSM: 144,0,000000036F1604001AA0AA04020000
+05-15 14:50:26.700 D/AT      ( 3788): AT< OK
+05-15 14:50:26.700 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.700 D/AT      ( 3788): AT> AT+CRSM=192,28437,0,0,15
+05-15 14:50:26.700 D/RILJ    ( 2733): [3688]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.700 D/RILJ    ( 2733): [3718]> iccIO: SIM_IO 0xb0 0x6f16  path: 3F007F20,0,0,3 aid: null
+05-15 14:50:26.730 D/AT      ( 3788): AT< +CRSM: 144,0,0000001A6F15040011A0AA04020000
+05-15 14:50:26.730 D/AT      ( 3788): AT< OK
+05-15 14:50:26.730 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.730 D/AT      ( 3788): AT> AT+CRSM=192,28478,0,0,15
+05-15 14:50:26.730 D/RILJ    ( 2733): [3689]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.730 D/RILJ    ( 2733): [3719]> iccIO: SIM_IO 0xb0 0x6f15  path: 3F007F20,0,0,26 aid: null
+05-15 14:50:26.740 D/AT      ( 3788): AT< +CRSM: 144,0,000000016F3E04001AF0AA04020000
+05-15 14:50:26.740 D/AT      ( 3788): AT< OK
+05-15 14:50:26.740 I/RIL     ( 3788): ------ VendorRIL onRequest: GET_IMSI ------
+05-15 14:50:26.740 D/AT      ( 3788): AT> AT+CIMI
+05-15 14:50:26.740 D/RILJ    ( 2733): [3690]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.750 D/RILJ    ( 2733): [3720]> iccIO: SIM_IO 0xb0 0x6f3e  path: 3F007F20,0,0,1 aid: null
+05-15 14:50:26.760 D/AT      ( 3788): AT< 302370602284779
+05-15 14:50:26.760 D/AT      ( 3788): AT< OK
+05-15 14:50:26.760 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.760 D/AT      ( 3788): AT> AT+CRSM=192,12258,0,0,15
+05-15 14:50:26.760 D/RILJ    ( 2733): [3691]< GET_IMSI 
+05-15 14:50:26.760 D/RuimRecords( 2733): [RuimRecords] IMSI: 302370xxxxxxxxx
+05-15 14:50:26.770 D/AT      ( 3788): AT< +CRSM: 144,0,0000000A2FE20400FFF0AA04020000
+05-15 14:50:26.770 D/AT      ( 3788): AT< OK
+05-15 14:50:26.770 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.770 D/AT      ( 3788): AT> AT+CRSM=192,12037,0,0,15
+05-15 14:50:26.780 D/RILJ    ( 2733): [3692]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.800 D/AT      ( 3788): AT< +CRSM: 144,0,0000000A2F05040001F0AA04020000
+05-15 14:50:26.800 D/AT      ( 3788): AT< OK
+05-15 14:50:26.800 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.800 D/AT      ( 3788): AT> AT+CRSM=192,28474,0,0,15
+05-15 14:50:26.800 D/RILJ    ( 2733): [3693]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.810 D/AT      ( 3788): AT< +CRSM: 144,0,00001F404F3A040011F0AA04020120
+05-15 14:50:26.810 D/AT      ( 3788): AT< OK
+05-15 14:50:26.810 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.810 D/AT      ( 3788): AT> AT+CRSM=192,28481,0,0,15
+05-15 14:50:26.810 D/RILJ    ( 2733): [3694]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.840 D/AT      ( 3788): AT< +CRSM: 148,4
+05-15 14:50:26.840 D/AT      ( 3788): AT< ERROR
+05-15 14:50:26.840 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.840 D/AT      ( 3788): AT> AT+CRSM=192,28484,0,0,15
+05-15 14:50:26.840 D/RilRequest( 2733): [3695]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+05-15 14:50:26.880 D/AT      ( 3788): AT< +CRSM: 144,0,000001406F44044011F0AA04020320
+05-15 14:50:26.880 D/AT      ( 3788): AT< OK
+05-15 14:50:26.880 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.880 D/AT      ( 3788): AT> AT+CRSM=192,28450,0,0,15
+05-15 14:50:26.880 D/RILJ    ( 2733): [3696]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.880 D/AT      ( 3788): AT< ERROR
+05-15 14:50:26.880 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.880 D/AT      ( 3788): AT> AT+CRSM=192,28456,0,0,15
+05-15 14:50:26.880 D/RilRequest( 2733): [3697]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+05-15 14:50:26.880 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 8 requested: true
+05-15 14:50:26.890 D/RILJ    ( 2733): [3721]> iccIO: SIM_IO 0xb0 0x2fe2  path: 3F00,0,0,10 aid: null
+05-15 14:50:26.890 D/RILJ    ( 2733): [3722]> iccIO: SIM_IO 0xb0 0x2f05  path: 3F00,0,0,10 aid: null
+05-15 14:50:26.890 D/AT      ( 3788): AT< ERROR
+05-15 14:50:26.890 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.890 D/AT      ( 3788): AT> AT+CRSM=176,28506,0,0,4
+05-15 14:50:26.890 D/RilRequest( 2733): [3698]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+05-15 14:50:26.890 D/AT      ( 3788): AT< ERROR
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] EF_CSIM_LI LOADED
+05-15 14:50:26.890 E/RuimRecords( 2733): [RuimRecords] Record Load Exception: com.android.internal.telephony.uicc.IccFileTypeMismatch
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 7 requested: true
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] EF_CSIM_SPN LOADED
+05-15 14:50:26.890 E/RuimRecords( 2733): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 6 requested: true
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] EF_CSIM_MDN LOADED
+05-15 14:50:26.890 E/RuimRecords( 2733): [RuimRecords] Record Load Exception: com.android.internal.telephony.uicc.IccFileTypeMismatch
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 5 requested: true
+05-15 14:50:26.890 I/RIL     ( 3788): ------ VendorRIL onRequest: CDMA_SUBSCRIPTION ------
+05-15 14:50:26.890 I/RIL     ( 3788): ------ VendorRIL onRequest: REPORT_STK_SERVICE_IS_RUNNING ------
+05-15 14:50:26.890 I/RIL     ( 3788): --- VendorRIL not supported: RIL_REQUEST_REPORT_STK_SERVICE_IS_RUNNING ---
+05-15 14:50:26.890 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.890 D/AT      ( 3788): AT> AT+CRSM=176,12258,0,0,10
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] EF_CSIM_IMSIM LOADED
+05-15 14:50:26.890 E/RuimRecords( 2733): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 4 requested: true
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] EF_CSIM_CDMAHOME LOADED
+05-15 14:50:26.890 E/RuimRecords( 2733): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+05-15 14:50:26.890 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 3 requested: true
+05-15 14:50:26.890 D/RilRequest( 2733): [3699]< SIM_IO error: com.android.internal.telephony.CommandException: GENERIC_FAILURE ret=
+05-15 14:50:26.900 D/RilRequest( 2733): [3700]< RIL_REQUEST_CDMA_SUBSCRIPTION error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
+05-15 14:50:26.900 D/RuimRecords( 2733): [RuimRecords] EF_CSIM_EPRL LOADED
+05-15 14:50:26.900 E/RuimRecords( 2733): [RuimRecords] Record Load Exception: com.android.internal.telephony.CommandException: GENERIC_FAILURE
+05-15 14:50:26.900 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 2 requested: true
+05-15 14:50:26.910 D/AT      ( 3788): AT< +CRSM: 144,0,98033207130360835283
+05-15 14:50:26.910 D/AT      ( 3788): AT< OK
+05-15 14:50:26.910 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.910 D/AT      ( 3788): AT> AT+CRSM=178,28480,1,4,32
+05-15 14:50:26.910 D/RILJ    ( 2733): [3702]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.910 D/SIMRecords( 2733): [SIMRecords] iccid: 89302370313006382538
+05-15 14:50:26.910 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 12 requested: true
+05-15 14:50:26.940 D/AT      ( 3788): AT< +CRSM: 144,0,FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF07915141655908F0FFFFFFFFFFFF
+05-15 14:50:26.940 D/AT      ( 3788): AT< OK
+05-15 14:50:26.940 I/RIL     ( 3788): ------ VendorRIL onRequest: SET_PREFERRED_NETWORK_TYPE ------
+05-15 14:50:26.940 D/RIL     ( 3788): requestSetPreferredNetworkType: current: 1. New: 1
+05-15 14:50:26.940 I/RIL     ( 3788): ------ VendorRIL onRequest: SET_NETWORK_SELECTION_MANUAL ------
+05-15 14:50:26.940 D/RIL     ( 3788): >> requestSetNetworkSelectionManual 302720
+05-15 14:50:26.940 I/RIL     ( 3788): ------ VendorRIL onRequest: OPERATOR ------
+05-15 14:50:26.940 D/AT      ( 3788): AT> AT+COPS=3,0;+COPS?;+COPS=3,1;+COPS?;+COPS=3,2;+COPS?
+05-15 14:50:26.940 D/RILJ    ( 2733): [3703]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:26.940 D/RILJ    ( 2733): [3704]< REQUEST_SET_PREFERRED_NETWORK_TYPE 
+05-15 14:50:26.940 D/RILJ    ( 2733): [3705]< SET_NETWORK_SELECTION_MANUAL 
+05-15 14:50:26.950 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.950 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.950 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.950 D/AT      ( 3788): AT< OK
+05-15 14:50:26.950 D/RIL     ( 3788): [VendorRIL] requestOperator result: [0] = CAN Rogers Wirel
+05-15 14:50:26.950 D/RIL     ( 3788): [VendorRIL] requestOperator result: [1] = ROGERS
+05-15 14:50:26.950 D/RIL     ( 3788): [VendorRIL] requestOperator result: [2] = 302720
+05-15 14:50:26.950 I/RIL     ( 3788): ------ VendorRIL onRequest: DATA_REGISTRATION_STATE ------
+05-15 14:50:26.950 D/RIL     ( 3788): VendorRIL: requestRegistrationState >>>>>>>>>
+05-15 14:50:26.950 D/AT      ( 3788): AT> AT+CGREG?
+05-15 14:50:26.950 D/RILJ    ( 2733): [3706]< OPERATOR {CAN Rogers Wirel, ROGERS, 302720}
+05-15 14:50:26.950 D/AT      ( 3788): AT< +CGREG: 1,2
+05-15 14:50:26.950 D/AT      ( 3788): AT< OK
+05-15 14:50:26.950 D/RIL     ( 3788): [DATA_REGISTRATION] response=+CGREG: 1,2
+05-15 14:50:26.950 D/RIL     ( 3788): parseRegistrationState. Parsing: +CGREG: 1,2
+05-15 14:50:26.950 D/RIL     ( 3788): registration state type: 3GPP
+05-15 14:50:26.950 I/RIL     ( 3788): ------ VendorRIL onRequest: VOICE_REGISTRATION_STATE ------
+05-15 14:50:26.950 D/RIL     ( 3788): VendorRIL: requestRegistrationState >>>>>>>>>
+05-15 14:50:26.950 D/AT      ( 3788): AT> AT+CREG?
+05-15 14:50:26.950 D/RILJ    ( 2733): [3707]< DATA_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null}
+05-15 14:50:26.960 D/AT      ( 3788): AT< +CREG: 2,2
+05-15 14:50:26.960 D/AT      ( 3788): AT< OK
+05-15 14:50:26.960 D/RIL     ( 3788): [VOICE_REGISTRATION] response=+CREG: 2,2
+05-15 14:50:26.960 D/RIL     ( 3788): parseRegistrationState. Parsing: +CREG: 2,2
+05-15 14:50:26.960 D/RIL     ( 3788): registration state type: 3GPP
+05-15 14:50:26.960 I/RIL     ( 3788): ------ VendorRIL onRequest: QUERY_NETWORK_SELECTION_MODE ------
+05-15 14:50:26.960 D/AT      ( 3788): AT> AT+COPS?
+05-15 14:50:26.960 D/AT      ( 3788): AT< +COPS: 0
+05-15 14:50:26.960 D/AT      ( 3788): AT< OK
+05-15 14:50:26.960 D/RIL     ( 3788): >>> QueryNetworkSelectionMode, response=0
+05-15 14:50:26.960 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.960 D/AT      ( 3788): AT> AT+CRSM=178,28617,1,4,12
+05-15 14:50:26.960 D/RILJ    ( 2733): [3708]< VOICE_REGISTRATION_STATE {2, ffffffff, ffffffff, null, null, null, null, null, null, null, null, null, null, null, null}
+05-15 14:50:26.960 D/RILJ    ( 2733): [3709]< QUERY_NETWORK_SELECTION_MODE {0}
+05-15 14:50:26.980 E/GsmSST  ( 2733): [GsmSST] error parsing GprsRegistrationState: java.lang.NumberFormatException: Invalid int: "null"
+05-15 14:50:26.980 D/PHONE   ( 2733): [ServiceState] setDataRegState=1
+05-15 14:50:26.980 D/PHONE   ( 2733): [ServiceState] setDataRadioTechnology=0
+05-15 14:50:26.980 D/GsmSST  ( 2733): [GsmSST] handlPollStateResultMessage: GsmSST setDataRegState=1 regState=2 dataRadioTechnology=0
+05-15 14:50:26.980 E/GsmSST  ( 2733): [GsmSST] error parsing RegistrationState: java.lang.NumberFormatException: Invalid int: "ffffffff"
+05-15 14:50:26.980 D/PHONE   ( 2733): [ServiceState] setVoiceRegState=1
+05-15 14:50:26.980 E/PHONE   ( 2733): [ServiceState] setState deprecated use setVoiceRegState()
+05-15 14:50:26.980 D/GsmSST  ( 2733): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] newSS=[1 1 home CAN Rogers Wirel ROGERS 302720  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+05-15 14:50:26.980 D/PHONE   ( 2733): [ServiceState] setNullState=1
+05-15 14:50:26.980 D/SIMRecords( 2733): [SIMRecords] MSISDN: xxxxxxx
+05-15 14:50:26.980 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 11 requested: true
+05-15 14:50:26.990 D/AT      ( 3788): AT< +CRSM: 144,0,010000000000000000000000
+05-15 14:50:26.990 D/AT      ( 3788): AT< OK
+05-15 14:50:26.990 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:26.990 D/AT      ( 3788): AT> AT+CRSM=176,28589,0,0,4
+05-15 14:50:26.990 D/RILJ    ( 2733): [3710]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.010 D/AT      ( 3788): AT< +CRSM: 144,0,00000003
+05-15 14:50:27.010 D/AT      ( 3788): AT< OK
+05-15 14:50:27.010 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.010 D/AT      ( 3788): AT> AT+CRSM=178,28618,1,4,5
+05-15 14:50:27.010 D/RILJ    ( 2733): [3711]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.010 D/SIMRecords( 2733): [SIMRecords] EF_MBI: 010000000000000000000000
+05-15 14:50:27.010 D/SIMRecords( 2733): [SIMRecords] Got valid mailbox number for MBDN
+05-15 14:50:27.010 D/RILJ    ( 2733): [3723]> iccIO: SIM_IO 0xc0 0x6fc7  path: 3F007F20,0,0,15 aid: null
+05-15 14:50:27.010 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 11 requested: true
+05-15 14:50:27.010 D/SIMRecords( 2733): [SIMRecords] EF_AD: 00000003
+05-15 14:50:27.030 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 10 requested: true
+05-15 14:50:27.030 D/AT      ( 3788): AT< +CRSM: 144,0,0000000000
+05-15 14:50:27.030 D/AT      ( 3788): AT< OK
+05-15 14:50:27.030 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.030 D/AT      ( 3788): AT> AT+CRSM=178,28619,1,4,16
+05-15 14:50:27.030 D/RILJ    ( 2733): [3712]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.030 D/SIMRecords( 2733): [SIMRecords] EF_MWIS: 0000000000
+05-15 14:50:27.030 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 9 requested: true
+05-15 14:50:27.140 D/AT      ( 3788): AT< +CRSM: 144,0,0100FFFFFFFFFFFFFFFFFFFFFFFFFFFF
+05-15 14:50:27.140 D/AT      ( 3788): AT< OK
+05-15 14:50:27.140 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.140 D/AT      ( 3788): AT> AT+CRSM=176,28486,0,0,17
+05-15 14:50:27.140 D/RILJ    ( 2733): [3713]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.140 D/SIMRecords( 2733): [SIMRecords] EF_CFIS: 0100ffffffffffffffffffffffffffff
+05-15 14:50:27.140 D/SIMRecords( 2733): [SIMRecords] EF_CFIS: callForwardingEnabled=false
+05-15 14:50:27.140 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 8 requested: true
+05-15 14:50:27.280 D/AT      ( 3788): AT< +CRSM: 144,0,00FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+05-15 14:50:27.280 D/AT      ( 3788): AT< OK
+05-15 14:50:27.280 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.280 D/AT      ( 3788): AT> AT+CRSM=176,28621,0,0,19
+05-15 14:50:27.280 D/RILJ    ( 2733): [3714]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.280 D/SIMRecords( 2733): [SIMRecords] Load EF_SPN:  spnDisplayCondition: 0
+05-15 14:50:27.280 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 7 requested: true
+05-15 14:50:27.350 D/AT      ( 3788): AT< +CRSM: 144,0,A311800FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+05-15 14:50:27.350 D/AT      ( 3788): AT< OK
+05-15 14:50:27.470 D/RILJ    ( 2733): [3715]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.470 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 6 requested: true
+05-15 14:50:27.470 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.470 D/AT      ( 3788): AT> AT+CRSM=178,28613,1,4,20
+05-15 14:50:27.510 D/AT      ( 3788): AT< +CRSM: 144,0,430584C634F90DFFFFFFFFFFFFFFFFFFFFFFFFFF
+05-15 14:50:27.510 D/AT      ( 3788): AT< OK
+05-15 14:50:27.510 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.510 D/AT      ( 3788): AT> AT+CRSM=176,28472,0,0,11
+05-15 14:50:27.510 D/RILJ    ( 2733): [3716]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.510 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 5 requested: true
+05-15 14:50:27.540 D/AT      ( 3788): AT< +CRSM: 144,0,9ECB17AC27F60500400240
+05-15 14:50:27.540 D/AT      ( 3788): AT< OK
+05-15 14:50:27.540 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.540 D/AT      ( 3788): AT> AT+CRSM=176,28438,0,0,3
+05-15 14:50:27.540 D/RILJ    ( 2733): [3717]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.540 D/SIMRecords( 2733): [SIMRecords] SST: UsimServiceTable[88]={ FDN, FDN_EXTENSION, SDN, SDN_EXTENSION, OUTGOING_CALL_INFO, INCOMING_CALL_INFO, SM_STORAGE, SM_SERVICE_PARAMS, CB_MESSAGE_ID, CB_MESSAGE_ID_RANGES, GROUP_ID_LEVEL_1, GROUP_ID_LEVEL_2, SPN, MSISDN, GSM_ACCESS, DATA_DL_VIA_SMS_PP, CALL_CONTROL_BY_USIM, RUN_AT_COMMAND, IGNORED_1, ENABLED_SERVICES_TABLE, APN_CONTROL_LIST, GSM_SECURITY_CONTEXT, OPERATOR_PLMN_SELECT, HPLMN_SELECT, PLMN_NETWORK_NAME, OPERATOR_PLMN_LIST, MBDN, MWI_STATUS, CFI_STATUS, SERVICE_PROVIDER_DISPLAY_INFO, EQUIVALENT_HPLMN, LAST_RPLMN_SELECTION_INDICATION, CALL_CONTROL_ON_EPS_PDN_CONNECTION_BY_USIM }
+05-15 14:50:27.540 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 4 requested: true
+05-15 14:50:27.580 D/AT      ( 3788): AT< +CRSM: 144,0,023303
+05-15 14:50:27.580 D/AT      ( 3788): AT< OK
+05-15 14:50:27.580 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.580 D/AT      ( 3788): AT> AT+CRSM=176,28437,0,0,26
+05-15 14:50:27.580 D/RILJ    ( 2733): [3718]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.580 D/SIMRecords( 2733): [SIMRecords] iCPHS: 023303
+05-15 14:50:27.580 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 3 requested: true
+05-15 14:50:27.610 D/AT      ( 3788): AT< +CRSM: 144,0,01F002C0038004C005F00600070008830984C0DDFF00FF00FF00
+05-15 14:50:27.610 D/AT      ( 3788): AT< OK
+05-15 14:50:27.610 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.610 D/AT      ( 3788): AT> AT+CRSM=176,28478,0,0,1
+05-15 14:50:27.610 D/RILJ    ( 2733): [3719]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.610 D/SIMRecords( 2733): [SIMRecords] EF_CSP: 01f002c0038004c005f00600070008830984c0ddff00ff00ff00
+05-15 14:50:27.610 D/SIMRecords( 2733): [SIMRecords] [CSP] found ValueAddedServicesGroup, value -35
+05-15 14:50:27.610 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 2 requested: true
+05-15 14:50:27.660 D/AT      ( 3788): AT< +CRSM: 144,0,DD
+05-15 14:50:27.660 D/AT      ( 3788): AT< OK
+05-15 14:50:27.680 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.680 D/AT      ( 3788): AT> AT+CRSM=176,12258,0,0,10
+05-15 14:50:27.680 D/RILJ    ( 2733): [3720]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.680 D/SIMRecords( 2733): [SIMRecords] GID1: dd
+05-15 14:50:27.680 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 1 requested: true
+05-15 14:50:27.810 D/AT      ( 3788): AT< +CRSM: 144,0,98033207130360835283
+05-15 14:50:27.810 D/AT      ( 3788): AT< OK
+05-15 14:50:27.810 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:27.810 D/AT      ( 3788): AT> AT+CRSM=176,12037,0,0,10
+05-15 14:50:27.810 D/RILJ    ( 2733): [3721]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:27.810 D/RuimRecords( 2733): [RuimRecords] iccid: 89302370313006382538
+05-15 14:50:27.810 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 1 requested: true
+05-15 14:50:28.130 D/AT      ( 3788): AT< +CRSM: 144,0,656EFFFFFFFFFFFFFFFF
+05-15 14:50:28.130 D/AT      ( 3788): AT< OK
+05-15 14:50:28.150 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:28.150 D/AT      ( 3788): AT> AT+CRSM=192,28615,0,0,15
+05-15 14:50:28.150 D/RILJ    ( 2733): [3722]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:28.150 D/RuimRecords( 2733): [RuimRecords] EF_PL LOADED
+05-15 14:50:28.150 D/RuimRecords( 2733): [RuimRecords] EF_PL=656effffffffffffffff
+05-15 14:50:28.150 D/RuimRecords( 2733): [RuimRecords] onRecordLoaded 0 requested: true
+05-15 14:50:28.150 D/RuimRecords( 2733): [RuimRecords] record load complete
+05-15 14:50:28.150 D/RuimRecords( 2733): [RuimRecords] onAllRecordsLoaded set 'gsm.sim.operator.numeric' to operator='302370'
+05-15 14:50:28.190 D/AT      ( 3788): AT< +CRSM: 144,0,000000306FC7040011F0AA04020118
+05-15 14:50:28.190 D/AT      ( 3788): AT< OK
+05-15 14:50:28.190 D/RILJ    ( 2733): [3723]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:28.190 D/RuimRecords( 2733): [RuimRecords] onAllRecordsLoaded set mcc imsi=302370602284779
+05-15 14:50:28.220 D/RuimRecords( 2733): [RuimRecords] Setting locale to en_ca
+05-15 14:50:28.220 D/RILJ    ( 2733): [3724]> iccIO: SIM_IO 0xb2 0x6fc7  path: 3F007F20,1,4,24 aid: null
+05-15 14:50:28.310 I/RIL     ( 3788): ------ VendorRIL onRequest: SIM_IO ------
+05-15 14:50:28.310 D/AT      ( 3788): AT> AT+CRSM=178,28615,1,4,24
+05-15 14:50:28.370 D/AT      ( 3788): AT< +CRSM: 144,0,566F6963656D61696CFF07914161286145F9FFFFFFFFFFFF
+05-15 14:50:28.370 D/AT      ( 3788): AT< OK
+05-15 14:50:28.370 D/RILJ    ( 2733): [3724]< SIM_IO IccIoResponse sw1:0x90 sw2:0x0
+05-15 14:50:28.370 D/SIMRecords( 2733): [SIMRecords] VM: ADN Record 'Voicemail' '+14168216549 null' EF[MBDN]
+05-15 14:50:28.370 D/SIMRecords( 2733): [SIMRecords] onRecordLoaded 0 requested: true
+05-15 14:50:28.370 D/SIMRecords( 2733): [SIMRecords] record load complete
+05-15 14:50:28.370 D/SIMRecords( 2733): [SIMRecords] onAllRecordsLoaded set 'gsm.sim.operator.numeric' to operator='302370'
+05-15 14:50:28.370 D/SIMRecords( 2733): [SIMRecords] onAllRecordsLoaded set mcc imsi=302370602284779
+05-15 14:50:28.890 D/GsmSST  ( 2733): [GsmSST] EVENT_SIM_RECORDS_LOADED: what=16
+05-15 14:50:28.890 D/PhoneProxy( 2733): [PhoneProxy] updatePhoneObject: radioTechnology=0
+05-15 14:50:28.890 D/GsmSST  ( 2733): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+05-15 14:50:28.890 D/DCT     ( 2733): handleMessage msg={ when=-521ms what=270338 obj=android.os.AsyncResult@4203aa38 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-15 14:50:28.890 D/DCT     ( 2733): onRecordsLoaded: createAllApnList
+05-15 14:50:28.890 D/DCT     ( 2733): createAllApnList, r:SimRecords: mDestroyed=false mContext=com.android.phone.PhoneGlobals@41eebaa0 mCi=com.android.internal.telephony.RIL@41eefed8 mFh=Handler (com.android.internal.telephony.uicc.SIMFileHandler) {41fdb2d8} mParentApp=com.android.internal.telephony.uicc.UiccCardApplication@41fda1e8 recordsLoadedRegistrants=android.os.RegistrantList@41fddd90 mImsiReadyRegistrants=android.os.RegistrantList@41fdddb8 mRecordsEventsRegistrants=android.os.RegistrantList@41fddde0 mNewSmsRegistrants=android.os.RegistrantList@41fdde08 mNetworkSelectionModeAutomaticRegistrants=android.os.RegistrantList@41fdde30 recordsToLoad=0 adnCache=Handler (com.android.internal.telephony.uicc.AdnRecordCache) {41fddf30} recordsRequested=true iccid=89302370313006382538 msisdn=+15145695800 msisdnTag= voiceMailNum=+14168216549 voiceMailTag=Voicemail newVoiceMailNum=null newVoiceMailTag=null isVoiceMailFixed=false countVoiceMessages=0 mImsi=302370602284779 mncLength=3 mailboxIndex=1 spn= mVmConfigcom.android.internal.telephony.uicc.VoiceMailConstants@41fde6e0 mSpnOverride=mSpnOverride callForwardingEnabled=false spnState=IDLE mCphsInfo=[B@420311f8 mCspPlmnEnabled=true efMWIS=[B@42028a30 efCPHS_MWI=null mEfCff=null mEfCfis=[B@420292a0 getOperatorNumeric=302370, operator:302370
+05-15 14:50:28.890 D/DCT     ( 2733): createAllApnList: selection=numeric = '302370' and carrier_enabled = 1
+05-15 14:50:28.910 D/DCT     ( 2733): createApnList: X result=[[ApnSettingV2] Fido (Datawind Test1), 1434, 302370, internet.fido.ca, , , , , , -1, default | supl, IP, IP, true, 0, [ApnSettingV2] Fido (Datawind Test2), 1435, 302370, internet.fido.ca, , http://mms.fido.ca, , 80, , -1, default | supl | mms, IP, IP, true, 0, [ApnSettingV2] Fido (Datawind Test3), 1436, 302370, ltemobile.apn, null, http://mms.fido.ca, 205.151.11.13, 80, null, -1, default | supl | mms, IP, IP, true, 0]
+05-15 14:50:28.940 D/DCT     ( 2733): getPreferredApn: mRequestedApnType=default cursor=android.content.ContentResolver$CursorWrapperInner@42056108 cursor.count=1
+05-15 14:50:28.940 D/DCT     ( 2733): getPreferredApn: apnSetting=[ApnSettingV2] Fido (Datawind Test1), 1434, 302370, internet.fido.ca, , , , , , -1, default | supl, IP, IP, true, 0
+05-15 14:50:28.940 D/DCT     ( 2733): getPreferredApn: apnSetting=[ApnSettingV2] Fido (Datawind Test2), 1435, 302370, internet.fido.ca, , http://mms.fido.ca, , 80, , -1, default | supl | mms, IP, IP, true, 0
+05-15 14:50:28.940 D/DCT     ( 2733): getPreferredApn: apnSetting=[ApnSettingV2] Fido (Datawind Test3), 1436, 302370, ltemobile.apn, null, http://mms.fido.ca, 205.151.11.13, 80, null, -1, default | supl | mms, IP, IP, true, 0
+05-15 14:50:28.940 D/DCT     ( 2733): getPreferredApn: X not found
+05-15 14:50:28.940 D/DCT     ( 2733): createAllApnList: mPreferredApn=null
+05-15 14:50:28.940 D/DCT     ( 2733): createAllApnList: X mAllApnSettings=[[ApnSettingV2] Fido (Datawind Test1), 1434, 302370, internet.fido.ca, , , , , , -1, default | supl, IP, IP, true, 0, [ApnSettingV2] Fido (Datawind Test2), 1435, 302370, internet.fido.ca, , http://mms.fido.ca, , 80, , -1, default | supl | mms, IP, IP, true, 0, [ApnSettingV2] Fido (Datawind Test3), 1436, 302370, ltemobile.apn, null, http://mms.fido.ca, 205.151.11.13, 80, null, -1, default | supl | mms, IP, IP, true, 0]
+05-15 14:50:28.940 D/DCT     ( 2733): setInitialApn: E mPreferredApn=null
+05-15 14:50:28.940 D/DCT     ( 2733): setInitialApn: firstApnSetting=[ApnSettingV2] Fido (Datawind Test1), 1434, 302370, internet.fido.ca, , , , , , -1, default | supl, IP, IP, true, 0
+05-15 14:50:28.940 D/DCT     ( 2733): setInitialApn: defaultApnSetting=[ApnSettingV2] Fido (Datawind Test1), 1434, 302370, internet.fido.ca, , , , , , -1, default | supl, IP, IP, true, 0
+05-15 14:50:28.940 D/DCT     ( 2733): setInitialAttachApn: using defaultApnSetting
+05-15 14:50:28.940 D/DCT     ( 2733): setInitialAttachApn: X selected Apn=[ApnSettingV2] Fido (Datawind Test1), 1434, 302370, internet.fido.ca, , , , , , -1, default | supl, IP, IP, true, 0
+05-15 14:50:28.940 D/RILJ    ( 2733): Set RIL_REQUEST_SET_INITIAL_ATTACH_APN
+05-15 14:50:28.940 D/RILJ    ( 2733): [3725]> RIL_REQUEST_SET_INITIAL_ATTACH_APN, apn:internet.fido.ca, protocol:IP, authType:-1, username:fido, password:fido
+05-15 14:50:28.940 D/DCT     ( 2733): onRecordsLoaded: notifying data availability
+05-15 14:50:28.940 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.940 D/DCT     ( 2733): [ApnContext:fota] getApnSetting: apnSetting=null
+05-15 14:50:28.950 I/RIL     ( 3788): ------ VendorRIL onRequest: RIL_REQUEST_SET_INITIAL_ATTACH_APN ------
+05-15 14:50:28.950 I/RIL     ( 3788): --- VendorRIL SetAPN: apn=internet.fido.ca, protocol=IP, auth_type=-1, username=fido, password=fido ---
+05-15 14:50:28.950 D/RILJ    ( 2733): [3725]< RIL_REQUEST_SET_INITIAL_ATTACH_APN 
+05-15 14:50:28.950 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.950 D/DCT     ( 2733): [ApnContext:supl] getApnSetting: apnSetting=null
+05-15 14:50:28.950 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.950 D/DCT     ( 2733): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-15 14:50:28.960 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.960 D/DCT     ( 2733): [ApnContext:ims] getApnSetting: apnSetting=null
+05-15 14:50:28.970 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.970 D/DCT     ( 2733): [ApnContext:default] getApnSetting: apnSetting=null
+05-15 14:50:28.980 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.980 D/DCT     ( 2733): [ApnContext:mms] getApnSetting: apnSetting=null
+05-15 14:50:28.990 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.990 D/DCT     ( 2733): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-15 14:50:28.990 D/DCT     ( 2733): setupDataOnConnectableApns: simLoaded
+05-15 14:50:28.990 D/DCT     ( 2733): setupDataOnConnectableApns: apnContext {mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 14:50:28.990 D/DCT     ( 2733): setupDataOnConnectableApns: apnContext {mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 14:50:28.990 D/DCT     ( 2733): setupDataOnConnectableApns: apnContext {mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 14:50:28.990 D/DCT     ( 2733): setupDataOnConnectableApns: apnContext {mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+05-15 14:50:28.990 D/DCT     ( 2733): setupDataOnConnectableApns: isConnectable() call trySetupData
+05-15 14:50:28.990 D/DCT     ( 2733): trySetupData for type:default due to simLoaded apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=simLoaded mDataEnabled=true mDependencyMet=true}
+05-15 14:50:28.990 D/DCT     ( 2733): trySetupData with mIsPsRestricted=false
+05-15 14:50:28.990 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.990 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.990 D/DCT     ( 2733): [ApnContext:fota] getApnSetting: apnSetting=null
+05-15 14:50:28.990 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:28.990 D/DCT     ( 2733): [ApnContext:supl] getApnSetting: apnSetting=null
+05-15 14:50:29.000 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:29.000 D/DCT     ( 2733): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-15 14:50:29.000 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:29.000 D/DCT     ( 2733): [ApnContext:ims] getApnSetting: apnSetting=null
+05-15 14:50:29.200 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:29.200 D/DCT     ( 2733): [ApnContext:default] getApnSetting: apnSetting=null
+05-15 14:50:29.250 D/AT      ( 3788): AT< +PB_READY
+05-15 14:50:29.350 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:29.350 D/DCT     ( 2733): [ApnContext:mms] getApnSetting: apnSetting=null
+05-15 14:50:29.350 D/DCT     ( 2733): isDataAllowed: not allowed due to - Attached= false
+05-15 14:50:29.350 D/DCT     ( 2733): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-15 14:50:29.350 D/DCT     ( 2733): trySetupData: X apnContext not 'ready' retValue=false
+05-15 14:50:29.350 D/DCT     ( 2733): setupDataOnConnectableApns: apnContext {mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 14:50:29.350 D/DCT     ( 2733): setupDataOnConnectableApns: apnContext {mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 14:50:29.350 D/DCT     ( 2733): setupDataOnConnectableApns: apnContext {mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-15 14:50:29.350 D/IccCardProxy( 2733): Broadcasting intent ACTION_SIM_STATE_CHANGED LOADED reason null
+05-15 14:50:29.360 D/PhoneProxy( 2733): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=0
+05-15 14:50:29.360 D/PhoneProxy( 2733): [PhoneProxy] phoneObjectUpdater: Unknown rat ignore,  newVoiceRadioTech=Unknown. mActivePhone=GSM
+05-15 14:50:46.480 D/RILJ    ( 2733): [3726]> SIGNAL_STRENGTH
+05-15 14:50:46.480 I/RIL     ( 3788): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
+05-15 14:50:46.480 D/AT      ( 3788): AT> AT+CSQ
+05-15 14:50:46.490 D/AT      ( 3788): AT< +CSQ: 31,99
+05-15 14:50:46.490 D/AT      ( 3788): AT< OK
+05-15 14:50:46.500 I/RIL     ( 3788): ------ VendorRIL SignalStrength: 31, 99 ------
+05-15 14:50:46.500 E/RILC    ( 3788): invalid response length
+05-15 14:50:46.500 D/RilRequest( 2733): [3726]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
+05-15 14:50:46.500 D/GsmSST  ( 2733): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+05-15 14:51:06.520 D/RILJ    ( 2733): [3727]> SIGNAL_STRENGTH
+05-15 14:51:06.520 I/RIL     ( 3788): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
+05-15 14:51:06.520 D/AT      ( 3788): AT> AT+CSQ
+05-15 14:51:06.540 D/AT      ( 3788): AT< +CSQ: 31,99
+05-15 14:51:06.540 D/AT      ( 3788): AT< OK
+05-15 14:51:06.540 I/RIL     ( 3788): ------ VendorRIL SignalStrength: 31, 99 ------
+05-15 14:51:06.540 E/RILC    ( 3788): invalid response length
+05-15 14:51:06.540 D/RilRequest( 2733): [3727]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
+05-15 14:51:06.540 D/GsmSST  ( 2733): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+05-15 14:51:26.570 D/RILJ    ( 2733): [3728]> SIGNAL_STRENGTH
+05-15 14:51:26.570 I/RIL     ( 3788): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
+05-15 14:51:26.570 D/AT      ( 3788): AT> AT+CSQ
+05-15 14:51:26.580 D/AT      ( 3788): AT< +CSQ: 31,99
+05-15 14:51:26.580 D/AT      ( 3788): AT< OK
+05-15 14:51:26.580 I/RIL     ( 3788): ------ VendorRIL SignalStrength: 31, 99 ------
+05-15 14:51:26.580 E/RILC    ( 3788): invalid response length
+05-15 14:51:26.580 D/RilRequest( 2733): [3728]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
+05-15 14:51:26.580 D/GsmSST  ( 2733): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
