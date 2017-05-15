@@ -39,10 +39,11 @@
 #include "ril.h"
 #include "hardware/qemu_pipe.h"
 
-#include "common.h"
-
 #define LOG_TAG "RIL"
 #include <utils/Log.h>
+
+#include "ril-vendor.h"
+
 
 #define MAX_AT_RESPONSE 0x1000
 

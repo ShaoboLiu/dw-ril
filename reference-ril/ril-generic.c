@@ -42,7 +42,7 @@
 #define LOG_TAG "RIL"
 #include <utils/Log.h>
 
-#include "common.h"
+#include "ril-vendor.h"
 
 
 #if 0
