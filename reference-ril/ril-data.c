@@ -45,6 +45,9 @@
 #include "ril-vendor.h"
 
 
+/* pathname returned from RIL_REQUEST_SETUP_DATA_CALL / RIL_REQUEST_SETUP_DEFAULT_PDP */
+// #define PPP_TTY_PATH "eth0"
+
 #if 0
 
 #define MAX_AT_RESPONSE 0x1000
