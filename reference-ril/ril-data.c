@@ -279,124 +279,324 @@ RIL_InitialAttachApn s_apnInfo;
 #endif
 
 
-#if 0
-void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
+
+
+static void requestOrSendDataCallList(RIL_Token *t)
 {
-    ATResponse *p_response = NULL;
+    ATResponse *p_response;
+    ATLine *p_cur;
     int err;
-    int response[2];
-    char *line;
+    int n = 0;
+    char *out;
 
-    if(signalStrength[0] == 0 && signalStrength[1] == 0) {
-        if(isgsm)
-            err = at_send_command_singleline("AT+CSQ", "+CSQ:", &p_response);
+    err = at_send_command_multiline ("AT+CGACT?", "+CGACT:", &p_response);
+    if (err != 0 || p_response->success == 0) {
+        if (t != NULL)
+            RIL_onRequestComplete(*t, RIL_E_GENERIC_FAILURE, NULL, 0);
         else
-            err = at_send_command("AT+CSQ=1", &p_response);
+            RIL_onUnsolicitedResponse(RIL_UNSOL_DATA_CALL_LIST_CHANGED,
+                                      NULL, 0);
+        return;
+    }
 
-        if (err < 0 || p_response->success == 0) {
-            RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
+    for (p_cur = p_response->p_intermediates; p_cur != NULL;
+         p_cur = p_cur->p_next)
+        n++;
+
+    RIL_Data_Call_Response_v6 *responses =
+        alloca(n * sizeof(RIL_Data_Call_Response_v6));
+
+    int i;
+    for (i = 0; i < n; i++) {
+        responses[i].status = -1;
+        responses[i].suggestedRetryTime = -1;
+        responses[i].cid = -1;
+        responses[i].active = -1;
+        responses[i].type = "";
+        responses[i].ifname = "";
+        responses[i].addresses = "";
+        responses[i].dnses = "";
+        responses[i].gateways = "";
+    }
+
+    RIL_Data_Call_Response_v6 *response = responses;
+    for (p_cur = p_response->p_intermediates; p_cur != NULL;
+         p_cur = p_cur->p_next) {
+        char *line = p_cur->line;
+
+        err = at_tok_start(&line);
+        if (err < 0)
+            goto error;
+
+        err = at_tok_nextint(&line, &response->cid);
+        if (err < 0)
+            goto error;
+
+        err = at_tok_nextint(&line, &response->active);
+        if (err < 0)
+            goto error;
+
+        response++;
+    }
+
+    at_response_free(p_response);
+
+    err = at_send_command_multiline ("AT+CGDCONT?", "+CGDCONT:", &p_response);
+    if (err != 0 || p_response->success == 0) {
+        if (t != NULL)
+            RIL_onRequestComplete(*t, RIL_E_GENERIC_FAILURE, NULL, 0);
+        else
+            RIL_onUnsolicitedResponse(RIL_UNSOL_DATA_CALL_LIST_CHANGED,
+                                      NULL, 0);
+        return;
+    }
+
+    for (p_cur = p_response->p_intermediates; p_cur != NULL;
+         p_cur = p_cur->p_next) {
+        char *line = p_cur->line;
+        int cid;
+
+        err = at_tok_start(&line);
+        if (err < 0)
+            goto error;
+
+        err = at_tok_nextint(&line, &cid);
+        if (err < 0)
+            goto error;
+
+        for (i = 0; i < n; i++) {
+            if (responses[i].cid == cid)
+                break;
+        }
+
+        if (i >= n) {
+            /* details for a context we didn't hear about in the last request */
+            continue;
+        }
+
+        // Assume no error
+        responses[i].status = 0;
+
+        // type
+        err = at_tok_nextstr(&line, &out);
+        if (err < 0)
+            goto error;
+        responses[i].type = alloca(strlen(out) + 1);
+        strcpy(responses[i].type, out);
+
+        // APN ignored for v5
+        err = at_tok_nextstr(&line, &out);
+        if (err < 0)
+            goto error;
+
+        responses[i].ifname = alloca(strlen(PPP_TTY_PATH) + 1);
+        strcpy(responses[i].ifname, PPP_TTY_PATH);
+
+        err = at_tok_nextstr(&line, &out);
+        if (err < 0)
+            goto error;
+
+        responses[i].addresses = alloca(strlen(out) + 1);
+        strcpy(responses[i].addresses, out);
+
+        {
+            char  propValue[PROP_VALUE_MAX];
+
+            if (__system_property_get("ro.kernel.qemu", propValue) != 0) {
+                /* We are in the emulator - the dns servers are listed
+                 * by the following system properties, setup in
+                 * /system/etc/init.goldfish.sh:
+                 *  - net.eth0.dns1
+                 *  - net.eth0.dns2
+                 *  - net.eth0.dns3
+                 *  - net.eth0.dns4
+                 */
+                const int   dnslist_sz = 128;
+                char*       dnslist = alloca(dnslist_sz);
+                const char* separator = "";
+                int         nn;
+
+                dnslist[0] = 0;
+                for (nn = 1; nn <= 4; nn++) {
+                    /* Probe net.eth0.dns<n> */
+                    char  propName[PROP_NAME_MAX];
+                    snprintf(propName, sizeof propName, "net.eth0.dns%d", nn);
+
+                    /* Ignore if undefined */
+                    if (__system_property_get(propName, propValue) == 0) {
+                        continue;
+                    }
+
+                    /* Append the DNS IP address */
+                    strlcat(dnslist, separator, dnslist_sz);
+                    strlcat(dnslist, propValue, dnslist_sz);
+                    separator = " ";
+                }
+                responses[i].dnses = dnslist;
+
+                /* There is only on gateway in the emulator */
+                responses[i].gateways = "10.0.2.2";
+            }
+            else {
+                /* I don't know where we are, so use the public Google DNS
+                 * servers by default and no gateway.
+                 */
+                responses[i].dnses = "8.8.8.8 8.8.4.4";
+                responses[i].gateways = "";
+            }
+        }
+    }
+
+    at_response_free(p_response);
+
+    if (t != NULL)
+        RIL_onRequestComplete(*t, RIL_E_SUCCESS, responses,
+                              n * sizeof(RIL_Data_Call_Response_v6));
+    else
+        RIL_onUnsolicitedResponse(RIL_UNSOL_DATA_CALL_LIST_CHANGED,
+                                  responses,
+                                  n * sizeof(RIL_Data_Call_Response_v6));
+
+    return;
+
+error:
+    if (t != NULL)
+        RIL_onRequestComplete(*t, RIL_E_GENERIC_FAILURE, NULL, 0);
+    else
+        RIL_onUnsolicitedResponse(RIL_UNSOL_DATA_CALL_LIST_CHANGED,
+                                  NULL, 0);
+
+    at_response_free(p_response);
+}
+
+void onDataCallListChanged(void *param)
+{
+    requestOrSendDataCallList(NULL);
+}
+
+void requestDataCallList(void *data, size_t datalen, RIL_Token t)
+{
+    requestOrSendDataCallList(&t);
+}
+
+void requestSetupDataCall(void *data, size_t datalen, RIL_Token t)
+{
+    const char *apn;
+    char *cmd;
+    int err;
+    ATResponse *p_response = NULL;
+
+    apn = ((const char **)data)[2];
+
+#ifdef USE_TI_COMMANDS
+    // Config for multislot class 10 (probably default anyway eh?)
+    err = at_send_command("AT%CPRIM=\"GMM\",\"CONFIG MULTISLOT_CLASS=<10>\"",
+                        NULL);
+
+    err = at_send_command("AT%DATA=2,\"UART\",1,,\"SER\",\"UART\",0", NULL);
+#endif /* USE_TI_COMMANDS */
+
+    int fd, qmistatus;
+    size_t cur = 0;
+    size_t len;
+    ssize_t written, rlen;
+    char status[32] = {0};
+    int retry = 10;
+    const char *pdp_type;
+
+    RLOGD("requesting data connection to APN '%s'", apn);
+
+    fd = open ("/dev/qmi", O_RDWR);
+    if (fd >= 0) { /* the device doesn't exist on the emulator */
+
+        RLOGD("opened the qmi device\n");
+        asprintf(&cmd, "up:%s", apn);
+        len = strlen(cmd);
+
+        while (cur < len) {
+            do {
+                written = write (fd, cmd + cur, len - cur);
+            } while (written < 0 && errno == EINTR);
+
+            if (written < 0) {
+                RLOGE("### ERROR writing to /dev/qmi");
+                close(fd);
+                goto error;
+            }
+
+            cur += written;
+        }
+
+        // wait for interface to come online
+
+        do {
+            sleep(1);
+            do {
+                rlen = read(fd, status, 31);
+            } while (rlen < 0 && errno == EINTR);
+
+            if (rlen < 0) {
+                RLOGE("### ERROR reading from /dev/qmi");
+                close(fd);
+                goto error;
+            } else {
+                status[rlen] = '\0';
+                RLOGD("### status: %s", status);
+            }
+        } while (strncmp(status, "STATE=up", 8) && strcmp(status, "online") && --retry);
+
+        close(fd);
+
+        if (retry == 0) {
+            RLOGE("### Failed to get data connection up\n");
             goto error;
         }
 
-        line = p_response->p_intermediates->line;
+        qmistatus = system("netcfg rmnet0 dhcp");
 
-        err = at_tok_start(&line);
-        if (err < 0) goto error;
+        RLOGD("netcfg rmnet0 dhcp: status %d\n", qmistatus);
 
-        err = at_tok_nextint(&line, &(response[0]));
-        if (err < 0) goto error;
-
-        err = at_tok_nextint(&line, &(response[1]));
-        if (err < 0) goto error;
-        if(!isgsm) {
-//			response[0]=(response[0]*31)/5;
-//			response[1]=99;
-        }
-        signalStrength[0] = response[0];
-        signalStrength[1] = response[1];
-        at_response_free(p_response);
+        if (qmistatus < 0) goto error;
 
     } else {
-        LOGD("Sending stored CSQ values to RIL");
-        response[0] = signalStrength[0];
-        response[1] = signalStrength[1];
+
+        if (datalen > 6 * sizeof(char *)) {
+            pdp_type = ((const char **)data)[6];
+        } else {
+            pdp_type = "IP";
+        }
+
+        asprintf(&cmd, "AT+CGDCONT=1,\"%s\",\"%s\",,0,0", pdp_type, apn);
+        //FIXME check for error here
+        err = at_send_command(cmd, NULL);
+        free(cmd);
+
+        // Set required QoS params to default
+        err = at_send_command("AT+CGQREQ=1", NULL);
+
+        // Set minimum QoS params to default
+        err = at_send_command("AT+CGQMIN=1", NULL);
+
+        // packet-domain event reporting
+        err = at_send_command("AT+CGEREP=1,0", NULL);
+
+        // Hangup anything that's happening there now
+        err = at_send_command("AT+CGACT=1,0", NULL);
+
+        // Start data on PDP context 1
+        err = at_send_command("ATD*99***1#", &p_response);
+
+        if (err < 0 || p_response->success == 0) {
+            goto error;
+        }
     }
 
-    response[0] = signalStrength[0];
-    response[1] = signalStrength[1];
+    requestOrSendDataCallList(&t);
 
-    LOGI("SignalStrength %d %d",response[0],response[1]);
-    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
+    at_response_free(p_response);
+
     return;
-
 error:
-    LOGE("requestSignalStrength must never return an error when radio is on");
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
     at_response_free(p_response);
 }
-
-#else
-void requestSignalStrength(void *data, size_t datalen, RIL_Token t)
-{
-    ATResponse *p_response = NULL;
-    int err;
-    char *line;
-    int count =0;
-    int numofElements=sizeof(RIL_SignalStrength_v6)/sizeof(int);
-    int response[numofElements];
-
-    /*************************************************************************/
-    if (!IsGsmModem()) {
-        RLOGI("------ VendorRIL not support (CDMA): RIL_REQUEST_SIGNAL_STRENGTH ------");
-        RIL_onRequestComplete(t, RIL_E_REQUEST_NOT_SUPPORTED, NULL, 0);
-        return;
-    }
-    /*************************************************************************/
-
-    // GSM mode below, using structure RIL_GW_SignalStrength {int, int}
-
-    err = at_send_command_singleline("AT+CSQ", "+CSQ:", &p_response);
-    if (err < 0 || p_response->success == 0) {
-        RLOGE("------ VendorRIL SignalStrength: error at_send ------");
-        goto error;
-    }
-
-    line = p_response->p_intermediates->line;
-    err = at_tok_start(&line);
-    if (err < 0) {
-        RLOGE("------ VendorRIL SignalStrength: error at_tok_start ------");
-        goto error;
-    }
-
-    /*
-    for (count =0; count < numofElements; count ++) {
-        err = at_tok_nextint(&line, &(response[count]));
-        if (err < 0) goto error;
-    }
-    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(response));
-    */
-
-    err = at_tok_nextint(&line, &(response[0]));
-    if (err < 0) {
-        RLOGE("------ VendorRIL SignalStrength: error at_tok_nextint_0 ------");
-        goto error;
-    }
-
-    err = at_tok_nextint(&line, &(response[1]));
-    if (err < 0) {
-        RLOGE("------ VendorRIL SignalStrength: error at_tok_nextint_1 ------");
-        goto error;
-    }
-
-
-    RLOGI("------ VendorRIL SignalStrength: %d, %d ------", response[0], response[1]);
-    at_response_free(p_response);
-    RIL_onRequestComplete(t, RIL_E_SUCCESS, response, sizeof(int)*2);
-    return;
-
-error:
-    RLOGE("requestSignalStrength must never return an error when radio is on");
-    at_response_free(p_response);
-    RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
-}
-#endif

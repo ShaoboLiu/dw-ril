@@ -19,3 +19,8 @@
 bool IsGsmModem();
 
 void requestSignalStrength(void *data, size_t datalen, RIL_Token t);
+
+
+void onDataCallListChanged(void *param);
+void requestDataCallList(void *data, size_t datalen, RIL_Token t);
+void requestSetupDataCall(void *data, size_t datalen, RIL_Token t);

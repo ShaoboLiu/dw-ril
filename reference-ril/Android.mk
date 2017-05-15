@@ -8,6 +8,7 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES:= \
     reference-ril.c \
     ril-generic.c \
+    ril-data.c \
     atchannel.c \
     misc.c \
     at_tok.c

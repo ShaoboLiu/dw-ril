@@ -172,7 +172,7 @@ static int isRadioOn();
 static SIM_Status getSIMStatus();
 static int getCardStatus(RIL_CardStatus_v6 **pp_card_status);
 static void freeCardStatus(RIL_CardStatus_v6 *p_card_status);
-static void onDataCallListChanged(void *param);
+// static void onDataCallListChanged(void *param);
 
 extern const char * requestToString(int request);
 
@@ -425,6 +425,7 @@ error:
     RIL_onRequestComplete(t, RIL_E_GENERIC_FAILURE, NULL, 0);
 }
 
+#if 0
 static void requestOrSendDataCallList(RIL_Token *t);
 
 static void onDataCallListChanged(void *param)
@@ -624,6 +625,7 @@ error:
 
     at_response_free(p_response);
 }
+#endif
 
 static void requestQueryNetworkSelectionMode(
                 void *data, size_t datalen, RIL_Token t)
@@ -1815,6 +1817,7 @@ error2:
     RIL_onRequestComplete(t, RIL_E_SMS_SEND_FAIL_RETRY, &response, sizeof(response));
 }
 
+#if 0
 static void requestSetupDataCall(void *data, size_t datalen, RIL_Token t)
 {
     const char *apn;
@@ -1937,6 +1940,7 @@ error:
     at_response_free(p_response);
 
 }
+#endif
 
 static void requestSMSAcknowledge(void *data, size_t datalen, RIL_Token t)
 {
