@@ -1,179 +1,526 @@
-05-15 13:50:34.400 D/TelephonyManager( 1236): No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline: open failed: EACCES (Permission denied)
-05-15 13:50:34.400 D/TelephonyManager( 1236): /proc/cmdline=
-05-15 13:50:51.420 D/TelephonyManager( 3041): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
-05-15 13:50:51.420 I/PhoneFactory( 3041): Network Mode set to 1
-05-15 13:50:51.560 I/PhoneFactory( 3041): Cdma Subscription set to 1
-05-15 13:50:51.580 D/RILJ    ( 3041): RIL(context, preferredNetworkType=1 cdmaSubscription=1)
-05-15 13:50:51.600 D/RILJ    ( 3041): Starting RILReceiver
-05-15 13:50:51.600 D/UiccController( 3041): Creating UiccController
-05-15 13:50:51.600 I/PhoneFactory( 3041): Creating GSMPhone
-05-15 13:50:51.620 D/TelephonyTester( 3041): register for intent action=com.android.internal.telephony.gsm.action_detached
-05-15 13:50:51.620 D/TelephonyTester( 3041): register for intent action=com.android.internal.telephony.gsm.action_attached
-05-15 13:50:51.720 D/PhoneBase( 3041): mDoesRilSendMultipleCallRing=true
-05-15 13:50:51.720 D/PhoneBase( 3041): mCallRingDelay=3000
-05-15 13:50:51.750 D/RILJ    ( 3041): setPhoneType=1 old value=0
-05-15 13:50:51.780 D/DCT     ( 3041): DCT.constructor
-05-15 13:50:51.780 D/Dcc     ( 3041): E ctor
-05-15 13:50:51.780 D/Dcc     ( 3041): X ctor
-05-15 13:50:51.790 D/DcTesterFailBrinupAll( 3041): register for intent action=com.android.internal.telephony.dataconnection.action_fail_bringup
-05-15 13:50:51.790 D/DcTesterFailBrinupAll( 3041): register for intent action=com.android.internal.telephony.gsm.action_detached
-05-15 13:50:51.790 D/DcTesterFailBrinupAll( 3041): register for intent action=com.android.internal.telephony.gsm.action_attached
-05-15 13:50:51.790 D/DCT     ( 3041): GsmDCT.constructor
-05-15 13:50:51.790 D/DcTesterDeacativeAll( 3041): register for intent action=com.android.internal.telephony.dataconnection.action_deactivate_all
-05-15 13:50:51.790 D/DcTesterDeacativeAll( 3041): register for intent action=com.android.internal.telephony.gsm.action_detached
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: E
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: skipping unknown type=1
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=true mDependencyMet=true}
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: skipping unknown type=9
-05-15 13:50:51.790 D/DCT     ( 3041): initApnContexts: X mApnContexts={fota={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, supl={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, hipri={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, ims={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, default={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=true mDependencyMet=true}, mms={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, cbs={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}}
-05-15 13:50:51.810 E/RIL_ImsSms( 3041): getFormat should never be called from here!
-05-15 13:50:51.810 D/SMSDispatcher( 3041): SMSDispatcher: ctor mSmsCapable=true format=unknown mSmsSendDisabled=false
-05-15 13:50:51.810 D/RIL_ImsSms( 3041): ImsSMSDispatcher created
-05-15 13:50:51.820 D/SMSDispatcher( 3041): SMSDispatcher: ctor mSmsCapable=true format=3gpp2 mSmsSendDisabled=false
-05-15 13:50:51.820 D/CdmaSMSDispatcher( 3041): CdmaSMSDispatcher created
-05-15 13:50:51.820 E/WAP PUSH( 3041): bindService() for wappush manager failed
-05-15 13:50:51.820 D/GsmInboundSmsHandler( 3041): created InboundSmsHandler
-05-15 13:50:52.070 E/WAP PUSH( 3041): bindService() for wappush manager failed
-05-15 13:50:52.070 D/CdmaInboundSmsHandler( 3041): created InboundSmsHandler
-05-15 13:50:52.080 D/SMSDispatcher( 3041): SMSDispatcher: ctor mSmsCapable=true format=3gpp mSmsSendDisabled=false
-05-15 13:50:52.090 D/GsmSMSDispatcher( 3041): GsmSMSDispatcher created
-05-15 13:50:52.090 D/SmsBroadcastUndelivered( 3041): scanning raw table for undelivered messages
-05-15 13:50:52.100 D/IccCardProxy( 3041): Creating
-05-15 13:50:52.100 D/IccCardProxy( 3041): Broadcasting intent ACTION_SIM_STATE_CHANGED NOT_READY reason null
-05-15 13:50:52.100 D/IccCardProxy( 3041): Setting radio tech UMTS
-05-15 13:50:52.100 D/TelephonyManager( 3041): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
-05-15 13:50:52.100 D/IccCardProxy( 3041): updateQuietMode: 3GPP subscription -> newQuietMode=false
-05-15 13:50:52.110 D/IccCardProxy( 3041): updateQuietMode: QuietMode is false (app_type=1 isLteOnCdmaMode=false cdmaSource=-1)
-05-15 13:50:52.350 D/SmsBroadcastUndelivered( 3041): finished scanning raw table in 254 ms
-05-15 13:50:52.350 D/GsmInboundSmsHandler( 3041): entering Idle state
-05-15 13:50:52.350 D/CdmaInboundSmsHandler( 3041): entering Idle state
-05-15 13:50:52.750 I/PhoneFactory( 3041): defaultSmsApplication: com.android.mms
-05-15 13:50:52.790 D/CallManager( 3041): registerPhone(GSM Handler (com.android.internal.telephony.PhoneProxy) {41f47c18})
-05-15 13:50:53.000 D/RILJ    ( 3041): [3648]> GET_CURRENT_CALLS
-05-15 13:50:53.000 D/RilRequest( 3041): [3648]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-05-15 13:50:53.000 D/PHONE   ( 3041): [ServiceState] setNullState=1
-05-15 13:50:53.000 D/GsmSST  ( 3041): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported 0 0 RoamInd=0 DefRoamInd=0 EmergOnly=false] newSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
-05-15 13:50:53.000 D/PHONE   ( 3041): [ServiceState] setNullState=1
-05-15 13:50:53.000 D/GsmSST  ( 3041): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
-05-15 13:50:53.000 D/GsmSST  ( 3041): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='true' plmn='No service.' showSpn='false' spn=''
-05-15 13:50:53.010 D/GsmSST  ( 3041): [GsmSST] operatorNumeric is null
-05-15 13:50:53.010 D/DCT     ( 3041): handleMessage msg={ when=-1s234ms what=270369 obj=android.os.AsyncResult@41f5ffd0 target=com.android.internal.telephony.dataconnection.DcTracker }
-05-15 13:50:53.010 D/DCT     ( 3041): newIccRecords is in APP_FAM_3GPP2
-05-15 13:50:53.010 D/DCT     ( 3041): handleMessage msg={ when=-1s224ms what=270342 obj=android.os.AsyncResult@41f649b8 target=com.android.internal.telephony.dataconnection.DcTracker }
-05-15 13:50:53.010 D/DCT     ( 3041): onRadioOffOrNotAvailable: is off and clean up all connections
-05-15 13:50:53.010 D/DCT     ( 3041): cleanUpAllConnections: tearDown=false reason=radioTurnedOff
-05-15 13:50:53.010 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
-05-15 13:50:53.010 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.010 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
-05-15 13:50:53.020 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
-05-15 13:50:53.020 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
-05-15 13:50:53.030 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.030 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
-05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
-05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
-05-15 13:50:53.040 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.040 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
-05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
-05-15 13:50:53.040 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
-05-15 13:50:53.040 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.040 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
-05-15 13:50:53.050 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
-05-15 13:50:53.050 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
-05-15 13:50:53.050 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.050 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
-05-15 13:50:53.050 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true} dcac=null
-05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
-05-15 13:50:53.060 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.060 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
-05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
-05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
-05-15 13:50:53.060 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.060 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
-05-15 13:50:53.060 D/DCT     ( 3041): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
-05-15 13:50:53.060 D/DCT     ( 3041): stopNetStatPoll
-05-15 13:50:53.060 D/DCT     ( 3041): stopDataStallAlarm: current tag=38241 mDataStallAlarmIntent=null
-05-15 13:50:53.060 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.060 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
-05-15 13:50:53.080 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.080 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
-05-15 13:50:53.090 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.090 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
-05-15 13:50:53.110 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.110 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
-05-15 13:50:53.120 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.120 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
-05-15 13:50:53.120 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.120 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
-05-15 13:50:53.140 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.140 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
-05-15 13:50:53.140 D/DCT     ( 3041): handleMessage msg={ when=-1s352ms what=270345 obj=android.os.AsyncResult@41f64c90 target=com.android.internal.telephony.dataconnection.DcTracker }
-05-15 13:50:53.140 D/DCT     ( 3041): onDataConnectionDetached: stop polling and notify detached
-05-15 13:50:53.140 D/DCT     ( 3041): stopNetStatPoll
-05-15 13:50:53.140 D/DCT     ( 3041): stopDataStallAlarm: current tag=38242 mDataStallAlarmIntent=null
-05-15 13:50:53.140 D/DCT     ( 3041): notifyDataConnection: reason=dataDetached
-05-15 13:50:53.140 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.140 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
-05-15 13:50:53.140 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.140 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
-05-15 13:50:53.150 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.150 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
-05-15 13:50:53.170 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.170 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
-05-15 13:50:53.170 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.170 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
-05-15 13:50:53.170 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.170 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
-05-15 13:50:53.180 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.180 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
-05-15 13:50:53.180 D/DCT     ( 3041): handleMessage msg={ when=-1s391ms what=270348 obj=android.os.AsyncResult@41f64de8 target=com.android.internal.telephony.dataconnection.DcTracker }
-05-15 13:50:53.180 D/DCT     ( 3041): onRoamingOff
-05-15 13:50:53.190 D/DCT     ( 3041): notifyDataConnection: reason=roamingOff
-05-15 13:50:53.190 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.190 D/DCT     ( 3041): [ApnContext:fota] getApnSetting: apnSetting=null
-05-15 13:50:53.200 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.200 D/DCT     ( 3041): [ApnContext:supl] getApnSetting: apnSetting=null
-05-15 13:50:53.200 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.200 D/DCT     ( 3041): [ApnContext:hipri] getApnSetting: apnSetting=null
-05-15 13:50:53.200 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.200 D/DCT     ( 3041): [ApnContext:ims] getApnSetting: apnSetting=null
-05-15 13:50:53.230 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.230 D/DCT     ( 3041): [ApnContext:default] getApnSetting: apnSetting=null
-05-15 13:50:53.250 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.250 D/DCT     ( 3041): [ApnContext:mms] getApnSetting: apnSetting=null
-05-15 13:50:53.260 D/DCT     ( 3041): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
-05-15 13:50:53.260 D/DCT     ( 3041): [ApnContext:cbs] getApnSetting: apnSetting=null
-05-15 13:50:53.270 D/DebugService( 3041): DebugService DebugService:
-05-15 13:50:53.300 D/SipService( 3041): SipService: started!
-05-15 13:50:53.320 D/SipService( 3041): start:
-05-15 13:50:54.820 D/GsmCellBroadcastHandler( 3041): mWakeLock released
-05-15 13:50:55.060 D/CellBroadcastHandler( 3041): mWakeLock released
-05-15 13:50:55.090 D/CdmaServiceCategoryProgramHandler( 3041): mWakeLock released
-05-15 13:50:55.360 D/GsmInboundSmsHandler( 3041): Idle state processing message type 5
-05-15 13:50:55.360 D/CdmaInboundSmsHandler( 3041): Idle state processing message type 5
-05-15 13:50:55.360 D/CdmaInboundSmsHandler( 3041): mWakeLock released
-05-15 13:50:55.360 D/GsmInboundSmsHandler( 3041): mWakeLock released
-05-15 13:50:55.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
-05-15 13:50:56.680 D/SipBroadcastReceiver( 3041): onReceive: start auto registration
-05-15 13:50:59.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
-05-15 13:51:03.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
-05-15 13:51:07.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
-05-15 13:51:11.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
-05-15 13:51:15.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
-05-15 13:51:19.610 I/RILJ    ( 3041): Couldn't find 'rild' socket; retrying after timeout
-05-15 13:51:23.620 E/RILJ    ( 3041): Couldn't find 'rild' socket after 8 times, continuing to retry silently
-05-15 13:53:36.910 D/RILJ    ( 3041): [3649]> SCREEN_STATE: true
-05-15 13:53:36.910 D/RilRequest( 3041): [3649]< SCREEN_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-05-15 13:53:37.000 D/DCT     ( 3041): onReceive: action=android.intent.action.SCREEN_ON
-05-15 13:53:37.000 D/DCT     ( 3041): stopNetStatPoll
-05-15 13:53:37.000 D/DCT     ( 3041): overall state is IDLE
-05-15 13:53:37.200 D/RILJ    ( 3041): [3650]> SCREEN_STATE: false
-05-15 13:53:37.200 D/RilRequest( 3041): [3650]< SCREEN_STATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-05-15 13:53:37.220 D/DCT     ( 3041): onReceive: action=android.intent.action.SCREEN_OFF
-05-15 13:53:37.220 D/DCT     ( 3041): stopNetStatPoll
-05-15 13:53:37.220 D/DCT     ( 3041): overall state is IDLE
+=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2017.05.19 11:42:34 =~=~=~=~=~=~=~=~=~=~=~=
+[   10.963900] 
+[   10.963915] get_cap_gauge, 485, store cap: 100, temp: 100000
+[   10.971422] bat_cap_temp = 100000  bat_cap_store = 100000 
+[   10.971445]  The Deviation Less than 10%Get Store CAP
+[   11.027257] vout->id = 1 !
+[   11.029975] layer_mgr->path_id = 1 layer_id = 3 
+[   11.035275] vout->id = 2 !
+[   11.037982] layer_mgr->path_id = 0 layer_id = 1 
+[   11.041257] ==ctp_detect_init==
+[   11.041271] platform_device_register 356 devname=ctp_detect
+[   11.053259] in ctp_detect_probe.
+[   11.056587] 
+[   11.056593] TP_USE_CONFIG
+[   11.060693] get ctp reset gpio failed!
+[   11.064854] --------------------------
+[   11.068679]   tp_reset GPIOB3
+[   11.071735]   ctp_adapter 1
+[   11.074666] --------------------------
+[   11.080575]   ctp detect list: ICN83XX=1
+[   11.084821] [get_config]NOT find item:ctp_detect_list.TC1126
+[   11.090593]   ctp detect list: TC1126=1
+[   11.094569] [get_config]NOT find item:ctp_detect_list.TC1126
+[   11.100338]   ctp detect list: TC1126=1
+[   11.106299]   ctp detect list: GSLX6X0=1
+[   11.110248]   ctp detect list: FT52-406=1
+[   11.114310]   ctp detect list: FT5606=1
+[   11.120227]   ctp detect list: GT813=1
+[   11.124070]   ctp detect list: AW5206=0
+[   11.127948]   ctp detect list: AW5209=1
+[   11.133906]   ctp detect list: CT36X=0
+[   11.137970]   ctp detect list: HL3X06=0
+[   11.138021] platform_device_register 356 devname=asoc_hdmi
+[   11.149595]   ctp detect list: ILITEK=1
+[   11.153491]   ctp detect list: MT395=0
+[   11.159315]   ctp detect list: NT1100X=1
+[   11.163277]   ctp detect list: SSD254X=1
+[   11.167238] [get_config]NOT find item:ctp_detect_list.BF6751A1
+[   11.173068]   ctp detect list: BF6751A1=1
+[   11.177168] I2C_HDMI_EDID_DRV: [i2c_hdmi_init start]
+[   11.184292] [get_config]NOT find item:boot_disp_cfg.hdmi_cfg
+[   11.207054] platform_device_register 356 devname=headset-detect
+[   11.213915] atc2603_ADC0_CTL:0xb81
+[   11.218138] input: headset-detect as /devices/platform/headset-detect.0/input/input3
+[   11.227468] [atc260x_adckeypad_probe finish]
+[   11.233976] [flash light] flash_light version: 1.0.0, 2013-6-05
+[   11.239882] platform_device_register 356 devname=flashlight
+[   11.246091] flashlight_init_gpio gpio_pin:160
+[   11.250441] RTL871X: rtw_hal_config_gpio gpio_num =4 direction=1
+[   11.256620] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.260881] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.268528] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.272956] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.277359] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.285012] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[4]=0
+[   11.291260] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.319817] [camera_detect] camera_detect version: 1.0.0, 2013-10-31
+[   11.326358] platform_device_register 356 devname=camera_detect
+[   11.332761] [camera_detect] camera.detect_enable :1
+[   11.337880] [camera_detect] camera.i2c_adap_id :2
+[   11.342712] [get_config]NOT find item:camera_detect_list.it03a1
+[   11.348877] [get_config]NOT find item:camera_detect_list.bf3603
+[   11.355118] [get_config]NOT find item:camera_detect_list.sp0a18
+[   11.361050] [get_config]NOT find item:camera_detect_list.siv130b
+[   11.367271] [get_config]NOT find item:camera_detect_list.gc2015
+[   11.373411] [get_config]NOT find item:camera_detect_list.bf3a03
+[   11.379488] [get_config]NOT find item:camera_detect_list.hm5065
+[   11.385560] [camera_detect] camera.avdd_use_ragulator :0
+[   11.390920] [camera_detect] camera.avdd_use_ldo :0
+[   11.395854] [camera_detect] camera.dvdd_use_ragulator :1
+[   11.401213] [camera_detect] camera.dvdd_use_ldo :0
+[   11.406147] [camera_detect] camera.dovdd_use_ragulator :0
+[   11.411591] [camera_detect] camera.dovdd_use_ldo :0
+[   11.416623] [get_config]NOT find item:camera.hot_plug_enable
+[   11.422308] [camera_detect] get camera.hot_plug_enable error!
+[   11.428178] camera option=1[camera_detect] get_gpio_config 201, wifi_camera_front_pwdn pin num: 162
+[   11.437401] [camera_detect] get_gpio_config 212, wifi_camera_back_pwdn pin num: 161
+[   11.445179] [camera_detect] get_gpio_config 223, wifi_camera_front_reset pin num: 163
+[   11.465387] RTL871X: rtw_hal_config_gpio gpio_num =6 direction=1
+[   11.471377] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.475805] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.483431] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.487905] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.492162] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.499820] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[6]=1
+[   11.506202] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.520860] RTL871X: rtw_hal_config_gpio gpio_num =5 direction=1
+[   11.526980] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.531278] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.538891] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.543484] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.547741] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.555398] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[5]=1
+[   11.561647] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.576437] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   11.582425] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.586859] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.594476] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.598946] RTL871X: rtw_pm_set_ips IPS_NONE
+[   11.603337] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   11.610875] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=1
+[   11.617252] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   11.686159] init: /dev/hw_random not found
+[   11.699220] init: persist.sys.shutok is init
+[   11.703606] init: signal_init, recoverywhencrash: 4.
+[   11.710687] init: signal_init, poweroffwhencrash not defined.
+[   11.717263] init: total=488
+[   11.719973] init: value=512misc info read type=0, size=32
+[   11.727556] asoc_read_secure_storage_data: faild to read secure storage, ret -1
+[   11.737946] read miscinfo:0 failed
+[   11.741469] init: failed to open /data/system/entropy.dat
+[   11.776058] healthd: wakealarm_init: timerfd_create failed
+[   11.964697] misc info read type=4, size=4096
+[   11.976414] misc info read success
+[   11.979822] ReadExtensionType
+[   11.983194] misc info read type=4, size=4096
+[   11.993446] warning: `daemonsu' uses 32-bit capabilities (legacy support in use)
+[   12.007409] misc info read success
+[   12.010920] ReadExtensionType
+[   12.017550] EXT4-fs (actc): re-mounted. Opts: (null)
+[   12.030185] we do not support cmd 4701 in nand drv ioctl!
+[   12.040769] EXT4-fs (actc): re-mounted. Opts: (null)
+[   12.128517] init: property 'sys.powerctl' doesn't exist while expanding '${sys.powerctl}'
+[   12.137494] init: powerctl: cannot expand '${sys.powerctl}'
+[   12.144301] init: property 'sys.sysctl.extra_free_kbytes' doesn't exist while expanding '${sys.sysctl.extra_free_kbytes}'
+[   12.156401] init: cannot expand '${sys.sysctl.extra_free_kbytes}' while writing to '/proc/sys/vm/extra_free_kbytes'
+[   12.169128] android_usb: already disabled
+[   12.183786] in ctp_init.
+[   12.186394] LDO5: Failed to create debugfs directory
+[   12.198690] ctp_detect,line:253.
+[   12.202312] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x20013
+[   12.202321] 
+[   12.223270] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x20013
+[   12.223278] 
+[   12.254073] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x20013
+[   12.254080] 
+root@86v_sd:/ # [   12.273097] read the chipid is:0xfffffffa
+[   12.273967] adb_open, cnt:1
+[   12.273990] adb_bind_config
+[   12.285636] Is not the ctp:ICN83XX,skip it.
+[   12.290838] Find u,u are:TC1126
+[   12.296960] in ctp_deinit.
+[   12.366508] EXT4-fs (actc): re-mounted. Opts: (null)
+[   12.549921] EXT4-fs (actc): re-mounted. Opts: (null)
+[   12.701894] platform_device_register 356 devname=pvrsrvkm
+[   12.742258] act_fb_open device id = (1)
+[   12.742270] #####: Device 1: Framebuffer physical address: 0x1fb65000
+[   12.754065] act_fb_open device id = (0)
+[   12.754361] #####: Device 0: Framebuffer physical address: 0x1f700000
+
+root@86v_sd:/ # 
+root@86v_sd:/ # [   13.501073] ==ctp_detect_exit==
+[   13.504537] in ctp_detect_remove.
+[   13.508628] platform_device_unregister 373 devname=ctp_detect
+[   13.517793] platform_device_unregister 376 devname=ctp_detect 
+[   13.687975] ==gsl_ts_init==
+[   13.690762] 
+[   13.690769] TP_USE_CONFIG
+[   13.696419] [TCM-DEBUG] option=1 get reset gpio failed!
+[   13.702533] hardware reset
+[   13.706409] [TCM-DEBUG] option=1 get sirq gpio,irq name:tp_irq_opt1 
+[   13.715176] [TCM-DEBUG] option=1 sirq gpio 39 
+[   13.720199] --------------------------
+[   13.724191]   tp_reset GPIOB3
+[   13.729391]   sirq SIRQ39
+[   13.732214]   i2cNum 1
+[   13.734808]   i2cAddr 0x40
+[   13.737731]   xMax 1024
+[   13.740314]   yMax 600
+[   13.742873]   xRevert 0
+[   13.745449]   yRevert 0
+[   13.748108]   rotate 0
+[   13.750567] --------------------------
+[   13.754643] request irq  gpio success
+[   13.758649] LDO5: Failed to create debugfs directory
+[   13.764209] ====voltage:3300000======
+[   13.768301] HELLO
+[   13.771133] i2c-core: driver [tc1126] using legacy suspend method
+[   13.780186] i2c-core: driver [tc1126] using legacy resume method
+[   13.786600] i2c_add_driver,ret=0
+[   13.792249] Build Time:1495009560
+[   13.796920] ==========>123chm_ts_probe
+[   13.802742] input: chm_ts as /devices/virtual/input/input4
+[   13.810686] cpufreq_interactive_input_connect: connect to chm_ts
+[   13.819275] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
+[   13.819284] 
+[   13.827503] retry:1
+[   13.829714] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
+[   13.829721] 
+[   13.837775] retry:2
+[   13.839912] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
+[   13.839919] 
+[   13.847993] retry:3
+[   13.850092] failed to send i2c message:-6
+[   13.873416] get chip addr:0x5d
+[   13.913301] D.===
+[   13.914780] 
+[   13.914783] 
+[   13.921494] GPIO INTERRUPT 128
+[   13.925982] RESET_PIN:35,IRQ_NUM:39
+[   13.961939] misc info read type=4, size=4096
+[   13.970462] [DEBUG_ADAPTIVE]max = 1633, min = 1305, Refhigh = 31, Reflow = 25
+[   13.979911] misc info read success
+[   13.985410] ReadExtensionType
+[   13.989302] [DEBUG_ADAPTIVE]SCREEN_SIMPLE_ADAPTIVE:RefHigh = 2, RefHighGain = 3
+[   13.999495] [DEBUG_ADAPTIVE]SCREEN_SIMPLE_ADAPTIVE:RefLow = 1, RefLowGain = 3
+[   14.285515] misc info read type=4, size=4096
+[   14.296683] misc info read success
+[   14.300166] ReadExtensionType
+l[   14.415951] act_fb_blank called blank is 0 
+[   14.415958]  act_fb_blank called blank is 0 
+[   14.421706]  act_fb_blank called blank is 0 
+[   14.426585]  act_fb_blank called blank is 0 
+[   14.433748]  act_fb_open device id = (0)
+[   14.497882] act_fb_open device id = (0)
+[   14.501791] dc_owl: CreateDCSwapChain: Device 0: Swap chain refCount 2
+[   14.511697] act_fb_open device id = (0)
+[   14.516088] act_fb_open device id = (1)
+o[   14.643134] RTL871X: rtw_hal_config_gpio gpio_num =6 direction=1
+[   14.649422] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.656498] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.664250] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.668701] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.672977] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.680832] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[6]=0
+[   14.688045] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.693402] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   14.699410] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.705436] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.713981] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.719457] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.724901] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.734991] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=0
+[   14.742380] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.761232] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   14.768374] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.773586] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.781958] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.787449] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.792782] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.801347] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=1
+[   14.808488] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.829635] [camera_list] module_detect_bf3925, 1043, detect bf3925
+[   14.843673] [camera_detect] (bf3925), success!!!!!
+[   14.848508] RTL871X: rtw_hal_config_gpio gpio_num =6 direction=1
+g[   14.866981] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.871281] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.899223] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.905230] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.909529] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   14.930328] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[6]=1
+[   14.951985] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   14.970039] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   14.989321] RTL871X: rtw_pm_set_ips IPS_NONE
+[   14.999413] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.012097] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.022638] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.034241] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.041770] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=1
+[   15.068445] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.103096] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   15.111633] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.123164] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+ca[   15.143123] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.147651] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.159259] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.172397] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=0
+[   15.192195] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.209240] RTL871X: rtw_hal_config_gpio gpio_num =5 direction=1
+[   15.215936] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.220876] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.228595] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.250055] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.268165] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.291469] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[5]=0
+[   15.314700] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.319169] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   15.329340] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.333739] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.341333] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.345993] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.350293] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.358017] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=0
+[   15.364333] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.379302] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   15.385418] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.389836] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.397466] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.401926] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.406253] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.414017] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=1
+[   15.420307] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.438354] [camera_list] module_detect_bf3703, 797, detect bf3703
+[   15.478297] [camera_detect] (bf3703), success!!!!!
+[   15.485802] RTL871X: rtw_hal_config_gpio gpio_num =5 direction=1
+[   15.492341] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.497550] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.506503] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.511028] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.515435] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.524456] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[5]=1
+[   15.532301] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.547808] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   15.554678] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.558969] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.577992] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.594362] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.599959] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.607547] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=1
+[   15.613930] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.628865] RTL871X: rtw_hal_config_gpio gpio_num =7 direction=1
+[   15.634953] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.639448] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.652288] RTL871X: rtw_pm_set_ips IPS_NORMAL
+t [   15.660508] RTL871X: rtw_pm_set_ips IPS_NONE
+[   15.665043] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
+[   15.682996] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[7]=0
+[   15.689553] RTL871X: rtw_pm_set_ips IPS_NORMAL
+[   15.828001] [get_config]NOT find item:isp.enchance_drv
+[   15.843943] platform_device_register 356 devname=asoc_camera
+-vt[   16.594865] store_opt_mode: 0x1
+[   16.597997] screen_mode_changed: 1, scene_mode: 0x4
+ime -bradio
+[   20.021072] funcName=debug_modifyFlashChipInfo
+[   20.025685] param=watch_dog 0
+[   20.028965] watch_dog: 0
+[   20.033623] nandLinePrintEnable     = 0
+[   20.037512] nandFunctionPrintEnable = 0
+[   20.041384] nandDebugPrintEnable    = 0
+[   20.047343] nandTimeStubEnable      = 0
+[   20.051239] nandDumpBufferEnable    = 0
+[   20.055173] nandTempDebugEnable     = 0
+[   20.059659] watch_dog               = 0
+[   20.064319] funcName=debug_modifyFlashChipInfo
+[   20.071361] param=watch_dog 0
+[   20.074790] 
+[   20.074795] [power] atc260x_charger_check_state, 1224, start chargewatch_dog: 0
+[   20.083702] nandLinePrintEnable     = 0
+[   20.087537] nandFunctionPrintEnable = 0
+[   20.091373] nandDebugPrintEnable    = 0
+[   20.095434] nandTimeStubEnable      = 0
+[   20.099270] nandDumpBufferEnable    = 0
+[   20.103317] nandTempDebugEnable     = 0
+[   20.107165] watch_dog               = 0
+05-19 11:44:25.630 D/TelephonyManager( 1241): No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline: open failed: EACCES (Permission denied)
+05-19 11:44:25.630 D/TelephonyManager( 1241): /proc/cmdline=
+[   31.695719] request_suspend_state: wakeup (3->0) at 31682699256 (2017-05-19 15:44:37.047501502 UTC)
+[   32.515945] acc_open
+[   32.518137] acc_release
+[   36.010254] store_opt_mode: 0x0
+05-19 11:44:43.960 D/TelephonyManager( 3011): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
+05-19 11:44:43.970 I/PhoneFactory( 3011): Network Mode set to 1
+05-19 11:44:44.000 I/PhoneFactory( 3011): Cdma Subscription set to 1
+05-19 11:44:44.010 D/RILJ    ( 3011): RIL(context, preferredNetworkType=1 cdmaSubscription=1)
+05-19 11:44:44.010 D/RILJ    ( 3011): Starting RILReceiver
+05-19 11:44:44.010 D/UiccController( 3011): Creating UiccController
+05-19 11:44:44.020 I/PhoneFactory( 3011): Creating GSMPhone
+05-19 11:44:44.060 D/TelephonyTester( 3011): register for intent action=com.android.internal.telephony.gsm.action_detached
+05-19 11:44:44.060 D/TelephonyTester( 3011): register for intent action=com.android.internal.telephony.gsm.action_attached
+05-19 11:44:44.330 D/PhoneBase( 3011): mDoesRilSendMultipleCallRing=true
+05-19 11:44:44.330 D/PhoneBase( 3011): mCallRingDelay=3000
+05-19 11:44:44.380 D/RILJ    ( 3011): setPhoneType=1 old value=0
+05-19 11:44:44.420 D/DCT     ( 3011): DCT.constructor
+05-19 11:44:44.460 D/Dcc     ( 3011): E ctor
+05-19 11:44:44.460 D/Dcc     ( 3011): X ctor
+05-19 11:44:44.460 D/DcTesterFailBrinupAll( 3011): register for intent action=com.android.internal.telephony.dataconnection.action_fail_bringup
+05-19 11:44:44.460 D/DcTesterFailBrinupAll( 3011): register for intent action=com.android.internal.telephony.gsm.action_detached[   39.205777] misc info read type=4, size=4096
+
+05-19 11:44:44.460 D/DcTesterFailBrinupAll( 3011): register for intent action=com.android.internal.telephony.gsm.action_attached
+05-19 11:44:44.470 D/DCT     ( 3011): GsmDCT.constructor
+05-19 11:44:44.470 D/DcTesterDeacativeAll( 3011): register for intent action=com.android.internal.telephony.dataconnection.action_deactivate_all
+05-19 11:44:44.480 D/DcTesterDeacativeAll( 3011): register for intent action=com.android.internal.telephony.gsm.action_detached
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: E
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: skipping unknown type=1
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=true mDependencyMet=true}
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: skipping unknown type=9
+05-19 11:44:44.500 D/DCT     ( 3011): initApnContexts: X mApnContexts={fota={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, supl={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, hipri={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, ims={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, default={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=true mDependencyMet=true}, mms={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, cbs={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}}
+05-19 11:44:44.550 E/RIL_ImsSms( 3011): getFormat should never be called from here!
+05-19 11:44:44.550 D/SMSDispatcher( 3011): SMSDispatcher: ctor mSmsCapable=true format=unknown mSmsSendDisabled=false
+05-19 11:44:44.550 D/RIL_ImsSms( 3011): ImsSMSDispatcher created
+05-19 11:44:44.550 D/SMSDispatcher( 3011): SMSDispatcher: ctor mSmsCapable=true format=3gpp2 mSmsSendDisabled=false
+05-19 11:44:44.550 D/CdmaSMSDispatcher( 3011): CdmaSMSDispatcher created
+05-19 11:44:44.570 E/WAP PUSH( 3011): bindService() for wappush manager failed
+05-19 11:44:44.570 D/GsmInboundSmsHandler( 3011): created InboundSmsHandler
+[   39.606691] misc info read success
+[   39.612656] ReadExtensionType
+[   39.625949] get MISC_INFO_GSENSOR chksum failed, so we return def calib data
+[   39.643355] calc:571e rec:4553
+[   39.646414] size:64 calib size:11
+05-19 11:44:45.040 E/WAP PUSH( 3011): bindService() for wappush manager failed
+05-19 11:44:45.040 D/CdmaInboundSmsHandler( 3011): created InboundSmsHandler
+05-19 11:44:45.050 D/SMSDispatcher( 3011): SMSDispatcher: ctor mSmsCapable=true format=3gpp mSmsSendDisabled=false
+05-19 11:44:45.050 D/GsmSMSDispatcher( 3011): GsmSMSDispatcher created
+05-19 11:44:45.060 D/IccCardProxy( 3011): Creating
+05-19 11:44:45.070 D/IccCardProxy( 3011): Broadcasting intent ACTION_SIM_STATE_CHANGED NOT_READY reason null
+05-19 11:44:45.080 D/IccCardProxy( 3011): Setting radio tech UMTS
+05-19 11:44:45.080 D/TelephonyManager( 3011): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
+05-19 11:44:45.080 D/IccCardProxy( 3011): updateQuietMode: 3GPP subscription -> newQuietMode=false
+05-19 11:44:45.080 D/IccCardProxy( 3011): updateQuietMode: QuietMode is false (app_type=1 isLteOnCdmaMode=false cdmaSource=-1)
+05-19 11:44:45.080 D/SmsBroadcastUndelivered( 3011): scanning raw table for undelivered messages
+05-19 11:44:45.380 I/PhoneFactory( 3011): defaultSmsApplication: com.android.mms
+05-19 11:44:45.390 D/CallManager( 3011): registerPhone(GSM Handler (com.android.internal.telephony.PhoneProxy) {41892aa0})
+05-19 11:44:45.430 D/SmsBroadcastUndelivered( 3011): finished scanning raw table in 349 ms
+05-19 11:44:45.430 D/GsmInboundSmsHandler( 3011): entering Idle state
+05-19 11:44:45.450 D/CdmaInboundSmsHandler( 3011): entering Idle state
+05-19 11:44:45.880 D/RILJ    ( 3011): [3648]> GET_CURRENT_CALLS
+05-19 11:44:45.890 D/RilRequest( 3011): [3648]< GET_CURRENT_CALLS error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
+05-19 11:44:45.890 D/PHONE   ( 3011): [ServiceState] setNullState=1
+05-19 11:44:45.920 D/GsmSST  ( 3011): [GsmSST] Poll ServiceState done:  oldSS=[1 1 home null null null  none none CSS not supported 0 0 RoamInd=0 DefRoamInd=0 EmergOnly=false] newSS=[1 1 home null null null  none none CSS not supported -1 -1 RoamInd=-1 DefRoamInd=-1 EmergOnly=false] oldMaxDataCalls=1 mNewMaxDataCalls=1 oldReasonDataDenied=-1 mNewReasonDataDenied=-1
+05-19 11:44:45.920 D/PHONE   ( 3011): [ServiceState] setNullState=1
+05-19 11:44:45.950 D/GsmSST  ( 3011): [GsmSST] updateSpnDisplay: radio is on but out of service, set plmn='No service.'
+05-19 11:44:45.950 D/GsmSST  ( 3011): [GsmSST] updateSpnDisplay: changed sending intent rule=0 showPlmn='true' plmn='No service.' showSpn='false' spn=''
+05-19 11:44:45.970 D/GsmSST  ( 3011): [GsmSST] operatorNumeric is null
+05-19 11:44:45.980 D/DCT     ( 3011): handleMessage msg={ when=-1s560ms what=270369 obj=android.os.AsyncResult@418aabd8 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-19 11:44:45.980 D/DCT     ( 3011): newIccRecords is in APP_FAM_3GPP2
+05-19 11:44:45.980 D/DCT     ( 3011): handleMessage msg={ when=-1s506ms what=270342 obj=android.os.AsyncResult@418af5c0 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-19 11:44:45.980 D/DCT     ( 3011): onRadioOffOrNotAvailable: is off and clean up all connections
+05-19 11:44:45.980 D/DCT     ( 3011): cleanUpAllConnections: tearDown=false reason=radioTurnedOff
+05-19 11:44:45.980 D/DCT     ( 3011): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-19 11:44:45.980 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:45.980 D/DCT     ( 3011): [ApnContext:fota] getApnSetting: apnSetting=null
+05-19 11:44:46.000 D/DCT     ( 3011): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-19 11:44:46.020 D/DCT     ( 3011): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-19 11:44:46.020 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.020 D/DCT     ( 3011): [ApnContext:supl] getApnSetting: apnSetting=null
+05-19 11:44:46.020 D/DCT     ( 3011): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+[   41.016917] mc32x0_enable_store
+[   41.021389] mc32x0_delay_store
+05-19 11:44:46.020 D/DCT     ( 3011): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}[   41.055509] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
+
+05-19 11:44:46.020 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded[   41.113103] gsensor calibration file not exist!
+
+05-19 11:44:46.020 D/DCT     ( 3011): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-19 11:44:46.030 D/DCT     ( 3011): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-19 11:44:46.030 D/DCT     ( 3011): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-19 11:44:46.030 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.030 D/DCT     ( 3011): [ApnContext:ims] getApnSetting: apnSetting=null
+05-19 11:44:46.030 D/DCT     ( 3011): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-19 11:44:46.030 D/DCT     ( 3011): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true}
+05-19 11:44:46.030 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.030 D/DCT     ( 3011): [ApnContext:default] getApnSetting: apnSetting=null
+05-19 11:44:46.040 D/DCT     ( 3011): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=true mDependencyMet=true} dcac=null
+05-19 11:44:46.040 D/DCT     ( 3011): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-19 11:44:46.040 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.040 D/DCT     ( 3011): [ApnContext:mms] getApnSetting: apnSetting=null
+05-19 11:44:46.050 D/DCT     ( 3011): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-19 11:44:46.050 D/DCT     ( 3011): cleanUpConnection: E tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true}
+05-19 11:44:46.050 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.050 D/DCT     ( 3011): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-19 11:44:46.050 D/DCT     ( 3011): cleanUpConnection: X tearDown=false reason=radioTurnedOff apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=radioTurnedOff mDataEnabled=false mDependencyMet=true} dcac=null
+05-19 11:44:46.050 D/DCT     ( 3011): stopNetStatPoll
+05-19 11:44:46.050 D/DCT     ( 3011): stopDataStallAlarm: current tag=39059 mDataStallAlarmIntent=null
+05-19 11:44:46.050 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.050 D/DCT     ( 3011): [ApnContext:fota] getApnSetting: apnSetting=null
+05-19 11:44:46.080 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.080 D/DCT     ( 3011): [ApnContext:supl] getApnSetting: apnSetting=null
+05-19 11:44:46.090 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.090 D/DCT     ( 3011): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-19 11:44:46.090 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.090 D/DCT     ( 3011): [ApnContext:ims] getApnSetting: apnSetting=null
+05-19 11:44:46.090 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.090 D/DCT     ( 3011): [ApnContext:default] getApnSetting: apnSetting=null
+05-19 11:44:46.090 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.090 D/DCT     ( 3011): [ApnContext:mms] getApnSetting: apnSetting=null
+05-19 11:44:46.120 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.120 D/DCT     ( 3011): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-19 11:44:46.180 D/DCT     ( 3011): handleMessage msg={ when=-1s704ms what=270345 obj=android.os.AsyncResult@418af898 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-19 11:44:46.180 D/DCT     ( 3011): onDataConnectionDetached: stop polling and notify detached
+05-19 11:44:46.180 D/DCT     ( 3011): stopNetStatPoll
+05-19 11:44:46.180 D/DCT     ( 3011): stopDataStallAlarm: current tag=39060 mDataStallAlarmIntent=null
+05-19 11:44:46.180 D/DCT     ( 3011): notifyDataConnection: reason=dataDetached
+05-19 11:44:46.180 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.180 D/DCT     ( 3011): [ApnContext:fota] getApnSetting: apnSetting=null
+05-19 11:44:46.190 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.190 D/DCT     ( 3011): [ApnContext:supl] getApnSetting: apnSetting=null
+05-19 11:44:46.200 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.200 D/DCT     ( 3011): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-19 11:44:46.200 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.200 D/DCT     ( 3011): [ApnContext:ims] getApnSetting: apnSetting=null
+05-19 11:44:46.200 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.200 D/DCT     ( 3011): [ApnContext:default] getApnSetting: apnSetting=null
+05-19 11:44:46.200 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.200 D/DCT     ( 3011): [ApnContext:mms] getApnSetting: apnSetting=null
+05-19 11:44:46.210 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.210 D/DCT     ( 3011): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-19 11:44:46.220 D/DCT     ( 3011): handleMessage msg={ when=-1s749ms what=270348 obj=android.os.AsyncResult@418af9f0 target=com.android.internal.telephony.dataconnection.DcTracker }
+05-19 11:44:46.220 D/DCT     ( 3011): onRoamingOff
+05-19 11:44:46.220 D/DCT     ( 3011): notifyDataConnection: reason=roamingOff
+05-19 11:44:46.220 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.220 D/DCT     ( 3011): [ApnContext:fota] getApnSetting: apnSetting=null
+05-19 11:44:46.230 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.230 D/DCT     ( 3011): [ApnContext:supl] getApnSetting: apnSetting=null
+05-19 11:44:46.290 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.290 D/DCT     ( 3011): [ApnContext:hipri] getApnSetting: apnSetting=null
+05-19 11:44:46.290 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.290 D/DCT     ( 3011): [ApnContext:ims] getApnSetting: apnSetting=null
+05-19 11:44:46.300 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.300 D/DCT     ( 3011): [ApnContext:default] getApnSetting: apnSetting=null
+05-19 11:44:46.330 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.330 D/DCT     ( 3011): [ApnContext:mms] getApnSetting: apnSetting=null
+05-19 11:44:46.360 D/DCT     ( 3011): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
+05-19 11:44:46.360 D/DCT     ( 3011): [ApnContext:cbs] getApnSetting: apnSetting=null
+05-19 11:44:46.430 D/DebugService( 3011): DebugService DebugService:
+05-19 11:44:46.480 D/SipService( 3011): SipService: started!
+05-19 11:44:46.510 D/SipService( 3011): start:
+05-19 11:44:47.570 D/GsmCellBroadcastHandler( 3011): mWakeLock released
+05-19 11:44:48.020 I/RILJ    ( 3011): Couldn't find 'rild' socket; retrying after timeout
+05-19 11:44:48.030 D/CellBroadcastHandler( 3011): mWakeLock released
+05-19 11:44:48.060 D/CdmaServiceCategoryProgramHandler( 3011): mWakeLock released
+05-19 11:44:48.430 D/GsmInboundSmsHandler( 3011): Idle state processing message type 5
+05-19 11:44:48.430 D/GsmInboundSmsHandler( 3011): mWakeLock released
+05-19 11:44:48.460 D/CdmaInboundSmsHandler( 3011): Idle state processing message type 5
+05-19 11:44:48.460 D/CdmaInboundSmsHandler( 3011): mWakeLock released
+05-19 11:44:52.020 I/RILJ    ( 3011): Couldn't find 'rild' socket; retrying after timeout
+05-19 11:44:56.020 I/RILJ    ( 3011): Couldn't find 'rild' socket; retrying after timeout
+05-19 11:45:00.020 I/RILJ    ( 3011): Couldn't find 'rild' socket; retrying after timeout
+05-19 11:45:04.020 I/RILJ    ( 3011): Couldn't find 'rild' socket; retrying after timeout
+05-19 11:45:08.030 I/RILJ    ( 3011): Couldn't find 'rild' socket; retrying after timeout
+05-19 11:45:12.030 I/RILJ    ( 3011): Couldn't find 'rild' socket; retrying after timeout
+05-19 11:45:16.030 E/RILJ    ( 3011): Couldn't find 'rild' socket after 8 times, continuing to retry silently
