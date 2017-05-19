@@ -1,4 +1,3 @@
-=~=~=~=~=~=~=~=~=~=~=~= PuTTY log 2017.05.19 14:22:24 =~=~=~=~=~=~=~=~=~=~=~=
 [ 9601.493135] <MON> idpin be pulldown when B_IN detecting
 [ 9602.173143] /home/developer/action_compiling_21/leopard/platform/drivers/usb/monitor/umonitor_core.c--738, SYS_MSG_USB_A_IN
 ------start rild
