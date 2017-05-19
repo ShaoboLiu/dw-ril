@@ -1,5 +1,3 @@
-[ 9601.493135] <MON> idpin be pulldown when B_IN detecting
-[ 9602.173143] /home/developer/action_compiling_21/leopard/platform/drivers/usb/monitor/umonitor_core.c--738, SYS_MSG_USB_A_IN
 ------start rild
 05-19 14:24:07.630 I/RILD    ( 8390): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
 05-19 14:24:07.630 I/RILD    ( 8390): ------ VendorRIL initialize: arguments from command ------
@@ -19,15 +17,6 @@
 05-19 14:24:07.650 I/RIL     ( 8390): ------ VendorRIL entering mainLoop() ------
 05-19 14:24:07.650 I/RIL     ( 8390): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
 05-19 14:24:07.650 I/RIL     ( 8390): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
-[ 9603.255932] hcd aotg0 add
-[ 9603.265780] aotg_hcd aotg_hcd.0: AOTG USB Host Controller Driver
-[ 9603.271897] aotg_hcd aotg_hcd.0: new USB bus registered, assigned bus number 1
-[ 9603.279801] aotg_hcd aotg_hcd.0: irq 67, io mem 0xb0240000
-[ 9603.286242] aotg_hcd aotg_hcd.0: <HCD> start
-[ 9603.292755] hub 1-0:1.0: USB hub found
-[ 9603.296725] hub 1-0:1.0: 1 port detected
-[ 9603.300996] aotg_hcd aotg_hcd.0: hcd controller initialized. OTGIRQ: 0x01, OTGSTATE:	0x02 
-[ 9604.303103] aotg_hcd aotg_hcd.0: aotg_hcd.0	changed:0,inserted: 0
 05-19 14:24:10.470 I/RILJ    ( 3011): Connected to 'rild' socket
 05-19 14:24:10.470 I/RILC    ( 8390): libril: new connection
 05-19 14:24:10.470 I/RILC    ( 8390): RIL Daemon version: android reference-ril 1.0
