@@ -1,36 +1,6 @@
 
-
-
-[   16.535699] screen_mode_changed: 1, scene_mode: 0x4
-vtime -bradio[   20.001388] 
-[   20.001392] [power] atc260x_charger_check_state, 1224, start charge
-
-funcName=debug_modifyFlashChipInfo
-[   20.402505] param=watch_dog 0
-[   20.405556] watch_dog: 0
-[   20.408841] nandLinePrintEnable     = 0
-[   20.416788] nandFunctionPrintEnable = 0
-[   20.421104] nandDebugPrintEnable    = 0
-[   20.427962] nandTimeStubEnable      = 0
-[   20.432228] nandDumpBufferEnable    = 0
-[   20.436156] nandTempDebugEnable     = 0
-[   20.442225] watch_dog               = 0
-[   20.446236] funcName=debug_modifyFlashChipInfo
-[   20.453080] param=watch_dog 0
-[   20.456127] watch_dog: 0
-[   20.458658] nandLinePrintEnable     = 0
-[   20.462684] nandFunctionPrintEnable = 0
-[   20.466595] nandDebugPrintEnable    = 0
-[   20.470515] nandTimeStubEnable      = 0
-[   20.474464] nandDumpBufferEnable    = 0
-[   20.480432] nandTempDebugEnable     = 0
-[   20.484576] watch_dog               = 0
 05-23 11:39:09.610 D/TelephonyManager( 1247): No /proc/cmdline exception=java.io.FileNotFoundException: /proc/cmdline: open failed: EACCES (Permission denied)
 05-23 11:39:09.610 D/TelephonyManager( 1247): /proc/cmdline=
-[   31.446903] request_suspend_state: wakeup (3->0) at 31435877504 (2017-05-23 15:39:20.690298502 UTC)
-[   32.306106] acc_open
-[   32.308297] acc_release
-[   35.747284] store_opt_mode: 0x0
 05-23 11:39:27.760 D/TelephonyManager( 2830): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
 05-23 11:39:27.760 I/PhoneFactory( 2830): Network Mode set to 1
 05-23 11:39:27.900 I/PhoneFactory( 2830): Cdma Subscription set to 1
@@ -43,7 +13,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:39:28.160 D/PhoneBase( 2830): mDoesRilSendMultipleCallRing=true
 05-23 11:39:28.160 D/PhoneBase( 2830): mCallRingDelay=3000
 05-23 11:39:28.230 D/RILJ    ( 2830): setPhoneType=1 old value=0
-[   39.027502] misc info read type=4, size=4096
 05-23 11:39:28.260 D/DCT     ( 2830): DCT.constructor
 05-23 11:39:28.280 D/Dcc     ( 2830): E ctor
 05-23 11:39:28.290 D/Dcc     ( 2830): X ctor
@@ -51,7 +20,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:39:28.290 D/DcTesterDeacativeAll( 2830): register for intent action=com.android.internal.telephony.gsm.action_detached
 05-23 11:39:28.330 D/DcTesterFailBrinupAll( 2830): register for intent action=com.android.internal.telephony.dataconnection.action_fail_bringup
 05-23 11:39:28.330 D/DcTesterFailBrinupAll( 2830): register for intent action=com.android.internal.telephony.gsm.action_detached
-[   39.144707] misc info read success
 05-23 11:39:28.330 D/DcTesterFailBrinupAll( 2830): register for intent action=com.android.internal.telephony.gsm.action_attached
 05-23 11:39:28.350 D/DCT     ( 2830): GsmDCT.constructor
 05-23 11:39:28.370 D/DCT     ( 2830): initApnContexts: E
@@ -65,10 +33,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:39:28.370 D/DCT     ( 2830): initApnContexts: apnContext={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}
 05-23 11:39:28.370 D/DCT     ( 2830): initApnContexts: skipping unknown type=9
 05-23 11:39:28.380 D/DCT     ( 2830): initApnContexts: X mApnContexts={fota={mApnType=fota mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, supl={mApnType=supl mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, hipri={mApnType=hipri mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, ims={mApnType=ims mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, default={mApnType=default mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=true mDependencyMet=true}, mms={mApnType=mms mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}, cbs={mApnType=cbs mState=IDLE mWaitingApns={null} mWaitingApnsPermanentFailureCountDown=0 mApnSetting={null} mReason=dataEnabled mDataEnabled=false mDependencyMet=true}}
-[   39.443603] ReadExtensionType
-[   39.447400] get MISC_INFO_GSENSOR chksum failed, so we return def calib data
-[   39.459089] calc:3b63 rec:4553
-[   39.462988] size:64 calib size:11
 05-23 11:39:28.710 E/RIL_ImsSms( 2830): getFormat should never be called from here!
 05-23 11:39:28.710 D/SMSDispatcher( 2830): SMSDispatcher: ctor mSmsCapable=true format=unknown mSmsSendDisabled=false
 05-23 11:39:28.720 D/RIL_ImsSms( 2830): ImsSMSDispatcher created
@@ -186,12 +150,8 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:39:30.610 D/DCT     ( 2830): isDataAllowed: not allowed due to - Attached= false - SIM not loaded
 05-23 11:39:30.610 D/DCT     ( 2830): [ApnContext:cbs] getApnSetting: apnSetting=null
 05-23 11:39:30.620 D/DebugService( 2830): DebugService DebugService:
-[   41.542370] mc32x0_enable_store
 05-23 11:39:30.700 D/SipService( 2830): SipService: started!
-[   41.577624] mc32x0_delay_store
-[   41.590237] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
 05-23 11:39:30.870 D/SipService( 2830): start:
-[   41.674237] gsensor calibration file not exist!
 05-23 11:39:31.740 D/GsmCellBroadcastHandler( 2830): mWakeLock released
 05-23 11:39:31.860 D/CellBroadcastHandler( 2830): mWakeLock released
 05-23 11:39:31.890 D/CdmaServiceCategoryProgramHandler( 2830): mWakeLock released
@@ -207,8 +167,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:39:51.970 I/RILJ    ( 2830): Couldn't find 'rild' socket; retrying after timeout
 05-23 11:39:55.970 I/RILJ    ( 2830): Couldn't find 'rild' socket; retrying after timeout
 05-23 11:39:59.970 E/RILJ    ( 2830): Couldn't find 'rild' socket after 8 times, continuing to retry silently
-[   80.781164] <MON> idpin be pulldown when B_IN detecting
-[   81.461204] /home/developer/action_compiling_21/leopard/platform/drivers/usb/monitor/umonitor_core.c--738, SYS_MSG_USB_A_IN
 ------start rild
 05-23 11:40:10.780 I/RILD    ( 3039): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
 05-23 11:40:10.790 I/RILD    ( 3039): ------ VendorRIL initialize: arguments from command ------
@@ -228,17 +186,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:40:10.910 I/RIL     ( 3039): ------ VendorRIL entering mainLoop() ------
 05-23 11:40:10.910 I/RIL     ( 3039): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
 05-23 11:40:10.910 I/RIL     ( 3039): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
-[   82.529081] hcd aotg0 add
-[   82.539540] aotg_hcd aotg_hcd.0: AOTG USB Host Controller Driver
-[   82.546120] aotg_hcd aotg_hcd.0: new USB bus registered, assigned bus number 1
-[   82.554031] aotg_hcd aotg_hcd.0: irq 67, io mem 0xb0240000
-[   82.559763] aotg_hcd aotg_hcd.0: <HCD> start
-[   82.565851] hub 1-0:1.0: USB hub found
-[   82.569621] hub 1-0:1.0: 1 port detected
-[   82.574121] aotg_hcd aotg_hcd.0: hcd controller initialized. OTGIRQ: 0x01, OTGSTATE:	0x02 
-[   82.684106] otg_port_no:0 OTG IRQ,	OTGSTATE: 0x03, USBIRQ:0x00
-[   82.691161] aotg_hcd aotg_hcd.0: aotg_hcd.0	changed:1,inserted: 1
-[   82.697268] port status change,2842
 05-23 11:40:11.970 I/RILJ    ( 2830): Connected to 'rild' socket
 05-23 11:40:11.980 I/RILC    ( 3039): libril: new connection
 05-23 11:40:11.980 I/RILC    ( 3039): RIL Daemon version: android reference-ril 1.0
@@ -258,20 +205,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:40:12.050 D/Dcc     ( 2830): DccDefaultState: msg.what=EVENT_RIL_CONNECTED mRilVersion=9
 05-23 11:40:12.060 I/RIL     ( 3039): ------ VendorRIL onRequest: SET_UNSOL_CELL_INFO_LIST_RATE ------
 05-23 11:40:12.060 D/RilRequest( 2830): [3652]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-[   83.031067] usb 1-1: new full-speed USB device number 2 using aotg_hcd
-[   83.265621] option 1-1:1.0: GSM modem (1-port) converter detected
-[   83.272831] urb->interval: 128
-[   83.279334] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB0
-[   83.288395] option 1-1:1.1: GSM modem (1-port) converter detected
-[   83.300084] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB1
-[   83.308263] option 1-1:1.2: GSM modem (1-port) converter detected
-[   83.318822] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB2
-[   83.327036] option 1-1:1.3: GSM modem (1-port) converter detected
-[   83.336908] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB3
-[   83.345134] scsi0 : usb-storage 1-1:1.4
-[   84.344852] scsi 0:0:0:0: Direct-Access     WCDMA    MMC Storage      2.31 PQ: 0 ANSI: 2
-[   84.365335] sd 0:0:0:0: Attached scsi generic sg0 type 0
-[   84.374545] sd 0:0:0:0: [sda] Attached SCSI removable disk
 05-23 11:40:20.910 I/RIL     ( 3039): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
 05-23 11:40:20.910 I/AT      ( 3039): ------ VendorRIL readerLoop: repeatedly readLine, processLine, handleUnsolicited, handleFinalResponse ------
 05-23 11:40:20.910 D/RIL     ( 3039): ******** VendorRIL: setRadioState(0), oldState=1 ********
@@ -959,7 +892,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:41:23.550 E/RILC    ( 3039): invalid response length
 05-23 11:41:23.550 D/RilRequest( 2830): [3723]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-23 11:41:23.560 D/GsmSST  ( 2830): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  163.814778] disable gamme 
 05-23 11:41:43.580 D/RILJ    ( 2830): [3724]> SIGNAL_STRENGTH
 05-23 11:41:43.580 I/RIL     ( 3039): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-23 11:41:43.580 D/AT      ( 3039): AT> AT+CSQ
@@ -981,14 +913,6 @@ funcName=debug_modifyFlashChipInfo
 05-23 11:42:02.300 D/PhoneNumberUtils( 2830): System property doesn't provide any emergency numbers. Use embedded logic for determining ones.
 05-23 11:42:02.300 D/PhoneNumberUtils( 2830): System property doesn't provide any emergency numbers. Use embedded logic for determining ones.
 05-23 11:42:02.320 D/PhoneNumberUtils( 2830): System property doesn't provide any emergency numbers. Use embedded logic for determining ones.
-[  193.956191] we do not support cmd 4701 in nand drv ioctl!
-[  193.964086] EXT4-fs (actc): re-mounted. Opts: (null)
-[  193.977498] EXT4-fs (actc): re-mounted. Opts: (null)
-[  193.989687] we do not support cmd 4701 in nand drv ioctl!
-[  193.997085] EXT4-fs (actc): re-mounted. Opts: (null)
-[  194.103170] EXT4-fs (actc): re-mounted. Opts: (null)
-[  194.126039] EXT4-fs (actc): re-mounted. Opts: (null)
-[  194.139840] EXT4-fs (actc): re-mounted. Opts: (null)
 05-23 11:42:03.590 D/RILJ    ( 2830): [3725]> SIGNAL_STRENGTH
 05-23 11:42:03.600 I/RIL     ( 3039): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-23 11:42:03.600 D/AT      ( 3039): AT> AT+CSQ
