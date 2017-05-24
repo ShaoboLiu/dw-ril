@@ -41,7 +41,6 @@
 05-24 13:52:23.650 D/CdmaSMSDispatcher( 2623): CdmaSMSDispatcher created
 05-24 13:52:23.700 E/WAP PUSH( 2623): bindService() for wappush manager failed
 05-24 13:52:23.700 D/GsmInboundSmsHandler( 2623): created InboundSmsHandler
-
 05-24 13:52:24.190 E/WAP PUSH( 2623): bindService() for wappush manager failed
 05-24 13:52:24.200 D/CdmaInboundSmsHandler( 2623): created InboundSmsHandler
 05-24 13:52:24.230 D/SMSDispatcher( 2623): SMSDispatcher: ctor mSmsCapable=true format=3gpp mSmsSendDisabled=false
@@ -184,15 +183,10 @@
 05-24 13:52:27.200 D/CellBroadcastHandler( 2623): mWakeLock released
 05-24 13:52:27.230 D/CdmaServiceCategoryProgramHandler( 2623): mWakeLock released
 05-24 13:52:27.320 I/RILJ    ( 2623): Couldn't find 'rild' socket; retrying after timeout
-[   38.733524] store_opt_mode: 0x0
 05-24 13:52:27.530 D/CdmaInboundSmsHandler( 2623): Idle state processing message type 5
 05-24 13:52:27.530 D/CdmaInboundSmsHandler( 2623): mWakeLock released
 05-24 13:52:27.530 D/GsmInboundSmsHandler( 2623): Idle state processing message type 5
 05-24 13:52:27.530 D/GsmInboundSmsHandler( 2623): mWakeLock released
-[   40.457901] mc32x0_enable_store
-[   40.461488] mc32x0_delay_store
-[   40.554800] gsensor calibration file not exist!
-[   40.767084] init: sys_prop: permission denied uid:1003  name:service.bootanim.exit
 05-24 13:52:31.290 D/SipBroadcastReceiver( 2623): onReceive: start auto registration
 05-24 13:52:31.320 I/RILJ    ( 2623): Couldn't find 'rild' socket; retrying after timeout
 05-24 13:52:35.320 I/RILJ    ( 2623): Couldn't find 'rild' socket; retrying after timeout
@@ -200,8 +194,7 @@
 05-24 13:52:43.320 I/RILJ    ( 2623): Couldn't find 'rild' socket; retrying after timeout
 05-24 13:52:47.320 I/RILJ    ( 2623): Couldn't find 'rild' socket; retrying after timeout
 05-24 13:52:51.320 I/RILJ    ( 2623): Couldn't find 'rild' socket; retrying after timeout
-[   64.694873] 
-[   64.694887] /home/developer/action_compiling_21/leopard/platform/drivers/usb/monitor/umonitor_core.c--738, SYS_MSG_USB_A_IN
+
 ------start rild
 05-24 13:52:53.390 I/RILD    ( 2906): ------ VendorRIL initialize: library=/system/lib/libreference-ril.so ------
 05-24 13:52:53.400 I/RILD    ( 2906): ------ VendorRIL initialize: arguments from command ------
@@ -221,26 +214,6 @@
 05-24 13:52:53.490 I/RIL     ( 2906): ------ VendorRIL entering mainLoop() ------
 05-24 13:52:53.490 I/RIL     ( 2906): ------ VendorRIL mainLoop: repeatedly check if port available, open, initalize, readThread ------
 05-24 13:52:53.490 I/RIL     ( 2906): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
-[   65.765140] hcd aotg0 add
-[   65.774511] aotg_hcd aotg_hcd.0: AOTG USB Host Controller Driver
-[   65.781526] aotg_hcd aotg_hcd.0: new USB bus registered, assigned bus number 1
-[   65.789345] aotg_hcd aotg_hcd.0: irq 67, io mem 0xb0240000
-[   65.795028] aotg_hcd aotg_hcd.0: <HCD> start
-[   65.801678] hub 1-0:1.0: USB hub found
-[   65.805604] hub 1-0:1.0: 1 port detected
-[   65.810312] aotg_hcd aotg_hcd.0: hcd controller initialized. OTGIRQ: 0x01, OTGSTATE:	0x02 
-[   65.920300] otg_port_no:0 OTG IRQ,	OTGSTATE: 0x03, USBIRQ:0x00
-[   65.926290] aotg_hcd aotg_hcd.0: aotg_hcd.0	changed:1,inserted: 1
-[   65.932397] port status change,2842
-[   66.274917] usb 1-1: new full-speed USB device number 2 using aotg_hcd
-[   66.504640] option 1-1:1.0: GSM modem (1-port) converter detected
-[   66.512855] urb->interval: 128
-[   66.517487] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB0
-[   66.528826] option 1-1:1.1: GSM modem (1-port) converter detected
-[   66.536330] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB1
-[   66.544406] option 1-1:1.2: GSM modem (1-port) converter detected
-[   66.551900] usb 1-1: GSM modem (1-port) converter now attached to ttyUSB2
-[   66.562357] scsi3 : usb-storage 1-1:1.3
 05-24 13:52:55.320 I/RILJ    ( 2623): Connected to 'rild' socket
 05-24 13:52:55.320 I/RILC    ( 2906): libril: new connection
 05-24 13:52:55.330 I/RILC    ( 2906): RIL Daemon version: android reference-ril 1.0
@@ -260,9 +233,6 @@
 05-24 13:52:55.430 D/RilRequest( 2623): [3650]< REQUEST_SET_PREFERRED_NETWORK_TYPE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
 05-24 13:52:55.430 D/RilRequest( 2623): [3651]< RIL_REQUEST_CDMA_SET_SUBSCRIPTION_SOURCE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
 05-24 13:52:55.430 D/RilRequest( 2623): [3652]< RIL_REQUEST_SET_CELL_INFO_LIST_RATE error: com.android.internal.telephony.CommandException: RADIO_NOT_AVAILABLE ret=
-[   67.568639] scsi 3:0:0:0: Direct-Access     WCDMA    MMC Storage      2.31 PQ: 0 ANSI: 2
-[   67.593119] sd 3:0:0:0: Attached scsi generic sg0 type 0
-[   67.604363] sd 3:0:0:0: [sda] Attached SCSI removable disk
 05-24 13:53:03.490 I/RIL     ( 2906): ------ VendorRIL open port: device_u=/dev/ttyUSB0 ------
 05-24 13:53:03.500 I/AT      ( 2906): ------ VendorRIL readerLoop: repeatedly readLine, processLine, handleUnsolicited, handleFinalResponse ------
 05-24 13:53:03.500 D/RIL     ( 2906): ******** VendorRIL: setRadioState(0), oldState=1 ********
@@ -978,32 +948,13 @@
 05-24 13:53:10.230 D/IccCardProxy( 2623): Broadcasting intent ACTION_SIM_STATE_CHANGED LOADED reason null
 05-24 13:53:10.250 D/PhoneProxy( 2623): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=0
 05-24 13:53:10.250 D/PhoneProxy( 2623): [PhoneProxy] phoneObjectUpdater: Unknown rat ignore,  newVoiceRadioTech=Unknown. mActivePhone=GSM
-[   83.041971] request_suspend_state: sleep (0->3) at 83027253012 (2017-05-24 17:53:11.659313258 UTC)
-[   83.050959] mc32x0_early_suspend
-[   83.058186] RTL871X: rtw_hal_config_gpio gpio_num =4 direction=1
-[   83.070600] RTL871X: rtw_pm_set_ips IPS_NONE
-[   83.089884] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
-[   83.114926] RTL871X: rtw_pm_set_ips IPS_NORMAL
-[   83.122254] RTL871X: rtw_pm_set_ips IPS_NONE
-[   83.145446] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
-[   83.158421] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[4]=0
-[   83.183053] RTL871X: rtw_pm_set_ips IPS_NORMAL
-[   83.190049] RTL871X: rtw_early_suspend
-[   83.197082] cap_gauge_early_suspend, 792, enter early_suspend
 05-24 13:53:11.810 D/RILJ    ( 2623): [3722]> SCREEN_STATE: true
 05-24 13:53:11.810 I/RIL     ( 2906): ------ VendorRIL onRequest: SCREEN_STATE ------
 05-24 13:53:11.810 I/RIL     ( 2906): [ScreenState]: OFF
 05-24 13:53:11.820 D/DCT     ( 2623): onReceive: action=android.intent.action.SCREEN_ON
 05-24 13:53:11.820 D/DCT     ( 2623): stopNetStatPoll
-[   83.237043] chm_ts_early_suspend:1
-[   83.240684] ealy suspend done
 05-24 13:53:11.820 D/DCT     ( 2623): overall state is IDLE[   83.250952] hotplug_early_suspend
-[   83.255062] sync_system +
-
-[   83.259583] disable gamme 
 05-24 13:53:11.830 D/RilRequest( 2623): [3722]< SCREEN_STATE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
-[   83.311962] sync_system -
-[   83.416082] mc32x0_enable_store
 05-24 13:53:12.100 D/RILJ    ( 2623): [3723]> SCREEN_STATE: false
 05-24 13:53:12.110 I/RIL     ( 2906): ------ VendorRIL onRequest: SCREEN_STATE ------
 05-24 13:53:12.110 I/RIL     ( 2906): [ScreenState]: OFF
@@ -1011,23 +962,6 @@
 05-24 13:53:12.130 D/DCT     ( 2623): stopNetStatPoll
 05-24 13:53:12.130 D/DCT     ( 2623): overall state is IDLE
 05-24 13:53:12.140 D/RilRequest( 2623): [3723]< SCREEN_STATE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
-[   84.058263] request_suspend_state: wakeup (3->0) at 84043543512 (2017-05-24 17:53:12.675604258 UTC)
-[   84.068480] hotplug_late_resume
-[   84.073510] chm_ts_late_resume
-[   84.088916] System Return From Deep Sleep
-[   84.099799] mc32x0_enable_store
-[   84.103356] mc32x0_delay_store
-[   84.113197] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
-[   84.113207] 
-[   84.121312] retry:1
-[   84.123488] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
-[   84.123496] 
-[   84.132100] retry:2
-[   84.134462] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
-[   84.134473] 
-[   84.142862] retry:3
-[   84.142870] failed to send i2c message:-6
-[   84.155825] get chip addr:0x5d
 05-24 13:53:12.800 D/RILJ    ( 2623): [3724]> SCREEN_STATE: true
 05-24 13:53:12.800 I/RIL     ( 2906): ------ VendorRIL onRequest: SCREEN_STATE ------
 05-24 13:53:12.800 I/RIL     ( 2906): [ScreenState]: OFF
@@ -1035,16 +969,6 @@
 05-24 13:53:12.800 D/DCT     ( 2623): onReceive: action=android.intent.action.SCREEN_ON
 05-24 13:53:12.800 D/DCT     ( 2623): stopNetStatPoll
 05-24 13:53:12.800 D/DCT     ( 2623): overall state is IDLE
-[   84.264133] D.===
-[   84.265678] 
-[   84.265686] 
-[   84.284971] cap_gauge_later_resume, 800, enter later_resume
-[   84.315174] [DEBUG_ADAPTIVE]max = 1627, min = 1304, Refhigh = 31, Reflow = 25
-[   84.338391] [DEBUG_ADAPTIVE]SCREEN_SIMPLE_ADAPTIVE:RefHigh = 2, RefHighGain = 3
-[   84.349123] [DEBUG_ADAPTIVE]SCREEN_SIMPLE_ADAPTIVE:RefLow = 1, RefLowGain = 3
-[   84.385599] open rgb_lcd
-[   84.388213] writel LCD_REG_BASE + LCD_OFF_CTL 0xb02a0000 value 0x10081  new value 0x10081 RTL871X: rtw_late_resume
-[   84.643009] mc32x0_early_resume
 05-24 13:53:19.830 D/TelephonyManager( 2623): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
 05-24 13:53:19.860 D/RILJ    ( 2623): [3725]> REQUEST_GET_PREFERRED_NETWORK_TYPE
 05-24 13:53:19.860 I/RIL     ( 2906): ------ VendorRIL onRequest: GET_PREFERRED_NETWORK_TYPE ------
@@ -1066,14 +990,6 @@
 05-24 13:53:28.910 D/AT      ( 2906): AT> AT+COPS=?
 05-24 13:53:28.930 D/AT      ( 2906): AT< [WCDMA] Current RRC Status = 0
 05-24 13:53:45.930 D/RILJ    ( 2623): [3729]> SIGNAL_STRENGTH
-[  119.840912] we do not support cmd 4701 in nand drv ioctl!
-[  119.854544] EXT4-fs (actc): re-mounted. Opts: (null)
-[  119.888768] EXT4-fs (actc): re-mounted. Opts: (null)
-[  119.908399] we do not support cmd 4701 in nand drv ioctl!
-[  119.918034] EXT4-fs (actc): re-mounted. Opts: (null)
-[  120.109715] EXT4-fs (actc): re-mounted. Opts: (null)
-[  120.150584] EXT4-fs (actc): re-mounted. Opts: (null)
-[  120.171287] EXT4-fs (actc): re-mounted. Opts: (null)
 05-24 13:54:05.650 D/AT      ( 2906): AT< +COPS: (2,"CAN Rogers Wirel","ROGERS","302720",0),,(0,1,3,4),(0,1,2)
 05-24 13:54:05.650 D/AT      ( 2906): AT< OK
 05-24 13:54:05.650 D/RIL     ( 2906): >> [QueryAvailableNetworks] p_response: +COPS: (2,"CAN Rogers Wirel","ROGERS","302720",0),,(0,1,3,4),(0,1,2)
@@ -1104,9 +1020,6 @@
 05-24 13:54:25.780 E/RILC    ( 2906): invalid response length
 05-24 13:54:25.780 D/RilRequest( 2623): [3732]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:54:25.790 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  165.946887] store_opt_mode: 0x1
-[  165.953300] screen_mode_changed: 1, scene_mode: 0x4
-[  165.983801] store_opt_mode: 0x0
 05-24 13:54:45.800 D/RILJ    ( 2623): [3733]> SIGNAL_STRENGTH
 05-24 13:54:45.800 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:54:45.800 D/AT      ( 2906): AT> AT+CSQ
@@ -1176,7 +1089,6 @@
 05-24 13:54:53.760 D/RilRequest( 2623): [3740]< SET_MUTE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
 05-24 13:54:53.860 D/GsmConnection( 2623): [GSMConn] --dssds----null
 05-24 13:54:53.860 D/GsmConnection( 2623): [GSMConn] update: parent=DIALING, hasNewParent=false, wasConnectingInOrOut=true, wasHolding=false, isConnectingInOrOut=true, changed=false
-[  185.292211] mc32x0_delay_store
 05-24 13:54:54.220 D/RILJ    ( 2623): [UNSL]< UNSOL_RESPONSE_CALL_STATE_CHANGED
 05-24 13:54:54.220 D/RILJ    ( 2623): [3741]> GET_CURRENT_CALLS
 05-24 13:54:54.230 I/RIL     ( 2906): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------
@@ -1549,12 +1461,6 @@
 05-24 13:55:19.080 I/RIL     ( 2906): ------ VendorRIL onRequest: SET_MUTE ------
 05-24 13:55:19.080 D/RIL     ( 2906): Request not supported. Tech: 1
 05-24 13:55:19.080 D/RilRequest( 2623): [3774]< SET_MUTE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-[  212.366509] mc32x0_delay_store
-[  215.604780] cpu1 turning off start...
-[  215.611137] CPU1: shutdown
-[  215.615531] end
-[  216.434819] cpu1 turning on start...CPU1: Booted secondary processor
-[  216.468548] end
 05-24 13:55:25.920 D/RILJ    ( 2623): [3775]> SIGNAL_STRENGTH
 05-24 13:55:25.930 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:55:25.930 D/AT      ( 2906): AT> AT+CSQ
@@ -1573,11 +1479,6 @@
 05-24 13:55:46.010 E/RILC    ( 2906): invalid response length
 05-24 13:55:46.020 D/RilRequest( 2623): [3776]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:55:46.020 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  256.924975] cpu1 turning off start...
-[  256.934876] CPU1: shutdown
-[  256.942055] end
-[  257.234887] cpu1 turning on start...CPU1: Booted secondary processor
-[  257.282912] end
 05-24 13:56:06.050 D/RILJ    ( 2623): [3777]> SIGNAL_STRENGTH
 05-24 13:56:06.060 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:56:06.060 D/AT      ( 2906): AT> AT+CSQ
@@ -1596,11 +1497,6 @@
 05-24 13:56:26.140 E/RILC    ( 2906): invalid response length
 05-24 13:56:26.140 D/RilRequest( 2623): [3778]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:56:26.150 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  285.824905] cpu1 turning off start...
-[  285.832632] CPU1: shutdown
-[  285.857139] end
-[  286.154759] cpu1 turning on start...CPU1: Booted secondary processor
-[  286.182606] end
 05-24 13:56:43.180 D/RIL_ImsSms( 2623): sendText
 05-24 13:56:43.190 D/PhoneNumberUtils( 2623): System property doesn't provide any emergency numbers. Use embedded logic for determining ones.
 05-24 13:56:43.190 D/GsmSMSDispatcher( 2623): sendSms:  isIms()=false mRetryCount=0 mImsRetry=0 mMessageRef=0 SS=0
@@ -1622,11 +1518,6 @@
 05-24 13:56:46.190 E/RILC    ( 2906): invalid response length
 05-24 13:56:46.190 D/RilRequest( 2623): [3780]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:56:46.190 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  309.854768] cpu1 turning off start...
-[  309.859204] CPU1: shutdown
-[  309.865814] end
-[  310.364766] cpu1 turning on start...CPU1: Booted secondary processor
-[  310.392685] end
 05-24 13:57:06.210 D/RILJ    ( 2623): [3781]> SIGNAL_STRENGTH
 05-24 13:57:06.220 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:57:06.220 D/AT      ( 2906): AT> AT+CSQ
@@ -1636,17 +1527,7 @@
 05-24 13:57:06.240 E/RILC    ( 2906): invalid response length
 05-24 13:57:06.260 D/RilRequest( 2623): [3781]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:57:06.260 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  320.908412] cpu1 turning off start...
-[  320.915261] CPU1: shutdown
-[  320.919619] end
-[  321.404817] cpu1 turning on start...CPU1: Booted secondary processor
-[  321.432579] end
 05-24 13:57:14.870 D/AT      ( 2906): AT< +CMTI: "SM",11
-[  332.934794] cpu1 turning off start...
-[  332.939385] CPU1: shutdown
-[  332.943298] end
-[  333.244775] cpu1 turning on start...CPU1: Booted secondary processor
-[  333.272829] end
 05-24 13:57:26.300 D/RILJ    ( 2623): [3782]> SIGNAL_STRENGTH
 05-24 13:57:26.300 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:57:26.300 D/AT      ( 2906): AT> AT+CSQ
@@ -1656,16 +1537,6 @@
 05-24 13:57:26.320 E/RILC    ( 2906): invalid response length
 05-24 13:57:26.320 D/RilRequest( 2623): [3782]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:57:26.320 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  343.464817] cpu1 turning off start...
-[  343.470913] CPU1: shutdown
-[  343.474417] end
-[  343.774746] cpu1 turning on start...CPU1: Booted secondary processor
-[  343.804673] end
-[  356.024796] cpu1 turning off start...
-[  356.031560] CPU1: shutdown
-[  356.036064] end
-[  356.524785] cpu1 turning on start...CPU1: Booted secondary processor
-[  356.554628] end
 05-24 13:57:46.340 D/RILJ    ( 2623): [3783]> SIGNAL_STRENGTH
 05-24 13:57:46.350 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:57:46.350 D/AT      ( 2906): AT> AT+CSQ
@@ -1675,11 +1546,6 @@
 05-24 13:57:46.360 E/RILC    ( 2906): invalid response length
 05-24 13:57:46.360 D/RilRequest( 2623): [3783]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:57:46.360 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  368.054793] cpu1 turning off start...
-[  368.059467] CPU1: shutdown
-[  368.065945] end
-[  368.554818] cpu1 turning on start...CPU1: Booted secondary processor
-[  368.582950] end
 05-24 13:58:06.380 D/RILJ    ( 2623): [3784]> SIGNAL_STRENGTH
 05-24 13:58:06.390 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:58:06.390 D/AT      ( 2906): AT> AT+CSQ
@@ -1689,16 +1555,6 @@
 05-24 13:58:06.410 E/RILC    ( 2906): invalid response length
 05-24 13:58:06.440 D/RilRequest( 2623): [3784]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:58:06.440 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  379.104754] cpu1 turning off start...
-[  379.109178] CPU1: shutdown
-[  379.115114] end
-[  379.624778] cpu1 turning on start...CPU1: Booted secondary processor
-[  379.653019] end
-[  390.134804] cpu1 turning off start...
-[  390.149564] CPU1: shutdown
-[  390.153101] end
-[  390.624817] cpu1 turning on start...CPU1: Booted secondary processor
-[  390.653086] end
 05-24 13:58:26.460 D/RILJ    ( 2623): [3785]> SIGNAL_STRENGTH
 05-24 13:58:26.460 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:58:26.460 D/AT      ( 2906): AT> AT+CSQ
@@ -1708,42 +1564,14 @@
 05-24 13:58:26.480 E/RILC    ( 2906): invalid response length
 05-24 13:58:26.520 D/RilRequest( 2623): [3785]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:58:26.520 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  402.664790] cpu1 turning off start...
-[  402.671459] CPU1: shutdown
-[  402.675604] end
-[  402.974765] cpu1 turning on start...CPU1: Booted secondary processor
-[  403.003514] end
 05-24 13:58:36.030 D/AT      ( 2906): AT< +CMTI: "SM",12
-[  414.294949] mc32x0_enable_store
-[  414.355204] request_suspend_state: sleep (0->3) at 414340487843 (2017-05-24 17:58:42.972548589 UTC)
-[  414.364679] mc32x0_early_suspend
-[  414.375401] RTL871X: rtw_hal_config_gpio gpio_num =4 direction=1
-[  414.382813] RTL871X: rtw_pm_set_ips IPS_NONE
-[  414.398552] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
 05-24 13:58:43.020 D/RILJ    ( 2623): [3786]> SCREEN_STATE: false
 05-24 13:58:43.020 I/RIL     ( 2906): ------ VendorRIL onRequest: SCREEN_STATE ------
 05-24 13:58:43.020 I/RIL     ( 2906): [ScreenState]: OFF
 05-24 13:58:43.020 D/RilRequest( 2623): [3786]< SCREEN_STATE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=
 05-24 13:58:43.060 D/DCT     ( 2623): onReceive: action=android.intent.action.SCREEN_OFF
-[  414.456551] RTL871X: rtw_pm_set_ips IPS_NORMAL
 05-24 13:58:43.060 D/DCT     ( 2623): stopNetStatPoll
 05-24 13:58:43.070 D/DCT     ( 2623): overall state is IDLE
-[  414.476901] RTL871X: rtw_pm_set_ips IPS_NONE
-[  414.484115] RTL871X: rtw_pm_set_ips: bDriverStopped=1, bup=0, hw_init_completed=0
-[  414.492168] RTL871X: rtw_hal_set_gpio_output_value Set gpio 45[4]=0
-[  414.501223] RTL871X: rtw_pm_set_ips IPS_NORMAL
-[  414.506739] RTL871X: rtw_early_suspend
-[  414.512830] close lcd,lcd_id=1
-[  414.516323] Switch LDO1: Failed to create debugfs directory
-[  414.522432] cap_gauge_early_suspend, 792, enter early_suspend
-[  414.529724] chm_ts_early_suspend:1
-[  414.533116] ealy suspend done
-[  414.536576] hotplug_early_suspend
-[  414.541363] sync_system +
-[  414.550368] sync_system -
-[  417.494868] cpu1 turning off start...
-[  417.500789] CPU1: shutdown
-[  417.506502] end
 05-24 13:58:46.560 D/RILJ    ( 2623): [3787]> SIGNAL_STRENGTH
 05-24 13:58:46.560 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:58:46.560 D/AT      ( 2906): AT> AT+CSQ
@@ -1779,53 +1607,25 @@
 05-24 13:58:53.050 D/GsmConnection( 2623): [GSMConn] --dssds----null
 05-24 13:58:53.050 D/GsmConnection( 2623): [GSMConn] update: parent=INCOMING, hasNewParent=false, wasConnectingInOrOut=true, wasHolding=false, isConnectingInOrOut=true, changed=false
 05-24 13:58:53.550 D/RILJ    ( 2623): [UNSL]< UNSOL_RESPONSE_CALL_STATE_CHANGED[  424.965914] request_suspend_state: wakeup (3->0) at 424951199802 (2017-05-24 17:58:53.583261298 UTC)
-[  424.975105] hotplug_late_resume
-[  424.990401] chm_ts_late_resume
-[  424.993444] System Return From Deep Sleep
-
 05-24 13:58:53.550 D/RILJ    ( 2623): [3790]> GET_CURRENT_CALLS
 05-24 13:58:53.560 I/RIL     ( 2906): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------[  425.090381] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
-[  425.090389] 
-[  425.100036] retry:1
-[  425.102180] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
-[  425.102186] 
-[  425.110964] retry:2
-[  425.113114] asoc_i2c: asoc_fifo_irq(): [i2c1] no ACK, fifostat 0x30013
-[  425.113120] 
-[  425.129811] retry:3
-[  425.131898] failed to send i2c message:-6
-[  425.150634] mc32x0_enable_store
-[  425.154700] mc32x0_delay_store
-[  425.164816] cpu1 turning on start...
 05-24 13:58:53.560 D/AT      ( 2906): AT> AT+CLCCget chip addr:0x5d
-
-[  425.235363] CPU1: Booted secondary processor
-[  425.242106] end
 05-24 13:58:53.570 D/AT      ( 2906): AT< +CLCC: 1,1,4,0,0
 05-24 13:58:53.570 D/AT      ( 2906): AT< OK
 05-24 13:58:53.570 V/RILJ    ( 2623): Incoming UUS : NOT present!
 05-24 13:58:53.570 D/RILJ    ( 2623): InCall VoicePrivacy is disabled
 05-24 13:58:53.570 D/RILJ    ( 2623): [3790]< GET_CURRENT_CALLS  [id=1,INCOMING,toa=0,norm,mt,0,voc,noevp,,cli=1,,0] [  425.313692] D.
 05-24 13:58:53.570 D/GsmConnection( 2623): [GSMConn] --dssds----null===
-[  425.318578] 
-[  425.318590] 
-
 05-24 13:58:53.570 D/GsmConnection( 2623): [GSMConn] update: parent=INCOMING, hasNewParent=false, wasConnectingInOrOut=true, wasHolding=false, isConnectingInOrOut=true, changed=false
 05-24 13:58:53.820 D/RILJ    ( 2623): [3791]> SCREEN_STATE: true
 05-24 13:58:53.820 I/RIL     ( 2906): ------ VendorRIL onRequest: SCREEN_STATE ------
 05-24 13:58:53.820 I/RIL     ( 2906): [ScreenState]: OFF
-[  425.375214] cap_gauge_later_resume, 800, enter later_resume
 05-24 13:58:53.830 D/RilRequest( 2623): [3791]< SCREEN_STATE error: com.android.internal.telephony.CommandException: MODE_NOT_SUPPORTED ret=[  425.399078] Switch LDO1: Failed to create debugfs directory
-[  425.410705] [DEBUG_ADAPTIVE]max = 1632, min = 1302, Refhigh = 31, Reflow = 25
-[  425.432961] [DEBUG_ADAPTIVE]SCREEN_SIMPLE_ADAPTIVE:RefHigh = 2, RefHighGain = 3
-
 05-24 13:58:53.830 D/DCT     ( 2623): onReceive: action=android.intent.action.SCREEN_ON[  425.452153] [DEBUG_ADAPTIVE]SCREEN_SIMPLE_ADAPTIVE:RefLow = 1, RefLowGain = 3
-
 05-24 13:58:53.830 D/DCT     ( 2623): stopNetStatPoll
 05-24 13:58:53.830 D/DCT     ( 2623): overall state is IDLE
 05-24 13:58:54.100 D/RILJ    ( 2623): [UNSL]< UNSOL_RESPONSE_CALL_STATE_CHANGED
 05-24 13:58:54.110 D/RILJ    ( 2623): [3792]> GET_CURRENT_CALLS[  425.507348] open rgb_lcd
-[  425.513051] writel LCD_REG_BASE + LCD_OFF_CTL 0xb02a0000 value 0x10081  new value 0x10081 
 05-24 13:58:54.110 I/RIL     ( 2906): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------
 05-24 13:58:54.110 D/AT      ( 2906): AT> AT+CLCC
 05-24 13:58:54.120 D/AT      ( 2906): AT< +CLCC: 1,1,4,0,0
@@ -1835,8 +1635,6 @@
 05-24 13:58:54.120 D/RILJ    ( 2623): [3792]< GET_CURRENT_CALLS  [id=1,INCOMING,toa=0,norm,mt,0,voc,noevp,,cli=1,,0] 
 05-24 13:58:54.120 D/GsmConnection( 2623): [GSMConn] --dssds----null
 05-24 13:58:54.120 D/GsmConnection( 2623): [GSMConn] update: parent=INCOMING, hasNewParent=false, wasConnectingInOrOut=true, wasHolding=false, isConnectingInOrOut=true, changed=false
-RTL871X: rtw_late_resume
-[  425.744092] mc32x0_early_resume
 05-24 13:58:54.620 D/RILJ    ( 2623): [UNSL]< UNSOL_RESPONSE_CALL_STATE_CHANGED
 05-24 13:58:54.620 D/RILJ    ( 2623): [3793]> GET_CURRENT_CALLS
 05-24 13:58:54.640 I/RIL     ( 2906): ------ VendorRIL onRequest: GET_CURRENT_CALLS ------
@@ -2142,11 +1940,6 @@ RTL871X: rtw_late_resume
 05-24 13:59:06.620 E/RILC    ( 2906): invalid response length
 05-24 13:59:06.620 D/RilRequest( 2623): [3822]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:59:06.620 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  446.064777] cpu1 turning off start...
-[  446.069101] CPU1: shutdown
-[  446.072826] end
-[  446.364750] cpu1 turning on start...CPU1: Booted secondary processor
-[  446.392530] end
 05-24 13:59:22.040 D/AT      ( 2906): AT< NO CARRIER
 05-24 13:59:22.040 D/RILJ    ( 2623): [UNSL]< UNSOL_RESPONSE_CALL_STATE_CHANGED
 05-24 13:59:22.040 D/RILJ    ( 2623): [3823]> GET_CURRENT_CALLS
@@ -2195,7 +1988,6 @@ RTL871X: rtw_late_resume
 05-24 13:59:22.190 I/RIL     ( 2906): ------ VendorRIL onRequest: SET_MUTE ------
 05-24 13:59:22.190 D/RIL     ( 2906): Request not supported. Tech: 1
 05-24 13:59:22.190 D/RilRequest( 2623): [3826]< SET_MUTE error: com.android.internal.telephony.CommandException: REQUEST_NOT_SUPPORTED ret=
-[  455.589078] mc32x0_delay_store
 05-24 13:59:26.630 D/RILJ    ( 2623): [3827]> SIGNAL_STRENGTH
 05-24 13:59:26.630 I/RIL     ( 2906): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 13:59:26.630 D/AT      ( 2906): AT> AT+CSQ
@@ -2205,8 +1997,4 @@ RTL871X: rtw_late_resume
 05-24 13:59:26.650 E/RILC    ( 2906): invalid response length
 05-24 13:59:26.650 D/RilRequest( 2623): [3827]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 13:59:26.650 D/GsmSST  ( 2623): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
-[  462.764862] cpu1 turning off start...
-[  462.772776] CPU1: shutdown
-[  462.778394] end
-[  463.074772] cpu1 turning on start...CPU1: Booted secondary processor
-[  463.103196] end
+
