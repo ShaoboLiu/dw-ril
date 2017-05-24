@@ -944,6 +944,7 @@
 05-24 15:15:43.680 D/IccCardProxy( 2738): Broadcasting intent ACTION_SIM_STATE_CHANGED LOADED reason null
 05-24 15:15:43.680 D/PhoneProxy( 2738): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=0
 05-24 15:15:43.680 D/PhoneProxy( 2738): [PhoneProxy] phoneObjectUpdater: Unknown rat ignore,  newVoiceRadioTech=Unknown. mActivePhone=GSM
+
 05-24 15:15:58.320 D/RILJ    ( 2738): [3722]> SIGNAL_STRENGTH
 05-24 15:15:58.320 I/RIL     ( 3095): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 15:15:58.320 D/AT      ( 3095): AT> AT+CSQ
@@ -971,6 +972,7 @@
 05-24 15:16:38.450 E/RILC    ( 3095): invalid response length
 05-24 15:16:38.450 D/RilRequest( 2738): [3724]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 15:16:38.450 D/GsmSST  ( 2738): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+
 05-24 15:16:58.470 D/RILJ    ( 2738): [3725]> SIGNAL_STRENGTH
 05-24 15:16:58.470 I/RIL     ( 3095): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 15:16:58.470 D/AT      ( 3095): AT> AT+CSQ
@@ -980,6 +982,7 @@
 05-24 15:16:58.490 E/RILC    ( 3095): invalid response length
 05-24 15:16:58.490 D/RilRequest( 2738): [3725]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 15:16:58.490 D/GsmSST  ( 2738): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+
 05-24 15:17:18.570 D/RILJ    ( 2738): [3726]> SIGNAL_STRENGTH
 05-24 15:17:18.570 I/RIL     ( 3095): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 15:17:18.570 D/AT      ( 3095): AT> AT+CSQ
