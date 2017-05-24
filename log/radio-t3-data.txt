@@ -1023,6 +1023,8 @@
 05-24 15:17:58.670 D/RilRequest( 2738): [3728]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 15:17:58.670 D/GsmSST  ( 2738): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
 05-24 15:17:58.970 D/DCT     ( 2738): handleMessage msg={ when=0 what=270366 arg1=1 target=com.android.internal.telephony.dataconnection.DcTracker }
+
+
 05-24 15:17:58.970 D/DCT     ( 2738): CMD_SET_USER_DATA_ENABLE enabled=true
 05-24 15:17:59.050 D/DCT     ( 2738): isDataAllowed: not allowed due to - Roaming and data roaming not enabled
 05-24 15:17:59.050 D/DCT     ( 2738): [ApnContext:fota] getApnSetting: apnSetting=null
