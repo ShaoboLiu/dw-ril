@@ -989,6 +989,8 @@
 05-24 15:17:18.600 E/RILC    ( 3095): invalid response length
 05-24 15:17:18.600 D/RilRequest( 2738): [3726]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 15:17:18.600 D/GsmSST  ( 2738): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+
+
 05-24 15:17:36.170 D/DCT     ( 2738): handleMessage msg={ when=-1ms what=270366 target=com.android.internal.telephony.dataconnection.DcTracker }
 05-24 15:17:36.170 D/DCT     ( 2738): CMD_SET_USER_DATA_ENABLE enabled=false
 05-24 15:17:36.170 D/DCT     ( 2738): isDataAllowed: not allowed due to - Roaming and data roaming not enabled
@@ -1004,6 +1006,7 @@
 05-24 15:17:36.310 D/DCT     ( 2738): [ApnContext:mms] getApnSetting: apnSetting=null
 05-24 15:17:36.320 D/DCT     ( 2738): isDataAllowed: not allowed due to - Roaming and data roaming not enabled
 05-24 15:17:36.320 D/DCT     ( 2738): [ApnContext:cbs] getApnSetting: apnSetting=null
+
 05-24 15:17:38.600 D/RILJ    ( 2738): [3727]> SIGNAL_STRENGTH
 05-24 15:17:38.610 I/RIL     ( 3095): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------[  192.486148] cpu1 turning on start...
 05-24 15:17:38.610 D/AT      ( 3095): AT> AT+CSQ
@@ -1013,6 +1016,7 @@
 05-24 15:17:38.620 E/RILC    ( 3095): invalid response length
 05-24 15:17:38.620 D/RilRequest( 2738): [3727]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-24 15:17:38.620 D/GsmSST  ( 2738): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+
 05-24 15:17:58.650 D/RILJ    ( 2738): [3728]> SIGNAL_STRENGTH
 05-24 15:17:58.660 I/RIL     ( 3095): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 15:17:58.660 D/AT      ( 3095): AT> AT+CSQ
@@ -1039,6 +1043,7 @@
 05-24 15:17:59.140 D/DCT     ( 2738): isDataAllowed: not allowed due to - Roaming and data roaming not enabled
 05-24 15:17:59.140 D/DCT     ( 2738): [ApnContext:cbs] getApnSetting: apnSetting=null
 05-24 15:17:59.150 D/DCT     ( 2738): isDataAllowed: not allowed due to - Roaming and data roaming not enabled
+
 05-24 15:18:18.690 D/RILJ    ( 2738): [3729]> SIGNAL_STRENGTH
 05-24 15:18:18.700 I/RIL     ( 3095): ------ VendorRIL onRequest: SIGNAL_STRENGTH ------
 05-24 15:18:18.700 D/AT      ( 3095): AT> AT+CSQ
