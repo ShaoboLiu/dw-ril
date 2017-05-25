@@ -872,6 +872,7 @@
 05-25 13:05:55.270 D/PhoneProxy( 2506): [PhoneProxy] phoneObjectUpdater: newVoiceRadioTech=0
 05-25 13:05:55.270 D/PhoneProxy( 2506): [PhoneProxy] phoneObjectUpdater: Unknown rat ignore,  newVoiceRadioTech=Unknown. mActivePhone=GSM
 05-25 13:06:06.070 D/TelephonyManager( 2506): getLteOnCdmaMode=0 curVal=-1 product_type='' lteOnCdmaProductType=''
+
 05-25 13:06:06.090 D/RILJ    ( 2506): [3725]> REQUEST_GET_PREFERRED_NETWORK_TYPE
 05-25 13:06:06.090 I/RIL     ( 3524): ------ VendorRIL onRequest: GET_PREFERRED_NETWORK_TYPE ------
 05-25 13:06:06.090 D/RILJ    ( 2506): [3725]< REQUEST_GET_PREFERRED_NETWORK_TYPE {1}
@@ -884,6 +885,8 @@
 05-25 13:06:10.600 E/RILC    ( 3524): invalid response length
 05-25 13:06:10.600 D/RilRequest( 2506): [3726]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-25 13:06:10.600 D/GsmSST  ( 2506): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+
+
 05-25 13:06:21.070 D/DCT     ( 2506): handleMessage msg={ when=0 what=270366 target=com.android.internal.telephony.dataconnection.DcTracker }
 05-25 13:06:21.070 D/DCT     ( 2506): CMD_SET_USER_DATA_ENABLE enabled=false
 05-25 13:06:21.070 D/DCT     ( 2506): isDataAllowed: not allowed due to - Attached= false
@@ -896,6 +899,8 @@
 05-25 13:06:30.640 E/RILC    ( 3524): invalid response length
 05-25 13:06:30.640 D/RilRequest( 2506): [3727]< SIGNAL_STRENGTH error: com.android.internal.telephony.CommandException: INVALID_RESPONSE ret=
 05-25 13:06:30.680 D/GsmSST  ( 2506): [GsmSST] onSignalStrengthResult() Exception from RIL : com.android.internal.telephony.CommandException: INVALID_RESPONSE
+
+
 05-25 13:06:46.560 D/DCT     ( 2506): handleMessage msg={ when=-1ms what=270366 arg1=1 target=com.android.internal.telephony.dataconnection.DcTracker }
 05-25 13:06:46.560 D/DCT     ( 2506): CMD_SET_USER_DATA_ENABLE enabled=true
 05-25 13:06:46.620 D/DCT     ( 2506): isDataAllowed: not allowed due to - Attached= false
